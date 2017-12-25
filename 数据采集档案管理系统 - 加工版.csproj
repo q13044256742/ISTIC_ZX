@@ -48,17 +48,41 @@
     <Compile Include="Frm_FIle_Opinion.Designer.cs">
       <DependentUpon>Frm_FIle_Opinion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_Import.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Import.Designer.cs">
+      <DependentUpon>Frm_Import.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_Main.Designer.cs">
       <DependentUpon>Frm_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_MainFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_MainFrame.Designer.cs">
+      <DependentUpon>Frm_MainFrame.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_MyWork.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_MyWork.Designer.cs">
       <DependentUpon>Frm_MyWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_OnWork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_OnWork.Designer.cs">
+      <DependentUpon>Frm_OnWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Print.Designer.cs">
+      <DependentUpon>Frm_Print.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_WorkLog.cs">
       <SubType>Form</SubType>
@@ -76,15 +100,28 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\DataGridViewStyleHelper.cs" />
     <Compile Include="Tools\DataSourceHelper.cs" />
+    <Compile Include="Tools\FileBoxHelper.cs" />
     <Compile Include="Tools\FileListHelper.cs" />
     <EmbeddedResource Include="Frm_FIle_Opinion.resx">
       <DependentUpon>Frm_FIle_Opinion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Import.resx">
+      <DependentUpon>Frm_Import.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Main.resx">
       <DependentUpon>Frm_Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_MainFrame.resx">
+      <DependentUpon>Frm_MainFrame.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_MyWork.resx">
       <DependentUpon>Frm_MyWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_OnWork.resx">
+      <DependentUpon>Frm_OnWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Print.resx">
+      <DependentUpon>Frm_Print.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_WorkLog.resx">
       <DependentUpon>Frm_WorkLog.cs</DependentUpon>
@@ -100,6 +137,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -110,6 +148,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\png-0228.png" />
+    <None Include="Images\png-0222.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\png-0281.png" />
+    <Content Include="Images\png-0289.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

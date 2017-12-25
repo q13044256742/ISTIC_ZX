@@ -59,25 +59,25 @@ namespace 数据采集档案管理系统___加工版.Tools
         /// 初始化文件列表控件
         /// </summary>
         /// <param name="dgv_JH_FileList"></param>
-        public static void InitialFileList(DataGridView dgv_JH_FileList)
+        public static void InitialFileList(DataGridView dataGridView)
         {
-            dgv_JH_FileList.EditingControlShowing += Dgv_JH_FileList_EditingControlShowing;
+            dataGridView.EditingControlShowing += Dgv_JH_FileList_EditingControlShowing;
         }
         /// <summary>
         /// 下拉框联动事件
         /// </summary>
         private static void Dgv_JH_FileList_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
-            DataGridView dgv_JH_FileList = sender as DataGridView;
-            if (dgv_JH_FileList.CurrentCell.RowIndex != -1)
+            DataGridView dataGridView = sender as DataGridView;
+            if (dataGridView.CurrentCell.RowIndex != -1)
             {
-                if (dgv_JH_FileList.CurrentCell.ColumnIndex == 1)
+                if (dataGridView.CurrentCell.ColumnIndex == 1)
                 {
                     ComboBox cb = e.Control as ComboBox;
                     cb.SelectedIndexChanged -= Cb_SelectedIndexChanged;
                     cb.SelectedIndexChanged += Cb_SelectedIndexChanged;
                 }
-                else if (dgv_JH_FileList.CurrentCell.ColumnIndex == 2)
+                else if (dataGridView.CurrentCell.ColumnIndex == 2)
                 {
                     ComboBox cb = e.Control as ComboBox;
                     cb.SelectedIndexChanged -= Cb_SelectedIndexChanged1;
@@ -92,10 +92,10 @@ namespace 数据采集档案管理系统___加工版.Tools
         private static void Cb_SelectedIndexChanged1(object sender, EventArgs e)
         {
             ComboBox comboBox = sender as ComboBox;
-            DataGridView dgv_JH_FileList = comboBox.Parent.Parent as DataGridView;
+            DataGridView dataGridView = comboBox.Parent.Parent as DataGridView;
             string value = null;
             bool b = FileListHelper.GetFileType().TryGetValue(comboBox.SelectedItem.ToString(), out value);
-            if (b) dgv_JH_FileList.CurrentRow.Cells[3].Value = value;
+            if (b) dataGridView.CurrentRow.Cells[3].Value = value;
         }
 
         /// <summary>
@@ -104,8 +104,8 @@ namespace 数据采集档案管理系统___加工版.Tools
         private static void Cb_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox comboBox = sender as ComboBox;
-            DataGridView dgv_JH_FileList = comboBox.Parent.Parent as DataGridView;
-            DataGridViewComboBoxCell comboBoxCell = dgv_JH_FileList.CurrentRow.Cells[2] as DataGridViewComboBoxCell;
+            DataGridView dataGridView = comboBox.Parent.Parent as DataGridView;
+            DataGridViewComboBoxCell comboBoxCell = dataGridView.CurrentRow.Cells[2] as DataGridViewComboBoxCell;
             comboBoxCell.Items.Clear();
             if (comboBox.SelectedIndex == 0)
                 comboBoxCell.Items.AddRange("A01", "A02", "A03", "A04", "A05");

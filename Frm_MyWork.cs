@@ -47,8 +47,9 @@ namespace 数据采集档案管理系统___加工版
                 //编辑
                 else if(e.ColumnIndex == dgv_MyWork.Columns.Count - 2)
                 {
-                    Frm_Wroking frm_Wroking = new Frm_Wroking();
-                    frm_Wroking.ShowDialog();
+
+                    Frm_OnWork frm_OnWork = new Frm_OnWork();
+                    frm_OnWork.ShowDialog();
                 }
             }
         }

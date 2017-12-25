@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace 数据采集档案管理系统___加工版
@@ -15,7 +13,8 @@ namespace 数据采集档案管理系统___加工版
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_Main());
+            Application.Run(new Frm_MainFrame());
+            //Application.Run(new Frm_Main());
         }
     }
 }
