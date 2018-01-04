@@ -28,23 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("008ZX02101-001");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("008ZX02101-002");
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("008ZX02101", new System.Windows.Forms.TreeNode[] {
-            treeNode11,
-            treeNode12});
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("008ZX02102");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("863计划", new System.Windows.Forms.TreeNode[] {
-            treeNode13,
-            treeNode14});
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("008ZX02101-001");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("008ZX02101-002");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("008ZX02101", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2});
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("008ZX02102");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("863计划", new System.Windows.Forms.TreeNode[] {
+            treeNode3,
+            treeNode4});
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pic_Add = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.pic_Import = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.pic_Export = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pic_Check = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_Query = new System.Windows.Forms.Button();
             this.txt_Query_Name = new System.Windows.Forms.TextBox();
@@ -57,27 +64,19 @@
             this.btn_SH = new System.Windows.Forms.Button();
             this.tv_DataTree = new System.Windows.Forms.TreeView();
             this.dgv_DataList = new System.Windows.Forms.DataGridView();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pic_Check = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pic_Add = new System.Windows.Forms.PictureBox();
-            this.pic_Export = new System.Windows.Forms.PictureBox();
-            this.pic_Import = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Add)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Import)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Export)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_DataList)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Check)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Add)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Export)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Import)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_DataList)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -100,6 +99,19 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "添加项目/课题";
             // 
+            // pic_Add
+            // 
+            this.pic_Add.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pic_Add.Image = global::数据采集档案管理系统___加工版.Properties.Resources.png_0289;
+            this.pic_Add.Location = new System.Drawing.Point(18, 7);
+            this.pic_Add.Name = "pic_Add";
+            this.pic_Add.Size = new System.Drawing.Size(55, 48);
+            this.pic_Add.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_Add.TabIndex = 0;
+            this.pic_Add.TabStop = false;
+            this.pic_Add.Click += new System.EventHandler(this.pic_Add_Click);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label2);
@@ -117,6 +129,19 @@
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 1;
             this.label2.Text = "数据导入";
+            // 
+            // pic_Import
+            // 
+            this.pic_Import.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pic_Import.Image = global::数据采集档案管理系统___加工版.Properties.Resources.png_0222;
+            this.pic_Import.Location = new System.Drawing.Point(18, 7);
+            this.pic_Import.Name = "pic_Import";
+            this.pic_Import.Size = new System.Drawing.Size(55, 48);
+            this.pic_Import.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_Import.TabIndex = 0;
+            this.pic_Import.TabStop = false;
+            this.pic_Import.Click += new System.EventHandler(this.pic_Import_Click);
             // 
             // panel3
             // 
@@ -136,6 +161,18 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "数据导出";
             // 
+            // pic_Export
+            // 
+            this.pic_Export.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pic_Export.Image = global::数据采集档案管理系统___加工版.Properties.Resources.png_0228;
+            this.pic_Export.Location = new System.Drawing.Point(17, 7);
+            this.pic_Export.Name = "pic_Export";
+            this.pic_Export.Size = new System.Drawing.Size(55, 48);
+            this.pic_Export.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_Export.TabIndex = 0;
+            this.pic_Export.TabStop = false;
+            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -150,6 +187,46 @@
             this.groupBox1.Size = new System.Drawing.Size(1006, 96);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.label4);
+            this.panel4.Controls.Add(this.pic_Check);
+            this.panel4.Location = new System.Drawing.Point(204, 10);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(91, 82);
+            this.panel4.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(19, 63);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 12);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "校验/比对";
+            // 
+            // pic_Check
+            // 
+            this.pic_Check.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pic_Check.Image = global::数据采集档案管理系统___加工版.Properties.Resources.png_0281;
+            this.pic_Check.Location = new System.Drawing.Point(17, 7);
+            this.pic_Check.Name = "pic_Check";
+            this.pic_Check.Size = new System.Drawing.Size(55, 48);
+            this.pic_Check.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_Check.TabIndex = 0;
+            this.pic_Check.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::数据采集档案管理系统___加工版.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(432, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(484, 67);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // groupBox2
             // 
@@ -260,18 +337,18 @@
             this.tv_DataTree.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tv_DataTree.Location = new System.Drawing.Point(3, 17);
             this.tv_DataTree.Name = "tv_DataTree";
-            treeNode11.Name = "节点3";
-            treeNode11.Text = "008ZX02101-001";
-            treeNode12.Name = "节点4";
-            treeNode12.Text = "008ZX02101-002";
-            treeNode13.Name = "节点0";
-            treeNode13.Text = "008ZX02101";
-            treeNode14.Name = "节点2";
-            treeNode14.Text = "008ZX02102";
-            treeNode15.Name = "863计划";
-            treeNode15.Text = "863计划";
+            treeNode1.Name = "节点3";
+            treeNode1.Text = "008ZX02101-001";
+            treeNode2.Name = "节点4";
+            treeNode2.Text = "008ZX02101-002";
+            treeNode3.Name = "节点0";
+            treeNode3.Text = "008ZX02101";
+            treeNode4.Name = "节点2";
+            treeNode4.Text = "008ZX02102";
+            treeNode5.Name = "863计划";
+            treeNode5.Text = "863计划";
             this.tv_DataTree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode15});
+            treeNode5});
             this.tv_DataTree.Size = new System.Drawing.Size(205, 326);
             this.tv_DataTree.TabIndex = 1;
             // 
@@ -285,14 +362,14 @@
             this.dgv_DataList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_DataList.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgv_DataList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_DataList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_DataList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_DataList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_DataList.Location = new System.Drawing.Point(208, 17);
             this.dgv_DataList.Name = "dgv_DataList";
@@ -301,98 +378,11 @@
             this.dgv_DataList.Size = new System.Drawing.Size(797, 329);
             this.dgv_DataList.TabIndex = 0;
             // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 461);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1014, 22);
-            this.statusStrip1.TabIndex = 7;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.label4);
-            this.panel4.Controls.Add(this.pic_Check);
-            this.panel4.Location = new System.Drawing.Point(204, 10);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(91, 82);
-            this.panel4.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 63);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 12);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "校验/比对";
-            // 
-            // pic_Check
-            // 
-            this.pic_Check.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pic_Check.Image = global::数据采集档案管理系统___加工版.Properties.Resources.png_0281;
-            this.pic_Check.Location = new System.Drawing.Point(17, 7);
-            this.pic_Check.Name = "pic_Check";
-            this.pic_Check.Size = new System.Drawing.Size(55, 48);
-            this.pic_Check.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_Check.TabIndex = 0;
-            this.pic_Check.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::数据采集档案管理系统___加工版.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(432, 10);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(484, 67);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pic_Add
-            // 
-            this.pic_Add.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pic_Add.Image = global::数据采集档案管理系统___加工版.Properties.Resources.png_0289;
-            this.pic_Add.Location = new System.Drawing.Point(18, 7);
-            this.pic_Add.Name = "pic_Add";
-            this.pic_Add.Size = new System.Drawing.Size(55, 48);
-            this.pic_Add.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_Add.TabIndex = 0;
-            this.pic_Add.TabStop = false;
-            this.pic_Add.Click += new System.EventHandler(this.pic_Add_Click);
-            // 
-            // pic_Export
-            // 
-            this.pic_Export.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pic_Export.Image = global::数据采集档案管理系统___加工版.Properties.Resources.png_0228;
-            this.pic_Export.Location = new System.Drawing.Point(17, 7);
-            this.pic_Export.Name = "pic_Export";
-            this.pic_Export.Size = new System.Drawing.Size(55, 48);
-            this.pic_Export.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_Export.TabIndex = 0;
-            this.pic_Export.TabStop = false;
-            // 
-            // pic_Import
-            // 
-            this.pic_Import.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pic_Import.Image = global::数据采集档案管理系统___加工版.Properties.Resources.png_0222;
-            this.pic_Import.Location = new System.Drawing.Point(18, 7);
-            this.pic_Import.Name = "pic_Import";
-            this.pic_Import.Size = new System.Drawing.Size(55, 48);
-            this.pic_Import.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_Import.TabIndex = 0;
-            this.pic_Import.TabStop = false;
-            this.pic_Import.Click += new System.EventHandler(this.pic_Import_Click);
-            // 
             // Frm_MainFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 483);
-            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
@@ -400,27 +390,28 @@
             this.Name = "Frm_MainFrame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "著录加工系统";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_MainFrame_FormClosing);
             this.Load += new System.EventHandler(this.Frm_MainFrame_Load);
+            this.Shown += new System.EventHandler(this.Frm_MainFrame_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Add)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Import)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Export)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_DataList)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Check)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Add)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Export)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Import)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_DataList)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -449,7 +440,6 @@
         private System.Windows.Forms.TreeView tv_DataTree;
         private System.Windows.Forms.Button btn_SH;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pic_Check;

@@ -31,13 +31,16 @@ namespace 数据采集档案管理系统___加工版
             dgv_DataList.DataSource = dataTable;
             lbl_TotalAmount.Text = "共有 " + dataTable.Rows.Count + " 条数据";
 
-            List<KeyValuePair<int, int>> list = new List<KeyValuePair<int, int>>();
-            list.Add(new KeyValuePair<int, int>(0, 70));
-            list.Add(new KeyValuePair<int, int>(2, 150));
+            List<KeyValuePair<int, int>> list = new List<KeyValuePair<int, int>>
+            {
+                new KeyValuePair<int, int>(0, 70),
+                new KeyValuePair<int, int>(2, 150)
+            };
             DataGridViewStyleHelper.SetWidth(dgv_DataList, list);
             DataGridViewStyleHelper.SetAlignWithCenter(dgv_DataList, new int[] { 0 });
 
             tv_DataTree.Nodes[0].ExpandAll();
+
         }
 
         private void Pic_Add_MouseLeave(object sender, EventArgs e)
@@ -143,6 +146,17 @@ namespace 数据采集档案管理系统___加工版
         {
             Frm_Import frm_Import = new Frm_Import();
             frm_Import.ShowDialog();
+        }
+
+        private void Frm_MainFrame_Shown(object sender, EventArgs e)
+        {
+            Frm_Explain explain = new Frm_Explain();
+            explain.ShowDialog();
+        }
+
+        private void Frm_MainFrame_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

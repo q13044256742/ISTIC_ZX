@@ -28,37 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle65 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle66 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Wroking));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("863计划");
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle70 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle71 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle72 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("863计划");
             this.tab_Menu = new System.Windows.Forms.TabControl();
             this.jhjbxx = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.file = new System.Windows.Forms.TabPage();
             this.dgv_JH_FileList = new System.Windows.Forms.DataGridView();
-            this.fileId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stage = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.fileType = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.fileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fileResper = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fileType2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.secret = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.page = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.count = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.data = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.location = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.carrier = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.format = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.form = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.opinion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fileCheck = new System.Windows.Forms.TabPage();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -70,20 +54,6 @@
             this.fileName2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lose = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.files = new System.Windows.Forms.TabPage();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.box = new System.Windows.Forms.TabPage();
             this.lsv_JH_Box = new System.Windows.Forms.ListView();
             this.fileCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -135,20 +105,6 @@
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgv_XM_FileList = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewComboBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewComboBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewComboBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewComboBoxColumn5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewComboBoxColumn6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewComboBoxColumn7 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgv_XM_FileCheck = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -159,18 +115,6 @@
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.xmRemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.btn_XM_Print = new System.Windows.Forms.Button();
             this.lnk_XM_Delete = new System.Windows.Forms.LinkLabel();
@@ -197,20 +141,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.dgv_KT_FileList = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewComboBoxColumn8 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewComboBoxColumn9 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewComboBoxColumn10 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewComboBoxColumn11 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewComboBoxColumn12 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewComboBoxColumn13 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewComboBoxColumn14 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.dgv_KT_FileCheck = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -221,18 +151,6 @@
             this.dataGridViewComboBoxColumn22 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.label72 = new System.Windows.Forms.Label();
-            this.label73 = new System.Windows.Forms.Label();
-            this.label74 = new System.Windows.Forms.Label();
-            this.label75 = new System.Windows.Forms.Label();
-            this.label76 = new System.Windows.Forms.Label();
-            this.label77 = new System.Windows.Forms.Label();
-            this.label78 = new System.Windows.Forms.Label();
-            this.label79 = new System.Windows.Forms.Label();
-            this.label80 = new System.Windows.Forms.Label();
-            this.label81 = new System.Windows.Forms.Label();
-            this.label82 = new System.Windows.Forms.Label();
-            this.label83 = new System.Windows.Forms.Label();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.btn_KT_Print = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
@@ -287,20 +205,6 @@
             this.tabControl4 = new System.Windows.Forms.TabControl();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.dgv_ZKT_FileList = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewComboBoxColumn15 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewComboBoxColumn16 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewComboBoxColumn17 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewComboBoxColumn18 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewComboBoxColumn19 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewComboBoxColumn20 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewComboBoxColumn21 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.dgv_ZKT_FileCheck = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn40 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -311,18 +215,6 @@
             this.dataGridViewComboBoxColumn23 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn45 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage11 = new System.Windows.Forms.TabPage();
-            this.label104 = new System.Windows.Forms.Label();
-            this.label105 = new System.Windows.Forms.Label();
-            this.label106 = new System.Windows.Forms.Label();
-            this.label107 = new System.Windows.Forms.Label();
-            this.label108 = new System.Windows.Forms.Label();
-            this.label109 = new System.Windows.Forms.Label();
-            this.label110 = new System.Windows.Forms.Label();
-            this.label111 = new System.Windows.Forms.Label();
-            this.label112 = new System.Windows.Forms.Label();
-            this.label113 = new System.Windows.Forms.Label();
-            this.label114 = new System.Windows.Forms.Label();
-            this.label115 = new System.Windows.Forms.Label();
             this.tabPage12 = new System.Windows.Forms.TabPage();
             this.btn_ZKT_Print = new System.Windows.Forms.Button();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
@@ -372,6 +264,118 @@
             this.btn_ZKT_Submit = new System.Windows.Forms.Button();
             this.btn_ZKT_Save = new System.Windows.Forms.Button();
             this.tv_Working = new System.Windows.Forms.TreeView();
+            this.fileId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stage = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.fileType = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.fileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fileResper = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fileType2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.secret = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.page = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.count = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.location = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carrier = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.format = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.form = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.opinion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.textBox29 = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewComboBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewComboBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewComboBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewComboBoxColumn5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewComboBoxColumn6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewComboBoxColumn7 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewComboBoxColumn8 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewComboBoxColumn9 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewComboBoxColumn10 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewComboBoxColumn11 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewComboBoxColumn12 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewComboBoxColumn13 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewComboBoxColumn14 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.textBox31 = new System.Windows.Forms.TextBox();
+            this.textBox32 = new System.Windows.Forms.TextBox();
+            this.textBox33 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewComboBoxColumn15 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewComboBoxColumn16 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewComboBoxColumn17 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewComboBoxColumn18 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewComboBoxColumn19 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewComboBoxColumn20 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewComboBoxColumn21 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.textBox34 = new System.Windows.Forms.TextBox();
+            this.comboBox9 = new System.Windows.Forms.ComboBox();
+            this.comboBox10 = new System.Windows.Forms.ComboBox();
+            this.textBox35 = new System.Windows.Forms.TextBox();
+            this.textBox44 = new System.Windows.Forms.TextBox();
+            this.textBox46 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.textBox47 = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.textBox48 = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.textBox49 = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
             this.tab_Menu.SuspendLayout();
             this.jhjbxx.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -472,14 +476,14 @@
             // 
             this.dgv_JH_FileList.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgv_JH_FileList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_JH_FileList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle65.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle65.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle65.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle65.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle65.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle65.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle65.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_JH_FileList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle65;
             this.dgv_JH_FileList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_JH_FileList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fileId,
@@ -505,125 +509,6 @@
             this.dgv_JH_FileList.Size = new System.Drawing.Size(806, 293);
             this.dgv_JH_FileList.TabIndex = 0;
             this.dgv_JH_FileList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_XM_FileList_CellClick);
-            // 
-            // fileId
-            // 
-            this.fileId.HeaderText = "文件序号";
-            this.fileId.Name = "fileId";
-            // 
-            // stage
-            // 
-            this.stage.HeaderText = "阶段";
-            this.stage.Items.AddRange(new object[] {
-            "规划阶段",
-            "申报立项阶段",
-            "过程管理阶段",
-            "验收阶段"});
-            this.stage.Name = "stage";
-            this.stage.Width = 130;
-            // 
-            // fileType
-            // 
-            this.fileType.HeaderText = "文件类别";
-            this.fileType.Name = "fileType";
-            // 
-            // fileName
-            // 
-            this.fileName.HeaderText = "文件名称";
-            this.fileName.Name = "fileName";
-            this.fileName.Width = 200;
-            // 
-            // fileResper
-            // 
-            this.fileResper.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.fileResper.HeaderText = "文件负责人";
-            this.fileResper.Name = "fileResper";
-            this.fileResper.Width = 113;
-            // 
-            // fileType2
-            // 
-            this.fileType2.HeaderText = "文件类型";
-            this.fileType2.Items.AddRange(new object[] {
-            "财务",
-            "管理",
-            "评审",
-            "技术",
-            "汇编"});
-            this.fileType2.Name = "fileType2";
-            // 
-            // secret
-            // 
-            this.secret.HeaderText = "密级";
-            this.secret.Items.AddRange(new object[] {
-            "公开",
-            "国内",
-            "秘密",
-            "机密",
-            "绝密"});
-            this.secret.Name = "secret";
-            this.secret.Width = 70;
-            // 
-            // page
-            // 
-            this.page.HeaderText = "页数";
-            this.page.Name = "page";
-            // 
-            // count
-            // 
-            this.count.HeaderText = "份数";
-            this.count.Name = "count";
-            // 
-            // data
-            // 
-            this.data.HeaderText = "形成日期";
-            this.data.Name = "data";
-            // 
-            // location
-            // 
-            this.location.HeaderText = "存放单位";
-            this.location.Name = "location";
-            this.location.Width = 250;
-            // 
-            // carrier
-            // 
-            this.carrier.HeaderText = "载体";
-            this.carrier.Items.AddRange(new object[] {
-            "纸质",
-            "电子",
-            "纸质+电子"});
-            this.carrier.Name = "carrier";
-            // 
-            // format
-            // 
-            this.format.HeaderText = "格式";
-            this.format.Items.AddRange(new object[] {
-            "PDF",
-            "DOC",
-            "EXCEL"});
-            this.format.Name = "format";
-            // 
-            // form
-            // 
-            this.form.HeaderText = "形态";
-            this.form.Items.AddRange(new object[] {
-            "原件",
-            "复印本"});
-            this.form.Name = "form";
-            this.form.ReadOnly = true;
-            // 
-            // remark
-            // 
-            this.remark.HeaderText = "附注";
-            this.remark.Name = "remark";
-            this.remark.ReadOnly = true;
-            this.remark.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.remark.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // opinion
-            // 
-            this.opinion.HeaderText = "修改意见";
-            this.opinion.Name = "opinion";
-            this.opinion.Width = 200;
             // 
             // fileCheck
             // 
@@ -661,14 +546,14 @@
             this.dgv_JH_FIilCheck.AllowUserToDeleteRows = false;
             this.dgv_JH_FIilCheck.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgv_JH_FIilCheck.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_JH_FIilCheck.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle66.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle66.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle66.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle66.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle66.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle66.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle66.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_JH_FIilCheck.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle66;
             this.dgv_JH_FIilCheck.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_JH_FIilCheck.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -732,156 +617,23 @@
             // files
             // 
             this.files.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.files.Controls.Add(this.textBox3);
-            this.files.Controls.Add(this.label19);
-            this.files.Controls.Add(this.label17);
-            this.files.Controls.Add(this.label18);
-            this.files.Controls.Add(this.label15);
-            this.files.Controls.Add(this.label16);
-            this.files.Controls.Add(this.label13);
-            this.files.Controls.Add(this.label14);
-            this.files.Controls.Add(this.label11);
-            this.files.Controls.Add(this.label12);
-            this.files.Controls.Add(this.label9);
-            this.files.Controls.Add(this.label10);
-            this.files.Controls.Add(this.label8);
-            this.files.Controls.Add(this.label7);
+            this.files.Controls.Add(this.textBox10);
+            this.files.Controls.Add(this.comboBox5);
+            this.files.Controls.Add(this.comboBox6);
+            this.files.Controls.Add(this.textBox15);
+            this.files.Controls.Add(this.textBox16);
+            this.files.Controls.Add(this.textBox29);
+            this.files.Controls.Add(this.label22);
+            this.files.Controls.Add(this.label24);
+            this.files.Controls.Add(this.label37);
+            this.files.Controls.Add(this.label54);
+            this.files.Controls.Add(this.label55);
+            this.files.Controls.Add(this.label70);
             this.files.Location = new System.Drawing.Point(4, 26);
             this.files.Name = "files";
             this.files.Size = new System.Drawing.Size(812, 299);
             this.files.TabIndex = 2;
             this.files.Text = "案卷信息";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(127, 207);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(645, 26);
-            this.textBox3.TabIndex = 13;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label19.Location = new System.Drawing.Point(18, 210);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(103, 16);
-            this.label19.TabIndex = 12;
-            this.label19.Text = "修改意见 : ";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(138, 139);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(152, 16);
-            this.label17.TabIndex = 11;
-            this.label17.Text = "国家重大专项办公室";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label18.Location = new System.Drawing.Point(41, 139);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(93, 16);
-            this.label18.TabIndex = 10;
-            this.label18.Text = "存放单位：";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(728, 22);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(40, 16);
-            this.label15.TabIndex = 9;
-            this.label15.Text = "永久";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label16.Location = new System.Drawing.Point(631, 22);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(93, 16);
-            this.label16.TabIndex = 8;
-            this.label16.Text = "保管期限：";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(431, 78);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(56, 16);
-            this.label13.TabIndex = 7;
-            this.label13.Text = "崔文健";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label14.Location = new System.Drawing.Point(351, 78);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(76, 16);
-            this.label14.TabIndex = 6;
-            this.label14.Text = "立卷人：";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(431, 22);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(64, 16);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "863计划";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label12.Location = new System.Drawing.Point(334, 22);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(93, 16);
-            this.label12.TabIndex = 4;
-            this.label12.Text = "案卷名称：";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(138, 78);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(40, 16);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "公开";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label10.Location = new System.Drawing.Point(75, 78);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(59, 16);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "密级：";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(138, 22);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 16);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "ZDZX-001 ";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(41, 22);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(93, 16);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "案卷编号：";
             // 
             // box
             // 
@@ -1073,6 +825,8 @@
             // 
             // jh_xm
             // 
+            this.jh_xm.Controls.Add(this.textBox47);
+            this.jh_xm.Controls.Add(this.label30);
             this.jh_xm.Controls.Add(this.dateTimePicker2);
             this.jh_xm.Controls.Add(this.dateTimePicker1);
             this.jh_xm.Controls.Add(this.cbo_XM_HasNext);
@@ -1141,10 +895,10 @@
             // 
             // textBox20
             // 
-            this.textBox20.Location = new System.Drawing.Point(94, 140);
+            this.textBox20.Location = new System.Drawing.Point(94, 169);
             this.textBox20.Multiline = true;
             this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(939, 65);
+            this.textBox20.Size = new System.Drawing.Size(939, 36);
             this.textBox20.TabIndex = 36;
             // 
             // textBox17
@@ -1163,23 +917,23 @@
             // 
             // textBox19
             // 
-            this.textBox19.Location = new System.Drawing.Point(94, 105);
+            this.textBox19.Location = new System.Drawing.Point(94, 104);
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(210, 26);
             this.textBox19.TabIndex = 33;
             // 
             // textBox14
             // 
-            this.textBox14.Location = new System.Drawing.Point(810, 72);
+            this.textBox14.Location = new System.Drawing.Point(810, 74);
             this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(158, 26);
+            this.textBox14.Size = new System.Drawing.Size(150, 26);
             this.textBox14.TabIndex = 32;
             // 
             // textBox11
             // 
             this.textBox11.Location = new System.Drawing.Point(810, 41);
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(190, 26);
+            this.textBox11.Size = new System.Drawing.Size(187, 26);
             this.textBox11.TabIndex = 29;
             // 
             // textBox12
@@ -1234,7 +988,7 @@
             // 
             this.label52.AutoSize = true;
             this.label52.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label52.Location = new System.Drawing.Point(46, 160);
+            this.label52.Location = new System.Drawing.Point(36, 173);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(52, 14);
             this.label52.TabIndex = 22;
@@ -1244,27 +998,27 @@
             // 
             this.label51.AutoSize = true;
             this.label51.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label51.Location = new System.Drawing.Point(742, 110);
+            this.label51.Location = new System.Drawing.Point(712, 110);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(67, 14);
+            this.label51.Size = new System.Drawing.Size(97, 14);
             this.label51.TabIndex = 21;
-            this.label51.Text = "负责人：";
+            this.label51.Text = "单位负责人：";
             // 
             // label50
             // 
             this.label50.AutoSize = true;
             this.label50.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label50.Location = new System.Drawing.Point(381, 110);
+            this.label50.Location = new System.Drawing.Point(343, 110);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(82, 14);
+            this.label50.Size = new System.Drawing.Size(120, 14);
             this.label50.TabIndex = 20;
-            this.label50.Text = "来源单位：";
+            this.label50.Text = "所在省/直辖市：";
             // 
             // label49
             // 
             this.label49.AutoSize = true;
             this.label49.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label49.Location = new System.Drawing.Point(16, 110);
+            this.label49.Location = new System.Drawing.Point(8, 110);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(82, 14);
             this.label49.TabIndex = 19;
@@ -1304,7 +1058,7 @@
             // 
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label45.Location = new System.Drawing.Point(711, 48);
+            this.label45.Location = new System.Drawing.Point(711, 46);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(98, 14);
             this.label45.TabIndex = 15;
@@ -1344,7 +1098,7 @@
             // 
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label41.Location = new System.Drawing.Point(402, 17);
+            this.label41.Location = new System.Drawing.Point(411, 17);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(52, 14);
             this.label41.TabIndex = 11;
@@ -1389,14 +1143,14 @@
             // 
             this.dgv_XM_FileList.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgv_XM_FileList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_XM_FileList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle67.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle67.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle67.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle67.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle67.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle67.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle67.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_XM_FileList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle67;
             this.dgv_XM_FileList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_XM_FileList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -1420,111 +1174,6 @@
             this.dgv_XM_FileList.Size = new System.Drawing.Size(1046, 293);
             this.dgv_XM_FileList.TabIndex = 0;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "文件序号";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewComboBoxColumn1
-            // 
-            this.dataGridViewComboBoxColumn1.HeaderText = "阶段";
-            this.dataGridViewComboBoxColumn1.Items.AddRange(new object[] {
-            "规划阶段",
-            "申报立项阶段",
-            "过程管理阶段",
-            "验收阶段"});
-            this.dataGridViewComboBoxColumn1.Name = "dataGridViewComboBoxColumn1";
-            this.dataGridViewComboBoxColumn1.Width = 130;
-            // 
-            // dataGridViewComboBoxColumn2
-            // 
-            this.dataGridViewComboBoxColumn2.HeaderText = "文件类别";
-            this.dataGridViewComboBoxColumn2.Name = "dataGridViewComboBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "文件名称";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn3.HeaderText = "文件负责人";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 113;
-            // 
-            // dataGridViewComboBoxColumn3
-            // 
-            this.dataGridViewComboBoxColumn3.HeaderText = "文件类型";
-            this.dataGridViewComboBoxColumn3.Items.AddRange(new object[] {
-            "财务",
-            "管理",
-            "评审",
-            "技术",
-            "汇编"});
-            this.dataGridViewComboBoxColumn3.Name = "dataGridViewComboBoxColumn3";
-            // 
-            // dataGridViewComboBoxColumn4
-            // 
-            this.dataGridViewComboBoxColumn4.HeaderText = "密级";
-            this.dataGridViewComboBoxColumn4.Items.AddRange(new object[] {
-            "公开",
-            "国内",
-            "秘密",
-            "机密",
-            "绝密"});
-            this.dataGridViewComboBoxColumn4.Name = "dataGridViewComboBoxColumn4";
-            this.dataGridViewComboBoxColumn4.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "页数";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "份数";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "形成日期";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "存放单位";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 250;
-            // 
-            // dataGridViewComboBoxColumn5
-            // 
-            this.dataGridViewComboBoxColumn5.HeaderText = "载体";
-            this.dataGridViewComboBoxColumn5.Items.AddRange(new object[] {
-            "纸质",
-            "电子",
-            "纸质+电子"});
-            this.dataGridViewComboBoxColumn5.Name = "dataGridViewComboBoxColumn5";
-            // 
-            // dataGridViewComboBoxColumn6
-            // 
-            this.dataGridViewComboBoxColumn6.HeaderText = "格式";
-            this.dataGridViewComboBoxColumn6.Items.AddRange(new object[] {
-            "PDF",
-            "DOC",
-            "EXCEL"});
-            this.dataGridViewComboBoxColumn6.Name = "dataGridViewComboBoxColumn6";
-            // 
-            // dataGridViewComboBoxColumn7
-            // 
-            this.dataGridViewComboBoxColumn7.HeaderText = "形态";
-            this.dataGridViewComboBoxColumn7.Items.AddRange(new object[] {
-            "原件",
-            "复印本"});
-            this.dataGridViewComboBoxColumn7.Name = "dataGridViewComboBoxColumn7";
-            this.dataGridViewComboBoxColumn7.ReadOnly = true;
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.dgv_XM_FileCheck);
@@ -1542,14 +1191,14 @@
             this.dgv_XM_FileCheck.AllowUserToDeleteRows = false;
             this.dgv_XM_FileCheck.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgv_XM_FileCheck.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_XM_FileCheck.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle68.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle68.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle68.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle68.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle68.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle68.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_XM_FileCheck.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle68;
             this.dgv_XM_FileCheck.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_XM_FileCheck.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn10,
@@ -1618,137 +1267,23 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tabPage3.Controls.Add(this.label25);
-            this.tabPage3.Controls.Add(this.label26);
-            this.tabPage3.Controls.Add(this.label27);
-            this.tabPage3.Controls.Add(this.label28);
-            this.tabPage3.Controls.Add(this.label29);
-            this.tabPage3.Controls.Add(this.label30);
-            this.tabPage3.Controls.Add(this.label31);
-            this.tabPage3.Controls.Add(this.label32);
-            this.tabPage3.Controls.Add(this.label33);
-            this.tabPage3.Controls.Add(this.label34);
-            this.tabPage3.Controls.Add(this.label35);
-            this.tabPage3.Controls.Add(this.label36);
+            this.tabPage3.Controls.Add(this.textBox3);
+            this.tabPage3.Controls.Add(this.comboBox3);
+            this.tabPage3.Controls.Add(this.comboBox4);
+            this.tabPage3.Controls.Add(this.textBox5);
+            this.tabPage3.Controls.Add(this.textBox6);
+            this.tabPage3.Controls.Add(this.textBox7);
+            this.tabPage3.Controls.Add(this.label7);
+            this.tabPage3.Controls.Add(this.label8);
+            this.tabPage3.Controls.Add(this.label9);
+            this.tabPage3.Controls.Add(this.label10);
+            this.tabPage3.Controls.Add(this.label11);
+            this.tabPage3.Controls.Add(this.label12);
             this.tabPage3.Location = new System.Drawing.Point(4, 26);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(1052, 299);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "案卷信息";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(138, 139);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(152, 16);
-            this.label25.TabIndex = 11;
-            this.label25.Text = "国家重大专项办公室";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label26.Location = new System.Drawing.Point(41, 139);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(93, 16);
-            this.label26.TabIndex = 10;
-            this.label26.Text = "存放单位：";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(728, 22);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(40, 16);
-            this.label27.TabIndex = 9;
-            this.label27.Text = "永久";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label28.Location = new System.Drawing.Point(631, 22);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(93, 16);
-            this.label28.TabIndex = 8;
-            this.label28.Text = "保管期限：";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(431, 78);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(56, 16);
-            this.label29.TabIndex = 7;
-            this.label29.Text = "崔文健";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label30.Location = new System.Drawing.Point(351, 78);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(76, 16);
-            this.label30.TabIndex = 6;
-            this.label30.Text = "立卷人：";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(431, 22);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(64, 16);
-            this.label31.TabIndex = 5;
-            this.label31.Text = "863计划";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label32.Location = new System.Drawing.Point(334, 22);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(93, 16);
-            this.label32.TabIndex = 4;
-            this.label32.Text = "案卷名称：";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(138, 78);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(40, 16);
-            this.label33.TabIndex = 3;
-            this.label33.Text = "公开";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label34.Location = new System.Drawing.Point(75, 78);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(59, 16);
-            this.label34.TabIndex = 2;
-            this.label34.Text = "密级：";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(138, 22);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(80, 16);
-            this.label35.TabIndex = 1;
-            this.label35.Text = "ZDZX-001 ";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label36.Location = new System.Drawing.Point(41, 22);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(93, 16);
-            this.label36.TabIndex = 0;
-            this.label36.Text = "案卷编号：";
             // 
             // tabPage4
             // 
@@ -1986,6 +1521,8 @@
             // 
             // jh_kt
             // 
+            this.jh_kt.Controls.Add(this.textBox48);
+            this.jh_kt.Controls.Add(this.label31);
             this.jh_kt.Controls.Add(this.tabControl1);
             this.jh_kt.Controls.Add(this.dateTimePicker3);
             this.jh_kt.Controls.Add(this.dateTimePicker4);
@@ -2052,14 +1589,14 @@
             // 
             this.dgv_KT_FileList.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgv_KT_FileList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_KT_FileList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle69.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle69.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle69.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle69.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle69.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle69.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_KT_FileList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle69;
             this.dgv_KT_FileList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_KT_FileList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn16,
@@ -2083,111 +1620,6 @@
             this.dgv_KT_FileList.Size = new System.Drawing.Size(1046, 293);
             this.dgv_KT_FileList.TabIndex = 0;
             // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.HeaderText = "文件序号";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            // 
-            // dataGridViewComboBoxColumn8
-            // 
-            this.dataGridViewComboBoxColumn8.HeaderText = "阶段";
-            this.dataGridViewComboBoxColumn8.Items.AddRange(new object[] {
-            "规划阶段",
-            "申报立项阶段",
-            "过程管理阶段",
-            "验收阶段"});
-            this.dataGridViewComboBoxColumn8.Name = "dataGridViewComboBoxColumn8";
-            this.dataGridViewComboBoxColumn8.Width = 130;
-            // 
-            // dataGridViewComboBoxColumn9
-            // 
-            this.dataGridViewComboBoxColumn9.HeaderText = "文件类别";
-            this.dataGridViewComboBoxColumn9.Name = "dataGridViewComboBoxColumn9";
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.HeaderText = "文件名称";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn18.HeaderText = "文件负责人";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            this.dataGridViewTextBoxColumn18.Width = 113;
-            // 
-            // dataGridViewComboBoxColumn10
-            // 
-            this.dataGridViewComboBoxColumn10.HeaderText = "文件类型";
-            this.dataGridViewComboBoxColumn10.Items.AddRange(new object[] {
-            "财务",
-            "管理",
-            "评审",
-            "技术",
-            "汇编"});
-            this.dataGridViewComboBoxColumn10.Name = "dataGridViewComboBoxColumn10";
-            // 
-            // dataGridViewComboBoxColumn11
-            // 
-            this.dataGridViewComboBoxColumn11.HeaderText = "密级";
-            this.dataGridViewComboBoxColumn11.Items.AddRange(new object[] {
-            "公开",
-            "国内",
-            "秘密",
-            "机密",
-            "绝密"});
-            this.dataGridViewComboBoxColumn11.Name = "dataGridViewComboBoxColumn11";
-            this.dataGridViewComboBoxColumn11.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            this.dataGridViewTextBoxColumn19.HeaderText = "页数";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            // 
-            // dataGridViewTextBoxColumn20
-            // 
-            this.dataGridViewTextBoxColumn20.HeaderText = "份数";
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            this.dataGridViewTextBoxColumn21.HeaderText = "形成日期";
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            // 
-            // dataGridViewTextBoxColumn22
-            // 
-            this.dataGridViewTextBoxColumn22.HeaderText = "存放单位";
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-            this.dataGridViewTextBoxColumn22.Width = 250;
-            // 
-            // dataGridViewComboBoxColumn12
-            // 
-            this.dataGridViewComboBoxColumn12.HeaderText = "载体";
-            this.dataGridViewComboBoxColumn12.Items.AddRange(new object[] {
-            "纸质",
-            "电子",
-            "纸质+电子"});
-            this.dataGridViewComboBoxColumn12.Name = "dataGridViewComboBoxColumn12";
-            // 
-            // dataGridViewComboBoxColumn13
-            // 
-            this.dataGridViewComboBoxColumn13.HeaderText = "格式";
-            this.dataGridViewComboBoxColumn13.Items.AddRange(new object[] {
-            "PDF",
-            "DOC",
-            "EXCEL"});
-            this.dataGridViewComboBoxColumn13.Name = "dataGridViewComboBoxColumn13";
-            // 
-            // dataGridViewComboBoxColumn14
-            // 
-            this.dataGridViewComboBoxColumn14.HeaderText = "形态";
-            this.dataGridViewComboBoxColumn14.Items.AddRange(new object[] {
-            "原件",
-            "复印本"});
-            this.dataGridViewComboBoxColumn14.Name = "dataGridViewComboBoxColumn14";
-            this.dataGridViewComboBoxColumn14.ReadOnly = true;
-            // 
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.dgv_KT_FileCheck);
@@ -2205,14 +1637,14 @@
             this.dgv_KT_FileCheck.AllowUserToDeleteRows = false;
             this.dgv_KT_FileCheck.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgv_KT_FileCheck.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_KT_FileCheck.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle70.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle70.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle70.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle70.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle70.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle70.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle70.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_KT_FileCheck.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle70;
             this.dgv_KT_FileCheck.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_KT_FileCheck.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn25,
@@ -2281,137 +1713,23 @@
             // tabPage7
             // 
             this.tabPage7.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tabPage7.Controls.Add(this.label72);
-            this.tabPage7.Controls.Add(this.label73);
-            this.tabPage7.Controls.Add(this.label74);
-            this.tabPage7.Controls.Add(this.label75);
-            this.tabPage7.Controls.Add(this.label76);
-            this.tabPage7.Controls.Add(this.label77);
-            this.tabPage7.Controls.Add(this.label78);
-            this.tabPage7.Controls.Add(this.label79);
-            this.tabPage7.Controls.Add(this.label80);
-            this.tabPage7.Controls.Add(this.label81);
-            this.tabPage7.Controls.Add(this.label82);
-            this.tabPage7.Controls.Add(this.label83);
+            this.tabPage7.Controls.Add(this.textBox8);
+            this.tabPage7.Controls.Add(this.comboBox7);
+            this.tabPage7.Controls.Add(this.comboBox8);
+            this.tabPage7.Controls.Add(this.textBox31);
+            this.tabPage7.Controls.Add(this.textBox32);
+            this.tabPage7.Controls.Add(this.textBox33);
+            this.tabPage7.Controls.Add(this.label13);
+            this.tabPage7.Controls.Add(this.label14);
+            this.tabPage7.Controls.Add(this.label15);
+            this.tabPage7.Controls.Add(this.label16);
+            this.tabPage7.Controls.Add(this.label17);
+            this.tabPage7.Controls.Add(this.label18);
             this.tabPage7.Location = new System.Drawing.Point(4, 26);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Size = new System.Drawing.Size(1052, 299);
             this.tabPage7.TabIndex = 2;
             this.tabPage7.Text = "案卷信息";
-            // 
-            // label72
-            // 
-            this.label72.AutoSize = true;
-            this.label72.Location = new System.Drawing.Point(138, 139);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(152, 16);
-            this.label72.TabIndex = 11;
-            this.label72.Text = "国家重大专项办公室";
-            // 
-            // label73
-            // 
-            this.label73.AutoSize = true;
-            this.label73.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label73.Location = new System.Drawing.Point(41, 139);
-            this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(93, 16);
-            this.label73.TabIndex = 10;
-            this.label73.Text = "存放单位：";
-            // 
-            // label74
-            // 
-            this.label74.AutoSize = true;
-            this.label74.Location = new System.Drawing.Point(728, 22);
-            this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(40, 16);
-            this.label74.TabIndex = 9;
-            this.label74.Text = "永久";
-            // 
-            // label75
-            // 
-            this.label75.AutoSize = true;
-            this.label75.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label75.Location = new System.Drawing.Point(631, 22);
-            this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(93, 16);
-            this.label75.TabIndex = 8;
-            this.label75.Text = "保管期限：";
-            // 
-            // label76
-            // 
-            this.label76.AutoSize = true;
-            this.label76.Location = new System.Drawing.Point(431, 78);
-            this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(56, 16);
-            this.label76.TabIndex = 7;
-            this.label76.Text = "崔文健";
-            // 
-            // label77
-            // 
-            this.label77.AutoSize = true;
-            this.label77.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label77.Location = new System.Drawing.Point(351, 78);
-            this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(76, 16);
-            this.label77.TabIndex = 6;
-            this.label77.Text = "立卷人：";
-            // 
-            // label78
-            // 
-            this.label78.AutoSize = true;
-            this.label78.Location = new System.Drawing.Point(431, 22);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(64, 16);
-            this.label78.TabIndex = 5;
-            this.label78.Text = "863计划";
-            // 
-            // label79
-            // 
-            this.label79.AutoSize = true;
-            this.label79.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label79.Location = new System.Drawing.Point(334, 22);
-            this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(93, 16);
-            this.label79.TabIndex = 4;
-            this.label79.Text = "案卷名称：";
-            // 
-            // label80
-            // 
-            this.label80.AutoSize = true;
-            this.label80.Location = new System.Drawing.Point(138, 78);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(40, 16);
-            this.label80.TabIndex = 3;
-            this.label80.Text = "公开";
-            // 
-            // label81
-            // 
-            this.label81.AutoSize = true;
-            this.label81.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label81.Location = new System.Drawing.Point(75, 78);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(59, 16);
-            this.label81.TabIndex = 2;
-            this.label81.Text = "密级：";
-            // 
-            // label82
-            // 
-            this.label82.AutoSize = true;
-            this.label82.Location = new System.Drawing.Point(138, 22);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(80, 16);
-            this.label82.TabIndex = 1;
-            this.label82.Text = "ZDZX-001 ";
-            // 
-            // label83
-            // 
-            this.label83.AutoSize = true;
-            this.label83.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label83.Location = new System.Drawing.Point(41, 22);
-            this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(93, 16);
-            this.label83.TabIndex = 0;
-            this.label83.Text = "案卷编号：";
             // 
             // tabPage8
             // 
@@ -2624,10 +1942,10 @@
             // 
             // textBox21
             // 
-            this.textBox21.Location = new System.Drawing.Point(104, 138);
+            this.textBox21.Location = new System.Drawing.Point(107, 170);
             this.textBox21.Multiline = true;
             this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(919, 65);
+            this.textBox21.Size = new System.Drawing.Size(919, 33);
             this.textBox21.TabIndex = 67;
             // 
             // textBox22
@@ -2715,7 +2033,7 @@
             // 
             this.label57.AutoSize = true;
             this.label57.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label57.Location = new System.Drawing.Point(49, 148);
+            this.label57.Location = new System.Drawing.Point(49, 175);
             this.label57.Name = "label57";
             this.label57.Size = new System.Drawing.Size(52, 14);
             this.label57.TabIndex = 55;
@@ -2725,21 +2043,21 @@
             // 
             this.label58.AutoSize = true;
             this.label58.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label58.Location = new System.Drawing.Point(746, 108);
+            this.label58.Location = new System.Drawing.Point(715, 110);
             this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(67, 14);
+            this.label58.Size = new System.Drawing.Size(97, 14);
             this.label58.TabIndex = 54;
-            this.label58.Text = "负责人：";
+            this.label58.Text = "单位负责人：";
             // 
             // label59
             // 
             this.label59.AutoSize = true;
             this.label59.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label59.Location = new System.Drawing.Point(378, 110);
+            this.label59.Location = new System.Drawing.Point(340, 110);
             this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(82, 14);
+            this.label59.Size = new System.Drawing.Size(120, 14);
             this.label59.TabIndex = 53;
-            this.label59.Text = "来源单位：";
+            this.label59.Text = "所在省/直辖市：";
             // 
             // label60
             // 
@@ -2890,6 +2208,8 @@
             // 
             // jh_zkt
             // 
+            this.jh_zkt.Controls.Add(this.textBox49);
+            this.jh_zkt.Controls.Add(this.label32);
             this.jh_zkt.Controls.Add(this.tabControl4);
             this.jh_zkt.Controls.Add(this.dateTimePicker5);
             this.jh_zkt.Controls.Add(this.dateTimePicker6);
@@ -2954,14 +2274,14 @@
             // 
             this.dgv_ZKT_FileList.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgv_ZKT_FileList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ZKT_FileList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle71.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle71.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle71.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle71.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle71.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle71.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle71.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ZKT_FileList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle71;
             this.dgv_ZKT_FileList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_ZKT_FileList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn31,
@@ -2985,111 +2305,6 @@
             this.dgv_ZKT_FileList.Size = new System.Drawing.Size(1046, 293);
             this.dgv_ZKT_FileList.TabIndex = 0;
             // 
-            // dataGridViewTextBoxColumn31
-            // 
-            this.dataGridViewTextBoxColumn31.HeaderText = "文件序号";
-            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
-            // 
-            // dataGridViewComboBoxColumn15
-            // 
-            this.dataGridViewComboBoxColumn15.HeaderText = "阶段";
-            this.dataGridViewComboBoxColumn15.Items.AddRange(new object[] {
-            "规划阶段",
-            "申报立项阶段",
-            "过程管理阶段",
-            "验收阶段"});
-            this.dataGridViewComboBoxColumn15.Name = "dataGridViewComboBoxColumn15";
-            this.dataGridViewComboBoxColumn15.Width = 130;
-            // 
-            // dataGridViewComboBoxColumn16
-            // 
-            this.dataGridViewComboBoxColumn16.HeaderText = "文件类别";
-            this.dataGridViewComboBoxColumn16.Name = "dataGridViewComboBoxColumn16";
-            // 
-            // dataGridViewTextBoxColumn32
-            // 
-            this.dataGridViewTextBoxColumn32.HeaderText = "文件名称";
-            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
-            this.dataGridViewTextBoxColumn32.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn33
-            // 
-            this.dataGridViewTextBoxColumn33.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn33.HeaderText = "文件负责人";
-            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
-            this.dataGridViewTextBoxColumn33.Width = 113;
-            // 
-            // dataGridViewComboBoxColumn17
-            // 
-            this.dataGridViewComboBoxColumn17.HeaderText = "文件类型";
-            this.dataGridViewComboBoxColumn17.Items.AddRange(new object[] {
-            "财务",
-            "管理",
-            "评审",
-            "技术",
-            "汇编"});
-            this.dataGridViewComboBoxColumn17.Name = "dataGridViewComboBoxColumn17";
-            // 
-            // dataGridViewComboBoxColumn18
-            // 
-            this.dataGridViewComboBoxColumn18.HeaderText = "密级";
-            this.dataGridViewComboBoxColumn18.Items.AddRange(new object[] {
-            "公开",
-            "国内",
-            "秘密",
-            "机密",
-            "绝密"});
-            this.dataGridViewComboBoxColumn18.Name = "dataGridViewComboBoxColumn18";
-            this.dataGridViewComboBoxColumn18.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn34
-            // 
-            this.dataGridViewTextBoxColumn34.HeaderText = "页数";
-            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
-            // 
-            // dataGridViewTextBoxColumn35
-            // 
-            this.dataGridViewTextBoxColumn35.HeaderText = "份数";
-            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
-            // 
-            // dataGridViewTextBoxColumn36
-            // 
-            this.dataGridViewTextBoxColumn36.HeaderText = "形成日期";
-            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
-            // 
-            // dataGridViewTextBoxColumn37
-            // 
-            this.dataGridViewTextBoxColumn37.HeaderText = "存放单位";
-            this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
-            this.dataGridViewTextBoxColumn37.Width = 250;
-            // 
-            // dataGridViewComboBoxColumn19
-            // 
-            this.dataGridViewComboBoxColumn19.HeaderText = "载体";
-            this.dataGridViewComboBoxColumn19.Items.AddRange(new object[] {
-            "纸质",
-            "电子",
-            "纸质+电子"});
-            this.dataGridViewComboBoxColumn19.Name = "dataGridViewComboBoxColumn19";
-            // 
-            // dataGridViewComboBoxColumn20
-            // 
-            this.dataGridViewComboBoxColumn20.HeaderText = "格式";
-            this.dataGridViewComboBoxColumn20.Items.AddRange(new object[] {
-            "PDF",
-            "DOC",
-            "EXCEL"});
-            this.dataGridViewComboBoxColumn20.Name = "dataGridViewComboBoxColumn20";
-            // 
-            // dataGridViewComboBoxColumn21
-            // 
-            this.dataGridViewComboBoxColumn21.HeaderText = "形态";
-            this.dataGridViewComboBoxColumn21.Items.AddRange(new object[] {
-            "原件",
-            "复印本"});
-            this.dataGridViewComboBoxColumn21.Name = "dataGridViewComboBoxColumn21";
-            this.dataGridViewComboBoxColumn21.ReadOnly = true;
-            // 
             // tabPage10
             // 
             this.tabPage10.Controls.Add(this.dgv_ZKT_FileCheck);
@@ -3107,14 +2322,14 @@
             this.dgv_ZKT_FileCheck.AllowUserToDeleteRows = false;
             this.dgv_ZKT_FileCheck.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgv_ZKT_FileCheck.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ZKT_FileCheck.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle72.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle72.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle72.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle72.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle72.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle72.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle72.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ZKT_FileCheck.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle72;
             this.dgv_ZKT_FileCheck.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_ZKT_FileCheck.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn40,
@@ -3183,137 +2398,23 @@
             // tabPage11
             // 
             this.tabPage11.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tabPage11.Controls.Add(this.label104);
-            this.tabPage11.Controls.Add(this.label105);
-            this.tabPage11.Controls.Add(this.label106);
-            this.tabPage11.Controls.Add(this.label107);
-            this.tabPage11.Controls.Add(this.label108);
-            this.tabPage11.Controls.Add(this.label109);
-            this.tabPage11.Controls.Add(this.label110);
-            this.tabPage11.Controls.Add(this.label111);
-            this.tabPage11.Controls.Add(this.label112);
-            this.tabPage11.Controls.Add(this.label113);
-            this.tabPage11.Controls.Add(this.label114);
-            this.tabPage11.Controls.Add(this.label115);
+            this.tabPage11.Controls.Add(this.textBox34);
+            this.tabPage11.Controls.Add(this.comboBox9);
+            this.tabPage11.Controls.Add(this.comboBox10);
+            this.tabPage11.Controls.Add(this.textBox35);
+            this.tabPage11.Controls.Add(this.textBox44);
+            this.tabPage11.Controls.Add(this.textBox46);
+            this.tabPage11.Controls.Add(this.label19);
+            this.tabPage11.Controls.Add(this.label25);
+            this.tabPage11.Controls.Add(this.label26);
+            this.tabPage11.Controls.Add(this.label27);
+            this.tabPage11.Controls.Add(this.label28);
+            this.tabPage11.Controls.Add(this.label29);
             this.tabPage11.Location = new System.Drawing.Point(4, 26);
             this.tabPage11.Name = "tabPage11";
             this.tabPage11.Size = new System.Drawing.Size(1052, 299);
             this.tabPage11.TabIndex = 2;
             this.tabPage11.Text = "案卷信息";
-            // 
-            // label104
-            // 
-            this.label104.AutoSize = true;
-            this.label104.Location = new System.Drawing.Point(138, 139);
-            this.label104.Name = "label104";
-            this.label104.Size = new System.Drawing.Size(152, 16);
-            this.label104.TabIndex = 11;
-            this.label104.Text = "国家重大专项办公室";
-            // 
-            // label105
-            // 
-            this.label105.AutoSize = true;
-            this.label105.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label105.Location = new System.Drawing.Point(41, 139);
-            this.label105.Name = "label105";
-            this.label105.Size = new System.Drawing.Size(93, 16);
-            this.label105.TabIndex = 10;
-            this.label105.Text = "存放单位：";
-            // 
-            // label106
-            // 
-            this.label106.AutoSize = true;
-            this.label106.Location = new System.Drawing.Point(728, 22);
-            this.label106.Name = "label106";
-            this.label106.Size = new System.Drawing.Size(40, 16);
-            this.label106.TabIndex = 9;
-            this.label106.Text = "永久";
-            // 
-            // label107
-            // 
-            this.label107.AutoSize = true;
-            this.label107.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label107.Location = new System.Drawing.Point(631, 22);
-            this.label107.Name = "label107";
-            this.label107.Size = new System.Drawing.Size(93, 16);
-            this.label107.TabIndex = 8;
-            this.label107.Text = "保管期限：";
-            // 
-            // label108
-            // 
-            this.label108.AutoSize = true;
-            this.label108.Location = new System.Drawing.Point(431, 78);
-            this.label108.Name = "label108";
-            this.label108.Size = new System.Drawing.Size(56, 16);
-            this.label108.TabIndex = 7;
-            this.label108.Text = "崔文健";
-            // 
-            // label109
-            // 
-            this.label109.AutoSize = true;
-            this.label109.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label109.Location = new System.Drawing.Point(351, 78);
-            this.label109.Name = "label109";
-            this.label109.Size = new System.Drawing.Size(76, 16);
-            this.label109.TabIndex = 6;
-            this.label109.Text = "立卷人：";
-            // 
-            // label110
-            // 
-            this.label110.AutoSize = true;
-            this.label110.Location = new System.Drawing.Point(431, 22);
-            this.label110.Name = "label110";
-            this.label110.Size = new System.Drawing.Size(64, 16);
-            this.label110.TabIndex = 5;
-            this.label110.Text = "863计划";
-            // 
-            // label111
-            // 
-            this.label111.AutoSize = true;
-            this.label111.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label111.Location = new System.Drawing.Point(334, 22);
-            this.label111.Name = "label111";
-            this.label111.Size = new System.Drawing.Size(93, 16);
-            this.label111.TabIndex = 4;
-            this.label111.Text = "案卷名称：";
-            // 
-            // label112
-            // 
-            this.label112.AutoSize = true;
-            this.label112.Location = new System.Drawing.Point(138, 78);
-            this.label112.Name = "label112";
-            this.label112.Size = new System.Drawing.Size(40, 16);
-            this.label112.TabIndex = 3;
-            this.label112.Text = "公开";
-            // 
-            // label113
-            // 
-            this.label113.AutoSize = true;
-            this.label113.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label113.Location = new System.Drawing.Point(75, 78);
-            this.label113.Name = "label113";
-            this.label113.Size = new System.Drawing.Size(59, 16);
-            this.label113.TabIndex = 2;
-            this.label113.Text = "密级：";
-            // 
-            // label114
-            // 
-            this.label114.AutoSize = true;
-            this.label114.Location = new System.Drawing.Point(138, 22);
-            this.label114.Name = "label114";
-            this.label114.Size = new System.Drawing.Size(80, 16);
-            this.label114.TabIndex = 1;
-            this.label114.Text = "ZDZX-001 ";
-            // 
-            // label115
-            // 
-            this.label115.AutoSize = true;
-            this.label115.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label115.Location = new System.Drawing.Point(41, 22);
-            this.label115.Name = "label115";
-            this.label115.Size = new System.Drawing.Size(93, 16);
-            this.label115.TabIndex = 0;
-            this.label115.Text = "案卷编号：";
             // 
             // tabPage12
             // 
@@ -3513,10 +2614,10 @@
             // 
             // textBox36
             // 
-            this.textBox36.Location = new System.Drawing.Point(94, 147);
+            this.textBox36.Location = new System.Drawing.Point(94, 179);
             this.textBox36.Multiline = true;
             this.textBox36.Name = "textBox36";
-            this.textBox36.Size = new System.Drawing.Size(889, 72);
+            this.textBox36.Size = new System.Drawing.Size(889, 40);
             this.textBox36.TabIndex = 67;
             // 
             // textBox37
@@ -3594,7 +2695,7 @@
             // 
             this.label90.AutoSize = true;
             this.label90.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label90.Location = new System.Drawing.Point(46, 147);
+            this.label90.Location = new System.Drawing.Point(46, 190);
             this.label90.Name = "label90";
             this.label90.Size = new System.Drawing.Size(52, 14);
             this.label90.TabIndex = 55;
@@ -3604,21 +2705,21 @@
             // 
             this.label91.AutoSize = true;
             this.label91.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label91.Location = new System.Drawing.Point(743, 109);
+            this.label91.Location = new System.Drawing.Point(713, 109);
             this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(67, 14);
+            this.label91.Size = new System.Drawing.Size(97, 14);
             this.label91.TabIndex = 54;
-            this.label91.Text = "负责人：";
+            this.label91.Text = "单位负责人：";
             // 
             // label92
             // 
             this.label92.AutoSize = true;
             this.label92.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label92.Location = new System.Drawing.Point(381, 109);
+            this.label92.Location = new System.Drawing.Point(343, 109);
             this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(82, 14);
+            this.label92.Size = new System.Drawing.Size(120, 14);
             this.label92.TabIndex = 53;
-            this.label92.Text = "来源单位：";
+            this.label92.Text = "所在省/直辖市：";
             // 
             // label93
             // 
@@ -3773,13 +2874,914 @@
             this.tv_Working.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tv_Working.Location = new System.Drawing.Point(-240, 0);
             this.tv_Working.Name = "tv_Working";
-            treeNode1.Name = "863计划";
-            treeNode1.Text = "863计划";
+            treeNode9.Name = "863计划";
+            treeNode9.Text = "863计划";
             this.tv_Working.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
+            treeNode9});
             this.tv_Working.Size = new System.Drawing.Size(240, 641);
             this.tv_Working.TabIndex = 0;
             this.tv_Working.Visible = false;
+            // 
+            // fileId
+            // 
+            this.fileId.HeaderText = "序号";
+            this.fileId.Name = "fileId";
+            // 
+            // stage
+            // 
+            this.stage.HeaderText = "阶段";
+            this.stage.Items.AddRange(new object[] {
+            "规划阶段",
+            "申报立项阶段",
+            "过程管理阶段",
+            "验收阶段"});
+            this.stage.Name = "stage";
+            this.stage.Width = 130;
+            // 
+            // fileType
+            // 
+            this.fileType.HeaderText = "文件类别";
+            this.fileType.Name = "fileType";
+            // 
+            // fileName
+            // 
+            this.fileName.HeaderText = "文件名称";
+            this.fileName.Name = "fileName";
+            this.fileName.Width = 200;
+            // 
+            // fileResper
+            // 
+            this.fileResper.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.fileResper.HeaderText = "文件负责人";
+            this.fileResper.Name = "fileResper";
+            this.fileResper.Width = 113;
+            // 
+            // fileType2
+            // 
+            this.fileType2.HeaderText = "文件类型";
+            this.fileType2.Items.AddRange(new object[] {
+            "财务",
+            "管理",
+            "评审",
+            "技术",
+            "汇编"});
+            this.fileType2.Name = "fileType2";
+            // 
+            // secret
+            // 
+            this.secret.HeaderText = "密级";
+            this.secret.Items.AddRange(new object[] {
+            "公开",
+            "国内",
+            "秘密",
+            "机密",
+            "绝密"});
+            this.secret.Name = "secret";
+            this.secret.Width = 70;
+            // 
+            // page
+            // 
+            this.page.HeaderText = "页数";
+            this.page.Name = "page";
+            // 
+            // count
+            // 
+            this.count.HeaderText = "份数";
+            this.count.Name = "count";
+            // 
+            // data
+            // 
+            this.data.HeaderText = "形成日期";
+            this.data.Name = "data";
+            // 
+            // location
+            // 
+            this.location.HeaderText = "存放单位";
+            this.location.Name = "location";
+            this.location.Width = 250;
+            // 
+            // carrier
+            // 
+            this.carrier.HeaderText = "载体";
+            this.carrier.Items.AddRange(new object[] {
+            "纸质",
+            "电子",
+            "纸质+电子"});
+            this.carrier.Name = "carrier";
+            // 
+            // format
+            // 
+            this.format.HeaderText = "格式";
+            this.format.Items.AddRange(new object[] {
+            "PDF",
+            "DOC",
+            "EXCEL"});
+            this.format.Name = "format";
+            // 
+            // form
+            // 
+            this.form.HeaderText = "形态";
+            this.form.Items.AddRange(new object[] {
+            "原件",
+            "复印本"});
+            this.form.Name = "form";
+            this.form.ReadOnly = true;
+            // 
+            // remark
+            // 
+            this.remark.HeaderText = "附注";
+            this.remark.Name = "remark";
+            this.remark.ReadOnly = true;
+            this.remark.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.remark.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // opinion
+            // 
+            this.opinion.HeaderText = "修改意见";
+            this.opinion.Name = "opinion";
+            this.opinion.Width = 200;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(111, 153);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(666, 26);
+            this.textBox10.TabIndex = 41;
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(111, 92);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(129, 24);
+            this.comboBox5.TabIndex = 40;
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Location = new System.Drawing.Point(677, 36);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(100, 24);
+            this.comboBox6.TabIndex = 39;
+            // 
+            // textBox15
+            // 
+            this.textBox15.Location = new System.Drawing.Point(388, 92);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(140, 26);
+            this.textBox15.TabIndex = 38;
+            // 
+            // textBox16
+            // 
+            this.textBox16.Location = new System.Drawing.Point(388, 33);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(180, 26);
+            this.textBox16.TabIndex = 37;
+            // 
+            // textBox29
+            // 
+            this.textBox29.Location = new System.Drawing.Point(111, 33);
+            this.textBox29.Name = "textBox29";
+            this.textBox29.Size = new System.Drawing.Size(162, 26);
+            this.textBox29.TabIndex = 36;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label22.Location = new System.Drawing.Point(24, 156);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(93, 16);
+            this.label22.TabIndex = 35;
+            this.label22.Text = "存放单位：";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label24.Location = new System.Drawing.Point(578, 39);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(93, 16);
+            this.label24.TabIndex = 34;
+            this.label24.Text = "保管期限：";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label37.Location = new System.Drawing.Point(321, 95);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(76, 16);
+            this.label37.TabIndex = 33;
+            this.label37.Text = "立卷人：";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label54.Location = new System.Drawing.Point(304, 39);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(93, 16);
+            this.label54.TabIndex = 32;
+            this.label54.Text = "案卷名称：";
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label55.Location = new System.Drawing.Point(58, 95);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(59, 16);
+            this.label55.TabIndex = 31;
+            this.label55.Text = "密级：";
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label70.Location = new System.Drawing.Point(24, 39);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(93, 16);
+            this.label70.TabIndex = 30;
+            this.label70.Text = "案卷编号：";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "序号";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewComboBoxColumn1
+            // 
+            this.dataGridViewComboBoxColumn1.HeaderText = "阶段";
+            this.dataGridViewComboBoxColumn1.Items.AddRange(new object[] {
+            "规划阶段",
+            "申报立项阶段",
+            "过程管理阶段",
+            "验收阶段"});
+            this.dataGridViewComboBoxColumn1.Name = "dataGridViewComboBoxColumn1";
+            this.dataGridViewComboBoxColumn1.Width = 130;
+            // 
+            // dataGridViewComboBoxColumn2
+            // 
+            this.dataGridViewComboBoxColumn2.HeaderText = "文件类别";
+            this.dataGridViewComboBoxColumn2.Name = "dataGridViewComboBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "文件名称";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn3.HeaderText = "文件负责人";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 113;
+            // 
+            // dataGridViewComboBoxColumn3
+            // 
+            this.dataGridViewComboBoxColumn3.HeaderText = "文件类型";
+            this.dataGridViewComboBoxColumn3.Items.AddRange(new object[] {
+            "财务",
+            "管理",
+            "评审",
+            "技术",
+            "汇编"});
+            this.dataGridViewComboBoxColumn3.Name = "dataGridViewComboBoxColumn3";
+            // 
+            // dataGridViewComboBoxColumn4
+            // 
+            this.dataGridViewComboBoxColumn4.HeaderText = "密级";
+            this.dataGridViewComboBoxColumn4.Items.AddRange(new object[] {
+            "公开",
+            "国内",
+            "秘密",
+            "机密",
+            "绝密"});
+            this.dataGridViewComboBoxColumn4.Name = "dataGridViewComboBoxColumn4";
+            this.dataGridViewComboBoxColumn4.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "页数";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "份数";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "形成日期";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "存放单位";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 250;
+            // 
+            // dataGridViewComboBoxColumn5
+            // 
+            this.dataGridViewComboBoxColumn5.HeaderText = "载体";
+            this.dataGridViewComboBoxColumn5.Items.AddRange(new object[] {
+            "纸质",
+            "电子",
+            "纸质+电子"});
+            this.dataGridViewComboBoxColumn5.Name = "dataGridViewComboBoxColumn5";
+            // 
+            // dataGridViewComboBoxColumn6
+            // 
+            this.dataGridViewComboBoxColumn6.HeaderText = "格式";
+            this.dataGridViewComboBoxColumn6.Items.AddRange(new object[] {
+            "PDF",
+            "DOC",
+            "EXCEL"});
+            this.dataGridViewComboBoxColumn6.Name = "dataGridViewComboBoxColumn6";
+            // 
+            // dataGridViewComboBoxColumn7
+            // 
+            this.dataGridViewComboBoxColumn7.HeaderText = "形态";
+            this.dataGridViewComboBoxColumn7.Items.AddRange(new object[] {
+            "原件",
+            "复印本"});
+            this.dataGridViewComboBoxColumn7.Name = "dataGridViewComboBoxColumn7";
+            this.dataGridViewComboBoxColumn7.ReadOnly = true;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(114, 145);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(666, 26);
+            this.textBox3.TabIndex = 41;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(114, 84);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(129, 24);
+            this.comboBox3.TabIndex = 40;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(680, 28);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(100, 24);
+            this.comboBox4.TabIndex = 39;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(391, 84);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(140, 26);
+            this.textBox5.TabIndex = 38;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(391, 25);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(180, 26);
+            this.textBox6.TabIndex = 37;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(114, 25);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(162, 26);
+            this.textBox7.TabIndex = 36;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.Location = new System.Drawing.Point(27, 148);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(93, 16);
+            this.label7.TabIndex = 35;
+            this.label7.Text = "存放单位：";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.Location = new System.Drawing.Point(581, 31);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(93, 16);
+            this.label8.TabIndex = 34;
+            this.label8.Text = "保管期限：";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label9.Location = new System.Drawing.Point(324, 87);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(76, 16);
+            this.label9.TabIndex = 33;
+            this.label9.Text = "立卷人：";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label10.Location = new System.Drawing.Point(307, 31);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(93, 16);
+            this.label10.TabIndex = 32;
+            this.label10.Text = "案卷名称：";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label11.Location = new System.Drawing.Point(61, 87);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(59, 16);
+            this.label11.TabIndex = 31;
+            this.label11.Text = "密级：";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label12.Location = new System.Drawing.Point(27, 31);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(93, 16);
+            this.label12.TabIndex = 30;
+            this.label12.Text = "案卷编号：";
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.HeaderText = "序号";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            // 
+            // dataGridViewComboBoxColumn8
+            // 
+            this.dataGridViewComboBoxColumn8.HeaderText = "阶段";
+            this.dataGridViewComboBoxColumn8.Items.AddRange(new object[] {
+            "规划阶段",
+            "申报立项阶段",
+            "过程管理阶段",
+            "验收阶段"});
+            this.dataGridViewComboBoxColumn8.Name = "dataGridViewComboBoxColumn8";
+            this.dataGridViewComboBoxColumn8.Width = 130;
+            // 
+            // dataGridViewComboBoxColumn9
+            // 
+            this.dataGridViewComboBoxColumn9.HeaderText = "文件类别";
+            this.dataGridViewComboBoxColumn9.Name = "dataGridViewComboBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.HeaderText = "文件名称";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn18.HeaderText = "文件负责人";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.Width = 113;
+            // 
+            // dataGridViewComboBoxColumn10
+            // 
+            this.dataGridViewComboBoxColumn10.HeaderText = "文件类型";
+            this.dataGridViewComboBoxColumn10.Items.AddRange(new object[] {
+            "财务",
+            "管理",
+            "评审",
+            "技术",
+            "汇编"});
+            this.dataGridViewComboBoxColumn10.Name = "dataGridViewComboBoxColumn10";
+            // 
+            // dataGridViewComboBoxColumn11
+            // 
+            this.dataGridViewComboBoxColumn11.HeaderText = "密级";
+            this.dataGridViewComboBoxColumn11.Items.AddRange(new object[] {
+            "公开",
+            "国内",
+            "秘密",
+            "机密",
+            "绝密"});
+            this.dataGridViewComboBoxColumn11.Name = "dataGridViewComboBoxColumn11";
+            this.dataGridViewComboBoxColumn11.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.HeaderText = "页数";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.HeaderText = "份数";
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.HeaderText = "形成日期";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.HeaderText = "存放单位";
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            this.dataGridViewTextBoxColumn22.Width = 250;
+            // 
+            // dataGridViewComboBoxColumn12
+            // 
+            this.dataGridViewComboBoxColumn12.HeaderText = "载体";
+            this.dataGridViewComboBoxColumn12.Items.AddRange(new object[] {
+            "纸质",
+            "电子",
+            "纸质+电子"});
+            this.dataGridViewComboBoxColumn12.Name = "dataGridViewComboBoxColumn12";
+            // 
+            // dataGridViewComboBoxColumn13
+            // 
+            this.dataGridViewComboBoxColumn13.HeaderText = "格式";
+            this.dataGridViewComboBoxColumn13.Items.AddRange(new object[] {
+            "PDF",
+            "DOC",
+            "EXCEL"});
+            this.dataGridViewComboBoxColumn13.Name = "dataGridViewComboBoxColumn13";
+            // 
+            // dataGridViewComboBoxColumn14
+            // 
+            this.dataGridViewComboBoxColumn14.HeaderText = "形态";
+            this.dataGridViewComboBoxColumn14.Items.AddRange(new object[] {
+            "原件",
+            "复印本"});
+            this.dataGridViewComboBoxColumn14.Name = "dataGridViewComboBoxColumn14";
+            this.dataGridViewComboBoxColumn14.ReadOnly = true;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(132, 149);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(666, 26);
+            this.textBox8.TabIndex = 41;
+            // 
+            // comboBox7
+            // 
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Location = new System.Drawing.Point(132, 88);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.Size = new System.Drawing.Size(129, 24);
+            this.comboBox7.TabIndex = 40;
+            // 
+            // comboBox8
+            // 
+            this.comboBox8.FormattingEnabled = true;
+            this.comboBox8.Location = new System.Drawing.Point(698, 32);
+            this.comboBox8.Name = "comboBox8";
+            this.comboBox8.Size = new System.Drawing.Size(100, 24);
+            this.comboBox8.TabIndex = 39;
+            // 
+            // textBox31
+            // 
+            this.textBox31.Location = new System.Drawing.Point(409, 88);
+            this.textBox31.Name = "textBox31";
+            this.textBox31.Size = new System.Drawing.Size(140, 26);
+            this.textBox31.TabIndex = 38;
+            // 
+            // textBox32
+            // 
+            this.textBox32.Location = new System.Drawing.Point(409, 29);
+            this.textBox32.Name = "textBox32";
+            this.textBox32.Size = new System.Drawing.Size(180, 26);
+            this.textBox32.TabIndex = 37;
+            // 
+            // textBox33
+            // 
+            this.textBox33.Location = new System.Drawing.Point(132, 29);
+            this.textBox33.Name = "textBox33";
+            this.textBox33.Size = new System.Drawing.Size(162, 26);
+            this.textBox33.TabIndex = 36;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label13.Location = new System.Drawing.Point(45, 152);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(93, 16);
+            this.label13.TabIndex = 35;
+            this.label13.Text = "存放单位：";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label14.Location = new System.Drawing.Point(599, 35);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(93, 16);
+            this.label14.TabIndex = 34;
+            this.label14.Text = "保管期限：";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label15.Location = new System.Drawing.Point(342, 91);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(76, 16);
+            this.label15.TabIndex = 33;
+            this.label15.Text = "立卷人：";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label16.Location = new System.Drawing.Point(325, 35);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(93, 16);
+            this.label16.TabIndex = 32;
+            this.label16.Text = "案卷名称：";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label17.Location = new System.Drawing.Point(79, 91);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(59, 16);
+            this.label17.TabIndex = 31;
+            this.label17.Text = "密级：";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label18.Location = new System.Drawing.Point(45, 35);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(93, 16);
+            this.label18.TabIndex = 30;
+            this.label18.Text = "案卷编号：";
+            // 
+            // dataGridViewTextBoxColumn31
+            // 
+            this.dataGridViewTextBoxColumn31.HeaderText = "序号";
+            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
+            // 
+            // dataGridViewComboBoxColumn15
+            // 
+            this.dataGridViewComboBoxColumn15.HeaderText = "阶段";
+            this.dataGridViewComboBoxColumn15.Items.AddRange(new object[] {
+            "规划阶段",
+            "申报立项阶段",
+            "过程管理阶段",
+            "验收阶段"});
+            this.dataGridViewComboBoxColumn15.Name = "dataGridViewComboBoxColumn15";
+            this.dataGridViewComboBoxColumn15.Width = 130;
+            // 
+            // dataGridViewComboBoxColumn16
+            // 
+            this.dataGridViewComboBoxColumn16.HeaderText = "文件类别";
+            this.dataGridViewComboBoxColumn16.Name = "dataGridViewComboBoxColumn16";
+            // 
+            // dataGridViewTextBoxColumn32
+            // 
+            this.dataGridViewTextBoxColumn32.HeaderText = "文件名称";
+            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
+            this.dataGridViewTextBoxColumn32.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn33
+            // 
+            this.dataGridViewTextBoxColumn33.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn33.HeaderText = "文件负责人";
+            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
+            this.dataGridViewTextBoxColumn33.Width = 113;
+            // 
+            // dataGridViewComboBoxColumn17
+            // 
+            this.dataGridViewComboBoxColumn17.HeaderText = "文件类型";
+            this.dataGridViewComboBoxColumn17.Items.AddRange(new object[] {
+            "财务",
+            "管理",
+            "评审",
+            "技术",
+            "汇编"});
+            this.dataGridViewComboBoxColumn17.Name = "dataGridViewComboBoxColumn17";
+            // 
+            // dataGridViewComboBoxColumn18
+            // 
+            this.dataGridViewComboBoxColumn18.HeaderText = "密级";
+            this.dataGridViewComboBoxColumn18.Items.AddRange(new object[] {
+            "公开",
+            "国内",
+            "秘密",
+            "机密",
+            "绝密"});
+            this.dataGridViewComboBoxColumn18.Name = "dataGridViewComboBoxColumn18";
+            this.dataGridViewComboBoxColumn18.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn34
+            // 
+            this.dataGridViewTextBoxColumn34.HeaderText = "页数";
+            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
+            // 
+            // dataGridViewTextBoxColumn35
+            // 
+            this.dataGridViewTextBoxColumn35.HeaderText = "份数";
+            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
+            // 
+            // dataGridViewTextBoxColumn36
+            // 
+            this.dataGridViewTextBoxColumn36.HeaderText = "形成日期";
+            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
+            // 
+            // dataGridViewTextBoxColumn37
+            // 
+            this.dataGridViewTextBoxColumn37.HeaderText = "存放单位";
+            this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
+            this.dataGridViewTextBoxColumn37.Width = 250;
+            // 
+            // dataGridViewComboBoxColumn19
+            // 
+            this.dataGridViewComboBoxColumn19.HeaderText = "载体";
+            this.dataGridViewComboBoxColumn19.Items.AddRange(new object[] {
+            "纸质",
+            "电子",
+            "纸质+电子"});
+            this.dataGridViewComboBoxColumn19.Name = "dataGridViewComboBoxColumn19";
+            // 
+            // dataGridViewComboBoxColumn20
+            // 
+            this.dataGridViewComboBoxColumn20.HeaderText = "格式";
+            this.dataGridViewComboBoxColumn20.Items.AddRange(new object[] {
+            "PDF",
+            "DOC",
+            "EXCEL"});
+            this.dataGridViewComboBoxColumn20.Name = "dataGridViewComboBoxColumn20";
+            // 
+            // dataGridViewComboBoxColumn21
+            // 
+            this.dataGridViewComboBoxColumn21.HeaderText = "形态";
+            this.dataGridViewComboBoxColumn21.Items.AddRange(new object[] {
+            "原件",
+            "复印本"});
+            this.dataGridViewComboBoxColumn21.Name = "dataGridViewComboBoxColumn21";
+            this.dataGridViewComboBoxColumn21.ReadOnly = true;
+            // 
+            // textBox34
+            // 
+            this.textBox34.Location = new System.Drawing.Point(116, 141);
+            this.textBox34.Name = "textBox34";
+            this.textBox34.Size = new System.Drawing.Size(666, 26);
+            this.textBox34.TabIndex = 41;
+            // 
+            // comboBox9
+            // 
+            this.comboBox9.FormattingEnabled = true;
+            this.comboBox9.Location = new System.Drawing.Point(116, 80);
+            this.comboBox9.Name = "comboBox9";
+            this.comboBox9.Size = new System.Drawing.Size(129, 24);
+            this.comboBox9.TabIndex = 40;
+            // 
+            // comboBox10
+            // 
+            this.comboBox10.FormattingEnabled = true;
+            this.comboBox10.Location = new System.Drawing.Point(682, 24);
+            this.comboBox10.Name = "comboBox10";
+            this.comboBox10.Size = new System.Drawing.Size(100, 24);
+            this.comboBox10.TabIndex = 39;
+            // 
+            // textBox35
+            // 
+            this.textBox35.Location = new System.Drawing.Point(393, 80);
+            this.textBox35.Name = "textBox35";
+            this.textBox35.Size = new System.Drawing.Size(140, 26);
+            this.textBox35.TabIndex = 38;
+            // 
+            // textBox44
+            // 
+            this.textBox44.Location = new System.Drawing.Point(393, 21);
+            this.textBox44.Name = "textBox44";
+            this.textBox44.Size = new System.Drawing.Size(180, 26);
+            this.textBox44.TabIndex = 37;
+            // 
+            // textBox46
+            // 
+            this.textBox46.Location = new System.Drawing.Point(116, 21);
+            this.textBox46.Name = "textBox46";
+            this.textBox46.Size = new System.Drawing.Size(162, 26);
+            this.textBox46.TabIndex = 36;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label19.Location = new System.Drawing.Point(29, 144);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(93, 16);
+            this.label19.TabIndex = 35;
+            this.label19.Text = "存放单位：";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label25.Location = new System.Drawing.Point(583, 27);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(93, 16);
+            this.label25.TabIndex = 34;
+            this.label25.Text = "保管期限：";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label26.Location = new System.Drawing.Point(326, 83);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(76, 16);
+            this.label26.TabIndex = 33;
+            this.label26.Text = "立卷人：";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label27.Location = new System.Drawing.Point(309, 27);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(93, 16);
+            this.label27.TabIndex = 32;
+            this.label27.Text = "案卷名称：";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label28.Location = new System.Drawing.Point(63, 83);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(59, 16);
+            this.label28.TabIndex = 31;
+            this.label28.Text = "密级：";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label29.Location = new System.Drawing.Point(29, 27);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(93, 16);
+            this.label29.TabIndex = 30;
+            this.label29.Text = "案卷编号：";
+            // 
+            // textBox47
+            // 
+            this.textBox47.Location = new System.Drawing.Point(94, 136);
+            this.textBox47.Name = "textBox47";
+            this.textBox47.Size = new System.Drawing.Size(210, 26);
+            this.textBox47.TabIndex = 41;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label30.Location = new System.Drawing.Point(13, 136);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(75, 28);
+            this.label30.TabIndex = 40;
+            this.label30.Text = "项目/课题\r\n负责人：";
+            // 
+            // textBox48
+            // 
+            this.textBox48.Location = new System.Drawing.Point(107, 138);
+            this.textBox48.Name = "textBox48";
+            this.textBox48.Size = new System.Drawing.Size(210, 26);
+            this.textBox48.TabIndex = 76;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label31.Location = new System.Drawing.Point(19, 136);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(75, 28);
+            this.label31.TabIndex = 75;
+            this.label31.Text = "项目/课题\r\n负责人：";
+            // 
+            // textBox49
+            // 
+            this.textBox49.Location = new System.Drawing.Point(94, 142);
+            this.textBox49.Name = "textBox49";
+            this.textBox49.Size = new System.Drawing.Size(210, 26);
+            this.textBox49.TabIndex = 78;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label32.Location = new System.Drawing.Point(8, 140);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(75, 28);
+            this.label32.TabIndex = 77;
+            this.label32.Text = "项目/课题\r\n负责人：";
             // 
             // Frm_Wroking
             // 
@@ -3866,22 +3868,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fileId;
-        private System.Windows.Forms.DataGridViewComboBoxColumn stage;
-        private System.Windows.Forms.DataGridViewComboBoxColumn fileType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fileName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fileResper;
-        private System.Windows.Forms.DataGridViewComboBoxColumn fileType2;
-        private System.Windows.Forms.DataGridViewComboBoxColumn secret;
-        private System.Windows.Forms.DataGridViewTextBoxColumn page;
-        private System.Windows.Forms.DataGridViewTextBoxColumn count;
-        private System.Windows.Forms.DataGridViewTextBoxColumn data;
-        private System.Windows.Forms.DataGridViewTextBoxColumn location;
-        private System.Windows.Forms.DataGridViewComboBoxColumn carrier;
-        private System.Windows.Forms.DataGridViewComboBoxColumn format;
-        private System.Windows.Forms.DataGridViewComboBoxColumn form;
-        private System.Windows.Forms.DataGridViewTextBoxColumn remark;
-        private System.Windows.Forms.DataGridViewTextBoxColumn opinion;
         private System.Windows.Forms.DataGridView dgv_JH_FIilCheck;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox2;
@@ -3891,20 +3877,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn type;
         private System.Windows.Forms.DataGridViewTextBoxColumn fileName2;
         private System.Windows.Forms.DataGridViewTextBoxColumn lose;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbl_GCH;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.ComboBox cbo_JH_BoxId;
@@ -3923,18 +3895,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView dgv_XM_FileCheck;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label36;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.ListView lsv_XM_DGD;
         private System.Windows.Forms.ColumnHeader columnHeader1;
@@ -4069,18 +4029,6 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn22;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
         private System.Windows.Forms.TabPage tabPage7;
-        private System.Windows.Forms.Label label72;
-        private System.Windows.Forms.Label label73;
-        private System.Windows.Forms.Label label74;
-        private System.Windows.Forms.Label label75;
-        private System.Windows.Forms.Label label76;
-        private System.Windows.Forms.Label label77;
-        private System.Windows.Forms.Label label78;
-        private System.Windows.Forms.Label label79;
-        private System.Windows.Forms.Label label80;
-        private System.Windows.Forms.Label label81;
-        private System.Windows.Forms.Label label82;
-        private System.Windows.Forms.Label label83;
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.Button btn_KT_Print;
         private System.Windows.Forms.LinkLabel linkLabel1;
@@ -4112,18 +4060,6 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn23;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn45;
         private System.Windows.Forms.TabPage tabPage11;
-        private System.Windows.Forms.Label label104;
-        private System.Windows.Forms.Label label105;
-        private System.Windows.Forms.Label label106;
-        private System.Windows.Forms.Label label107;
-        private System.Windows.Forms.Label label108;
-        private System.Windows.Forms.Label label109;
-        private System.Windows.Forms.Label label110;
-        private System.Windows.Forms.Label label111;
-        private System.Windows.Forms.Label label112;
-        private System.Windows.Forms.Label label113;
-        private System.Windows.Forms.Label label114;
-        private System.Windows.Forms.Label label115;
         private System.Windows.Forms.TabPage tabPage12;
         private System.Windows.Forms.Button btn_ZKT_Print;
         private System.Windows.Forms.LinkLabel linkLabel3;
@@ -4143,20 +4079,34 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label119;
         private System.Windows.Forms.TreeView tv_Working;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn8;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn10;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn12;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn13;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fileId;
+        private System.Windows.Forms.DataGridViewComboBoxColumn stage;
+        private System.Windows.Forms.DataGridViewComboBoxColumn fileType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fileName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fileResper;
+        private System.Windows.Forms.DataGridViewComboBoxColumn fileType2;
+        private System.Windows.Forms.DataGridViewComboBoxColumn secret;
+        private System.Windows.Forms.DataGridViewTextBoxColumn page;
+        private System.Windows.Forms.DataGridViewTextBoxColumn count;
+        private System.Windows.Forms.DataGridViewTextBoxColumn data;
+        private System.Windows.Forms.DataGridViewTextBoxColumn location;
+        private System.Windows.Forms.DataGridViewComboBoxColumn carrier;
+        private System.Windows.Forms.DataGridViewComboBoxColumn format;
+        private System.Windows.Forms.DataGridViewComboBoxColumn form;
+        private System.Windows.Forms.DataGridViewTextBoxColumn remark;
+        private System.Windows.Forms.DataGridViewTextBoxColumn opinion;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox textBox29;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Label label70;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn1;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn2;
@@ -4171,6 +4121,44 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn5;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn6;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn7;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn8;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn10;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn12;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn13;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn14;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.TextBox textBox31;
+        private System.Windows.Forms.TextBox textBox32;
+        private System.Windows.Forms.TextBox textBox33;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn15;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn16;
@@ -4185,5 +4173,23 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn19;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn20;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn21;
+        private System.Windows.Forms.TextBox textBox34;
+        private System.Windows.Forms.ComboBox comboBox9;
+        private System.Windows.Forms.ComboBox comboBox10;
+        private System.Windows.Forms.TextBox textBox35;
+        private System.Windows.Forms.TextBox textBox44;
+        private System.Windows.Forms.TextBox textBox46;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox textBox47;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox textBox48;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox textBox49;
+        private System.Windows.Forms.Label label32;
     }
 }
