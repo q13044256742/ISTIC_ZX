@@ -1,13 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Text;
 using System.Windows.Forms;
 using 数据采集档案管理系统___加工版.Tools;
+using MSWord = Microsoft.Office.Interop.Word;
 
 namespace 数据采集档案管理系统___加工版
 {
+
     public partial class Frm_MainFrame : Form
     {
+        private MSWord.Application m_word;
+
         public Frm_MainFrame()
         {
             InitializeComponent();
@@ -30,15 +35,28 @@ namespace 数据采集档案管理系统___加工版
             DataTable dataTable = DataSourceHelper.GetDataTable("firstpage");
             dgv_DataList.DataSource = dataTable;
             lbl_TotalAmount.Text = "共有 " + dataTable.Rows.Count + " 条数据";
+           
+            //添加验证和合成
+            int a = dgv_DataList.Columns.Add("inspect","文件校验");
+            int b = dgv_DataList.Columns.Add("synthesis", "合成word");
+
+            foreach (DataGridViewRow row in dgv_DataList.Rows)
+            {
+                row.Cells[a].Value = "检验";
+                row.Cells[b].Value = "打开";
+            }
 
             List<KeyValuePair<int, int>> list = new List<KeyValuePair<int, int>>
             {
                 new KeyValuePair<int, int>(0, 70),
-                new KeyValuePair<int, int>(2, 150)
+                new KeyValuePair<int, int>(1, 150),
+                new KeyValuePair<int, int>(3, 200),
+                new KeyValuePair<int, int>(5, 100),
+                new KeyValuePair<int, int>(6, 100)
             };
             DataGridViewStyleHelper.SetWidth(dgv_DataList, list);
-            DataGridViewStyleHelper.SetAlignWithCenter(dgv_DataList, new int[] { 0 });
-
+            DataGridViewStyleHelper.SetAlignWithCenter(dgv_DataList, new int[] { 0 ,5,6});
+            DataGridViewStyleHelper.SetLinkStyle(dgv_DataList, new int[] { 5, 6 });
             tv_DataTree.Nodes[0].ExpandAll();
 
         }
@@ -156,7 +174,33 @@ namespace 数据采集档案管理系统___加工版
 
         private void Frm_MainFrame_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            Environment.Exit(0);
+        }
+
+        private void dgv_DataList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                //文件校验
+                if (e.ColumnIndex == 5 && "inspect".Equals(dgv_DataList.Columns[e.ColumnIndex].Name))
+                {
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append("文件编号[008ZX02103-002] 项目编号不正确；\n");
+                    sb.Append("文件编号[008ZX02103-006] 缺少最后提交时间；\n");
+                    MessageBox.Show(sb.ToString(), "检验结果");
+                }
+                //合成Word
+                else if (e.ColumnIndex == 6 && "synthesis".Equals(dgv_DataList.Columns[e.ColumnIndex].Name))
+                {
+
+                    Object filename = "合成word示例.docx";
+                    Object filefullname = Application.StartupPath + "\\temp\\" + filename;
+
+                    string[] str = new string[] { dgv_DataList.Rows[e.RowIndex].Cells[1].Value.ToString() };
+                    MicrosoftWordHelper.WriteDocument(filefullname.ToString(), str);
+
+                }
+            }
         }
     }
 }

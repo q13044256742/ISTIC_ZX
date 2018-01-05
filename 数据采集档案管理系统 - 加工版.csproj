@@ -31,6 +31,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>Tools\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -114,6 +119,7 @@
     <Compile Include="Tools\DataSourceHelper.cs" />
     <Compile Include="Tools\FileBoxHelper.cs" />
     <Compile Include="Tools\FileListHelper.cs" />
+    <Compile Include="Tools\MicrosoftWordHelper.cs" />
     <EmbeddedResource Include="Frm_Explain.resx">
       <DependentUpon>Frm_Explain.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +179,17 @@
     <Content Include="Images\logo.png" />
     <Content Include="Images\png-0281.png" />
     <Content Include="Images\png-0289.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

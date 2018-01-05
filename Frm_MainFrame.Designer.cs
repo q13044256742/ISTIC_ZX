@@ -377,6 +377,7 @@
             this.dgv_DataList.RowTemplate.Height = 23;
             this.dgv_DataList.Size = new System.Drawing.Size(797, 329);
             this.dgv_DataList.TabIndex = 0;
+            this.dgv_DataList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DataList_CellContentClick);
             // 
             // Frm_MainFrame
             // 
