@@ -25,18 +25,12 @@ namespace 数据采集档案管理系统___加工版.Tools
             Object Nothing = Missing.Value;
             wordDoc = wordApp.Documents.Add(ref Nothing, ref Nothing, ref Nothing, ref Nothing);
 
-            #region 页面设置、页眉图片和文字设置，最后跳出页眉设置
-
             //页面设置
             wordDoc.PageSetup.PaperSize = MSWord.WdPaperSize.wdPaperA4;//设置纸张样式为A4纸
             wordDoc.PageSetup.Orientation = MSWord.WdOrientation.wdOrientPortrait;//排列方式为垂直方向
 
             //设置页眉
             wordApp.ActiveWindow.View.Type = MSWord.WdViewType.wdNormalView;//普通视图（即页面视图）样式
-
-            #endregion
-
-            #region 页码设置并添加页码
 
             //为当前页添加页码
             MSWord.PageNumbers pns = wordApp.Selection.Sections[1].Headers[MSWord.WdHeaderFooterIndex.wdHeaderFooterEvenPages].PageNumbers;//获取当前页的号码
@@ -49,7 +43,6 @@ namespace 数据采集档案管理系统___加工版.Tools
             object first = true;
             wordApp.Selection.Sections[1].Footers[MSWord.WdHeaderFooterIndex.wdHeaderFooterEvenPages].PageNumbers.Add(ref pagenmbetal, ref first);
 
-            #endregion
             wordApp.Selection.ParagraphFormat.LineSpacing = 16f;//设置文档的行间距
             wordApp.Selection.ParagraphFormat.FirstLineIndent = 30;//首行缩进的长度
 

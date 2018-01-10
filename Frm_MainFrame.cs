@@ -11,8 +11,6 @@ namespace 数据采集档案管理系统___加工版
 
     public partial class Frm_MainFrame : Form
     {
-        private MSWord.Application m_word;
-
         public Frm_MainFrame()
         {
             InitializeComponent();
@@ -75,33 +73,33 @@ namespace 数据采集档案管理系统___加工版
             Cursor = Cursors.Hand;
         }
 
-        private void btn_SH_Click(object sender, EventArgs e)
+        private void Btn_SH_Click(object sender, EventArgs e)
         {
             //收拢
             if (tv_DataTree.Width == 205)
             {
                 tv_DataTree.Width = 5;
-                btn_SH.Left = -5;
+                btn_SH.Left = -1;
                 dgv_DataList.Width += 200;
                 dgv_DataList.Left -= 200;
                 btn_SH.Text = ">";
             }else
             {
                 tv_DataTree.Width = 205;
-                btn_SH.Left = 188;
+                btn_SH.Left = 197;
                 dgv_DataList.Width -= 200;
                 dgv_DataList.Left += 200;
                 btn_SH.Text = "<";
             }
         }
 
-        private void pic_Add_Click(object sender, EventArgs e)
+        private void Pic_Add_Click(object sender, EventArgs e)
         {
             Frm_Wroking frm_Wroking = new Frm_Wroking();
             frm_Wroking.Show();
         }
 
-        private void btn_Delete_Click(object sender, EventArgs e)
+        private void Btn_Delete_Click(object sender, EventArgs e)
         {
             if (dgv_DataList.SelectedRows.Count > 0)
             {
@@ -115,7 +113,7 @@ namespace 数据采集档案管理系统___加工版
             }
         }
 
-        private void btn_Query_Click(object sender, EventArgs e)
+        private void Btn_Query_Click(object sender, EventArgs e)
         {
             string queryCode = "".Equals(txt_Query_Code.Text) ? null : txt_Query_Code.Text;
             string queryName = "".Equals(txt_Query_Name.Text) ? null : txt_Query_Name.Text;
@@ -160,7 +158,7 @@ namespace 数据采集档案管理系统___加工版
             }
         }
 
-        private void pic_Import_Click(object sender, EventArgs e)
+        private void Pic_Import_Click(object sender, EventArgs e)
         {
             Frm_Import frm_Import = new Frm_Import();
             frm_Import.ShowDialog();
@@ -177,7 +175,7 @@ namespace 数据采集档案管理系统___加工版
             Environment.Exit(0);
         }
 
-        private void dgv_DataList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void Dgv_DataList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
             {
@@ -201,6 +199,11 @@ namespace 数据采集档案管理系统___加工版
 
                 }
             }
+        }
+
+        private void pic_Manager_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
