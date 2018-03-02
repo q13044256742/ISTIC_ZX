@@ -28,66 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btn_UserManager = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.pal_LeftMenu = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // panel1
+            // pal_LeftMenu
             // 
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(240, 611);
-            this.panel1.TabIndex = 0;
-            // 
-            // panel4
-            // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.btn_UserManager);
-            this.panel4.Location = new System.Drawing.Point(9, 8);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(221, 60);
-            this.panel4.TabIndex = 0;
-            // 
-            // btn_UserManager
-            // 
-            this.btn_UserManager.Location = new System.Drawing.Point(3, 3);
-            this.btn_UserManager.Name = "btn_UserManager";
-            this.btn_UserManager.Size = new System.Drawing.Size(213, 52);
-            this.btn_UserManager.TabIndex = 0;
-            this.btn_UserManager.Text = "用户信息管理";
-            this.btn_UserManager.UseVisualStyleBackColor = true;
-            this.btn_UserManager.Click += new System.EventHandler(this.Btn_UserManager_Click);
+            this.pal_LeftMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pal_LeftMenu.Location = new System.Drawing.Point(0, 0);
+            this.pal_LeftMenu.Name = "pal_LeftMenu";
+            this.pal_LeftMenu.Size = new System.Drawing.Size(268, 611);
+            this.pal_LeftMenu.TabIndex = 0;
             // 
             // Frm_Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 611);
-            this.Controls.Add(this.panel1);
+          //  this.BackgroundImage = global::数据采集档案管理系统___加工版.Properties.Resources.background;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(1184, 611);
+            this.Controls.Add(this.pal_LeftMenu);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Frm_Manager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "系统后台管理";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Manager_FormClosing);
             this.Load += new System.EventHandler(this.Frm_Manager_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button btn_UserManager;
+        private System.Windows.Forms.Panel pal_LeftMenu;
     }
 }

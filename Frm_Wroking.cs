@@ -40,7 +40,7 @@ namespace 数据采集档案管理系统___加工版
 
             DataGridViewStyleHelper.SetAlignWithCenter(dgv_XM_FileList, new int[] { 0, 4, 7, 8, 9 });
 
-            dgv_XM_FileList.Rows.Add("1", "规划阶段", "A01", "科技计划预算书", "崔文健", "财务", "公开", "10", "5", "2010-10-10", "重大办，专项办", "纸质", "PDF", "原件", "查看", "文件不齐全");
+            dgv_XM_FileList.Rows.Add("1", "规划阶段", "A01", "科技计划预算书", "崔文健", "财务", "公开", "10", "5", "20101010", "重大办，专项办", "纸质", "PDF", "原件", "D:\\Data", "查看", "文件不齐全");
             dgv_XM_FileList.DataError += Dgv_XM_FileList_DataError;
             dgv_XM_FileCheck.DataError += Dgv_XM_FileList_DataError;
 
@@ -155,15 +155,15 @@ namespace 数据采集档案管理系统___加工版
         /// </summary>
         private void Cbo_XM_HasNext_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbo_XM_HasNext.SelectedIndex > 0)
+            if (cbo_XM_HasNext.SelectedIndex > 1)
             {
                 string xmCode = txt_XM_Code.Text;
-                if (cbo_XM_HasNext.SelectedIndex == 1)//课题
+                if (cbo_XM_HasNext.SelectedIndex == 2)//课题
                 {
                     txt_XM_Name.Text = txt_XM_Code.Text;
                     ShowTab(false, 1, "jh_kt");
                 }
-                else if (cbo_XM_HasNext.SelectedIndex == 2)//子课题
+                else if (cbo_XM_HasNext.SelectedIndex == 3)//子课题
                 {
                     txt_KT_Name.Text = txt_XM_Code.Text;
                     ShowTab(false, 1, "jh_zkt");

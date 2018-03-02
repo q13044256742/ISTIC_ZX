@@ -27,21 +27,20 @@ namespace 数据采集档案管理系统___加工版
             pic_Import.MouseLeave += Pic_Add_MouseLeave;
             pic_Export.MouseEnter += Pic_Add_MouseEnter;
             pic_Export.MouseLeave += Pic_Add_MouseLeave;
-            pic_Check.MouseEnter += Pic_Add_MouseEnter;
-            pic_Check.MouseLeave += Pic_Add_MouseLeave;
+           
 
             DataTable dataTable = DataSourceHelper.GetDataTable("firstpage");
             dgv_DataList.DataSource = dataTable;
             lbl_TotalAmount.Text = "共有 " + dataTable.Rows.Count + " 条数据";
            
             //添加验证和合成
-            int a = dgv_DataList.Columns.Add("inspect","文件校验");
-            int b = dgv_DataList.Columns.Add("synthesis", "合成word");
+            //int a = dgv_DataList.Columns.Add("inspect","文件校验");
+            int b = dgv_DataList.Columns.Add("synthesis", "操作");
 
             foreach (DataGridViewRow row in dgv_DataList.Rows)
             {
-                row.Cells[a].Value = "检验";
-                row.Cells[b].Value = "打开";
+               // row.Cells[a].Value = "检验";
+                row.Cells[b].Value = "查看";
             }
 
             List<KeyValuePair<int, int>> list = new List<KeyValuePair<int, int>>
@@ -49,12 +48,12 @@ namespace 数据采集档案管理系统___加工版
                 new KeyValuePair<int, int>(0, 70),
                 new KeyValuePair<int, int>(1, 150),
                 new KeyValuePair<int, int>(3, 200),
-                new KeyValuePair<int, int>(5, 100),
-                new KeyValuePair<int, int>(6, 100)
+                new KeyValuePair<int, int>(5, 100)
+               // new KeyValuePair<int, int>(6, 100)
             };
             DataGridViewStyleHelper.SetWidth(dgv_DataList, list);
-            DataGridViewStyleHelper.SetAlignWithCenter(dgv_DataList, new int[] { 0 ,5,6});
-            DataGridViewStyleHelper.SetLinkStyle(dgv_DataList, new int[] { 5, 6 });
+            DataGridViewStyleHelper.SetAlignWithCenter(dgv_DataList, new int[] { 0 ,8});
+            DataGridViewStyleHelper.SetLinkStyle(dgv_DataList, new int[] { 8});
             tv_DataTree.Nodes[0].ExpandAll();
 
         }
@@ -166,6 +165,8 @@ namespace 数据采集档案管理系统___加工版
 
         private void Frm_MainFrame_Shown(object sender, EventArgs e)
         {
+            Frm_IdentityChoose frm_Identity = new Frm_IdentityChoose();
+            frm_Identity.ShowDialog();
             Frm_Explain explain = new Frm_Explain();
             explain.ShowDialog();
         }
@@ -179,31 +180,47 @@ namespace 数据采集档案管理系统___加工版
         {
             if (e.RowIndex != -1)
             {
-                //文件校验
-                if (e.ColumnIndex == 5 && "inspect".Equals(dgv_DataList.Columns[e.ColumnIndex].Name))
+                //打开word
+                if (e.ColumnIndex == 8 && "synthesis".Equals(dgv_DataList.Columns[e.ColumnIndex].Name))
                 {
-                    StringBuilder sb = new StringBuilder();
-                    sb.Append("文件编号[008ZX02103-002] 项目编号不正确；\n");
-                    sb.Append("文件编号[008ZX02103-006] 缺少最后提交时间；\n");
-                    MessageBox.Show(sb.ToString(), "检验结果");
-                }
-                //合成Word
-                else if (e.ColumnIndex == 6 && "synthesis".Equals(dgv_DataList.Columns[e.ColumnIndex].Name))
-                {
-
                     Object filename = "合成word示例.docx";
                     Object filefullname = Application.StartupPath + "\\temp\\" + filename;
 
                     string[] str = new string[] { dgv_DataList.Rows[e.RowIndex].Cells[1].Value.ToString() };
                     MicrosoftWordHelper.WriteDocument(filefullname.ToString(), str);
-
                 }
+              
             }
         }
 
         private void pic_Manager_Click(object sender, EventArgs e)
         {
+            Frm_Manager manager = new Frm_Manager();
+            manager.ShowDialog();
+        }
 
+        private void pic_Export_Click(object sender, EventArgs e)
+        {
+            Frm_Export frm_Export = new Frm_Export();
+            frm_Export.ShowDialog();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Frm_Backup frm_Backup = new Frm_Backup();
+            frm_Backup.ShowDialog();
+        }
+
+        private void pic_Editpassword(object sender, EventArgs e)
+        {
+            Frm_EditPassword frm_EditPassword = new Frm_EditPassword();
+            frm_EditPassword.ShowDialog();
+        }
+
+        private void pic_Update(object sender, EventArgs e)
+        {
+            Frm_Wroking frm_Wroking = new Frm_Wroking();
+            frm_Wroking.Show();
         }
     }
 }

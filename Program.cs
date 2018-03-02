@@ -13,7 +13,7 @@ namespace 数据采集档案管理系统___加工版
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_Manager());
+            Application.Run(new Frm_Login());
         }
     }
 }

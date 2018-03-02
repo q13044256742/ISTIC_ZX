@@ -63,17 +63,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Frm_Backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Backup.Designer.cs">
+      <DependentUpon>Frm_Backup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_EditPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_EditPassword.Designer.cs">
+      <DependentUpon>Frm_EditPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Explain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_Explain.Designer.cs">
       <DependentUpon>Frm_Explain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_Export.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Export.Designer.cs">
+      <DependentUpon>Frm_Export.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_FIle_Opinion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_FIle_Opinion.Designer.cs">
       <DependentUpon>Frm_FIle_Opinion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_IdentityChoose.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_IdentityChoose.Designer.cs">
+      <DependentUpon>Frm_IdentityChoose.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Import.cs">
       <SubType>Form</SubType>
@@ -123,6 +147,18 @@
     <Compile Include="Frm_Print.Designer.cs">
       <DependentUpon>Frm_Print.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_SetContextPath.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_SetContextPath.Designer.cs">
+      <DependentUpon>Frm_SetContextPath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_UnitManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_UnitManage.Designer.cs">
+      <DependentUpon>Frm_UnitManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_UserManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,16 +179,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\CreateKyoPanel.cs" />
     <Compile Include="Tools\DataGridViewStyleHelper.cs" />
     <Compile Include="Tools\DataSourceHelper.cs" />
     <Compile Include="Tools\FileBoxHelper.cs" />
     <Compile Include="Tools\FileListHelper.cs" />
     <Compile Include="Tools\MicrosoftWordHelper.cs" />
+    <EmbeddedResource Include="Frm_Backup.resx">
+      <DependentUpon>Frm_Backup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_EditPassword.resx">
+      <DependentUpon>Frm_EditPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Explain.resx">
       <DependentUpon>Frm_Explain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Export.resx">
+      <DependentUpon>Frm_Export.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_FIle_Opinion.resx">
       <DependentUpon>Frm_FIle_Opinion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_IdentityChoose.resx">
+      <DependentUpon>Frm_IdentityChoose.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Import.resx">
       <DependentUpon>Frm_Import.cs</DependentUpon>
@@ -177,6 +226,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Print.resx">
       <DependentUpon>Frm_Print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_SetContextPath.resx">
+      <DependentUpon>Frm_SetContextPath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_UnitManage.resx">
+      <DependentUpon>Frm_UnitManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_UserManager.resx">
       <DependentUpon>Frm_UserManager.cs</DependentUpon>
@@ -209,6 +264,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\login_1.png" />
     <None Include="Images\png-0228.png" />
     <None Include="Images\png-0222.png" />
     <Content Include="Images\logo.png" />
@@ -216,22 +272,22 @@
     <Content Include="Images\png-0289.png" />
   </ItemGroup>
   <ItemGroup>
-    <COMReference Include="VBIDE">
-      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
-      <VersionMajor>5</VersionMajor>
-      <VersionMinor>3</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
