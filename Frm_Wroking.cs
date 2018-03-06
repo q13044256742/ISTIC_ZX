@@ -817,22 +817,21 @@ namespace 数据采集档案管理系统___加工版
             object id = SQLiteHelper.ExecuteOnlyOneQuery($"SELECT pb_files_id FROM files_box_info WHERE pb_id = '{pbId}'");
             if(id != null)
             {
-                querySql = $"SELECT fi_id, dd_name, fi_name, fi_create_date FROM files_info LEFT JOIN data_dictionary ON fi_categor=dd_id WHERE fi_id IN(";
                 string[] ids = GetValue(id).Split(',');
                 for(int i = 0; i < ids.Length; i++)
                 {
-                    querySql += "'" + ids[i] + "'" + (i == ids.Length - 1 ? ")" : ",");
-                }
-                DataTable _dataTable = SQLiteHelper.ExecuteQuery(querySql);
-                for(int i = 0; i < _dataTable.Rows.Count; i++)
-                {
-                    ListViewItem item = rightView.Items.Add(GetValue(_dataTable.Rows[i]["fi_id"]));
-                    item.SubItems.AddRange(new ListViewItem.ListViewSubItem[]
+                    querySql = $"SELECT fi_id, dd_name, fi_name, fi_create_date FROM files_info LEFT JOIN data_dictionary ON fi_categor=dd_id WHERE fi_id ='{ids[i]}'";
+                    DataRow row = SQLiteHelper.ExecuteSingleRowQuery(querySql);
+                    if(row != null)
                     {
-                        new ListViewItem.ListViewSubItem(){ Text = GetValue(_dataTable.Rows[i]["dd_name"]) },
-                        new ListViewItem.ListViewSubItem(){ Text = GetValue(_dataTable.Rows[i]["fi_name"]) },
-                        new ListViewItem.ListViewSubItem(){ Text = GetDateValue(_dataTable.Rows[i]["fi_create_date"], "yyyy-MM-dd") },
-                    });
+                        ListViewItem item = rightView.Items.Add(GetValue(row["fi_id"]));
+                        item.SubItems.AddRange(new ListViewItem.ListViewSubItem[]
+                        {
+                        new ListViewItem.ListViewSubItem(){ Text = GetValue(row["dd_name"]) },
+                        new ListViewItem.ListViewSubItem(){ Text = GetValue(row["fi_name"]) },
+                        new ListViewItem.ListViewSubItem(){ Text = GetDateValue(row["fi_create_date"], "yyyy-MM-dd") },
+                        });
+                    }
                 }
             }
         }
