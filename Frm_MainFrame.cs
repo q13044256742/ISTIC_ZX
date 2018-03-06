@@ -21,51 +21,16 @@ namespace 数据采集档案管理系统___加工版
 
         private void Frm_MainFrame_Load(object sender, EventArgs e)
         {
-            pic_Add.MouseEnter += Pic_Add_MouseEnter;
-            pic_Add.MouseLeave += Pic_Add_MouseLeave;
-            pic_Import.MouseEnter += Pic_Add_MouseEnter;
-            pic_Import.MouseLeave += Pic_Add_MouseLeave;
-            pic_Export.MouseEnter += Pic_Add_MouseEnter;
-            pic_Export.MouseLeave += Pic_Add_MouseLeave;
-           
-
-            DataTable dataTable = DataSourceHelper.GetDataTable("firstpage");
-            dgv_DataList.DataSource = dataTable;
-            lbl_TotalAmount.Text = "共有 " + dataTable.Rows.Count + " 条数据";
-           
-            //添加验证和合成
-            //int a = dgv_DataList.Columns.Add("inspect","文件校验");
-            int b = dgv_DataList.Columns.Add("synthesis", "操作");
-
-            foreach (DataGridViewRow row in dgv_DataList.Rows)
-            {
-               // row.Cells[a].Value = "检验";
-                row.Cells[b].Value = "查看";
-            }
-
-            List<KeyValuePair<int, int>> list = new List<KeyValuePair<int, int>>
-            {
-                new KeyValuePair<int, int>(0, 70),
-                new KeyValuePair<int, int>(1, 150),
-                new KeyValuePair<int, int>(3, 200),
-                new KeyValuePair<int, int>(5, 100)
-               // new KeyValuePair<int, int>(6, 100)
-            };
-            DataGridViewStyleHelper.SetWidth(dgv_DataList, list);
-            DataGridViewStyleHelper.SetAlignWithCenter(dgv_DataList, new int[] { 0 ,8});
-            DataGridViewStyleHelper.SetLinkStyle(dgv_DataList, new int[] { 8});
-            tv_DataTree.Nodes[0].ExpandAll();
-
         }
 
-        private void Pic_Add_MouseLeave(object sender, EventArgs e)
+        private void Pic_MouseLeave(object sender, EventArgs e)
         {
             Panel panel = (sender as PictureBox).Parent as Panel;
             panel.ForeColor = System.Drawing.Color.Black;
             Cursor = Cursors.Default;
         }
 
-        private void Pic_Add_MouseEnter(object sender, EventArgs e)
+        private void Pic_MouseEnter(object sender, EventArgs e)
         {
             Panel panel = (sender as PictureBox).Parent as Panel;
             panel.ForeColor = System.Drawing.Color.MidnightBlue;
@@ -94,8 +59,8 @@ namespace 数据采集档案管理系统___加工版
 
         private void Pic_Add_Click(object sender, EventArgs e)
         {
-            Frm_Wroking frm_Wroking = new Frm_Wroking();
-            frm_Wroking.Show();
+            Frm_Wroking frm_Wroking = new Frm_Wroking("ADMIN13044256742");
+            frm_Wroking.ShowDialog();
         }
 
         private void Btn_Delete_Click(object sender, EventArgs e)
@@ -165,10 +130,15 @@ namespace 数据采集档案管理系统___加工版
 
         private void Frm_MainFrame_Shown(object sender, EventArgs e)
         {
-            Frm_IdentityChoose frm_Identity = new Frm_IdentityChoose();
-            frm_Identity.ShowDialog();
-            Frm_Explain explain = new Frm_Explain();
-            explain.ShowDialog();
+            //Frm_IdentityChoose frm_Identity = new Frm_IdentityChoose();
+            //if(frm_Identity.ShowDialog() == DialogResult.OK)
+            //{
+            //    object obj = frm_Identity.Identity;
+            //    tv_DataTree.Nodes[0].Nodes.Add(GetValue(obj));
+            //    tv_DataTree.ExpandAll();
+            //}
+
+            //new Frm_Explain().ShowDialog();
         }
 
         private void Frm_MainFrame_FormClosing(object sender, FormClosingEventArgs e)
@@ -219,8 +189,13 @@ namespace 数据采集档案管理系统___加工版
 
         private void pic_Update(object sender, EventArgs e)
         {
-            Frm_Wroking frm_Wroking = new Frm_Wroking();
+            Frm_Wroking frm_Wroking = new Frm_Wroking(null);
             frm_Wroking.Show();
+        }
+
+        string GetValue(object obj)
+        {
+            return obj == null ? string.Empty : obj.ToString();
         }
     }
 }

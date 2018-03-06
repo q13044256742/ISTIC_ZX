@@ -11,6 +11,8 @@ namespace 数据采集档案管理系统___加工版
 {
     public partial class Frm_IdentityChoose : Form
     {
+        public object Identity;
+
         public Frm_IdentityChoose()
         {
             InitializeComponent();
@@ -18,6 +20,7 @@ namespace 数据采集档案管理系统___加工版
 
         private void Frm_IdentityChoose_Load(object sender, EventArgs e)
         {
+            Identity = null;
             cbo_ChooseIdentity.Items.AddRange(new string[]
             {
                 "核高基","集成电路","宽带移动","数控机床","油气","核电","水专项","转基因","新药","传染病"
@@ -27,7 +30,9 @@ namespace 数据采集档案管理系统___加工版
 
         private void btn_Sure_Click(object sender, EventArgs e)
         {
-            Close();
+            Identity = cbo_ChooseIdentity.SelectedItem;
+            DialogResult = DialogResult.OK;
+            Hide();
         }
 
         private void Frm_IdentityChoose_FormClosing(object sender, FormClosingEventArgs e)

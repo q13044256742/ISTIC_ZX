@@ -28,7 +28,7 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -54,6 +54,10 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.108.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Data.SQLite.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
@@ -63,6 +67,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Frm_AddFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_AddFile.Designer.cs">
+      <DependentUpon>Frm_AddFile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Backup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,12 +121,6 @@
     <Compile Include="Frm_Login.Designer.cs">
       <DependentUpon>Frm_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_Main.Designer.cs">
-      <DependentUpon>Frm_Main.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frm_MainFrame.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,12 +132,6 @@
     </Compile>
     <Compile Include="Frm_Manager.Designer.cs">
       <DependentUpon>Frm_Manager.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frm_MyWork.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_MyWork.Designer.cs">
-      <DependentUpon>Frm_MyWork.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_OnWork.cs">
       <SubType>Form</SubType>
@@ -165,12 +163,6 @@
     <Compile Include="Frm_UserManager.Designer.cs">
       <DependentUpon>Frm_UserManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_WorkLog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_WorkLog.Designer.cs">
-      <DependentUpon>Frm_WorkLog.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frm_Wroking.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,9 +174,14 @@
     <Compile Include="Tools\CreateKyoPanel.cs" />
     <Compile Include="Tools\DataGridViewStyleHelper.cs" />
     <Compile Include="Tools\DataSourceHelper.cs" />
+    <Compile Include="Tools\DictionaryHelper.cs" />
     <Compile Include="Tools\FileBoxHelper.cs" />
     <Compile Include="Tools\FileListHelper.cs" />
     <Compile Include="Tools\MicrosoftWordHelper.cs" />
+    <Compile Include="Tools\SQLiteHelper.cs" />
+    <EmbeddedResource Include="Frm_AddFile.resx">
+      <DependentUpon>Frm_AddFile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Backup.resx">
       <DependentUpon>Frm_Backup.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,17 +206,11 @@
     <EmbeddedResource Include="Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Main.resx">
-      <DependentUpon>Frm_Main.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Frm_MainFrame.resx">
       <DependentUpon>Frm_MainFrame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Manager.resx">
       <DependentUpon>Frm_Manager.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_MyWork.resx">
-      <DependentUpon>Frm_MyWork.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_OnWork.resx">
       <DependentUpon>Frm_OnWork.cs</DependentUpon>
@@ -235,9 +226,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_UserManager.resx">
       <DependentUpon>Frm_UserManager.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_WorkLog.resx">
-      <DependentUpon>Frm_WorkLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Wroking.resx">
       <DependentUpon>Frm_Wroking.cs</DependentUpon>
