@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Text;
 using System.Windows.Forms;
 
 namespace 数据采集档案管理系统___加工版
@@ -125,6 +126,19 @@ namespace 数据采集档案管理系统___加工版
         /// 将Object对象转换成String
         /// </summary>
         private string GetValue(object v) => v == null ? string.Empty : v.ToString();
+
+        /// <summary>
+        /// 将指定文本转换成指定日期格式
+        /// </summary>
+        /// <param name="date">待转换的日期对象</param>
+        /// <param name="format">转换格式</param>
+        private string GetDateValue(object date, string format)
+        {
+            string _formatDate = null, value = GetValue(date);
+            if(!string.IsNullOrEmpty(value))
+                _formatDate = Convert.ToDateTime(value).ToString(format);
+            return _formatDate;
+        }
 
         /// <summary>
         /// 根据指定的索引和名称显示指定的选项卡
@@ -293,6 +307,31 @@ namespace 数据采集档案管理系统___加工版
                             SQLiteHelper.ExecuteNonQuery(updateSql);
                         }
                         MessageBox.Show($"案卷信息保存成功！");
+                    }
+                    else if(index == 3)
+                    {
+                        object boxId = cbo_Special_BoxId.SelectedValue;
+                        if(boxId != null)
+                        {
+                            //先将当前盒中所有文件置为未归档状态
+                            SQLiteHelper.ExecuteNonQuery($"UPDATE files_info SET fi_status=-1 WHERE fi_id IN(SELECT pb_obj_id FROM files_box_info WHERE pb_id='{boxId}')");
+
+                            string ids = string.Empty;
+                            foreach(ListViewItem item in lsv_Special_Right.Items)
+                                ids += "'" + item.SubItems[0].Text + "',";
+                            if(!string.IsNullOrEmpty(ids))
+                            {
+                                ids = ids.Substring(0, ids.Length - 1);
+                                SQLiteHelper.ExecuteNonQuery($"UPDATE files_info SET fi_status=1 WHERE fi_id IN({ids})");
+                                SQLiteHelper.ExecuteNonQuery($"UPDATE files_box_info SET pb_files_id='{ids.Replace("'", string.Empty)}' WHERE pb_id='{boxId}'");
+
+                                MessageBox.Show("保存案卷盒成功。");
+                                LoadFileBoxTable(boxId, objId, ControlType.Plan);
+                            }
+
+                        }
+                        else
+                            MessageBox.Show("请先添加案卷盒。");
                     }
                 }
                 else
@@ -567,7 +606,7 @@ namespace 数据采集档案管理系统___加工版
                 ShowTabPageByName("subtopic", 2);
             }
         }
-        
+
         /// <summary>
         /// 更新文件信息
         /// </summary>
@@ -616,7 +655,7 @@ namespace 数据采集档案管理系统___加工版
                 $"WHERE fi_id = '{primaryKey}'";
             SQLiteHelper.ExecuteNonQuery(updateSql);
         }
-        
+
         /// <summary>
         /// 新增文件信息
         /// </summary>
@@ -705,7 +744,114 @@ namespace 数据采集档案管理系统___加工版
                             //txt_Special_AJ_Unit.Text = UserHelper.GetInstance().User.Company;
                         }
                     }
+                    else if(index == 3)
+                    {
+                        LoadBoxList(objid, ControlType.Plan);
+                        LoadFileBoxTable(cbo_Special_BoxId.SelectedValue, objid, ControlType.Plan);
+                    }
                 }
+            }
+        }
+
+        /// <summary>
+        /// 加载计划-案卷盒归档表
+        /// </summary>
+        /// <param name="pbId">案卷盒ID</param>
+        /// <param name="objId">所属对象ID</param>
+        /// <param name="type">对象类型</param>
+        private void LoadFileBoxTable(object pbId, object objId, ControlType type)
+        {
+            if(type == ControlType.Plan)
+            {
+                LoadFileBoxTableInstance(lsv_Special_Left, lsv_Special_Right, "special_", pbId, objId);
+                string GCID = GetValue(SQLiteHelper.ExecuteOnlyOneQuery($"SELECT pb_gc_id FROM files_box_info WHERE pb_id='{pbId}'"));
+                txt_Special_GCID.Text = GCID;
+            }
+
+        }
+
+        /// <summary>
+        /// 加载案卷盒归档表
+        /// </summary>
+        /// <param name="leftView">待归档列表</param>
+        /// <param name="rightView">已归档列表</param>
+        /// <param name="key">关键字</param>
+        /// <param name="pbId">盒ID</param>
+        /// <param name="objId">所属对象ID</param>
+        private void LoadFileBoxTableInstance(ListView leftView, ListView rightView, string key, object pbId, object objId)
+        {
+            leftView.Items.Clear();
+            leftView.Columns.Clear();
+            rightView.Items.Clear();
+            rightView.Columns.Clear();
+
+            leftView.Columns.AddRange(new ColumnHeader[]
+            {
+                    new ColumnHeader{ Name = $"{key}_file1_id", Text = "主键", Width = 0},
+                    new ColumnHeader{ Name = $"{key}_file1_type", Text = "文件类别", TextAlign = HorizontalAlignment.Center ,Width = 75},
+                    new ColumnHeader{ Name = $"{key}_file1_name", Text = "文件名称", Width = 250},
+                    new ColumnHeader{ Name = $"{key}_file1_date", Text = "形成日期", Width = 100}
+            });
+            rightView.Columns.AddRange(new ColumnHeader[]
+            {
+                    new ColumnHeader{ Name = $"{key}_file2_id", Text = "主键", Width = 0},
+                    new ColumnHeader{ Name = $"{key}_file2_type", Text = "文件类别", TextAlign = HorizontalAlignment.Center ,Width = 75},
+                    new ColumnHeader{ Name = $"{key}_file2_name", Text = "文件名称", Width = 250},
+                    new ColumnHeader{ Name = $"{key}_file2_date", Text = "形成日期", Width = 100}
+            });
+            //未归档
+            string querySql = $"SELECT fi_id, dd_name, fi_name, fi_create_date FROM files_info LEFT JOIN data_dictionary " +
+                $"ON fi_categor = dd_id WHERE fi_obj_id = '{objId}' AND fi_status = -1 ORDER BY fi_create_date";
+            DataTable dataTable = SQLiteHelper.ExecuteQuery(querySql);
+            for(int i = 0; i < dataTable.Rows.Count; i++)
+            {
+                ListViewItem item = leftView.Items.Add(GetValue(dataTable.Rows[i]["fi_id"]));
+                item.SubItems.AddRange(new ListViewItem.ListViewSubItem[]
+                {
+                        new ListViewItem.ListViewSubItem(){ Text = GetValue(dataTable.Rows[i]["dd_name"]) },
+                        new ListViewItem.ListViewSubItem(){ Text = GetValue(dataTable.Rows[i]["fi_name"]) },
+                        new ListViewItem.ListViewSubItem(){ Text = GetDateValue(dataTable.Rows[i]["fi_create_date"], "yyyy-MM-dd") },
+                });
+            }
+            //已归档
+            object id = SQLiteHelper.ExecuteOnlyOneQuery($"SELECT pb_files_id FROM files_box_info WHERE pb_id = '{pbId}'");
+            if(id != null)
+            {
+                querySql = $"SELECT fi_id, dd_name, fi_name, fi_create_date FROM files_info LEFT JOIN data_dictionary ON fi_categor=dd_id WHERE fi_id IN(";
+                string[] ids = GetValue(id).Split(',');
+                for(int i = 0; i < ids.Length; i++)
+                {
+                    querySql += "'" + ids[i] + "'" + (i == ids.Length - 1 ? ")" : ",");
+                }
+                DataTable _dataTable = SQLiteHelper.ExecuteQuery(querySql);
+                for(int i = 0; i < _dataTable.Rows.Count; i++)
+                {
+                    ListViewItem item = rightView.Items.Add(GetValue(_dataTable.Rows[i]["fi_id"]));
+                    item.SubItems.AddRange(new ListViewItem.ListViewSubItem[]
+                    {
+                        new ListViewItem.ListViewSubItem(){ Text = GetValue(_dataTable.Rows[i]["dd_name"]) },
+                        new ListViewItem.ListViewSubItem(){ Text = GetValue(_dataTable.Rows[i]["fi_name"]) },
+                        new ListViewItem.ListViewSubItem(){ Text = GetDateValue(_dataTable.Rows[i]["fi_create_date"], "yyyy-MM-dd") },
+                    });
+                }
+            }
+        }
+
+        /// <summary>
+        /// 计划 - 加载案卷盒列表
+        /// </summary>
+        /// <param name="objId">案卷盒所属对象ID</param>
+        /// <param name="type">对象类型</param>
+        private void LoadBoxList(object objId, ControlType type)
+        {
+            DataTable table = SQLiteHelper.ExecuteQuery($"SELECT pb_id, pb_box_number FROM files_box_info WHERE pb_obj_id='{objId}' ORDER BY pb_box_number ASC");
+            if(type == ControlType.Plan)
+            {
+                cbo_Special_BoxId.DataSource = table;
+                cbo_Special_BoxId.DisplayMember = "pb_box_number";
+                cbo_Special_BoxId.ValueMember = "pb_id";
+                if(table.Rows.Count > 0)
+                    cbo_Special_BoxId.SelectedIndex = 0;
             }
         }
 
@@ -786,6 +932,124 @@ namespace 数据采集档案管理系统___加工版
                         SQLiteHelper.ExecuteNonQuery(updateSql);
                     }
                 }
+            }
+        }
+
+        /// <summary>
+        /// 案卷盒归档移动
+        /// </summary>
+        private void btn_BoxMove_Click(object sender, EventArgs e)
+        {
+            string name = (sender as Control).Name;
+            if(name.Contains("Special"))
+            {
+                object objId = tab_Special_Info.Tag;
+                object boxId = cbo_Special_BoxId.SelectedValue;
+                if(objId != null)
+                {
+                    if(boxId != null)
+                    {
+                        if(name.Contains("RightMove"))
+                        {
+                            foreach(ListViewItem item in lsv_Special_Left.SelectedItems)
+                            {
+                                lsv_Special_Right.Items.Add((ListViewItem)item.Clone());
+                                item.Remove();
+                            }
+                        }
+                        else if(name.Contains("LeftMove"))
+                        {
+                            foreach(ListViewItem item in lsv_Special_Right.SelectedItems)
+                            {
+                                lsv_Special_Left.Items.Add((ListViewItem)item.Clone());
+                                item.Remove();
+                            }
+                        }
+                        else if(name.Contains("RightAllMove"))
+                        {
+                            foreach(ListViewItem item in lsv_Special_Left.Items)
+                            {
+                                lsv_Special_Right.Items.Add((ListViewItem)item.Clone());
+                                item.Remove();
+                            }
+                        }
+                        else if(name.Contains("LeftAllMove"))
+                        {
+                            foreach(ListViewItem item in lsv_Special_Right.Items)
+                            {
+                                lsv_Special_Left.Items.Add((ListViewItem)item.Clone());
+                                item.Remove();
+                            }
+                        }
+                    }
+                    else
+                        MessageBox.Show("请先添加案卷盒！", "操作失败", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+            }
+        }
+
+        /// <summary>
+        /// 添加/删除案卷盒
+        /// </summary>
+        private void lnk_BoxId_Edit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string name = (sender as Control).Name;
+            if(name.Contains("Special"))
+            {
+                object objId = tab_Special_Info.Tag;
+                if(objId != null)
+                {
+                    if(name.Contains("Add"))
+                    {
+                        int amount = Convert.ToInt32(SQLiteHelper.ExecuteOnlyOneQuery($"SELECT COUNT(pb_box_number) FROM files_box_info WHERE pb_obj_id='{objId}'"));
+                        string gch = txt_Special_GCID.Text;
+                        string unitCode = string.Empty;
+                        string insertSql = $"INSERT INTO files_box_info VALUES('{Guid.NewGuid().ToString()}','{amount + 1}','{gch}',null,'{objId}','{unitCode}')";
+                        SQLiteHelper.ExecuteNonQuery(insertSql);
+                        MessageBox.Show("添加案卷盒成功。");
+                    }
+                    else if(name.Contains("Delete"))
+                    {
+                        object boxId = cbo_Special_BoxId.SelectedValue;
+                        if(boxId != null)
+                        {
+                            object _temp = SQLiteHelper.ExecuteOnlyOneQuery($"SELECT MAX(pb_box_number) FROM files_box_info WHERE pb_obj_id='{objId}'");
+                            if(_temp != null)
+                            {
+                                int currentBoxId = Convert.ToInt32(SQLiteHelper.ExecuteOnlyOneQuery($"SELECT pb_box_number FROM files_box_info WHERE pb_id='{boxId}'"));
+                                if(Convert.ToInt32(_temp) > currentBoxId)
+                                    MessageBox.Show("请先删除较大盒号。", "删除失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                else if(MessageBox.Show("删除当前案卷盒会清空盒下已归档的文件，是否继续？", "删除确认", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                                {
+                                    //将当前盒中文件状态致为未归档
+                                    object ids = SQLiteHelper.ExecuteOnlyOneQuery($"SELECT pb_files_id FROM files_box_info WHERE pb_obj_id='{objId}' AND pb_id='{boxId}'");
+                                    string[] _ids = ids.ToString().Split(',');
+                                    StringBuilder sb = new StringBuilder($"UPDATE files_info SET fi_status = -1 WHERE fi_id IN(");
+                                    for(int i = 0; i < _ids.Length; i++)
+                                        sb.Append($"'{_ids[i]}'{(_ids.Length - 1 != i ? "," : ")")}");
+                                    SQLiteHelper.ExecuteNonQuery(sb.ToString());
+
+                                    //删除当前盒信息
+                                    SQLiteHelper.ExecuteNonQuery($"DELETE FROM processing_box WHERE pb_id='{boxId}'");
+
+                                    MessageBox.Show("删除案卷盒成功。");
+                                }
+                            }
+                        }
+                    }
+                    LoadBoxList(objId, ControlType.Plan);
+                    LoadFileBoxTable(cbo_Special_BoxId.SelectedValue, objId, ControlType.Plan);
+                }
+            }
+        }
+
+        private void cbo_BoxId_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            ComboBox comboBox = sender as ComboBox;
+            if("cbo_Special_BoxId".Equals(comboBox.Name))
+            {
+                object pbId = comboBox.SelectedValue;
+                LoadFileBoxTable(pbId, tab_Special_Info.Tag, ControlType.Plan);
             }
         }
     }
