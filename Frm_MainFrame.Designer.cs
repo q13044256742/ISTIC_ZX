@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("重大专项");
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pic_Add = new System.Windows.Forms.PictureBox();
@@ -51,7 +54,7 @@
             this.pic_Manager = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Edit = new System.Windows.Forms.Button();
             this.btn_Query = new System.Windows.Forms.Button();
             this.txt_Query_Name = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -60,9 +63,18 @@
             this.btn_Delete = new System.Windows.Forms.Button();
             this.lbl_TotalAmount = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btn_SH = new System.Windows.Forms.Button();
-            this.tv_DataTree = new System.Windows.Forms.TreeView();
             this.dgv_DataList = new System.Windows.Forms.DataGridView();
+            this.tv_DataTree = new System.Windows.Forms.TreeView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.user = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.files = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eles = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.control = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btn_Refresh = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Add)).BeginInit();
             this.panel2.SuspendLayout();
@@ -192,9 +204,9 @@
             this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.panel3);
-            this.groupBox1.Location = new System.Drawing.Point(4, -5);
+            this.groupBox1.Location = new System.Drawing.Point(1, -6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1006, 96);
+            this.groupBox1.Size = new System.Drawing.Size(1378, 96);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
@@ -307,7 +319,8 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.btn_Refresh);
+            this.groupBox2.Controls.Add(this.btn_Edit);
             this.groupBox2.Controls.Add(this.btn_Query);
             this.groupBox2.Controls.Add(this.txt_Query_Name);
             this.groupBox2.Controls.Add(this.label6);
@@ -317,26 +330,26 @@
             this.groupBox2.Controls.Add(this.lbl_TotalAmount);
             this.groupBox2.Location = new System.Drawing.Point(4, 83);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1006, 70);
+            this.groupBox2.Size = new System.Drawing.Size(1372, 70);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             // 
-            // button1
+            // btn_Edit
             // 
-            this.button1.Location = new System.Drawing.Point(208, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 29);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "编辑(&D)";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.pic_Update);
+            this.btn_Edit.Location = new System.Drawing.Point(208, 22);
+            this.btn_Edit.Name = "btn_Edit";
+            this.btn_Edit.Size = new System.Drawing.Size(75, 29);
+            this.btn_Edit.TabIndex = 7;
+            this.btn_Edit.Text = "编辑(&D)";
+            this.btn_Edit.UseVisualStyleBackColor = true;
+            this.btn_Edit.Click += new System.EventHandler(this.Btn_Edit_Click);
             // 
             // btn_Query
             // 
             this.btn_Query.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Query.Location = new System.Drawing.Point(714, 23);
             this.btn_Query.Name = "btn_Query";
-            this.btn_Query.Size = new System.Drawing.Size(75, 28);
+            this.btn_Query.Size = new System.Drawing.Size(75, 29);
             this.btn_Query.TabIndex = 6;
             this.btn_Query.Text = "查询(&Q)";
             this.btn_Query.UseVisualStyleBackColor = true;
@@ -398,78 +411,155 @@
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.btn_SH);
-            this.groupBox3.Controls.Add(this.tv_DataTree);
             this.groupBox3.Controls.Add(this.dgv_DataList);
+            this.groupBox3.Controls.Add(this.tv_DataTree);
             this.groupBox3.Location = new System.Drawing.Point(4, 136);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1006, 346);
+            this.groupBox3.Size = new System.Drawing.Size(1372, 626);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             // 
-            // btn_SH
+            // dgv_DataList
             // 
-            this.btn_SH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_SH.Location = new System.Drawing.Point(198, 16);
-            this.btn_SH.Name = "btn_SH";
-            this.btn_SH.Size = new System.Drawing.Size(11, 327);
-            this.btn_SH.TabIndex = 2;
-            this.btn_SH.Text = "<";
-            this.btn_SH.UseVisualStyleBackColor = true;
-            this.btn_SH.Click += new System.EventHandler(this.Btn_SH_Click);
+            this.dgv_DataList.AllowUserToAddRows = false;
+            this.dgv_DataList.AllowUserToDeleteRows = false;
+            this.dgv_DataList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_DataList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_DataList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgv_DataList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_DataList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.code,
+            this.name,
+            this.unit,
+            this.user,
+            this.phone,
+            this.files,
+            this.eles,
+            this.control});
+            this.dgv_DataList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_DataList.Location = new System.Drawing.Point(232, 17);
+            this.dgv_DataList.Name = "dgv_DataList";
+            this.dgv_DataList.ReadOnly = true;
+            this.dgv_DataList.RowTemplate.Height = 23;
+            this.dgv_DataList.Size = new System.Drawing.Size(1137, 606);
+            this.dgv_DataList.TabIndex = 0;
+            this.dgv_DataList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_DataList_CellContentClick);
             // 
             // tv_DataTree
             // 
-            this.tv_DataTree.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.tv_DataTree.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tv_DataTree.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tv_DataTree.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tv_DataTree.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tv_DataTree.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tv_DataTree.Location = new System.Drawing.Point(3, 17);
             this.tv_DataTree.Name = "tv_DataTree";
             treeNode2.Name = "863计划";
             treeNode2.Text = "重大专项";
             this.tv_DataTree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode2});
-            this.tv_DataTree.Size = new System.Drawing.Size(205, 326);
+            this.tv_DataTree.Size = new System.Drawing.Size(229, 606);
             this.tv_DataTree.TabIndex = 1;
+            this.tv_DataTree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.Tv_DataTree_AfterSelect);
+            this.tv_DataTree.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.Tv_DataTree_NodeMouseClick);
             // 
-            // dgv_DataList
+            // id
             // 
-            this.dgv_DataList.AllowUserToAddRows = false;
-            this.dgv_DataList.AllowUserToDeleteRows = false;
-            this.dgv_DataList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv_DataList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_DataList.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dgv_DataList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_DataList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_DataList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_DataList.Location = new System.Drawing.Point(208, 17);
-            this.dgv_DataList.Name = "dgv_DataList";
-            this.dgv_DataList.ReadOnly = true;
-            this.dgv_DataList.RowTemplate.Height = 23;
-            this.dgv_DataList.Size = new System.Drawing.Size(797, 329);
-            this.dgv_DataList.TabIndex = 0;
-            this.dgv_DataList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_DataList_CellContentClick);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.id.DefaultCellStyle = dataGridViewCellStyle6;
+            this.id.FillWeight = 20F;
+            this.id.HeaderText = "序号";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // code
+            // 
+            this.code.FillWeight = 80F;
+            this.code.HeaderText = "编号";
+            this.code.Name = "code";
+            this.code.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "名称";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // unit
+            // 
+            this.unit.FillWeight = 80F;
+            this.unit.HeaderText = "承担单位";
+            this.unit.Name = "unit";
+            this.unit.ReadOnly = true;
+            // 
+            // user
+            // 
+            this.user.FillWeight = 50F;
+            this.user.HeaderText = "负责人";
+            this.user.Name = "user";
+            this.user.ReadOnly = true;
+            // 
+            // phone
+            // 
+            this.phone.FillWeight = 50F;
+            this.phone.HeaderText = "手机";
+            this.phone.Name = "phone";
+            this.phone.ReadOnly = true;
+            // 
+            // files
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.files.DefaultCellStyle = dataGridViewCellStyle7;
+            this.files.FillWeight = 50F;
+            this.files.HeaderText = "文件数";
+            this.files.Name = "files";
+            this.files.ReadOnly = true;
+            // 
+            // eles
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.eles.DefaultCellStyle = dataGridViewCellStyle8;
+            this.eles.FillWeight = 50F;
+            this.eles.HeaderText = "电子文件数";
+            this.eles.Name = "eles";
+            this.eles.ReadOnly = true;
+            // 
+            // control
+            // 
+            this.control.FillWeight = 50F;
+            this.control.HeaderText = "操作";
+            this.control.Name = "control";
+            this.control.ReadOnly = true;
+            this.control.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.control.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.control.Text = "查看";
+            // 
+            // btn_Refresh
+            // 
+            this.btn_Refresh.Location = new System.Drawing.Point(1276, 28);
+            this.btn_Refresh.Name = "btn_Refresh";
+            this.btn_Refresh.Size = new System.Drawing.Size(75, 29);
+            this.btn_Refresh.TabIndex = 8;
+            this.btn_Refresh.Text = "刷新(&R)";
+            this.btn_Refresh.UseVisualStyleBackColor = true;
+            this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
             // 
             // Frm_MainFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1014, 483);
+            this.ClientSize = new System.Drawing.Size(1380, 763);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Frm_MainFrame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "著录加工系统-专项";
@@ -527,7 +617,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dgv_DataList;
         private System.Windows.Forms.TreeView tv_DataTree;
-        private System.Windows.Forms.Button btn_SH;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label7;
@@ -538,6 +627,16 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Edit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn code;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn user;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn files;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eles;
+        private System.Windows.Forms.DataGridViewButtonColumn control;
+        private System.Windows.Forms.Button btn_Refresh;
     }
 }
