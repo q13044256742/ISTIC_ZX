@@ -27,7 +27,7 @@ namespace 数据采集档案管理系统___加工版
         /// <summary>
         /// 子课题
         /// </summary>
-        Plan_Topic_Subtopic = 4,
+        Plan_Topic_Subject = 4,
     }
     /// <summary>
     /// 数据库字典帮助类
