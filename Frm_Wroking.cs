@@ -184,10 +184,12 @@ namespace 数据采集档案管理系统___加工版
                 if(index == 2)//项目
                 {
                     ShowTabPageByName("project", 1);
+                    project.Tag = dgv_Special_FileList.Tag;
                 }
                 else if(index == 3)//课题
                 {
                     ShowTabPageByName("topic", 1);
+                    topic.Tag = dgv_Special_FileList.Tag;
                 }
             }
         }
@@ -337,6 +339,150 @@ namespace 数据采集档案管理系统___加工版
                 else
                     MessageBox.Show("请先保存基础信息！", "保存失败", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
+            else if(name.Contains("Project"))
+            {
+                int index = tab_Project_Info.SelectedIndex;
+                string key = "dgv_Project_FL_";
+                object objId = tab_Project_Info.Tag;
+                if(index == 0)
+                {
+                    //保存基本信息
+                    if(objId == null)
+                    {
+                        objId = ModifyBasicInfo(ControlType.Plan_Project, objId, project.Tag);
+                        //保存文件信息
+                        int maxLength = dgv_Project_FileList.Rows.Count;
+                        for(int i = 0; i < maxLength; i++)
+                        {
+                            object fileName = dgv_Project_FileList.Rows[i].Cells[$"{key}name"].Value;
+                            if(fileName != null)
+                            {
+                                DataGridViewRow row = dgv_Project_FileList.Rows[i];
+                                object fileId = row.Cells[$"{key}id"].Tag;
+                                if(fileId == null)
+                                {
+                                    fileId = AddFileInfo(key, row, objId);
+                                    row.Cells[$"{key}id"].Value = row.Index + 1;
+                                    row.Cells[$"{key}id"].Tag = fileId;
+                                }
+                                else
+                                    UpdateFileInfo(key, row);
+                            }
+                        }
+                        MessageBox.Show("文件保存成功。");
+                    }
+                }
+                else if(index == 1)
+                {
+                    ModifyFileValid(dgv_Project_FileValid, objId, "dgv_Project_FV_");
+                    MessageBox.Show("文件核查信息保存成功！");
+                }
+                else if(index == 2)
+                {
+                    object aid = txt_Project_AJ_Code.Tag;
+                    string code = txt_Project_AJ_Code.Text;
+                    string _name = txt_Project_AJ_Name.Text;
+                    string term = txt_Project_AJ_Term.Text;
+                    string secret = txt_Project_AJ_Secret.Text;
+                    string user = txt_Project_AJ_User.Text;
+                    string unit = txt_Project_AJ_Unit.Text;
+                    if(aid == null)
+                    {
+                        aid = Guid.NewGuid().ToString();
+                        string insertSql = $"INSERT INTO files_tag_info VALUES ('{aid}','{code}','{_name}','{term}','{secret}','{user}','{unit}','{objId}')";
+                        SQLiteHelper.ExecuteNonQuery(insertSql);
+                        txt_Project_AJ_Code.Tag = aid;
+                    }
+                    else
+                    {
+                        string updateSql = $"UPDATE files_tag_info SET pt_code='{code}',pt_name='{_name}',pt_term='{term}',pt_secret='{secret}',pt_user='{user}',pt_unit='{unit}' WHERE pt_id='{aid}'";
+                        SQLiteHelper.ExecuteNonQuery(updateSql);
+                    }
+                    MessageBox.Show($"案卷信息保存成功！");
+                }
+                else if(index == 3)
+                {
+                    object boxId = cbo_Project_BoxId.SelectedValue;
+                    if(boxId != null)
+                    {
+                        //先将当前盒中所有文件置为未归档状态
+                        SQLiteHelper.ExecuteNonQuery($"UPDATE files_info SET fi_status=-1 WHERE fi_id IN(SELECT pb_obj_id FROM files_box_info WHERE pb_id='{boxId}')");
+
+                        string ids = string.Empty;
+                        foreach(ListViewItem item in lsv_Project_Right.Items)
+                            ids += "'" + item.SubItems[0].Text + "',";
+                        if(!string.IsNullOrEmpty(ids))
+                        {
+                            ids = ids.Substring(0, ids.Length - 1);
+                            SQLiteHelper.ExecuteNonQuery($"UPDATE files_info SET fi_status=1 WHERE fi_id IN({ids})");
+                            SQLiteHelper.ExecuteNonQuery($"UPDATE files_box_info SET pb_files_id='{ids.Replace("'", string.Empty)}' WHERE pb_id='{boxId}'");
+
+                            MessageBox.Show("保存案卷盒成功。");
+                            LoadFileBoxTable(boxId, objId, ControlType.Plan);
+                        }
+
+                    }
+                    else
+                        MessageBox.Show("请先添加案卷盒。");
+                }
+            }
+        }
+
+        /// <summary>
+        /// 保存或修改基本信息
+        /// </summary>
+        /// <param name="type">基本信息类型</param>
+        /// <param name="objId">主键</param>
+        /// <param name="parentId">父级主键</param>
+        private object ModifyBasicInfo(ControlType type, object objId, object parentId)
+        {
+            if(type == ControlType.Plan_Project)
+            {
+                object code = txt_Project_Code.Text;
+                object name = txt_Project_Name.Text;
+                object field = txt_Project_Field.Text;
+                object theme = txt_Project_Theme.Text;
+                object funds = txt_Project_Funds.Text;
+                object sdate = dtp_Project_StartDate.Value.ToString("s");
+                object fdate = dtp_Project_FinishDate.Value.ToString("s");
+                object year = txt_Project_Year.Text;
+                object unit = txt_Project_Unit.Text;
+                object province = txt_Project_Province.Text;
+                object uniter = txt_Project_Uniter.Text;
+                object proer = txt_Project_Proer.Text;
+                object coner = txt_Project_Connecter.Text;
+                object conphone = txt_Project_ConPhone.Text;
+                object intro = txt_Project_Intro.Text;
+                if(objId == null)
+                {
+                    objId = Guid.NewGuid().ToString();
+                    string insertSql = "INSERT INTO project_info (pi_id, pi_code, pi_name, pi_field, pi_theme, pi_funds, pi_startdate, pi_finishdate, pi_year, pi_unit, pi_province, pi_unit_user, pi_project_user, pi_contacts, pi_contacts_phone, pi_introduction, pi_obj_id) " +
+                        $"VALUES('{objId}', '{code}', '{name}', '{field}', '{theme}', '{funds}', '{sdate}', '{fdate}', '{year}', '{unit}', '{province}', '{uniter}', '{proer}', '{coner}', '{conphone}', '{intro}', '{parentId}')";
+                    SQLiteHelper.ExecuteNonQuery(insertSql);
+                }
+                else
+                {
+                    string updateSql = "UPDATE project_info SET " +
+                        $"pi_code = '{code}', " +
+                        $"pi_name = '{name}', " +
+                        $"pi_field = '{field}', " +
+                        $"pi_theme = '{theme}', " +
+                        $"pi_funds = '{funds}', " +
+                        $"pi_startdate = '{sdate}', " +
+                        $"pi_finishdate = '{fdate}', " +
+                        $"pi_year = '{year}', " +
+                        $"pi_unit = '{unit}', " +
+                        $"pi_province = '{province}', " +
+                        $"pi_unit_user = '{uniter}', " +
+                        $"pi_project_user = '{proer}', " +
+                        $"pi_contacts = '{coner}', " +
+                        $"pi_contacts_phone = '{conphone}', " +
+                        $"pi_introduction = '{intro}' " +
+                        $"WHERE pi_id='{objId}'";
+                    SQLiteHelper.ExecuteNonQuery(updateSql);
+                }
+            }
+            return objId;
         }
 
         /// <summary>
@@ -708,6 +854,11 @@ namespace 数据采集档案管理系统___加工版
                 Frm_AddFile frm = new Frm_AddFile(dgv_Special_FileList, "dgv_Special_FL_");
                 frm.ShowDialog();
             }
+            else if(name.Contains("Project"))
+            {
+                Frm_AddFile frm = new Frm_AddFile(dgv_Project_FileList, "dgv_Project_FL_");
+                frm.ShowDialog();
+            }
         }
 
         private void Tab_Info_SelectedIndexChanged(object sender, EventArgs e)
@@ -751,6 +902,44 @@ namespace 数据采集档案管理系统___加工版
                     }
                 }
             }
+            else if(name.Contains("Project"))
+            {
+                int index = tab_Project_Info.SelectedIndex;
+                object objid = tab_Project_Info.Tag;
+                if(objid != null)
+                {
+                    if(index == 1)
+                        LoadFileValidList(dgv_Project_FileValid, objid, "dgv_Project_FV_");
+                    else if(index == 2)
+                    {
+                        DataTable dataTable = SQLiteHelper.ExecuteQuery($"SELECT * FROM files_tag_info WHERE pt_obj_id='{objid}'");
+                        if(dataTable.Rows.Count > 0)
+                        {
+                            DataRow row = dataTable.Rows[0];
+                            txt_Project_AJ_Code.Tag = GetValue(row["pt_id"]);
+                            txt_Project_AJ_Code.Text = GetValue(row["pt_code"]);
+                            txt_Project_AJ_Name.Text = GetValue(row["pt_name"]);
+                            txt_Project_AJ_Term.Text = GetValue(row["pt_term"]);
+                            txt_Project_AJ_Secret.Text = GetValue(row["pt_secret"]);
+                            txt_Project_AJ_User.Text = GetValue(row["pt_user"]);
+                            txt_Project_AJ_Unit.Text = GetValue(row["pt_unit"]);
+                        }
+                        else
+                        {
+                            //txt_Project_AJ_Code.Text = $"{planCode}-{DateTime.Now.Year}-{GetAJAmount(planCode)}";
+                            //txt_Project_AJ_Name.Text = lbl_JH_Name.Text;
+                            txt_Project_AJ_Secret.Text = GetMaxSecretById(objid);
+                            //txt_Project_AJ_User.Text = UserHelper.GetInstance().User.RealName;
+                            //txt_Project_AJ_Unit.Text = UserHelper.GetInstance().User.Company;
+                        }
+                    }
+                    else if(index == 3)
+                    {
+                        LoadBoxList(objid, ControlType.Plan_Project);
+                        LoadFileBoxTable(cbo_Project_BoxId.SelectedValue, objid, ControlType.Plan_Project);
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -767,7 +956,12 @@ namespace 数据采集档案管理系统___加工版
                 string GCID = GetValue(SQLiteHelper.ExecuteOnlyOneQuery($"SELECT pb_gc_id FROM files_box_info WHERE pb_id='{pbId}'"));
                 txt_Special_GCID.Text = GCID;
             }
-
+            else if(type == ControlType.Plan_Project)
+            {
+                LoadFileBoxTableInstance(lsv_Project_Left, lsv_Project_Right, "project_", pbId, objId);
+                string GCID = GetValue(SQLiteHelper.ExecuteOnlyOneQuery($"SELECT pb_gc_id FROM files_box_info WHERE pb_id='{pbId}'"));
+                txt_Project_GCID.Text = GCID;
+            }
         }
 
         /// <summary>
@@ -851,6 +1045,14 @@ namespace 数据采集档案管理系统___加工版
                 cbo_Special_BoxId.ValueMember = "pb_id";
                 if(table.Rows.Count > 0)
                     cbo_Special_BoxId.SelectedIndex = 0;
+            }
+            else if(type == ControlType.Plan_Project)
+            {
+                cbo_Project_BoxId.DataSource = table;
+                cbo_Project_BoxId.DisplayMember = "pb_box_number";
+                cbo_Project_BoxId.ValueMember = "pb_id";
+                if(table.Rows.Count > 0)
+                    cbo_Project_BoxId.SelectedIndex = 0;
             }
         }
 
@@ -980,6 +1182,109 @@ namespace 数据采集档案管理系统___加工版
                                 item.Remove();
                             }
                         }
+                        else if(name.Contains("Top"))
+                        {
+                            foreach(ListViewItem item in lsv_Special_Right.SelectedItems)
+                            {
+                                int index = item.Index;
+                                if(index > 0)
+                                {
+                                    lsv_Special_Right.Items.RemoveAt(index);
+                                    lsv_Special_Right.Items.Insert(index - 1, item);
+                                }
+                            }
+                        }
+                        else if(name.Contains("Bottom"))
+                        {
+                            int size = lsv_Special_Right.Items.Count - 1;
+                            for(int i = size; i >= 0; i--)
+                            {
+                                ListViewItem item = lsv_Special_Right.Items[i];
+                                if(item.Selected)
+                                {
+                                    int index = item.Index;
+                                    if(index < size)
+                                    {
+                                        lsv_Special_Right.Items.RemoveAt(index);
+                                        lsv_Special_Right.Items.Insert(index + 1, item);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    else
+                        MessageBox.Show("请先添加案卷盒！", "操作失败", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+            }
+            else if(name.Contains("Project"))
+            {
+                object objId = tab_Project_Info.Tag;
+                object boxId = cbo_Project_BoxId.SelectedValue;
+                if(objId != null)
+                {
+                    if(boxId != null)
+                    {
+                        if(name.Contains("RightMove"))
+                        {
+                            foreach(ListViewItem item in lsv_Project_Left.SelectedItems)
+                            {
+                                lsv_Project_Right.Items.Add((ListViewItem)item.Clone());
+                                item.Remove();
+                            }
+                        }
+                        else if(name.Contains("LeftMove"))
+                        {
+                            foreach(ListViewItem item in lsv_Project_Right.SelectedItems)
+                            {
+                                lsv_Project_Left.Items.Add((ListViewItem)item.Clone());
+                                item.Remove();
+                            }
+                        }
+                        else if(name.Contains("RightAllMove"))
+                        {
+                            foreach(ListViewItem item in lsv_Project_Left.Items)
+                            {
+                                lsv_Project_Right.Items.Add((ListViewItem)item.Clone());
+                                item.Remove();
+                            }
+                        }
+                        else if(name.Contains("LeftAllMove"))
+                        {
+                            foreach(ListViewItem item in lsv_Project_Right.Items)
+                            {
+                                lsv_Project_Left.Items.Add((ListViewItem)item.Clone());
+                                item.Remove();
+                            }
+                        }
+                        else if(name.Contains("Top"))
+                        {
+                            foreach(ListViewItem item in lsv_Project_Right.SelectedItems)
+                            {
+                                int index = item.Index;
+                                if(index > 0)
+                                {
+                                    lsv_Project_Right.Items.RemoveAt(index);
+                                    lsv_Project_Right.Items.Insert(index - 1, item);
+                                }
+                            }
+                        }
+                        else if(name.Contains("Bottom"))
+                        {
+                            int size = lsv_Project_Right.Items.Count - 1;
+                            for(int i = size; i >= 0; i--)
+                            {
+                                ListViewItem item = lsv_Project_Right.Items[i];
+                                if(item.Selected)
+                                {
+                                    int index = item.Index;
+                                    if(index < size)
+                                    {
+                                        lsv_Project_Right.Items.RemoveAt(index);
+                                        lsv_Project_Right.Items.Insert(index + 1, item);
+                                    }
+                                }
+                            }
+                        }
                     }
                     else
                         MessageBox.Show("请先添加案卷盒！", "操作失败", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -990,7 +1295,7 @@ namespace 数据采集档案管理系统___加工版
         /// <summary>
         /// 添加/删除案卷盒
         /// </summary>
-        private void lnk_BoxId_Edit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void Lnk_BoxId_Edit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             string name = (sender as Control).Name;
             if(name.Contains("Special"))
@@ -1040,15 +1345,66 @@ namespace 数据采集档案管理系统___加工版
                     LoadFileBoxTable(cbo_Special_BoxId.SelectedValue, objId, ControlType.Plan);
                 }
             }
+            else if(name.Contains("Project"))
+            {
+                object objId = tab_Project_Info.Tag;
+                if(objId != null)
+                {
+                    if(name.Contains("Add"))
+                    {
+                        int amount = Convert.ToInt32(SQLiteHelper.ExecuteOnlyOneQuery($"SELECT COUNT(pb_box_number) FROM files_box_info WHERE pb_obj_id='{objId}'"));
+                        string gch = txt_Project_GCID.Text;
+                        string unitCode = string.Empty;
+                        string insertSql = $"INSERT INTO files_box_info VALUES('{Guid.NewGuid().ToString()}','{amount + 1}','{gch}',null,'{objId}','{unitCode}')";
+                        SQLiteHelper.ExecuteNonQuery(insertSql);
+                        MessageBox.Show("添加案卷盒成功。");
+                    }
+                    else if(name.Contains("Delete"))
+                    {
+                        object boxId = cbo_Project_BoxId.SelectedValue;
+                        if(boxId != null)
+                        {
+                            object _temp = SQLiteHelper.ExecuteOnlyOneQuery($"SELECT MAX(pb_box_number) FROM files_box_info WHERE pb_obj_id='{objId}'");
+                            if(_temp != null)
+                            {
+                                int currentBoxId = Convert.ToInt32(SQLiteHelper.ExecuteOnlyOneQuery($"SELECT pb_box_number FROM files_box_info WHERE pb_id='{boxId}'"));
+                                if(Convert.ToInt32(_temp) > currentBoxId)
+                                    MessageBox.Show("请先删除较大盒号。", "删除失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                else if(MessageBox.Show("删除当前案卷盒会清空盒下已归档的文件，是否继续？", "删除确认", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                                {
+                                    //将当前盒中文件状态致为未归档
+                                    object ids = SQLiteHelper.ExecuteOnlyOneQuery($"SELECT pb_files_id FROM files_box_info WHERE pb_obj_id='{objId}' AND pb_id='{boxId}'");
+                                    string[] _ids = ids.ToString().Split(',');
+                                    StringBuilder sb = new StringBuilder($"UPDATE files_info SET fi_status = -1 WHERE fi_id IN(");
+                                    for(int i = 0; i < _ids.Length; i++)
+                                        sb.Append($"'{_ids[i]}'{(_ids.Length - 1 != i ? "," : ")")}");
+                                    SQLiteHelper.ExecuteNonQuery(sb.ToString());
+
+                                    //删除当前盒信息
+                                    SQLiteHelper.ExecuteNonQuery($"DELETE FROM processing_box WHERE pb_id='{boxId}'");
+
+                                    MessageBox.Show("删除案卷盒成功。");
+                                }
+                            }
+                        }
+                    }
+                    LoadBoxList(objId, ControlType.Plan_Project);
+                    LoadFileBoxTable(cbo_Project_BoxId.SelectedValue, objId, ControlType.Plan_Project);
+                }
+            }
         }
 
-        private void cbo_BoxId_SelectionChangeCommitted(object sender, EventArgs e)
+        private void Cbo_BoxId_SelectionChangeCommitted(object sender, EventArgs e)
         {
             ComboBox comboBox = sender as ComboBox;
             if("cbo_Special_BoxId".Equals(comboBox.Name))
             {
                 object pbId = comboBox.SelectedValue;
                 LoadFileBoxTable(pbId, tab_Special_Info.Tag, ControlType.Plan);
+            }else if("cbo_Project_BoxId".Equals(comboBox.Name))
+            {
+                object pbId = comboBox.SelectedValue;
+                LoadFileBoxTable(pbId, tab_Project_Info.Tag, ControlType.Plan_Project);
             }
         }
     }

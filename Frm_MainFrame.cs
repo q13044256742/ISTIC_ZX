@@ -60,7 +60,7 @@ namespace 数据采集档案管理系统___加工版
         private void Pic_Add_Click(object sender, EventArgs e)
         {
             Frm_Wroking frm_Wroking = new Frm_Wroking("ADMIN13044256742");
-            frm_Wroking.ShowDialog();
+            frm_Wroking.Show();
         }
 
         private void Btn_Delete_Click(object sender, EventArgs e)
