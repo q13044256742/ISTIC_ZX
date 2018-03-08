@@ -482,10 +482,10 @@
             this.tab_Special_Info.Controls.Add(this.tab_Special_AJ);
             this.tab_Special_Info.Controls.Add(this.tab_Special_Box);
             this.tab_Special_Info.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tab_Special_Info.Location = new System.Drawing.Point(3, 211);
+            this.tab_Special_Info.Location = new System.Drawing.Point(3, 241);
             this.tab_Special_Info.Name = "tab_Special_Info";
             this.tab_Special_Info.SelectedIndex = 0;
-            this.tab_Special_Info.Size = new System.Drawing.Size(1050, 321);
+            this.tab_Special_Info.Size = new System.Drawing.Size(1050, 291);
             this.tab_Special_Info.TabIndex = 8;
             this.tab_Special_Info.SelectedIndexChanged += new System.EventHandler(this.Tab_Info_SelectedIndexChanged);
             // 
@@ -496,7 +496,7 @@
             this.tab_Special_File.Location = new System.Drawing.Point(4, 26);
             this.tab_Special_File.Name = "tab_Special_File";
             this.tab_Special_File.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Special_File.Size = new System.Drawing.Size(1042, 291);
+            this.tab_Special_File.Size = new System.Drawing.Size(1042, 261);
             this.tab_Special_File.TabIndex = 0;
             this.tab_Special_File.Text = "文件列表";
             this.tab_Special_File.UseVisualStyleBackColor = true;
@@ -540,7 +540,7 @@
             this.dgv_Special_FileList.Location = new System.Drawing.Point(3, 3);
             this.dgv_Special_FileList.Name = "dgv_Special_FileList";
             this.dgv_Special_FileList.RowTemplate.Height = 23;
-            this.dgv_Special_FileList.Size = new System.Drawing.Size(1036, 285);
+            this.dgv_Special_FileList.Size = new System.Drawing.Size(1036, 255);
             this.dgv_Special_FileList.TabIndex = 0;
             this.dgv_Special_FileList.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.Dgv_DataError);
             this.dgv_Special_FileList.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.Dgv_File_EditingControlShowing);
@@ -1137,10 +1137,10 @@
             this.tab_Project_Info.Controls.Add(this.tab_Project_AJ);
             this.tab_Project_Info.Controls.Add(this.tab_Project_Box);
             this.tab_Project_Info.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tab_Project_Info.Location = new System.Drawing.Point(0, 209);
+            this.tab_Project_Info.Location = new System.Drawing.Point(0, 239);
             this.tab_Project_Info.Name = "tab_Project_Info";
             this.tab_Project_Info.SelectedIndex = 0;
-            this.tab_Project_Info.Size = new System.Drawing.Size(1056, 322);
+            this.tab_Project_Info.Size = new System.Drawing.Size(1056, 292);
             this.tab_Project_Info.TabIndex = 116;
             this.tab_Project_Info.SelectedIndexChanged += new System.EventHandler(this.Tab_Info_SelectedIndexChanged);
             // 
@@ -1151,7 +1151,7 @@
             this.tab_Project_File.Location = new System.Drawing.Point(4, 26);
             this.tab_Project_File.Name = "tab_Project_File";
             this.tab_Project_File.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Project_File.Size = new System.Drawing.Size(1048, 292);
+            this.tab_Project_File.Size = new System.Drawing.Size(1048, 262);
             this.tab_Project_File.TabIndex = 0;
             this.tab_Project_File.Text = "文件列表";
             this.tab_Project_File.UseVisualStyleBackColor = true;
@@ -1195,7 +1195,7 @@
             this.dgv_Project_FileList.Location = new System.Drawing.Point(3, 3);
             this.dgv_Project_FileList.Name = "dgv_Project_FileList";
             this.dgv_Project_FileList.RowTemplate.Height = 23;
-            this.dgv_Project_FileList.Size = new System.Drawing.Size(1042, 286);
+            this.dgv_Project_FileList.Size = new System.Drawing.Size(1042, 256);
             this.dgv_Project_FileList.TabIndex = 0;
             // 
             // tab_Project_FileValid
@@ -2060,10 +2060,10 @@
             this.tab_Topic_Info.Controls.Add(this.tab_Topic_AJ);
             this.tab_Topic_Info.Controls.Add(this.tab_Topic_Box);
             this.tab_Topic_Info.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tab_Topic_Info.Location = new System.Drawing.Point(0, 209);
+            this.tab_Topic_Info.Location = new System.Drawing.Point(0, 239);
             this.tab_Topic_Info.Name = "tab_Topic_Info";
             this.tab_Topic_Info.SelectedIndex = 0;
-            this.tab_Topic_Info.Size = new System.Drawing.Size(1056, 322);
+            this.tab_Topic_Info.Size = new System.Drawing.Size(1056, 292);
             this.tab_Topic_Info.TabIndex = 74;
             this.tab_Topic_Info.SelectedIndexChanged += new System.EventHandler(this.Tab_Info_SelectedIndexChanged);
             // 
@@ -2074,7 +2074,7 @@
             this.tab_Topic_File.Location = new System.Drawing.Point(4, 26);
             this.tab_Topic_File.Name = "tab_Topic_File";
             this.tab_Topic_File.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Topic_File.Size = new System.Drawing.Size(1048, 292);
+            this.tab_Topic_File.Size = new System.Drawing.Size(1048, 262);
             this.tab_Topic_File.TabIndex = 0;
             this.tab_Topic_File.Text = "文件列表";
             this.tab_Topic_File.UseVisualStyleBackColor = true;
@@ -2118,7 +2118,7 @@
             this.dgv_Topic_FileList.Location = new System.Drawing.Point(3, 3);
             this.dgv_Topic_FileList.Name = "dgv_Topic_FileList";
             this.dgv_Topic_FileList.RowTemplate.Height = 23;
-            this.dgv_Topic_FileList.Size = new System.Drawing.Size(1042, 286);
+            this.dgv_Topic_FileList.Size = new System.Drawing.Size(1042, 256);
             this.dgv_Topic_FileList.TabIndex = 0;
             // 
             // tab_Topic_FileValid
@@ -2929,10 +2929,10 @@
             this.tab_Subject_Info.Controls.Add(this.tab_Subject_AJ);
             this.tab_Subject_Info.Controls.Add(this.tab_Subject_Box);
             this.tab_Subject_Info.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tab_Subject_Info.Location = new System.Drawing.Point(0, 210);
+            this.tab_Subject_Info.Location = new System.Drawing.Point(0, 241);
             this.tab_Subject_Info.Name = "tab_Subject_Info";
             this.tab_Subject_Info.SelectedIndex = 0;
-            this.tab_Subject_Info.Size = new System.Drawing.Size(1056, 321);
+            this.tab_Subject_Info.Size = new System.Drawing.Size(1056, 290);
             this.tab_Subject_Info.TabIndex = 74;
             this.tab_Subject_Info.SelectedIndexChanged += new System.EventHandler(this.Tab_Info_SelectedIndexChanged);
             // 
@@ -2943,7 +2943,7 @@
             this.tab_Subject_File.Location = new System.Drawing.Point(4, 26);
             this.tab_Subject_File.Name = "tab_Subject_File";
             this.tab_Subject_File.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Subject_File.Size = new System.Drawing.Size(1048, 291);
+            this.tab_Subject_File.Size = new System.Drawing.Size(1048, 260);
             this.tab_Subject_File.TabIndex = 0;
             this.tab_Subject_File.Text = "文件列表";
             this.tab_Subject_File.UseVisualStyleBackColor = true;
@@ -2987,7 +2987,7 @@
             this.dgv_Subject_FileList.Location = new System.Drawing.Point(3, 3);
             this.dgv_Subject_FileList.Name = "dgv_Subject_FileList";
             this.dgv_Subject_FileList.RowTemplate.Height = 23;
-            this.dgv_Subject_FileList.Size = new System.Drawing.Size(1042, 285);
+            this.dgv_Subject_FileList.Size = new System.Drawing.Size(1042, 254);
             this.dgv_Subject_FileList.TabIndex = 0;
             // 
             // tab_Subject_FileValid

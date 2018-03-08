@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Text;
 using System.Windows.Forms;
 using 数据采集档案管理系统___加工版.Tools;
-using MSWord = Microsoft.Office.Interop.Word;
 
 namespace 数据采集档案管理系统___加工版
 {
@@ -227,13 +225,16 @@ namespace 数据采集档案管理系统___加工版
             if (e.RowIndex != -1)
             {
                 //打开word
-                if (e.ColumnIndex == 8 && "synthesis".Equals(dgv_DataList.Columns[e.ColumnIndex].Name))
+                if ("control".Equals(dgv_DataList.Columns[e.ColumnIndex].Name))
                 {
-                    Object filename = "合成word示例.docx";
-                    Object filefullname = Application.StartupPath + "\\temp\\" + filename;
+                    if(MessageBox.Show("是否合成Word实例?", "确认提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        Object filename = "合成word示例.docx";
+                        Object filefullname = Application.StartupPath + "\\temp\\" + filename;
 
-                    string[] str = new string[] { dgv_DataList.Rows[e.RowIndex].Cells[1].Value.ToString() };
-                    MicrosoftWordHelper.WriteDocument(filefullname.ToString(), str);
+                        string[] str = new string[] { dgv_DataList.Rows[e.RowIndex].Cells[1].Value.ToString() };
+                        MicrosoftWordHelper.WriteDocument(filefullname.ToString(), str);
+                    }
                 }
               
             }
