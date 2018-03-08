@@ -302,20 +302,21 @@ namespace 数据采集档案管理系统___加工版
                 ControlType type = (ControlType)e.Node.Tag;
                 if(type == ControlType.Plan)
                 {
+                    int rowNumber = 1;
                     DataTable projectTable = SQLiteHelper.ExecuteQuery($"SELECT * FROM project_info WHERE pi_obj_id='{e.Node.Name}'");
                     for(int i = 0; i < projectTable.Rows.Count; i++)
                     {
                         int rid = dgv_DataList.Rows.Add();
                         dgv_DataList.Rows[rid].Tag = ControlType.Plan_Project;
                         dgv_DataList.Rows[rid].Cells["id"].Tag = projectTable.Rows[i]["pi_id"];
-                        dgv_DataList.Rows[rid].Cells["id"].Value = i + 1;
+                        dgv_DataList.Rows[rid].Cells["id"].Value = rowNumber++;
                         dgv_DataList.Rows[rid].Cells["code"].Value = projectTable.Rows[i]["pi_code"];
                         dgv_DataList.Rows[rid].Cells["name"].Value = projectTable.Rows[i]["pi_name"];
                         dgv_DataList.Rows[rid].Cells["unit"].Value = projectTable.Rows[i]["pi_unit"];
                         dgv_DataList.Rows[rid].Cells["user"].Value = projectTable.Rows[i]["pi_unit_user"];
                         dgv_DataList.Rows[rid].Cells["phone"].Value = projectTable.Rows[i]["pi_contacts_phone"];
-                        dgv_DataList.Rows[rid].Cells["files"].Value = 0;
-                        dgv_DataList.Rows[rid].Cells["eles"].Value = 0;
+                        dgv_DataList.Rows[rid].Cells["files"].Value = GetFileAmount(projectTable.Rows[i]["pi_id"], true);
+                        dgv_DataList.Rows[rid].Cells["eles"].Value = GetFileAmount(projectTable.Rows[i]["pi_id"], false);
                         dgv_DataList.Rows[rid].Cells["control"].Value = "查看";
                     }
                     DataTable topicTable = SQLiteHelper.ExecuteQuery($"SELECT * FROM topic_info WHERE ti_obj_id='{e.Node.Name}'");
@@ -324,33 +325,34 @@ namespace 数据采集档案管理系统___加工版
                         int rid = dgv_DataList.Rows.Add();
                         dgv_DataList.Rows[rid].Tag = ControlType.Plan_Topic;
                         dgv_DataList.Rows[rid].Cells["id"].Tag = topicTable.Rows[i]["ti_id"];
-                        dgv_DataList.Rows[rid].Cells["id"].Value = i + 1;
+                        dgv_DataList.Rows[rid].Cells["id"].Value = rowNumber++;
                         dgv_DataList.Rows[rid].Cells["code"].Value = topicTable.Rows[i]["ti_code"];
                         dgv_DataList.Rows[rid].Cells["name"].Value = topicTable.Rows[i]["ti_name"];
                         dgv_DataList.Rows[rid].Cells["unit"].Value = topicTable.Rows[i]["ti_unit"];
                         dgv_DataList.Rows[rid].Cells["user"].Value = topicTable.Rows[i]["ti_unit_user"];
                         dgv_DataList.Rows[rid].Cells["phone"].Value = topicTable.Rows[i]["ti_contacts_phone"];
-                        dgv_DataList.Rows[rid].Cells["files"].Value = 0;
-                        dgv_DataList.Rows[rid].Cells["eles"].Value = 0;
+                        dgv_DataList.Rows[rid].Cells["files"].Value = GetFileAmount(topicTable.Rows[i]["ti_id"], true);
+                        dgv_DataList.Rows[rid].Cells["eles"].Value = GetFileAmount(topicTable.Rows[i]["ti_id"], false);
                         dgv_DataList.Rows[rid].Cells["control"].Value = "查看";
                     }
                 }
                 else if(type == ControlType.Plan_Project)
                 {
                     DataTable subjectTable = SQLiteHelper.ExecuteQuery($"SELECT * FROM subject_info WHERE si_obj_id='{e.Node.Name}'");
+                    int rowNumber = 1;
                     for(int i = 0; i < subjectTable.Rows.Count; i++)
                     {
                         int rid = dgv_DataList.Rows.Add();
                         dgv_DataList.Rows[rid].Tag = ControlType.Plan_Topic_Subject;
                         dgv_DataList.Rows[rid].Cells["id"].Tag = subjectTable.Rows[i]["si_id"];
-                        dgv_DataList.Rows[rid].Cells["id"].Value = i + 1;
+                        dgv_DataList.Rows[rid].Cells["id"].Value = rowNumber++;
                         dgv_DataList.Rows[rid].Cells["code"].Value = subjectTable.Rows[i]["si_code"];
                         dgv_DataList.Rows[rid].Cells["name"].Value = subjectTable.Rows[i]["si_name"];
                         dgv_DataList.Rows[rid].Cells["unit"].Value = subjectTable.Rows[i]["si_unit"];
                         dgv_DataList.Rows[rid].Cells["user"].Value = subjectTable.Rows[i]["si_unit_user"];
                         dgv_DataList.Rows[rid].Cells["phone"].Value = subjectTable.Rows[i]["si_contacts_phone"];
-                        dgv_DataList.Rows[rid].Cells["files"].Value = 0;
-                        dgv_DataList.Rows[rid].Cells["eles"].Value = 0;
+                        dgv_DataList.Rows[rid].Cells["files"].Value = GetFileAmount(subjectTable.Rows[i]["si_id"], true);
+                        dgv_DataList.Rows[rid].Cells["eles"].Value = GetFileAmount(subjectTable.Rows[i]["si_id"], false);
                         dgv_DataList.Rows[rid].Cells["control"].Value = "查看";
                     }
                     DataTable topicTable = SQLiteHelper.ExecuteQuery($"SELECT * FROM topic_info WHERE ti_obj_id='{e.Node.Name}'");
@@ -359,14 +361,14 @@ namespace 数据采集档案管理系统___加工版
                         int rid = dgv_DataList.Rows.Add();
                         dgv_DataList.Rows[rid].Tag = ControlType.Plan_Topic;
                         dgv_DataList.Rows[rid].Cells["id"].Tag = topicTable.Rows[i]["ti_id"];
-                        dgv_DataList.Rows[rid].Cells["id"].Value = i + 1;
+                        dgv_DataList.Rows[rid].Cells["id"].Value = rowNumber++;
                         dgv_DataList.Rows[rid].Cells["code"].Value = topicTable.Rows[i]["ti_code"];
                         dgv_DataList.Rows[rid].Cells["name"].Value = topicTable.Rows[i]["ti_name"];
                         dgv_DataList.Rows[rid].Cells["unit"].Value = topicTable.Rows[i]["ti_unit"];
                         dgv_DataList.Rows[rid].Cells["user"].Value = topicTable.Rows[i]["ti_unit_user"];
                         dgv_DataList.Rows[rid].Cells["phone"].Value = topicTable.Rows[i]["ti_contacts_phone"];
-                        dgv_DataList.Rows[rid].Cells["files"].Value = 0;
-                        dgv_DataList.Rows[rid].Cells["eles"].Value = 0;
+                        dgv_DataList.Rows[rid].Cells["files"].Value = GetFileAmount(topicTable.Rows[i]["ti_id"], true);
+                        dgv_DataList.Rows[rid].Cells["eles"].Value = GetFileAmount(topicTable.Rows[i]["ti_id"], false);
                         dgv_DataList.Rows[rid].Cells["control"].Value = "查看";
                     }
                 }
@@ -384,12 +386,28 @@ namespace 数据采集档案管理系统___加工版
                         dgv_DataList.Rows[rid].Cells["unit"].Value = subjectTable.Rows[i]["si_unit"];
                         dgv_DataList.Rows[rid].Cells["user"].Value = subjectTable.Rows[i]["si_unit_user"];
                         dgv_DataList.Rows[rid].Cells["phone"].Value = subjectTable.Rows[i]["si_contacts_phone"];
-                        dgv_DataList.Rows[rid].Cells["files"].Value = 0;
-                        dgv_DataList.Rows[rid].Cells["eles"].Value = 0;
+                        dgv_DataList.Rows[rid].Cells["files"].Value = GetFileAmount(subjectTable.Rows[i]["si_id"], true);
+                        dgv_DataList.Rows[rid].Cells["eles"].Value = GetFileAmount(subjectTable.Rows[i]["si_id"], false);
                         dgv_DataList.Rows[rid].Cells["control"].Value = "查看";
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// 获取对象的文件数（纸本和电子）
+        /// </summary>
+        /// <param name="objid">对象主键</param>
+        /// <param name="isPaper">是否纸本</param>
+        /// <returns>文件数量</returns>
+        private object GetFileAmount(object objid, bool isPaper)
+        {
+            string querySql = $"SELECT COUNT(*) FROM files_info fi LEFT JOIN data_dictionary dd ON fi.fi_carrier = dd.dd_id WHERE fi.fi_obj_id='{objid}' ";
+            if(isPaper)
+                querySql += "AND (dd_code = 'ZT_ZZ' OR dd_code = 'ZT_ALL')";
+            else
+                querySql += "AND (dd_code = 'ZT_DZ' OR dd_code = 'ZT_ALL')";
+            return SQLiteHelper.ExecuteOnlyOneQuery(querySql); ;
         }
 
         private void btn_Refresh_Click(object sender, EventArgs e)
