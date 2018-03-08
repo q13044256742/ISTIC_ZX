@@ -111,15 +111,15 @@ namespace 数据采集档案管理系统___加工版
 
         private void Frm_MainFrame_Shown(object sender, EventArgs e)
         {
-            //Frm_IdentityChoose frm_Identity = new Frm_IdentityChoose();
-            //if(frm_Identity.ShowDialog() == DialogResult.OK)
-            //{
-            //    object obj = frm_Identity.Identity;
-            //    tv_DataTree.Nodes[0].Nodes.Add(GetValue(obj));
-            //    tv_DataTree.ExpandAll();
-            //}
+            Frm_IdentityChoose frm_Identity = new Frm_IdentityChoose();
+            if(frm_Identity.ShowDialog() == DialogResult.OK)
+            {
+                object obj = frm_Identity.Identity;
+                tv_DataTree.Nodes[0].Nodes.Add(GetValue(obj));
+                tv_DataTree.ExpandAll();
+            }
 
-            //new Frm_Explain().ShowDialog();
+            new Frm_Explain().ShowDialog();
             string SpecialId = "ADMIN13044256742";
             LoadTreeList(SpecialId);
             Tv_DataTree_AfterSelect(sender, new TreeViewEventArgs(tv_DataTree.Nodes[0].Nodes[0]));
