@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Drawing;
 using System.Windows.Forms;
 using 数据采集档案管理系统___加工版.Properties;
 
@@ -39,6 +38,9 @@ namespace 数据采集档案管理系统___加工版
              
             });
             CreateKyoPanel.SetPanel(pal_LeftMenu, list, LeftMenu_Click);
+
+            //默认打开用户管理
+            new Frm_UserManager { MdiParent = this }.Show();
         }
 
         private void LeftMenu_Click(object sender, System.EventArgs e)
@@ -56,7 +58,7 @@ namespace 数据采集档案管理系统___加工版
                     if(item is Frm_UserManager)
                     {
                         item.Activate();
-                        item.WindowState = FormWindowState.Normal;
+                        item.WindowState = FormWindowState.Maximized;
                         return;
                     }
                 new Frm_UserManager { MdiParent = this }.Show();
@@ -67,7 +69,7 @@ namespace 数据采集档案管理系统___加工版
                     if (item is Frm_UnitManage)
                     {
                         item.Activate();
-                        item.WindowState = FormWindowState.Normal;
+                        item.WindowState = FormWindowState.Maximized;
                         return;
                     }
                 new Frm_UnitManage { MdiParent = this }.Show();

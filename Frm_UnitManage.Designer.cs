@@ -385,9 +385,9 @@
             this.ClientSize = new System.Drawing.Size(831, 464);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
             this.Name = "Frm_UnitManage";
             this.Text = "单位信息管理";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tabControl1.ResumeLayout(false);
             this.tp_UnitList.ResumeLayout(false);
             this.panel5.ResumeLayout(false);

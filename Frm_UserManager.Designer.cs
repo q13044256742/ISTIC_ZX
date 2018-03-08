@@ -28,134 +28,411 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.tab_UseList = new System.Windows.Forms.TabControl();
             this.tp_UserList = new System.Windows.Forms.TabPage();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.seqid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_UserList = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_Search = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbo_Search_Type = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txt_Search_KeyWord = new System.Windows.Forms.TextBox();
+            this.tab_UserAdd = new System.Windows.Forms.TabPage();
+            this.btn_Reset = new System.Windows.Forms.Button();
+            this.btn_Save = new System.Windows.Forms.Button();
+            this.txt_Remark = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txt_Phone = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txt_Email = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txt_RealName = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txt_Department = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txt_Unit = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txt_PassWordAagin = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txt_PassWord = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt_UserName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.errorTip = new System.Windows.Forms.ErrorProvider(this.components);
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.realname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loginname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbo_UserList_SearchType = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.tp_UserEdit = new System.Windows.Forms.TabPage();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
+            this.btn_Refresh = new System.Windows.Forms.Button();
+            this.tab_UseList.SuspendLayout();
             this.tp_UserList.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_UserList)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.tp_UserEdit.SuspendLayout();
+            this.tab_UserAdd.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorTip)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tab_UseList
             // 
-            this.tabControl1.Controls.Add(this.tp_UserList);
-            this.tabControl1.Controls.Add(this.tp_UserEdit);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Font = new System.Drawing.Font("微软雅黑", 13F);
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(831, 464);
-            this.tabControl1.TabIndex = 1;
+            this.tab_UseList.Controls.Add(this.tp_UserList);
+            this.tab_UseList.Controls.Add(this.tab_UserAdd);
+            this.tab_UseList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tab_UseList.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tab_UseList.Location = new System.Drawing.Point(0, 0);
+            this.tab_UseList.Name = "tab_UseList";
+            this.tab_UseList.SelectedIndex = 0;
+            this.tab_UseList.Size = new System.Drawing.Size(856, 518);
+            this.tab_UseList.TabIndex = 1;
             // 
             // tp_UserList
             // 
-            this.tp_UserList.Controls.Add(this.panel5);
-            this.tp_UserList.Controls.Add(this.panel2);
-            this.tp_UserList.Location = new System.Drawing.Point(4, 32);
+            this.tp_UserList.Controls.Add(this.dgv_UserList);
+            this.tp_UserList.Controls.Add(this.groupBox1);
+            this.tp_UserList.Location = new System.Drawing.Point(4, 29);
             this.tp_UserList.Name = "tp_UserList";
             this.tp_UserList.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_UserList.Size = new System.Drawing.Size(823, 428);
+            this.tp_UserList.Size = new System.Drawing.Size(848, 485);
             this.tp_UserList.TabIndex = 0;
             this.tp_UserList.Text = "用户列表";
             this.tp_UserList.UseVisualStyleBackColor = true;
             // 
-            // panel5
+            // dgv_UserList
             // 
-            this.panel5.Controls.Add(this.groupBox2);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(3, 74);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(817, 351);
-            this.panel5.TabIndex = 1;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox2.Location = new System.Drawing.Point(0, 0);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(817, 351);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.seqid,
+            this.dgv_UserList.AllowUserToAddRows = false;
+            this.dgv_UserList.AllowUserToDeleteRows = false;
+            this.dgv_UserList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_UserList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_UserList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_UserList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
             this.realname,
-            this.loginname,
+            this.username,
             this.phone,
             this.unit});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 25);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(811, 323);
-            this.dataGridView1.TabIndex = 0;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_UserList.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_UserList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_UserList.Location = new System.Drawing.Point(3, 64);
+            this.dgv_UserList.Name = "dgv_UserList";
+            this.dgv_UserList.ReadOnly = true;
+            this.dgv_UserList.RowTemplate.Height = 23;
+            this.dgv_UserList.Size = new System.Drawing.Size(842, 418);
+            this.dgv_UserList.TabIndex = 0;
             // 
-            // seqid
+            // groupBox1
             // 
-            this.seqid.FillWeight = 80F;
-            this.seqid.HeaderText = "序号";
-            this.seqid.Name = "seqid";
-            this.seqid.ReadOnly = true;
+            this.groupBox1.Controls.Add(this.btn_Refresh);
+            this.groupBox1.Controls.Add(this.btn_Search);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.cbo_Search_Type);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txt_Search_KeyWord);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(842, 61);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "快速查询";
+            // 
+            // btn_Search
+            // 
+            this.btn_Search.AutoSize = true;
+            this.btn_Search.Location = new System.Drawing.Point(402, 20);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(87, 31);
+            this.btn_Search.TabIndex = 9;
+            this.btn_Search.Text = "查询(&F)";
+            this.btn_Search.UseVisualStyleBackColor = true;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(25, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(23, 19);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "按";
+            // 
+            // cbo_Search_Type
+            // 
+            this.cbo_Search_Type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_Search_Type.FormattingEnabled = true;
+            this.cbo_Search_Type.Items.AddRange(new object[] {
+            "真实姓名",
+            "登录名",
+            "联系方式",
+            "所属单位"});
+            this.cbo_Search_Type.Location = new System.Drawing.Point(56, 21);
+            this.cbo_Search_Type.Name = "cbo_Search_Type";
+            this.cbo_Search_Type.Size = new System.Drawing.Size(97, 28);
+            this.cbo_Search_Type.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(159, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 19);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "检索";
+            // 
+            // txt_Search_KeyWord
+            // 
+            this.txt_Search_KeyWord.Location = new System.Drawing.Point(219, 22);
+            this.txt_Search_KeyWord.Name = "txt_Search_KeyWord";
+            this.txt_Search_KeyWord.Size = new System.Drawing.Size(163, 26);
+            this.txt_Search_KeyWord.TabIndex = 8;
+            // 
+            // tab_UserAdd
+            // 
+            this.tab_UserAdd.AutoScroll = true;
+            this.tab_UserAdd.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.tab_UserAdd.Controls.Add(this.btn_Reset);
+            this.tab_UserAdd.Controls.Add(this.btn_Save);
+            this.tab_UserAdd.Controls.Add(this.txt_Remark);
+            this.tab_UserAdd.Controls.Add(this.label9);
+            this.tab_UserAdd.Controls.Add(this.txt_Phone);
+            this.tab_UserAdd.Controls.Add(this.label10);
+            this.tab_UserAdd.Controls.Add(this.txt_Email);
+            this.tab_UserAdd.Controls.Add(this.label11);
+            this.tab_UserAdd.Controls.Add(this.txt_RealName);
+            this.tab_UserAdd.Controls.Add(this.label8);
+            this.tab_UserAdd.Controls.Add(this.txt_Department);
+            this.tab_UserAdd.Controls.Add(this.label7);
+            this.tab_UserAdd.Controls.Add(this.txt_Unit);
+            this.tab_UserAdd.Controls.Add(this.label6);
+            this.tab_UserAdd.Controls.Add(this.txt_PassWordAagin);
+            this.tab_UserAdd.Controls.Add(this.label5);
+            this.tab_UserAdd.Controls.Add(this.txt_PassWord);
+            this.tab_UserAdd.Controls.Add(this.label4);
+            this.tab_UserAdd.Controls.Add(this.txt_UserName);
+            this.tab_UserAdd.Controls.Add(this.label3);
+            this.tab_UserAdd.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tab_UserAdd.Location = new System.Drawing.Point(4, 29);
+            this.tab_UserAdd.Name = "tab_UserAdd";
+            this.tab_UserAdd.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_UserAdd.Size = new System.Drawing.Size(848, 485);
+            this.tab_UserAdd.TabIndex = 1;
+            this.tab_UserAdd.Text = "用户添加";
+            // 
+            // btn_Reset
+            // 
+            this.btn_Reset.Location = new System.Drawing.Point(291, 442);
+            this.btn_Reset.Name = "btn_Reset";
+            this.btn_Reset.Size = new System.Drawing.Size(94, 33);
+            this.btn_Reset.TabIndex = 19;
+            this.btn_Reset.Text = "重置(&R)";
+            this.btn_Reset.UseVisualStyleBackColor = true;
+            this.btn_Reset.Click += new System.EventHandler(this.btn_Reset_Click);
+            // 
+            // btn_Save
+            // 
+            this.btn_Save.Location = new System.Drawing.Point(415, 442);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(94, 33);
+            this.btn_Save.TabIndex = 18;
+            this.btn_Save.Text = "保存(&S)";
+            this.btn_Save.UseVisualStyleBackColor = true;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+            // 
+            // txt_Remark
+            // 
+            this.txt_Remark.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_Remark.Location = new System.Drawing.Point(247, 336);
+            this.txt_Remark.Multiline = true;
+            this.txt_Remark.Name = "txt_Remark";
+            this.txt_Remark.Size = new System.Drawing.Size(379, 84);
+            this.txt_Remark.TabIndex = 17;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label9.Location = new System.Drawing.Point(146, 339);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(37, 19);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "备注";
+            // 
+            // txt_Phone
+            // 
+            this.txt_Phone.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_Phone.Location = new System.Drawing.Point(247, 297);
+            this.txt_Phone.Name = "txt_Phone";
+            this.txt_Phone.Size = new System.Drawing.Size(200, 26);
+            this.txt_Phone.TabIndex = 15;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label10.Location = new System.Drawing.Point(118, 300);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 19);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "联系电话";
+            // 
+            // txt_Email
+            // 
+            this.txt_Email.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_Email.Location = new System.Drawing.Point(247, 258);
+            this.txt_Email.Name = "txt_Email";
+            this.txt_Email.Size = new System.Drawing.Size(334, 26);
+            this.txt_Email.TabIndex = 13;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label11.Location = new System.Drawing.Point(146, 261);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(37, 19);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "邮箱";
+            // 
+            // txt_RealName
+            // 
+            this.txt_RealName.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_RealName.Location = new System.Drawing.Point(247, 219);
+            this.txt_RealName.Name = "txt_RealName";
+            this.txt_RealName.Size = new System.Drawing.Size(269, 26);
+            this.txt_RealName.TabIndex = 11;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.Location = new System.Drawing.Point(118, 222);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(65, 19);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "真实姓名";
+            // 
+            // txt_Department
+            // 
+            this.txt_Department.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_Department.Location = new System.Drawing.Point(247, 180);
+            this.txt_Department.Name = "txt_Department";
+            this.txt_Department.Size = new System.Drawing.Size(379, 26);
+            this.txt_Department.TabIndex = 9;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.Location = new System.Drawing.Point(118, 183);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(65, 19);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "归属部门";
+            // 
+            // txt_Unit
+            // 
+            this.txt_Unit.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_Unit.Location = new System.Drawing.Point(247, 141);
+            this.txt_Unit.Name = "txt_Unit";
+            this.txt_Unit.Size = new System.Drawing.Size(379, 26);
+            this.txt_Unit.TabIndex = 7;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.Location = new System.Drawing.Point(118, 144);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 19);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "所属单位";
+            // 
+            // txt_PassWordAagin
+            // 
+            this.txt_PassWordAagin.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_PassWordAagin.Location = new System.Drawing.Point(247, 102);
+            this.txt_PassWordAagin.Name = "txt_PassWordAagin";
+            this.txt_PassWordAagin.PasswordChar = '*';
+            this.txt_PassWordAagin.Size = new System.Drawing.Size(269, 26);
+            this.txt_PassWordAagin.TabIndex = 5;
+            this.txt_PassWordAagin.Leave += new System.EventHandler(this.txt_PassWordAagin_Leave);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Location = new System.Drawing.Point(118, 105);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 19);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "确认密码";
+            // 
+            // txt_PassWord
+            // 
+            this.txt_PassWord.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_PassWord.Location = new System.Drawing.Point(247, 63);
+            this.txt_PassWord.Name = "txt_PassWord";
+            this.txt_PassWord.PasswordChar = '*';
+            this.txt_PassWord.Size = new System.Drawing.Size(269, 26);
+            this.txt_PassWord.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Location = new System.Drawing.Point(146, 66);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(37, 19);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "密码";
+            // 
+            // txt_UserName
+            // 
+            this.txt_UserName.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_UserName.Location = new System.Drawing.Point(247, 24);
+            this.txt_UserName.Name = "txt_UserName";
+            this.txt_UserName.Size = new System.Drawing.Size(379, 26);
+            this.txt_UserName.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(132, 27);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 19);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "登录名";
+            // 
+            // errorTip
+            // 
+            this.errorTip.ContainerControl = this;
+            // 
+            // id
+            // 
+            this.id.FillWeight = 50F;
+            this.id.HeaderText = "序号";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
             // 
             // realname
             // 
@@ -163,11 +440,11 @@
             this.realname.Name = "realname";
             this.realname.ReadOnly = true;
             // 
-            // loginname
+            // username
             // 
-            this.loginname.HeaderText = "登录名";
-            this.loginname.Name = "loginname";
-            this.loginname.ReadOnly = true;
+            this.username.HeaderText = "登录名";
+            this.username.Name = "username";
+            this.username.ReadOnly = true;
             // 
             // phone
             // 
@@ -182,350 +459,79 @@
             this.unit.Name = "unit";
             this.unit.ReadOnly = true;
             // 
-            // panel2
+            // btn_Refresh
             // 
-            this.panel2.Controls.Add(this.groupBox1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(817, 71);
-            this.panel2.TabIndex = 0;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.cbo_UserList_SearchType);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(817, 71);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "快速查询";
-            // 
-            // button1
-            // 
-            this.button1.AutoSize = true;
-            this.button1.Location = new System.Drawing.Point(402, 29);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 31);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "查询(&F)";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 21);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "按";
-            // 
-            // cbo_UserList_SearchType
-            // 
-            this.cbo_UserList_SearchType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbo_UserList_SearchType.FormattingEnabled = true;
-            this.cbo_UserList_SearchType.Items.AddRange(new object[] {
-            "真实姓名",
-            "登录名",
-            "联系方式",
-            "所属单位"});
-            this.cbo_UserList_SearchType.Location = new System.Drawing.Point(56, 31);
-            this.cbo_UserList_SearchType.Name = "cbo_UserList_SearchType";
-            this.cbo_UserList_SearchType.Size = new System.Drawing.Size(97, 29);
-            this.cbo_UserList_SearchType.TabIndex = 6;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(159, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 21);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "检索";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(219, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(163, 29);
-            this.textBox1.TabIndex = 8;
-            // 
-            // tp_UserEdit
-            // 
-            this.tp_UserEdit.AutoScroll = true;
-            this.tp_UserEdit.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.tp_UserEdit.Controls.Add(this.button3);
-            this.tp_UserEdit.Controls.Add(this.button2);
-            this.tp_UserEdit.Controls.Add(this.textBox8);
-            this.tp_UserEdit.Controls.Add(this.label9);
-            this.tp_UserEdit.Controls.Add(this.textBox9);
-            this.tp_UserEdit.Controls.Add(this.label10);
-            this.tp_UserEdit.Controls.Add(this.textBox10);
-            this.tp_UserEdit.Controls.Add(this.label11);
-            this.tp_UserEdit.Controls.Add(this.textBox7);
-            this.tp_UserEdit.Controls.Add(this.label8);
-            this.tp_UserEdit.Controls.Add(this.textBox6);
-            this.tp_UserEdit.Controls.Add(this.label7);
-            this.tp_UserEdit.Controls.Add(this.textBox5);
-            this.tp_UserEdit.Controls.Add(this.label6);
-            this.tp_UserEdit.Controls.Add(this.textBox4);
-            this.tp_UserEdit.Controls.Add(this.label5);
-            this.tp_UserEdit.Controls.Add(this.textBox3);
-            this.tp_UserEdit.Controls.Add(this.label4);
-            this.tp_UserEdit.Controls.Add(this.textBox2);
-            this.tp_UserEdit.Controls.Add(this.label3);
-            this.tp_UserEdit.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tp_UserEdit.Location = new System.Drawing.Point(4, 32);
-            this.tp_UserEdit.Name = "tp_UserEdit";
-            this.tp_UserEdit.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_UserEdit.Size = new System.Drawing.Size(823, 428);
-            this.tp_UserEdit.TabIndex = 1;
-            this.tp_UserEdit.Text = "用户添加";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(291, 442);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 33);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "重置(&R)";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(415, 442);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 33);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "保存(&S)";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(247, 339);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(379, 84);
-            this.textBox8.TabIndex = 17;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label9.Location = new System.Drawing.Point(147, 342);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 19);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "备注";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(247, 300);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(200, 27);
-            this.textBox9.TabIndex = 15;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label10.Location = new System.Drawing.Point(117, 303);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(69, 19);
-            this.label10.TabIndex = 14;
-            this.label10.Text = "联系电话";
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(247, 261);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(334, 27);
-            this.textBox10.TabIndex = 13;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.Location = new System.Drawing.Point(147, 264);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(39, 19);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "邮箱";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(247, 219);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(269, 27);
-            this.textBox7.TabIndex = 11;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label8.Location = new System.Drawing.Point(117, 222);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(69, 19);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "真实姓名";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(247, 180);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(379, 27);
-            this.textBox6.TabIndex = 9;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(117, 183);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(69, 19);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "归属部门";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(247, 141);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(379, 27);
-            this.textBox5.TabIndex = 7;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(117, 144);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 19);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "所属单位";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(247, 102);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(269, 27);
-            this.textBox4.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(117, 105);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 19);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "确认密码";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(247, 63);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(269, 27);
-            this.textBox3.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(147, 66);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(39, 19);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "密码";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(247, 24);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(379, 27);
-            this.textBox2.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(132, 27);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 19);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "登录名";
+            this.btn_Refresh.AutoSize = true;
+            this.btn_Refresh.Location = new System.Drawing.Point(495, 20);
+            this.btn_Refresh.Name = "btn_Refresh";
+            this.btn_Refresh.Size = new System.Drawing.Size(87, 31);
+            this.btn_Refresh.TabIndex = 10;
+            this.btn_Refresh.Text = "刷新(&R)";
+            this.btn_Refresh.UseVisualStyleBackColor = true;
+            this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
             // 
             // Frm_UserManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 464);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(856, 518);
+            this.Controls.Add(this.tab_UseList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
             this.Name = "Frm_UserManager";
             this.ShowInTaskbar = false;
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "用户信息管理";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm_UserManager_Load);
-            this.tabControl1.ResumeLayout(false);
+            this.tab_UseList.ResumeLayout(false);
             this.tp_UserList.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_UserList)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.tp_UserEdit.ResumeLayout(false);
-            this.tp_UserEdit.PerformLayout();
+            this.tab_UserAdd.ResumeLayout(false);
+            this.tab_UserAdd.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorTip)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tab_UseList;
         private System.Windows.Forms.TabPage tp_UserList;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn seqid;
+        private System.Windows.Forms.DataGridView dgv_UserList;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btn_Search;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbo_Search_Type;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txt_Search_KeyWord;
+        private System.Windows.Forms.TabPage tab_UserAdd;
+        private System.Windows.Forms.Button btn_Reset;
+        private System.Windows.Forms.Button btn_Save;
+        private System.Windows.Forms.TextBox txt_Remark;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txt_Phone;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txt_Email;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txt_RealName;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txt_Department;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txt_Unit;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txt_PassWordAagin;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txt_PassWord;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txt_UserName;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ErrorProvider errorTip;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn realname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn loginname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn username;
         private System.Windows.Forms.DataGridViewTextBoxColumn phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn unit;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbo_UserList_SearchType;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TabPage tp_UserEdit;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btn_Refresh;
     }
 }
