@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gro_BasicInfo = new System.Windows.Forms.GroupBox();
+            this.btn_Reset = new System.Windows.Forms.Button();
             this.lbl_OpenFile = new System.Windows.Forms.LinkLabel();
             this.btn_Quit = new System.Windows.Forms.Button();
             this.btn_Save = new System.Windows.Forms.Button();
@@ -60,7 +61,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cbo_stage = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_Reset = new System.Windows.Forms.Button();
             this.gro_BasicInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_amount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_page)).BeginInit();
@@ -109,6 +109,17 @@
             this.gro_BasicInfo.TabIndex = 1;
             this.gro_BasicInfo.TabStop = false;
             // 
+            // btn_Reset
+            // 
+            this.btn_Reset.Location = new System.Drawing.Point(207, 535);
+            this.btn_Reset.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btn_Reset.Name = "btn_Reset";
+            this.btn_Reset.Size = new System.Drawing.Size(71, 33);
+            this.btn_Reset.TabIndex = 30;
+            this.btn_Reset.Text = "重置";
+            this.btn_Reset.UseVisualStyleBackColor = true;
+            this.btn_Reset.Click += new System.EventHandler(this.btn_Reset_Click);
+            // 
             // lbl_OpenFile
             // 
             this.lbl_OpenFile.AutoSize = true;
@@ -131,6 +142,7 @@
             this.btn_Quit.TabIndex = 16;
             this.btn_Quit.Text = "退出";
             this.btn_Quit.UseVisualStyleBackColor = true;
+            this.btn_Quit.Click += new System.EventHandler(this.btn_Quit_Click);
             // 
             // btn_Save
             // 
@@ -410,17 +422,6 @@
             this.label1.Size = new System.Drawing.Size(37, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "阶段";
-            // 
-            // btn_Reset
-            // 
-            this.btn_Reset.Location = new System.Drawing.Point(207, 535);
-            this.btn_Reset.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.btn_Reset.Name = "btn_Reset";
-            this.btn_Reset.Size = new System.Drawing.Size(71, 33);
-            this.btn_Reset.TabIndex = 30;
-            this.btn_Reset.Text = "重置";
-            this.btn_Reset.UseVisualStyleBackColor = true;
-            this.btn_Reset.Click += new System.EventHandler(this.btn_Reset_Click);
             // 
             // Frm_AddFile
             // 

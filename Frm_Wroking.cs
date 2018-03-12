@@ -1368,23 +1368,51 @@ namespace 数据采集档案管理系统___加工版
                 else
                 {
                     Frm_AddFile frm = new Frm_AddFile(dgv_Special_FileList, "dgv_Special_FL_", null);
+                    frm.parentId = tab_Special_Info.Tag;
                     frm.ShowDialog();
                 }
             }
             else if(name.Contains("Project"))
             {
-                Frm_AddFile frm = new Frm_AddFile(dgv_Project_FileList, "dgv_Project_FL_", null);
-                frm.ShowDialog();
+                if(dgv_Project_FileList.SelectedRows.Count == 1)
+                {
+                    Frm_AddFile frm = new Frm_AddFile(dgv_Project_FileList, "dgv_Project_FL_", dgv_Project_FileList.CurrentRow.Cells[0].Tag);
+                    frm.ShowDialog();
+                }
+                else
+                {
+                    Frm_AddFile frm = new Frm_AddFile(dgv_Project_FileList, "dgv_Project_FL_", null);
+                    frm.parentId = tab_Project_Info.Tag;
+                    frm.ShowDialog();
+                }
             }
             else if(name.Contains("Topic"))
             {
-                Frm_AddFile frm = new Frm_AddFile(dgv_Topic_FileList, "dgv_Topic_FL_", null);
-                frm.ShowDialog();
+                if(dgv_Topic_FileList.SelectedRows.Count == 1)
+                {
+                    Frm_AddFile frm = new Frm_AddFile(dgv_Topic_FileList, "dgv_Topic_FL_", dgv_Topic_FileList.CurrentRow.Cells[0].Tag);
+                    frm.ShowDialog();
+                }
+                else
+                {
+                    Frm_AddFile frm = new Frm_AddFile(dgv_Topic_FileList, "dgv_Topic_FL_", null);
+                    frm.parentId = tab_Topic_Info.Tag;
+                    frm.ShowDialog();
+                }
             }
             else if(name.Contains("Subject"))
             {
-                Frm_AddFile frm = new Frm_AddFile(dgv_Subject_FileList, "dgv_Subject_FL_", null);
-                frm.ShowDialog();
+                if(dgv_Subject_FileList.SelectedRows.Count == 1)
+                {
+                    Frm_AddFile frm = new Frm_AddFile(dgv_Subject_FileList, "dgv_Subject_FL_", dgv_Subject_FileList.CurrentRow.Cells[0].Tag);
+                    frm.ShowDialog();
+                }
+                else
+                {
+                    Frm_AddFile frm = new Frm_AddFile(dgv_Subject_FileList, "dgv_Subject_FL_", null);
+                    frm.parentId = tab_Subject_Info.Tag;
+                    frm.ShowDialog();
+                }
             }
         }
 

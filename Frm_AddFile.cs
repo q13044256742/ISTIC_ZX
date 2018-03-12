@@ -260,7 +260,7 @@ namespace 数据采集档案管理系统___加工版
             {
                 if(Text.Contains("新增"))
                 {
-                    object id = SaveFileInfo(view.Rows[view.Rows.Add()], true);
+                    fileId = SaveFileInfo(view.Rows[view.Rows.Add()], true);
                     ResetControl();
                 }
                 else if(Text.Contains("编辑"))
@@ -330,6 +330,17 @@ namespace 数据采集档案管理系统___加工版
             ResetControl();
             if(Text.Contains("编辑"))
                 LoadFileInfo(fileId);
+        }
+
+        private void btn_Quit_Click(object sender, EventArgs e)
+        {
+            if(fileId == null)
+            {
+                if(MessageBox.Show("尚未保存当前数据，是否确认退出？", "确认提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk) == DialogResult.OK)
+                    Close();
+            }
+            else
+                Close();
         }
     }
 }
