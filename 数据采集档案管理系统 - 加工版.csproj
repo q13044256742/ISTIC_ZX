@@ -79,6 +79,18 @@
     <Compile Include="Frm_Backup.Designer.cs">
       <DependentUpon>Frm_Backup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_DictionaryManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_DictionaryManage.Designer.cs">
+      <DependentUpon>Frm_DictionaryManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Dictionary_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Dictionary_Add.Designer.cs">
+      <DependentUpon>Frm_Dictionary_Add.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_EditPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,11 +169,11 @@
     <Compile Include="Frm_UnitManage.Designer.cs">
       <DependentUpon>Frm_UnitManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_UserManager.cs">
+    <Compile Include="Frm_UserManage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_UserManager.Designer.cs">
-      <DependentUpon>Frm_UserManager.cs</DependentUpon>
+    <Compile Include="Frm_UserManage.Designer.cs">
+      <DependentUpon>Frm_UserManage.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Wroking.cs">
       <SubType>Form</SubType>
@@ -184,6 +196,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Backup.resx">
       <DependentUpon>Frm_Backup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_DictionaryManage.resx">
+      <DependentUpon>Frm_DictionaryManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Dictionary_Add.resx">
+      <DependentUpon>Frm_Dictionary_Add.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_EditPassword.resx">
       <DependentUpon>Frm_EditPassword.cs</DependentUpon>
@@ -224,8 +242,8 @@
     <EmbeddedResource Include="Frm_UnitManage.resx">
       <DependentUpon>Frm_UnitManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_UserManager.resx">
-      <DependentUpon>Frm_UserManager.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_UserManage.resx">
+      <DependentUpon>Frm_UserManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Wroking.resx">
       <DependentUpon>Frm_Wroking.cs</DependentUpon>

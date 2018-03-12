@@ -29,27 +29,56 @@
         private void InitializeComponent()
         {
             this.pal_LeftMenu = new System.Windows.Forms.Panel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.菜单MToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.退出QToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pal_LeftMenu
             // 
             this.pal_LeftMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pal_LeftMenu.Location = new System.Drawing.Point(0, 0);
+            this.pal_LeftMenu.Location = new System.Drawing.Point(0, 25);
             this.pal_LeftMenu.Name = "pal_LeftMenu";
-            this.pal_LeftMenu.Size = new System.Drawing.Size(268, 611);
+            this.pal_LeftMenu.Size = new System.Drawing.Size(268, 586);
             this.pal_LeftMenu.TabIndex = 0;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.菜单MToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1184, 25);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // 菜单MToolStripMenuItem
+            // 
+            this.菜单MToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.退出QToolStripMenuItem});
+            this.菜单MToolStripMenuItem.Name = "菜单MToolStripMenuItem";
+            this.菜单MToolStripMenuItem.Size = new System.Drawing.Size(64, 21);
+            this.菜单MToolStripMenuItem.Text = "菜单(&M)";
+            // 
+            // 退出QToolStripMenuItem
+            // 
+            this.退出QToolStripMenuItem.Name = "退出QToolStripMenuItem";
+            this.退出QToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.退出QToolStripMenuItem.Text = "退出(&Q)";
             // 
             // Frm_Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-          //  this.BackgroundImage = global::数据采集档案管理系统___加工版.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1184, 611);
             this.Controls.Add(this.pal_LeftMenu);
+            this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Frm_Manager";
@@ -57,12 +86,18 @@
             this.Text = "系统后台管理";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Manager_FormClosing);
             this.Load += new System.EventHandler(this.Frm_Manager_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Panel pal_LeftMenu;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 菜单MToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 退出QToolStripMenuItem;
     }
 }

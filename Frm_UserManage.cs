@@ -4,15 +4,16 @@ using System.Windows.Forms;
 
 namespace 数据采集档案管理系统___加工版
 {
-    public partial class Frm_UserManager : Form
+    public partial class Frm_UserManage : Form
     {
-        public Frm_UserManager()
+        public Frm_UserManage()
         {
             InitializeComponent();
         }
 
         private void Frm_UserManager_Load(object sender, EventArgs e)
         {
+            WindowState = FormWindowState.Maximized;
             cbo_Search_Type.SelectedIndex = 0;
             LoadUserList(string.Empty);
         }

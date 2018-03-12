@@ -1,6 +1,6 @@
 ﻿namespace 数据采集档案管理系统___加工版
 {
-    partial class Frm_UserManager
+    partial class Frm_UserManage
     {
         /// <summary>
         /// Required designer variable.
@@ -30,11 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tab_UseList = new System.Windows.Forms.TabControl();
             this.tp_UserList = new System.Windows.Forms.TabPage();
             this.dgv_UserList = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.realname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_Refresh = new System.Windows.Forms.Button();
             this.btn_Search = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.cbo_Search_Type = new System.Windows.Forms.ComboBox();
@@ -62,12 +67,6 @@
             this.txt_UserName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.errorTip = new System.Windows.Forms.ErrorProvider(this.components);
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.realname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_Refresh = new System.Windows.Forms.Button();
             this.tab_UseList.SuspendLayout();
             this.tp_UserList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_UserList)).BeginInit();
@@ -85,7 +84,7 @@
             this.tab_UseList.Location = new System.Drawing.Point(0, 0);
             this.tab_UseList.Name = "tab_UseList";
             this.tab_UseList.SelectedIndex = 0;
-            this.tab_UseList.Size = new System.Drawing.Size(856, 518);
+            this.tab_UseList.Size = new System.Drawing.Size(834, 521);
             this.tab_UseList.TabIndex = 1;
             // 
             // tp_UserList
@@ -95,7 +94,7 @@
             this.tp_UserList.Location = new System.Drawing.Point(4, 29);
             this.tp_UserList.Name = "tp_UserList";
             this.tp_UserList.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_UserList.Size = new System.Drawing.Size(848, 485);
+            this.tp_UserList.Size = new System.Drawing.Size(826, 488);
             this.tp_UserList.TabIndex = 0;
             this.tp_UserList.Text = "用户列表";
             this.tp_UserList.UseVisualStyleBackColor = true;
@@ -107,34 +106,57 @@
             this.dgv_UserList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_UserList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_UserList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_UserList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.realname,
             this.username,
             this.phone,
             this.unit});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_UserList.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_UserList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_UserList.Location = new System.Drawing.Point(3, 64);
             this.dgv_UserList.Name = "dgv_UserList";
             this.dgv_UserList.ReadOnly = true;
             this.dgv_UserList.RowTemplate.Height = 23;
-            this.dgv_UserList.Size = new System.Drawing.Size(842, 418);
+            this.dgv_UserList.Size = new System.Drawing.Size(820, 421);
             this.dgv_UserList.TabIndex = 0;
+            // 
+            // id
+            // 
+            this.id.FillWeight = 50F;
+            this.id.HeaderText = "序号";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // realname
+            // 
+            this.realname.HeaderText = "真实姓名";
+            this.realname.Name = "realname";
+            this.realname.ReadOnly = true;
+            // 
+            // username
+            // 
+            this.username.HeaderText = "登录名";
+            this.username.Name = "username";
+            this.username.ReadOnly = true;
+            // 
+            // phone
+            // 
+            this.phone.HeaderText = "联系方式";
+            this.phone.Name = "phone";
+            this.phone.ReadOnly = true;
+            // 
+            // unit
+            // 
+            this.unit.FillWeight = 200F;
+            this.unit.HeaderText = "所属单位";
+            this.unit.Name = "unit";
+            this.unit.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -148,10 +170,21 @@
             this.groupBox1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(842, 61);
+            this.groupBox1.Size = new System.Drawing.Size(820, 61);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "快速查询";
+            // 
+            // btn_Refresh
+            // 
+            this.btn_Refresh.AutoSize = true;
+            this.btn_Refresh.Location = new System.Drawing.Point(495, 20);
+            this.btn_Refresh.Name = "btn_Refresh";
+            this.btn_Refresh.Size = new System.Drawing.Size(87, 31);
+            this.btn_Refresh.TabIndex = 10;
+            this.btn_Refresh.Text = "刷新(&R)";
+            this.btn_Refresh.UseVisualStyleBackColor = true;
+            this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
             // 
             // btn_Search
             // 
@@ -233,7 +266,7 @@
             this.tab_UserAdd.Location = new System.Drawing.Point(4, 29);
             this.tab_UserAdd.Name = "tab_UserAdd";
             this.tab_UserAdd.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_UserAdd.Size = new System.Drawing.Size(848, 485);
+            this.tab_UserAdd.Size = new System.Drawing.Size(826, 488);
             this.tab_UserAdd.TabIndex = 1;
             this.tab_UserAdd.Text = "用户添加";
             // 
@@ -427,57 +460,14 @@
             // 
             this.errorTip.ContainerControl = this;
             // 
-            // id
-            // 
-            this.id.FillWeight = 50F;
-            this.id.HeaderText = "序号";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // realname
-            // 
-            this.realname.HeaderText = "真实姓名";
-            this.realname.Name = "realname";
-            this.realname.ReadOnly = true;
-            // 
-            // username
-            // 
-            this.username.HeaderText = "登录名";
-            this.username.Name = "username";
-            this.username.ReadOnly = true;
-            // 
-            // phone
-            // 
-            this.phone.HeaderText = "联系方式";
-            this.phone.Name = "phone";
-            this.phone.ReadOnly = true;
-            // 
-            // unit
-            // 
-            this.unit.FillWeight = 200F;
-            this.unit.HeaderText = "所属单位";
-            this.unit.Name = "unit";
-            this.unit.ReadOnly = true;
-            // 
-            // btn_Refresh
-            // 
-            this.btn_Refresh.AutoSize = true;
-            this.btn_Refresh.Location = new System.Drawing.Point(495, 20);
-            this.btn_Refresh.Name = "btn_Refresh";
-            this.btn_Refresh.Size = new System.Drawing.Size(87, 31);
-            this.btn_Refresh.TabIndex = 10;
-            this.btn_Refresh.Text = "刷新(&R)";
-            this.btn_Refresh.UseVisualStyleBackColor = true;
-            this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
-            // 
-            // Frm_UserManager
+            // Frm_UserManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 518);
+            this.ClientSize = new System.Drawing.Size(834, 521);
             this.Controls.Add(this.tab_UseList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Frm_UserManager";
+            this.Name = "Frm_UserManage";
             this.ShowInTaskbar = false;
             this.Text = "用户信息管理";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

@@ -75,7 +75,19 @@ namespace 数据采集档案管理系统___加工版
             SQLiteCommand sqlCommand = new SQLiteCommand(querySql, GetConnect());
             object result = sqlCommand.ExecuteScalar();
             CloseConnect();
-            return result;
+            return GetValue(result);
+        }
+
+        private static object GetValue(object result)
+        {
+            if(result == null)
+                return null;
+            else
+            {
+                if(string.IsNullOrEmpty(result.ToString()))
+                    return null;
+                return result;
+            }
         }
 
         /// <summary>

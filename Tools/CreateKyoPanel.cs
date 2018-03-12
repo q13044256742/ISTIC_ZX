@@ -123,7 +123,7 @@ namespace 数据采集档案管理系统___加工版
         /// </summary>
         /// <param name="parentPanel"></param>
         /// <param name="list"></param>
-        public static void SetSubPanel(Panel parentPanel, List<KyoPanel> list)
+        public static void SetSubPanel(Panel parentPanel, List<KyoPanel> list, Action<object, EventArgs> action)
         {
             Panel basicPanel = new Panel
             {
@@ -141,7 +141,7 @@ namespace 数据采集档案管理系统___加工版
                 Control[] cs = panel.Parent.Controls.Find(panel.Name + "_SUB", false);
                 if (cs.Length == 0)
                 {
-                    ExpandSub(parentPanel, basicPanel, list);
+                    ExpandSub(parentPanel, basicPanel, list, action);
                 }
                 else
                 {
@@ -189,7 +189,7 @@ namespace 数据采集档案管理系统___加工版
         /// <param name="parentPanel">菜单所属父级</param>
         /// <param name="basicPanel">菜单容器</param>
         /// <param name="list">二级菜单列表</param>
-        private static void ExpandSub(Panel parentPanel, Panel basicPanel, List<KyoPanel> list)
+        private static void ExpandSub(Panel parentPanel, Panel basicPanel, List<KyoPanel> list, Action<object, EventArgs> action)
         {
             Panel _panel = parentPanel.Parent as Panel;
             for (int i = 0; i < list.Count; i++)
@@ -204,6 +204,7 @@ namespace 数据采集档案管理系统___加工版
                     Name = kyoPanel.Name,
                 };
                 panel.MouseEnter += Panel_MouseEnter;
+                panel.Click += new EventHandler(action);
                 basicPanel.Controls.Add(panel);
 
                 Label _label = new Label
