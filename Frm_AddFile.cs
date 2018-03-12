@@ -13,11 +13,18 @@ namespace 数据采集档案管理系统___加工版
     {
         private DataGridView view;
         private object key;
-        public Frm_AddFile(DataGridView view, object key)
+        private object fileId;
+        public object parentId;
+        public Frm_AddFile(DataGridView view, object key, object fileId)
         {
             InitializeComponent();
             this.view = view;
             this.key = key;
+            if(fileId != null)
+            {
+                Text = "编辑文件";
+                this.fileId = fileId;
+            }
         }
 
         private void Frm_AddFile_Load(object sender, EventArgs e)
@@ -50,6 +57,30 @@ namespace 数据采集档案管理系统___加工版
             cbo_form.ValueMember = "dd_id";
             //默认焦点
             cbo_stage.Focus();
+            //编辑状态加载信息
+            LoadFileInfo(fileId);
+        }
+
+        private void LoadFileInfo(object fileId)
+        {
+            DataRow row = SQLiteHelper.ExecuteSingleRowQuery($"SELECT * FROM files_info WHERE fi_id='{fileId}'");
+            if(row != null)
+            {
+                cbo_stage.SelectedValue = row["fi_stage"];
+                cbo_categor.SelectedValue = row["fi_categor"];
+                txt_fileName.Text = GetValue(row["fi_name"]);
+                txt_user.Text = GetValue(row["fi_user"]);
+                cbo_type.SelectedValue = row["fi_type"];
+                cbo_secret.SelectedValue = row["fi_secret"];
+                num_page.Value = Convert.ToInt32(row["fi_pages"]);
+                num_amount.Value = Convert.ToInt32(row["fi_number"]);
+                dtp_date.Value = Convert.ToDateTime(row["fi_create_date"]);
+                txt_unit.Text = GetValue(row["fi_unit"]);
+                cbo_carrier.SelectedValue = row["fi_carrier"];
+                cbo_format.SelectedValue = row["fi_format"];
+                cbo_form.SelectedValue = row["fi_form"];
+                txt_link.Text = GetValue(row["fi_link"]);
+            }
         }
 
         /// <summary>
@@ -85,6 +116,7 @@ namespace 数据采集档案管理系统___加工版
         {
             return obj == null ? string.Empty : obj.ToString();
         }
+        
         /// <summary>
         /// 文件类别下拉事件
         /// </summary>
@@ -93,6 +125,7 @@ namespace 数据采集档案管理系统___加工版
             if(cbo_categor.SelectedIndex != -1)
                 LoadFileNameByCategor(cbo_categor.SelectedValue);
         }
+        
         /// <summary>
         /// 打开文件
         /// </summary>
@@ -108,47 +141,116 @@ namespace 数据采集档案管理系统___加工版
                     System.Diagnostics.Process.Start("Explorer.exe", path);
             }
         }
-        /// <summary>
-        /// 新增
-        /// </summary>
-        private void Btn_Sure_Click(object sender, EventArgs e)
-        {
-            string nameValue = txt_fileName.Text.Trim();
-            if(string.IsNullOrEmpty(nameValue))
-                MessageBox.Show("文件名不可为空。", "保存失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else
-            {
-                SaveFileInfo();
-                Close();
-            }
-        }
+        
         /// <summary>
         /// 添加信息到指定表格
         /// </summary>
-        private void SaveFileInfo()
+        private object SaveFileInfo(DataGridViewRow row, bool isAdd)
         {
-            int index = view.Rows.Add();
-            view.Rows[index].Cells[key + "stage"].Value = cbo_stage.SelectedValue;
-            SetCategorByStage(cbo_stage.SelectedValue, view.Rows[index], key);
-            view.Rows[index].Cells[key + "categor"].Value = cbo_categor.SelectedValue;
-            view.Rows[index].Cells[key + "name"].Value = txt_fileName.Text;
-            view.Rows[index].Cells[key + "user"].Value = txt_user.Text;
-            view.Rows[index].Cells[key + "type"].Value = cbo_type.SelectedValue;
-            view.Rows[index].Cells[key + "secret"].Value = cbo_secret.SelectedValue;
-            view.Rows[index].Cells[key + "pages"].Value = num_page.Value;
-            view.Rows[index].Cells[key + "number"].Value = num_amount.Value;
-            view.Rows[index].Cells[key + "date"].Value = dtp_date.Value.ToString("yyyyMMdd");
-            view.Rows[index].Cells[key + "unit"].Value = txt_unit.Text;
-            view.Rows[index].Cells[key + "carrier"].Value = cbo_carrier.SelectedValue;
-            view.Rows[index].Cells[key + "format"].Value = cbo_format.SelectedValue;
-            view.Rows[index].Cells[key + "form"].Value = cbo_form.SelectedValue;
-            view.Rows[index].Cells[key + "link"].Value = txt_link.Text;
+            object primaryKey = Guid.NewGuid().ToString();
+            row.Cells[key + "id"].Value = row.Index + 1;
+            row.Cells[key + "stage"].Value = cbo_stage.SelectedValue;
+            SetCategorByStage(cbo_stage.SelectedValue, row, key);
+            row.Cells[key + "categor"].Value = cbo_categor.SelectedValue;
+            row.Cells[key + "name"].Value = txt_fileName.Text;
+            row.Cells[key + "user"].Value = txt_user.Text;
+            row.Cells[key + "type"].Value = cbo_type.SelectedValue;
+            row.Cells[key + "secret"].Value = cbo_secret.SelectedValue;
+            row.Cells[key + "pages"].Value = num_page.Value;
+            row.Cells[key + "number"].Value = num_amount.Value;
+            row.Cells[key + "date"].Value = dtp_date.Value.ToString("yyyyMMdd");
+            row.Cells[key + "unit"].Value = txt_unit.Text;
+            row.Cells[key + "carrier"].Value = cbo_carrier.SelectedValue;
+            row.Cells[key + "format"].Value = cbo_format.SelectedValue;
+            row.Cells[key + "form"].Value = cbo_form.SelectedValue;
+            row.Cells[key + "link"].Value = txt_link.Text;
+            if(isAdd)
+            {
+                object stage = row.Cells[key + "stage"].Value;
+                object categor = row.Cells[key + "categor"].Value;
+                object name = row.Cells[key + "name"].Value;
+                object user = row.Cells[key + "user"].Value;
+                object type = row.Cells[key + "type"].Value;
+                object secret = row.Cells[key + "secret"].Value;
+                object pages = row.Cells[key + "pages"].Value;
+                object number = row.Cells[key + "number"].Value;
+                DateTime date = DateTime.Now;
+                string _date = GetValue(row.Cells[key + "date"].Value);
+                if(!string.IsNullOrEmpty(_date))
+                {
+                    if(_date.Length == 6)
+                        _date = _date.Substring(0, 4) + "-" + _date.Substring(4, 2) + "-01";
+                    if(_date.Length == 8)
+                        _date = _date.Substring(0, 4) + "-" + _date.Substring(4, 2) + "-" + _date.Substring(6, 2);
+                    DateTime.TryParse(_date, out date);
+                }
+                object unit = row.Cells[key + "unit"].Value;
+                object carrier = row.Cells[key + "carrier"].Value;
+                object format = row.Cells[key + "format"].Value;
+                object form = row.Cells[key + "form"].Value;
+                object link = row.Cells[key + "link"].Value;
+
+                string insertSql = "INSERT INTO files_info (" +
+                "fi_id, fi_code, fi_stage, fi_categor, fi_name, fi_user, fi_type, fi_secret, fi_pages, fi_number, fi_create_date, fi_unit, fi_carrier, fi_format, fi_form, fi_link, fi_obj_id) " +
+                $"VALUES( '{primaryKey}', '', '{stage}', '{categor}', '{name}', '{user}', '{type}', '{secret}', '{pages}', '{number}', '{date.ToString("s")}', '{unit}', '{carrier}', '{format}', '{form}', '{link}','{parentId}')";
+                SQLiteHelper.ExecuteNonQuery(insertSql);
+
+                row.Cells[key + "id"].Tag = primaryKey;
+
+
+            }
+            else
+            {
+                primaryKey = row.Cells[key + "id"].Tag;
+                object stage = row.Cells[key + "stage"].Value;
+                object categor = row.Cells[key + "categor"].Value;
+                object name = row.Cells[key + "name"].Value;
+                object user = row.Cells[key + "user"].Value;
+                object type = row.Cells[key + "type"].Value;
+                object secret = row.Cells[key + "secret"].Value;
+                object pages = row.Cells[key + "pages"].Value;
+                object number = row.Cells[key + "number"].Value;
+                DateTime date = DateTime.Now;
+                string _date = GetValue(row.Cells[key + "date"].Value);
+                if(!string.IsNullOrEmpty(_date))
+                {
+                    if(_date.Length == 6)
+                        _date = _date.Substring(0, 4) + "-" + _date.Substring(4, 2) + "-01";
+                    if(_date.Length == 8)
+                        _date = _date.Substring(0, 4) + "-" + _date.Substring(4, 2) + "-" + _date.Substring(6, 2);
+                    DateTime.TryParse(_date, out date);
+                }
+                object unit = row.Cells[key + "unit"].Value;
+                object carrier = row.Cells[key + "carrier"].Value;
+                object format = row.Cells[key + "format"].Value;
+                object form = row.Cells[key + "form"].Value;
+                object link = row.Cells[key + "link"].Value;
+
+                string updateSql = "UPDATE files_info SET " +
+                    $"fi_stage = '{stage}', " +
+                    $"fi_categor = '{categor}', " +
+                    $"fi_name = '{name}', " +
+                    $"fi_user = '{user}', " +
+                    $"fi_type = '{type}', " +
+                    $"fi_secret = '{secret}', " +
+                    $"fi_pages = '{pages}', " +
+                    $"fi_number = '{number}', " +
+                    $"fi_create_date = '{date.ToString("s")}', " +
+                    $"fi_unit = '{unit}', " +
+                    $"fi_carrier = '{carrier}', " +
+                    $"fi_format = '{format}', " +
+                    $"fi_form = '{form}', " +
+                    $"fi_link = '{link}' " +
+                    $"WHERE fi_id = '{primaryKey}'";
+                SQLiteHelper.ExecuteNonQuery(updateSql);
+                MessageBox.Show("数据已保存。");
+            }
+            return primaryKey;
         }
+        
         /// <summary>
-        /// 保存-新增
+        /// 保存(更新)
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void Btn_Save_Add_Click(object sender, EventArgs e)
         {
             string nameValue = txt_fileName.Text.Trim();
@@ -156,11 +258,32 @@ namespace 数据采集档案管理系统___加工版
                 MessageBox.Show("文件名不可为空。", "保存失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                SaveFileInfo();
-                ResetControl();
+                if(Text.Contains("新增"))
+                {
+                    object id = SaveFileInfo(view.Rows[view.Rows.Add()], true);
+                    ResetControl();
+                }
+                else if(Text.Contains("编辑"))
+                    UpdateFileInfo();
                 cbo_stage.Focus();
             }
         }
+
+        /// <summary>
+        /// 更新文件
+        /// </summary>
+        private void UpdateFileInfo()
+        {
+            foreach(DataGridViewRow row in view.Rows)
+            {
+                if(fileId.Equals(row.Cells[key + "id"].Tag))
+                {
+                    SaveFileInfo(row, false);
+                    break;
+                }
+            }
+        }
+
         /// <summary>
         /// 根据阶段设置相应的文件类别
         /// </summary>
@@ -174,6 +297,7 @@ namespace 数据采集档案管理系统___加工版
             categorCell.ValueMember = "dd_id";
             categorCell.Style = new DataGridViewCellStyle() { Font = new System.Drawing.Font("宋体", 10.5f), NullValue = categorCell.Items[0] };
         }
+        
         /// <summary>
         /// 重置控件
         /// </summary>
@@ -199,6 +323,13 @@ namespace 数据采集档案管理系统___加工版
             {
                 Btn_Save_Add_Click(null, null);
             }
+        }
+
+        private void btn_Reset_Click(object sender, EventArgs e)
+        {
+            ResetControl();
+            if(Text.Contains("编辑"))
+                LoadFileInfo(fileId);
         }
     }
 }

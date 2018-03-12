@@ -222,10 +222,10 @@ namespace 数据采集档案管理系统___加工版
 
         private void Dgv_DataList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex != -1)
+            if(e.RowIndex != -1 && e.ColumnIndex != -1)
             {
                 //打开word
-                if ("control".Equals(dgv_DataList.Columns[e.ColumnIndex].Name))
+                if("control".Equals(dgv_DataList.Columns[e.ColumnIndex].Name))
                 {
                     if(MessageBox.Show("是否合成Word实例?", "确认提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
@@ -236,7 +236,7 @@ namespace 数据采集档案管理系统___加工版
                         MicrosoftWordHelper.WriteDocument(filefullname.ToString(), str);
                     }
                 }
-              
+
             }
         }
 

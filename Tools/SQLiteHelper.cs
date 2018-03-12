@@ -16,7 +16,7 @@ namespace 数据采集档案管理系统___加工版
         /// <summary>
         /// 数据连接字符串
         /// </summary>
-        private static string SQL_CONNECT = @"Data Source=C:\Java\sqlite-dll-win64-x64-3210000\ISTIC.db";
+        private static string SQL_CONNECT = $"Data Source={Application.StartupPath}\\ISTIC.db";
 
         private static SQLiteConnection SQLiteConnection; 
 
