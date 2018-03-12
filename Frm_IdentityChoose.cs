@@ -1,38 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace 数据采集档案管理系统___加工版
 {
     public partial class Frm_IdentityChoose : Form
     {
-        public object Identity;
-
-        public Frm_IdentityChoose()
+        private object uid;
+        public Frm_IdentityChoose(object uid)
         {
             InitializeComponent();
+            this.uid = uid;
         }
 
         private void Frm_IdentityChoose_Load(object sender, EventArgs e)
         {
-            Identity = null;
-            cbo_ChooseIdentity.Items.AddRange(new string[]
-            {
-                "核高基","集成电路","宽带移动","数控机床","油气","核电","水专项","转基因","新药","传染病"
-            });
-            cbo_ChooseIdentity.SelectedIndex = 0;
+            DataTable table = SQLiteHelper.ExecuteQuery($"SELECT * FROM special_info");
+            cbo_ChooseIdentity.DataSource = table;
+            cbo_ChooseIdentity.DisplayMember = "spi_name";
+            cbo_ChooseIdentity.ValueMember = "spi_id";
         }
 
         private void btn_Sure_Click(object sender, EventArgs e)
         {
-            Identity = cbo_ChooseIdentity.SelectedItem;
-            DialogResult = DialogResult.OK;
-            Hide();
+            object id = cbo_ChooseIdentity.SelectedValue;
+            if(MessageBox.Show("选择后不可修改，确定要选择当前身份吗?", "确认提示", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
+            {
+                SQLiteHelper.ExecuteNonQuery($"UPDATE user_info SET ui_special_id='{id}' WHERE ui_id='{uid}'");
+                MessageBox.Show("选择身份完毕。");
+                DialogResult = DialogResult.OK;
+                Close();
+            }
         }
 
         private void Frm_IdentityChoose_FormClosing(object sender, FormClosingEventArgs e)

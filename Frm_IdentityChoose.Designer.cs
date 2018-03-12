@@ -50,7 +50,7 @@
             this.cbo_ChooseIdentity.FormattingEnabled = true;
             this.cbo_ChooseIdentity.Location = new System.Drawing.Point(27, 54);
             this.cbo_ChooseIdentity.Name = "cbo_ChooseIdentity";
-            this.cbo_ChooseIdentity.Size = new System.Drawing.Size(223, 28);
+            this.cbo_ChooseIdentity.Size = new System.Drawing.Size(257, 28);
             this.cbo_ChooseIdentity.TabIndex = 1;
             // 
             // btn_Sure

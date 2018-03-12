@@ -9,10 +9,13 @@ namespace 数据采集档案管理系统___加工版
 
     public partial class Frm_MainFrame : Form
     {
-        public Frm_MainFrame()
+        private object userId;
+        private string rootId;
+        public Frm_MainFrame(object userId)
         {
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
+            this.userId = userId;
         }
 
         private void Frm_MainFrame_Load(object sender, EventArgs e)
@@ -36,10 +39,10 @@ namespace 数据采集档案管理系统___加工版
 
         private void Pic_Add_Click(object sender, EventArgs e)
         {
-            TreeNode node = new TreeNode() { Name = "ADMIN13044256742", Tag = ControlType.Plan };
+            TreeNode node = new TreeNode() { Name = rootId, Tag = ControlType.Plan };
             Frm_Wroking frm_Wroking = new Frm_Wroking(node);
             if(frm_Wroking.ShowDialog(this) == DialogResult.OK)
-                LoadTreeList("ADMIN13044256742");
+                LoadTreeList(rootId);
         }
 
         private void Btn_Delete_Click(object sender, EventArgs e)
@@ -109,18 +112,22 @@ namespace 数据采集档案管理系统___加工版
 
         private void Frm_MainFrame_Shown(object sender, EventArgs e)
         {
-            Frm_IdentityChoose frm_Identity = new Frm_IdentityChoose();
-            if(frm_Identity.ShowDialog() == DialogResult.OK)
+            string querySql = $"SELECT spi_id, spi_name FROM special_info WHERE spi_id=(SELECT ui_special_id FROM user_info WHERE ui_id='{userId}')";
+            object[] obj = SQLiteHelper.ExecuteRowsQuery(querySql);
+            if(obj == null)
             {
-                object obj = frm_Identity.Identity;
-                tv_DataTree.Nodes[0].Nodes.Add(GetValue(obj));
-                tv_DataTree.ExpandAll();
+                Frm_IdentityChoose frm_Identity = new Frm_IdentityChoose(userId);
+                if(frm_Identity.ShowDialog() == DialogResult.OK)
+                    obj = SQLiteHelper.ExecuteRowsQuery(querySql);
             }
+            if(obj != null)
+            {
+                rootId = GetValue(obj[0]);
+                LoadTreeList(rootId);
+                Tv_DataTree_AfterSelect(sender, new TreeViewEventArgs(tv_DataTree.Nodes[0].Nodes[0]));
 
-            new Frm_Explain().ShowDialog();
-            string SpecialId = "ADMIN13044256742";
-            LoadTreeList(SpecialId);
-            Tv_DataTree_AfterSelect(sender, new TreeViewEventArgs(tv_DataTree.Nodes[0].Nodes[0]));
+                new Frm_Explain().ShowDialog();
+            }
         }
         
         /// <summary>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace 数据采集档案管理系统___加工版
@@ -16,16 +17,21 @@ namespace 数据采集档案管理系统___加工版
             string password = txt_Password.Text;
             if(!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password))
             {
-                int i = SQLiteHelper.ExecuteCountQuery($"SELECT COUNT(*) FROM user_info WHERE ui_username='{username}' AND ui_password='{password}'");
-                if(i == 1)
+                object uid = SQLiteHelper.ExecuteOnlyOneQuery($"SELECT ui_id FROM user_info WHERE ui_username='{username}' AND ui_password='{password}'");
+                if(!string.IsNullOrEmpty(GetValue(uid)))
                 {
-                    Frm_MainFrame frm = new Frm_MainFrame();
+                    Frm_MainFrame frm = new Frm_MainFrame(uid);
                     frm.Show();
                     Hide();
                 }
                 else
                     MessageBox.Show("用户名或密码错误。", "登录失败", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
+        }
+
+        private string GetValue(object uid)
+        {
+            return uid == null ? string.Empty : uid.ToString();
         }
     }
 }
