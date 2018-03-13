@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -136,9 +137,23 @@ namespace 数据采集档案管理系统___加工版
             if(openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string path = openFileDialog.FileName;
-                txt_link.Text = path;
                 if(MessageBox.Show("是否要打开选定文件?", "温馨提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    System.Diagnostics.Process.Start("Explorer.exe", path);
+                {
+                    if(File.Exists(path))
+                    {
+                        txt_link.Text = path;
+                        try
+                        {
+                            System.Diagnostics.Process.Start("Explorer.exe", path);
+                        }
+                        catch(Exception ex)
+                        {
+                            MessageBox.Show(ex.Message, "打开失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                        MessageBox.Show("文件不存在。", "打开失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
         

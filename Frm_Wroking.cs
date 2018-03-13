@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
@@ -262,6 +263,34 @@ namespace 数据采集档案管理系统___加工版
                 tab_Subject_Info.Tag = objId;
                 LoadFileInfoById(dgv_Subject_FileList, "dgv_Subject_FL_", objId);
             }
+            SetFileDetail(type, 0);
+        }
+
+        private void SetFileDetail(ControlType type, int rowIndex)
+        {
+            int count = 0;
+            Label label = null;
+            if(type == ControlType.Plan)
+            {
+                label = lbl_Special_FileDetail;
+                count = dgv_Special_FileList.RowCount;
+            }
+            else if(type == ControlType.Plan_Project)
+            {
+                label = lbl_Project_FileDetail;
+                count = dgv_Project_FileList.RowCount;
+            }
+            else if(type == ControlType.Plan_Topic)
+            {
+                label = lbl_Topic_FileDetail;
+                count = dgv_Topic_FileList.RowCount;
+            }
+            else if(type == ControlType.Plan_Topic_Subject)
+            {
+                label = lbl_Subject_FileDetail;
+                count = dgv_Subject_FileList.RowCount;
+            }
+            label.Text = $"共计 {count - 1} 份文件，当前选中 {rowIndex + 1}";
         }
 
         /// <summary>
@@ -330,6 +359,7 @@ namespace 数据采集档案管理系统___加工版
         private void LoadFileInfoById(DataGridView dataGridView, string key, object pid)
         {
             dataGridView.Rows.Clear();
+            dataGridView.DefaultCellStyle.Font = new System.Drawing.Font("微软雅黑", 10.5f, System.Drawing.FontStyle.Regular);
             DataTable dataTable = SQLiteHelper.ExecuteQuery($"SELECT * FROM files_info WHERE fi_obj_id='{pid}'");
             for(int i = 0; i < dataTable.Rows.Count; i++)
             {
@@ -1421,12 +1451,20 @@ namespace 数据采集档案管理系统___加工版
             string name = (sender as Control).Name;
             if(name.Contains("Special"))
             {
+                btn_Special_AddFile.Visible = lbl_Special_FileDetail.Visible = false;
                 int index = tab_Special_Info.SelectedIndex;
                 object objid = tab_Special_Info.Tag;
                 if(objid != null)
                 {
+                    if(index == 0)
+                    {
+                        btn_Special_AddFile.Visible = lbl_Special_FileDetail.Visible = true;
+                    }
                     if(index == 1)
+                    {
                         LoadFileValidList(dgv_Special_FileValid, objid, "dgv_Special_FV_");
+                        dgv_Special_FileValid.DefaultCellStyle.Font = new System.Drawing.Font("微软雅黑", 10.5f, System.Drawing.FontStyle.Regular);
+                    }
                     else if(index == 2)
                     {
                         DataTable dataTable = SQLiteHelper.ExecuteQuery($"SELECT * FROM files_tag_info WHERE pt_obj_id='{objid}'");
@@ -1459,12 +1497,20 @@ namespace 数据采集档案管理系统___加工版
             }
             else if(name.Contains("Project"))
             {
+                btn_Project_AddFile.Visible = lbl_Project_FileDetail.Visible = false;
                 int index = tab_Project_Info.SelectedIndex;
                 object objid = tab_Project_Info.Tag;
                 if(objid != null)
                 {
+                    if(index == 0)
+                    {
+                        btn_Project_AddFile.Visible = lbl_Project_FileDetail.Visible = true;
+                    }
                     if(index == 1)
+                    {
                         LoadFileValidList(dgv_Project_FileValid, objid, "dgv_Project_FV_");
+                        dgv_Project_FileValid.DefaultCellStyle.Font = new System.Drawing.Font("微软雅黑", 10.5f, System.Drawing.FontStyle.Regular);
+                    }
                     else if(index == 2)
                     {
                         DataTable dataTable = SQLiteHelper.ExecuteQuery($"SELECT * FROM files_tag_info WHERE pt_obj_id='{objid}'");
@@ -1497,12 +1543,20 @@ namespace 数据采集档案管理系统___加工版
             }
             else if(name.Contains("Topic"))
             {
+                btn_Topic_AddFile.Visible = lbl_Topic_FileDetail.Visible = false;
                 int index = tab_Topic_Info.SelectedIndex;
                 object objid = tab_Topic_Info.Tag;
                 if(objid != null)
                 {
+                    if(index == 0)
+                    {
+                        btn_Topic_AddFile.Visible = lbl_Topic_FileDetail.Visible = true;
+                    }
                     if(index == 1)
+                    {
                         LoadFileValidList(dgv_Topic_FileValid, objid, "dgv_Topic_FV_");
+                        dgv_Topic_FileValid.DefaultCellStyle.Font = new System.Drawing.Font("微软雅黑", 10.5f, System.Drawing.FontStyle.Regular);
+                    }
                     else if(index == 2)
                     {
                         DataTable dataTable = SQLiteHelper.ExecuteQuery($"SELECT * FROM files_tag_info WHERE pt_obj_id='{objid}'");
@@ -1535,12 +1589,20 @@ namespace 数据采集档案管理系统___加工版
             }
             else if(name.Contains("Subject"))
             {
+                btn_Subject_AddFile.Visible = lbl_Subject_FileDetail.Visible = false;
                 int index = tab_Subject_Info.SelectedIndex;
                 object objid = tab_Subject_Info.Tag;
                 if(objid != null)
                 {
+                    if(index == 0)
+                    {
+                        btn_Subject_AddFile.Visible = lbl_Subject_FileDetail.Visible = true;
+                    }
                     if(index == 1)
+                    {
                         LoadFileValidList(dgv_Subject_FileValid, objid, "dgv_Subject_FV_");
+                        dgv_Subject_FileValid.DefaultCellStyle.Font = new System.Drawing.Font("微软雅黑", 10.5f, System.Drawing.FontStyle.Regular);
+                    }
                     else if(index == 2)
                     {
                         DataTable dataTable = SQLiteHelper.ExecuteQuery($"SELECT * FROM files_tag_info WHERE pt_obj_id='{objid}'");
@@ -2317,6 +2379,51 @@ namespace 数据采集档案管理系统___加工版
             {
                 object pbId = comboBox.SelectedValue;
                 LoadFileBoxTable(pbId, tab_Subject_Info.Tag, ControlType.Plan_Topic_Subject);
+            }
+        }
+
+        private void dgv_Special_FileList_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            string name = (sender as Control).Name;
+            if(name.Contains("Special"))
+                SetFileDetail(ControlType.Plan, e.RowIndex);
+            else if(name.Contains("Project"))
+                SetFileDetail(ControlType.Plan_Project, e.RowIndex);
+            else if(name.Contains("Topic"))
+                SetFileDetail(ControlType.Plan_Topic, e.RowIndex);
+            else if(name.Contains("Subject"))
+                SetFileDetail(ControlType.Plan_Topic_Subject, e.RowIndex);
+        }
+
+        private void dgv_Subject_FileList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex != -1 && e.ColumnIndex != -1)
+            {
+                DataGridView dataGridView = sender as DataGridView;
+                if(dataGridView.Columns[e.ColumnIndex].Name.Contains("link"))
+                {
+                    string path = GetValue(dataGridView.CurrentCell.Value);
+                    if(!string.IsNullOrEmpty(path))
+                    {
+                        if(MessageBox.Show("是否打开文件?", "确认提示", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
+                        {
+                            if(File.Exists(path))
+                            {
+                                try
+                                {
+                                    System.Diagnostics.Process.Start("Explorer.exe", path);
+                                }
+                                catch(Exception ex)
+                                {
+                                    MessageBox.Show(ex.Message, "打开失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                            else
+                                MessageBox.Show("文件不存在。", "打开失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            
+                        }
+                    }
+                }
             }
         }
     }
