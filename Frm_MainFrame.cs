@@ -51,10 +51,19 @@ namespace 数据采集档案管理系统___加工版
             {
                 if(MessageBox.Show("确认要删除当前选中行的数据吗?","确认提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk) == DialogResult.OK)
                 {
+                    string ids = string.Empty;
                     foreach (DataGridViewRow row in dgv_DataList.SelectedRows)
                     {
-                        dgv_DataList.Rows.Remove(row);
+                        object id = row.Cells["id"].Tag;
+                        ids += $"'{id}',";
                     }
+                    ids = ids.Substring(0, ids.Length - 1);
+
+                    SQLiteHelper.ExecuteNonQuery($"DELETE FROM project_info WHERE pi_id IN({ids});" +
+                        $"DELETE FROM topic_info WHERE ti_id IN({ids});" +
+                        $"DELETE FROM subject_info WHERE si_id IN({ids});");
+
+                    MessageBox.Show("删除成功。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
             }
         }
@@ -405,6 +414,9 @@ namespace 数据采集档案管理系统___加工版
                         dgv_DataList.Rows[rid].Cells["control"].Value = "查看";
                     }
                 }
+
+                int count = dgv_DataList.RowCount;
+                lbl_TotalAmount.Text = $"共有 {count} 条数据";
             }
         }
 

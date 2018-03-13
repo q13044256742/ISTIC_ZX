@@ -90,9 +90,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::数据采集档案管理系统___加工版.Properties.Resources.login_1;
-            this.pictureBox1.Location = new System.Drawing.Point(5, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(20, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(462, 58);
+            this.pictureBox1.Size = new System.Drawing.Size(475, 58);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
