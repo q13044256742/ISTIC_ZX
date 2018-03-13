@@ -79,6 +79,12 @@
     <Compile Include="Frm_Backup.Designer.cs">
       <DependentUpon>Frm_Backup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_CodeRule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_CodeRule.Designer.cs">
+      <DependentUpon>Frm_CodeRule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_DictionaryManage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +203,9 @@
     <EmbeddedResource Include="Frm_Backup.resx">
       <DependentUpon>Frm_Backup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_CodeRule.resx">
+      <DependentUpon>Frm_CodeRule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_DictionaryManage.resx">
       <DependentUpon>Frm_DictionaryManage.cs</DependentUpon>
     </EmbeddedResource>
@@ -276,6 +285,7 @@
     <None Include="Images\png-0222.png" />
     <Content Include="bin\Debug\Microsoft.Office.Interop.Word.dll" />
     <Content Include="bin\Debug\System.Data.SQLite.dll" />
+    <Content Include="Images\Mbg.jpg" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\png-0281.png" />
     <Content Include="Images\png-0289.png" />

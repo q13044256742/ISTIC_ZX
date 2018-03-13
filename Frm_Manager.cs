@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
 using 数据采集档案管理系统___加工版.Properties;
 
@@ -8,9 +6,11 @@ namespace 数据采集档案管理系统___加工版
 {
     public partial class Frm_Manager : Form
     {
-        public Frm_Manager()
+        private object specialId;
+        public Frm_Manager(object specialId)
         {
             InitializeComponent();
+            this.specialId = specialId;
         }
 
         private void Frm_Manager_Load(object sender, System.EventArgs e)
@@ -42,6 +42,12 @@ namespace 数据采集档案管理系统___加工版
                     Name = "setContextPath",
                     Text = "指定全文路径",
                     Image = Resources.png_0281
+                },
+                new CreateKyoPanel.KyoPanel
+                {
+                    Name = "setCodeRule",
+                    Text = "编码规则",
+                    Image = Resources.png_0289
                 }
             });
             CreateKyoPanel.SetPanel(pal_LeftMenu, list, LeftMenu_Click);
@@ -137,19 +143,19 @@ namespace 数据采集档案管理系统___加工版
                     }
                 new Frm_SetContextPath { MdiParent = this }.Show();
             }
-            //else if("dictionaryManage".Equals(control.Name))
-            //{
-            //    foreach(Form item in MdiChildren)
-            //    {
-            //        if(item is Frm_DictionaryManage)
-            //        {
-            //            item.Activate();
-            //            item.WindowState = FormWindowState.Maximized;
-            //            return;
-            //        }
-            //    }
-            //    new Frm_DictionaryManage() { MdiParent = this }.Show();
-            //}
+            else if("setCodeRule".Equals(control.Name))
+            {
+                foreach(Form item in MdiChildren)
+                {
+                    if(item is Frm_DictionaryManage)
+                    {
+                        item.Activate();
+                        //item.WindowState = FormWindowState.Maximized;
+                        return;
+                    }
+                }
+                new Frm_CodeRule(specialId) { MdiParent = this }.Show();
+            }
         }
 
         private void Frm_Manager_FormClosing(object sender, FormClosingEventArgs e)

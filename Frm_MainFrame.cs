@@ -249,8 +249,14 @@ namespace 数据采集档案管理系统___加工版
 
         private void pic_Manager_Click(object sender, EventArgs e)
         {
-            Frm_Manager manager = new Frm_Manager();
-            manager.ShowDialog();
+            object specialId = SQLiteHelper.ExecuteOnlyOneQuery($"SELECT ui_special_id FROM user_info WHERE ui_id='{userId}'");
+            if(specialId != null)
+            {
+                Frm_Manager manager = new Frm_Manager(specialId);
+                manager.ShowDialog();
+            }
+            else
+                MessageBox.Show("当前用户尚未指定专项。");
         }
 
         private void pic_Export_Click(object sender, EventArgs e)
