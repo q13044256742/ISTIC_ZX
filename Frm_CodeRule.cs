@@ -134,7 +134,7 @@ namespace 数据采集档案管理系统___加工版
                 insertSql += $" cr_split_symbol, cr_template, cr_create_date, cr_special_id) VALUES ('{Guid.NewGuid().ToString()}', '{type}', ";
                 for(int i = 0; i < values.Length; i++)
                     insertSql += $"'{values[i]}', ";
-                insertSql += $"'{symbol}', '{lbl_Template.Text}', '{DateTime.Now}', '{specialId}')";
+                insertSql += $"'{symbol}', '{lbl_Template.Text}', '{DateTime.Now.ToString("s")}', '{specialId}')";
 
                 SQLiteHelper.ExecuteNonQuery(insertSql);
                 MessageBox.Show("保存成功。");

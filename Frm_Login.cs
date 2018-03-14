@@ -21,7 +21,7 @@ namespace 数据采集档案管理系统___加工版
                 if(!string.IsNullOrEmpty(GetValue(uid)))
                 {
                     DataRow row = SQLiteHelper.ExecuteSingleRowQuery($"SELECT * FROM user_info WHERE ui_id='{uid}'");
-                    User user = UserHelpler.GetUser();
+                    User user = UserHelper.GetUser();
                     user.UserId = uid;
                     user.UserName = GetValue(row["ui_username"]);
                     user.RealName = GetValue(row["ui_realname"]);

@@ -1481,11 +1481,10 @@ namespace 数据采集档案管理系统___加工版
                         }
                         else
                         {
-                            //txt_Special_AJ_Code.Text = $"{planCode}-{DateTime.Now.Year}-{GetAJAmount(planCode)}";
-                            //txt_Special_AJ_Name.Text = lbl_JH_Name.Text;
+                            txt_Special_AJ_Code.Text = GetAJCode(objid, txt_Special_Code.Text);
                             txt_Special_AJ_Secret.Text = GetMaxSecretById(objid);
-                            //txt_Special_AJ_User.Text = UserHelper.GetInstance().User.RealName;
-                            //txt_Special_AJ_Unit.Text = UserHelper.GetInstance().User.Company;
+                            txt_Special_AJ_User.Text = UserHelper.GetUser().RealName;
+                            txt_Special_AJ_Unit.Text = UserHelper.GetUser().UserUnit;
                         }
                     }
                     else if(index == 3)
@@ -1538,11 +1537,10 @@ namespace 数据采集档案管理系统___加工版
                         }
                         else
                         {
-                            //txt_Project_AJ_Code.Text = $"{planCode}-{DateTime.Now.Year}-{GetAJAmount(planCode)}";
-                            //txt_Project_AJ_Name.Text = lbl_JH_Name.Text;
+                            txt_Project_AJ_Code.Text = GetAJCode(objid, txt_Project_Code.Text);
                             txt_Project_AJ_Secret.Text = GetMaxSecretById(objid);
-                            //txt_Project_AJ_User.Text = UserHelper.GetInstance().User.RealName;
-                            //txt_Project_AJ_Unit.Text = UserHelper.GetInstance().User.Company;
+                            txt_Project_AJ_User.Text = UserHelper.GetUser().RealName;
+                            txt_Project_AJ_Unit.Text = UserHelper.GetUser().UserUnit;
                         }
                     }
                     else if(index == 3)
@@ -1595,11 +1593,10 @@ namespace 数据采集档案管理系统___加工版
                         }
                         else
                         {
-                            //txt_Topic_AJ_Code.Text = $"{planCode}-{DateTime.Now.Year}-{GetAJAmount(planCode)}";
-                            //txt_Topic_AJ_Name.Text = lbl_JH_Name.Text;
+                            txt_Topic_AJ_Code.Text = GetAJCode(objid, txt_Topic_Code.Text);
                             txt_Topic_AJ_Secret.Text = GetMaxSecretById(objid);
-                            //txt_Topic_AJ_User.Text = UserHelper.GetInstance().User.RealName;
-                            //txt_Topic_AJ_Unit.Text = UserHelper.GetInstance().User.Company;
+                            txt_Topic_AJ_User.Text = UserHelper.GetUser().RealName;
+                            txt_Topic_AJ_Unit.Text = UserHelper.GetUser().UserUnit;
                         }
                     }
                     else if(index == 3)
@@ -1624,8 +1621,8 @@ namespace 数据采集档案管理系统___加工版
             {
                 btn_Subject_AddFile.Visible = lbl_Subject_FileDetail.Visible = false;
                 int index = tab_Subject_Info.SelectedIndex;
-                object objid = tab_Subject_Info.Tag;
-                if(objid != null)
+                object objId = tab_Subject_Info.Tag;
+                if(objId != null)
                 {
                     if(index == 0)
                     {
@@ -1633,12 +1630,12 @@ namespace 数据采集档案管理系统___加工版
                     }
                     if(index == 1)
                     {
-                        LoadFileValidList(dgv_Subject_FileValid, objid, "dgv_Subject_FV_");
+                        LoadFileValidList(dgv_Subject_FileValid, objId, "dgv_Subject_FV_");
                         dgv_Subject_FileValid.DefaultCellStyle.Font = new System.Drawing.Font("微软雅黑", 10.5f, System.Drawing.FontStyle.Regular);
                     }
                     else if(index == 2)
                     {
-                        DataTable dataTable = SQLiteHelper.ExecuteQuery($"SELECT * FROM files_tag_info WHERE pt_obj_id='{objid}'");
+                        DataTable dataTable = SQLiteHelper.ExecuteQuery($"SELECT * FROM files_tag_info WHERE pt_obj_id='{objId}'");
                         if(dataTable.Rows.Count > 0)
                         {
                             DataRow row = dataTable.Rows[0];
@@ -1652,16 +1649,15 @@ namespace 数据采集档案管理系统___加工版
                         }
                         else
                         {
-                            //txt_Subject_AJ_Code.Text = $"{planCode}-{DateTime.Now.Year}-{GetAJAmount(planCode)}";
-                            //txt_Subject_AJ_Name.Text = lbl_JH_Name.Text;
-                            txt_Subject_AJ_Secret.Text = GetMaxSecretById(objid);
-                            //txt_Subject_AJ_User.Text = UserHelper.GetInstance().User.RealName;
-                            //txt_Subject_AJ_Unit.Text = UserHelper.GetInstance().User.Company;
+                            txt_Subject_AJ_Code.Text = GetAJCode(objId, txt_Subject_Code.Text);
+                            txt_Subject_AJ_Secret.Text = GetMaxSecretById(objId);
+                            txt_Subject_AJ_User.Text = UserHelper.GetUser().RealName;
+                            txt_Subject_AJ_Unit.Text = UserHelper.GetUser().UserUnit;
                         }
                     }
                     else if(index == 3)
                     {
-                        object[] obj = SQLiteHelper.ExecuteRowsQuery($"SELECT pt_code, pt_name FROM files_tag_info WHERE pt_obj_id='{objid}'");
+                        object[] obj = SQLiteHelper.ExecuteRowsQuery($"SELECT pt_code, pt_name FROM files_tag_info WHERE pt_obj_id='{objId}'");
                         if(obj != null)
                         {
                             lbl_Subject_AJ_Code.Text = GetValue(obj[0]);
@@ -1672,11 +1668,41 @@ namespace 数据采集档案管理系统___加工版
                             lbl_Subject_AJ_Code.Text = string.Empty;
                             lbl_Subject_AJ_Name.Text = string.Empty;
                         }
-                        LoadBoxList(objid, ControlType.Plan_Topic_Subject);
-                        LoadFileBoxTable(cbo_Subject_BoxId.SelectedValue, objid, ControlType.Plan_Topic_Subject);
+                        LoadBoxList(objId, ControlType.Plan_Topic_Subject);
+                        LoadFileBoxTable(cbo_Subject_BoxId.SelectedValue, objId, ControlType.Plan_Topic_Subject);
                     }
                 }
             }
+        }
+
+        private string GetAJCode(object objId, object objCode)
+        {
+            string code = string.Empty;
+            DataRow row = SQLiteHelper.ExecuteSingleRowQuery($"SELECT * FROM code_rule WHERE cr_special_id='{UserHelper.GetUser().UserSepical}'");
+            if(row != null)
+            {
+                string symbol = GetValue(row["cr_split_symbol"]);
+                string template = GetValue(row["cr_template"]);
+                string[] strs = template.Split(symbol.ToCharArray());
+                for(int i = 0; i < strs.Length; i++)
+                {
+                    if("AAAA".Equals(strs[i]))//专项编号
+                        code += GetValue(SQLiteHelper.ExecuteOnlyOneQuery($"SELECT spi_code FROM special_info WHERE spi_id='{UserHelper.GetUser().UserSepical}'"));
+                    else if("BBBB".Equals(strs[i]))//项目/课题编号
+                        code += objCode;
+                    else if("CCCC".Equals(strs[i]))//来源单位
+                        code += GetValue(SQLiteHelper.ExecuteOnlyOneQuery($"SELECT dd_code FROM data_dictionary WHERE dd_id='{UserHelper.GetUser().UserUnit}'"));
+                    else if("2018".Equals(strs[i]))
+                        code += DateTime.Now.Year;
+                    else
+                    {
+                        int length = strs[i].Length;
+                        int amount = SQLiteHelper.ExecuteCountQuery($"SELECT COUNT(pt_id) FROM files_tag_info WHERE pt_obj_id='{objId}'") + 1;
+                        code += amount.ToString().PadLeft(length, '0');
+                    }
+                }
+            }
+            return code;
         }
 
         /// <summary>

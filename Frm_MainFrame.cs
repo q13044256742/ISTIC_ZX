@@ -121,7 +121,7 @@ namespace 数据采集档案管理系统___加工版
 
         private void Frm_MainFrame_Shown(object sender, EventArgs e)
         {
-            string querySql = $"SELECT spi_id, spi_name FROM special_info WHERE spi_id=(SELECT ui_special_id FROM user_info WHERE ui_id='{UserHelpler.GetUser().UserId}')";
+            string querySql = $"SELECT spi_id, spi_name FROM special_info WHERE spi_id=(SELECT ui_special_id FROM user_info WHERE ui_id='{UserHelper.GetUser().UserId}')";
             object[] obj = SQLiteHelper.ExecuteRowsQuery(querySql);
             if(obj == null)
             {
@@ -258,7 +258,7 @@ namespace 数据采集档案管理系统___加工版
 
         private void pic_Manager_Click(object sender, EventArgs e)
         {
-            string specialId = UserHelpler.GetUser().UserSepical;
+            string specialId = UserHelper.GetUser().UserSepical;
             if(!string.IsNullOrEmpty(specialId))
             {
                 Frm_Manager manager = new Frm_Manager(specialId);

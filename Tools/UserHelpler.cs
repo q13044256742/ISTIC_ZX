@@ -1,6 +1,6 @@
 ﻿namespace 数据采集档案管理系统___加工版
 {
-    class UserHelpler
+    class UserHelper
     {
         private static User user;
 

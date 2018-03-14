@@ -806,7 +806,7 @@
             this.txt_Special_AJ_Secret.Location = new System.Drawing.Point(113, 103);
             this.txt_Special_AJ_Secret.Name = "txt_Special_AJ_Secret";
             this.txt_Special_AJ_Secret.ReadOnly = true;
-            this.txt_Special_AJ_Secret.Size = new System.Drawing.Size(255, 26);
+            this.txt_Special_AJ_Secret.Size = new System.Drawing.Size(135, 26);
             this.txt_Special_AJ_Secret.TabIndex = 43;
             // 
             // txt_Special_AJ_Term
@@ -827,7 +827,7 @@
             // 
             this.txt_Special_AJ_User.Location = new System.Drawing.Point(482, 103);
             this.txt_Special_AJ_User.Name = "txt_Special_AJ_User";
-            this.txt_Special_AJ_User.Size = new System.Drawing.Size(255, 26);
+            this.txt_Special_AJ_User.Size = new System.Drawing.Size(140, 26);
             this.txt_Special_AJ_User.TabIndex = 38;
             // 
             // txt_Special_AJ_Name

@@ -344,18 +344,18 @@
             // 
             // btn_Refresh
             // 
-            this.btn_Refresh.Location = new System.Drawing.Point(8, 24);
+            this.btn_Refresh.Location = new System.Drawing.Point(8, 26);
             this.btn_Refresh.Name = "btn_Refresh";
-            this.btn_Refresh.Size = new System.Drawing.Size(75, 29);
+            this.btn_Refresh.Size = new System.Drawing.Size(75, 27);
             this.btn_Refresh.TabIndex = 9;
             this.btn_Refresh.Text = "刷新(&R)";
             this.btn_Refresh.UseVisualStyleBackColor = true;
             // 
             // btn_Edit
             // 
-            this.btn_Edit.Location = new System.Drawing.Point(300, 24);
+            this.btn_Edit.Location = new System.Drawing.Point(300, 26);
             this.btn_Edit.Name = "btn_Edit";
-            this.btn_Edit.Size = new System.Drawing.Size(75, 29);
+            this.btn_Edit.Size = new System.Drawing.Size(75, 27);
             this.btn_Edit.TabIndex = 7;
             this.btn_Edit.Text = "编辑(&D)";
             this.btn_Edit.UseVisualStyleBackColor = true;
@@ -364,9 +364,9 @@
             // btn_Query
             // 
             this.btn_Query.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Query.Location = new System.Drawing.Point(806, 25);
+            this.btn_Query.Location = new System.Drawing.Point(806, 26);
             this.btn_Query.Name = "btn_Query";
-            this.btn_Query.Size = new System.Drawing.Size(75, 29);
+            this.btn_Query.Size = new System.Drawing.Size(75, 27);
             this.btn_Query.TabIndex = 6;
             this.btn_Query.Text = "查询(&Q)";
             this.btn_Query.UseVisualStyleBackColor = true;
@@ -406,9 +406,9 @@
             // 
             // btn_Delete
             // 
-            this.btn_Delete.Location = new System.Drawing.Point(206, 24);
+            this.btn_Delete.Location = new System.Drawing.Point(206, 26);
             this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(75, 29);
+            this.btn_Delete.Size = new System.Drawing.Size(75, 27);
             this.btn_Delete.TabIndex = 1;
             this.btn_Delete.Text = "删除(&D)";
             this.btn_Delete.UseVisualStyleBackColor = true;

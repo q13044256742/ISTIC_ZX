@@ -31,82 +31,82 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_FilePath = new System.Windows.Forms.TextBox();
             this.btn_Import = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.pro_Show = new System.Windows.Forms.ProgressBar();
             this.label2 = new System.Windows.Forms.Label();
             this.fbd_Data = new System.Windows.Forms.FolderBrowserDialog();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(20, 16);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 20);
+            this.label1.Size = new System.Drawing.Size(83, 19);
             this.label1.TabIndex = 0;
-            this.label1.Text = "数据存放路径:";
+            this.label1.Text = "源数据路径:";
             // 
             // txt_FilePath
             // 
             this.txt_FilePath.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.txt_FilePath.Location = new System.Drawing.Point(24, 43);
+            this.txt_FilePath.Location = new System.Drawing.Point(20, 43);
             this.txt_FilePath.Margin = new System.Windows.Forms.Padding(5);
             this.txt_FilePath.Name = "txt_FilePath";
-            this.txt_FilePath.Size = new System.Drawing.Size(321, 25);
+            this.txt_FilePath.Size = new System.Drawing.Size(384, 25);
             this.txt_FilePath.TabIndex = 1;
             // 
             // btn_Import
             // 
-            this.btn_Import.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.btn_Import.Location = new System.Drawing.Point(355, 41);
+            this.btn_Import.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btn_Import.Location = new System.Drawing.Point(177, 174);
             this.btn_Import.Margin = new System.Windows.Forms.Padding(5);
             this.btn_Import.Name = "btn_Import";
-            this.btn_Import.Size = new System.Drawing.Size(83, 28);
-            this.btn_Import.TabIndex = 2;
-            this.btn_Import.Text = "选择(&S)";
+            this.btn_Import.Size = new System.Drawing.Size(102, 32);
+            this.btn_Import.TabIndex = 3;
+            this.btn_Import.Text = "开始导入";
             this.btn_Import.UseVisualStyleBackColor = true;
-            this.btn_Import.Click += new System.EventHandler(this.btn_Import_Click);
+            this.btn_Import.Click += new System.EventHandler(this.btn_Import_Click_1);
             // 
-            // button2
+            // pro_Show
             // 
-            this.button2.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.button2.Location = new System.Drawing.Point(177, 174);
-            this.button2.Margin = new System.Windows.Forms.Padding(5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(102, 30);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "开始导入(&I)";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(24, 119);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(5);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(414, 26);
-            this.progressBar1.TabIndex = 4;
+            this.pro_Show.Location = new System.Drawing.Point(20, 119);
+            this.pro_Show.Margin = new System.Windows.Forms.Padding(5);
+            this.pro_Show.Name = "pro_Show";
+            this.pro_Show.Size = new System.Drawing.Size(414, 26);
+            this.pro_Show.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.Location = new System.Drawing.Point(20, 90);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 20);
+            this.label2.Size = new System.Drawing.Size(69, 19);
             this.label2.TabIndex = 5;
             this.label2.Text = "读取进度:";
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(412, 47);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(22, 21);
+            this.linkLabel1.TabIndex = 6;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "...";
+            this.linkLabel1.Click += new System.EventHandler(this.btn_Import_Click);
             // 
             // Frm_Import
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 218);
+            this.ClientSize = new System.Drawing.Size(457, 228);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.pro_Show);
             this.Controls.Add(this.btn_Import);
             this.Controls.Add(this.txt_FilePath);
             this.Controls.Add(this.label1);
@@ -128,9 +128,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_FilePath;
         private System.Windows.Forms.Button btn_Import;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar pro_Show;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.FolderBrowserDialog fbd_Data;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
