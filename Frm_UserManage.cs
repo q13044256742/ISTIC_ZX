@@ -16,6 +16,12 @@ namespace 数据采集档案管理系统___加工版
             WindowState = FormWindowState.Maximized;
             cbo_Search_Type.SelectedIndex = 0;
             LoadUserList(string.Empty);
+
+            string key = "00f09cef-59be-4607-93bf-3b70b2db1e2b";
+            DataTable table = SQLiteHelper.ExecuteQuery($"SELECT * FROM data_dictionary WHERE dd_pId='{key}' ORDER BY dd_sort");
+            cbo_Unit.DataSource = table;
+            cbo_Unit.DisplayMember = "dd_name";
+            cbo_Unit.ValueMember = "dd_id";
         }
 
         private void LoadUserList(object queryCondition)
@@ -40,7 +46,7 @@ namespace 数据采集档案管理系统___加工版
             object username = txt_UserName.Text;
             object password = txt_PassWord.Text;
             object passwordAgain = txt_PassWordAagin.Text;
-            object unit = txt_Unit.Text;
+            object unit = cbo_Unit.SelectedValue;
             object department = txt_Department.Text;
             object realname = txt_RealName.Text;
             object email = txt_Email.Text;

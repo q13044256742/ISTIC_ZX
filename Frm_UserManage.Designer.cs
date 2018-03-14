@@ -58,7 +58,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txt_Department = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txt_Unit = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_PassWordAagin = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -67,6 +66,7 @@
             this.txt_UserName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.errorTip = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cbo_Unit = new System.Windows.Forms.ComboBox();
             this.tab_UseList.SuspendLayout();
             this.tp_UserList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_UserList)).BeginInit();
@@ -242,6 +242,7 @@
             // 
             this.tab_UserAdd.AutoScroll = true;
             this.tab_UserAdd.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.tab_UserAdd.Controls.Add(this.cbo_Unit);
             this.tab_UserAdd.Controls.Add(this.btn_Reset);
             this.tab_UserAdd.Controls.Add(this.btn_Save);
             this.tab_UserAdd.Controls.Add(this.txt_Remark);
@@ -254,7 +255,6 @@
             this.tab_UserAdd.Controls.Add(this.label8);
             this.tab_UserAdd.Controls.Add(this.txt_Department);
             this.tab_UserAdd.Controls.Add(this.label7);
-            this.tab_UserAdd.Controls.Add(this.txt_Unit);
             this.tab_UserAdd.Controls.Add(this.label6);
             this.tab_UserAdd.Controls.Add(this.txt_PassWordAagin);
             this.tab_UserAdd.Controls.Add(this.label5);
@@ -381,14 +381,6 @@
             this.label7.TabIndex = 8;
             this.label7.Text = "归属部门";
             // 
-            // txt_Unit
-            // 
-            this.txt_Unit.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_Unit.Location = new System.Drawing.Point(247, 141);
-            this.txt_Unit.Name = "txt_Unit";
-            this.txt_Unit.Size = new System.Drawing.Size(379, 26);
-            this.txt_Unit.TabIndex = 7;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -460,6 +452,15 @@
             // 
             this.errorTip.ContainerControl = this;
             // 
+            // cbo_Unit
+            // 
+            this.cbo_Unit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_Unit.FormattingEnabled = true;
+            this.cbo_Unit.Location = new System.Drawing.Point(247, 140);
+            this.cbo_Unit.Name = "cbo_Unit";
+            this.cbo_Unit.Size = new System.Drawing.Size(379, 28);
+            this.cbo_Unit.TabIndex = 20;
+            // 
             // Frm_UserManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -508,7 +509,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txt_Department;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txt_Unit;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txt_PassWordAagin;
         private System.Windows.Forms.Label label5;
@@ -523,5 +523,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn unit;
         private System.Windows.Forms.Button btn_Refresh;
+        private System.Windows.Forms.ComboBox cbo_Unit;
     }
 }

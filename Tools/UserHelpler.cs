@@ -16,8 +16,9 @@
         private object userId;
         private string userName;
         private string realName;
-        private string userUnit;
-        private string userSepical;
+        private string userUnitId;
+        private string userUnitName;
+        private string userSepicalId;
         /// <summary>
         /// 用户ID
         /// </summary>
@@ -27,16 +28,20 @@
         /// </summary>
         public string UserName { get => userName; set => userName = value; }
         /// <summary>
-        /// 用户所属单位
+        /// 用户所属单位ID
         /// </summary>
-        public string UserUnit { get => userUnit; set => userUnit = value; }
+        public string UserUnitId { get => userUnitId; set => userUnitId = value; }
         /// <summary>
         /// 用户所属专项ID
         /// </summary>
-        public string UserSepical { get => userSepical; set => userSepical = value; }
+        public string UserSepicalId { get => userSepicalId; set => userSepicalId = value; }
         /// <summary>
         /// 真实姓名
         /// </summary>
         public string RealName { get => realName; set => realName = value; }
+        /// <summary>
+        /// 用户所属单位名称
+        /// </summary>
+        public string UserUnitName { get => userUnitName; set => userUnitName = value; }
     }
 }

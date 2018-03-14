@@ -258,7 +258,7 @@ namespace 数据采集档案管理系统___加工版
 
         private void pic_Manager_Click(object sender, EventArgs e)
         {
-            string specialId = UserHelper.GetUser().UserSepical;
+            string specialId = UserHelper.GetUser().UserSepicalId;
             if(!string.IsNullOrEmpty(specialId))
             {
                 Frm_Manager manager = new Frm_Manager(specialId);
