@@ -1490,6 +1490,17 @@ namespace 数据采集档案管理系统___加工版
                     }
                     else if(index == 3)
                     {
+                        object[] obj = SQLiteHelper.ExecuteRowsQuery($"SELECT pt_code, pt_name FROM files_tag_info WHERE pt_obj_id='{objid}'");
+                        if(obj != null)
+                        {
+                            lbl_Special_AJ_Code.Text = GetValue(obj[0]);
+                            lbl_Special_AJ_Name.Text = GetValue(obj[1]);
+                        }
+                        else
+                        {
+                            lbl_Special_AJ_Code.Text = string.Empty;
+                            lbl_Special_AJ_Name.Text = string.Empty;
+                        }
                         LoadBoxList(objid, ControlType.Plan);
                         LoadFileBoxTable(cbo_Special_BoxId.SelectedValue, objid, ControlType.Plan);
                     }
@@ -1536,6 +1547,17 @@ namespace 数据采集档案管理系统___加工版
                     }
                     else if(index == 3)
                     {
+                        object[] obj = SQLiteHelper.ExecuteRowsQuery($"SELECT pt_code, pt_name FROM files_tag_info WHERE pt_obj_id='{objid}'");
+                        if(obj != null)
+                        {
+                            lbl_Project_AJ_Code.Text = GetValue(obj[0]);
+                            lbl_Project_AJ_Name.Text = GetValue(obj[1]);
+                        }
+                        else
+                        {
+                            lbl_Project_AJ_Code.Text = string.Empty;
+                            lbl_Project_AJ_Name.Text = string.Empty;
+                        }
                         LoadBoxList(objid, ControlType.Plan_Project);
                         LoadFileBoxTable(cbo_Project_BoxId.SelectedValue, objid, ControlType.Plan_Project);
                     }
@@ -1582,6 +1604,17 @@ namespace 数据采集档案管理系统___加工版
                     }
                     else if(index == 3)
                     {
+                        object[] obj = SQLiteHelper.ExecuteRowsQuery($"SELECT pt_code, pt_name FROM files_tag_info WHERE pt_obj_id='{objid}'");
+                        if(obj != null)
+                        {
+                            lbl_Topic_AJ_Code.Text = GetValue(obj[0]);
+                            lbl_Topic_AJ_Name.Text = GetValue(obj[1]);
+                        }
+                        else
+                        {
+                            lbl_Topic_AJ_Code.Text = string.Empty;
+                            lbl_Topic_AJ_Name.Text = string.Empty;
+                        }
                         LoadBoxList(objid, ControlType.Plan_Topic);
                         LoadFileBoxTable(cbo_Topic_BoxId.SelectedValue, objid, ControlType.Plan_Topic);
                     }
@@ -1628,6 +1661,17 @@ namespace 数据采集档案管理系统___加工版
                     }
                     else if(index == 3)
                     {
+                        object[] obj = SQLiteHelper.ExecuteRowsQuery($"SELECT pt_code, pt_name FROM files_tag_info WHERE pt_obj_id='{objid}'");
+                        if(obj != null)
+                        {
+                            lbl_Subject_AJ_Code.Text = GetValue(obj[0]);
+                            lbl_Subject_AJ_Name.Text = GetValue(obj[1]);
+                        }
+                        else
+                        {
+                            lbl_Subject_AJ_Code.Text = string.Empty;
+                            lbl_Subject_AJ_Name.Text = string.Empty;
+                        }
                         LoadBoxList(objid, ControlType.Plan_Topic_Subject);
                         LoadFileBoxTable(cbo_Subject_BoxId.SelectedValue, objid, ControlType.Plan_Topic_Subject);
                     }

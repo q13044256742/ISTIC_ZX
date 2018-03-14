@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("863计划");
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("863计划");
             this.tab_Menu = new System.Windows.Forms.TabControl();
             this.special = new System.Windows.Forms.TabPage();
             this.txt_Special_Unit = new System.Windows.Forms.Label();
@@ -83,8 +83,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.tab_Special_Box = new System.Windows.Forms.TabPage();
-            this.lbl_Special_AJ_User = new System.Windows.Forms.Label();
-            this.label80 = new System.Windows.Forms.Label();
             this.lbl_Special_AJ_Name = new System.Windows.Forms.Label();
             this.label78 = new System.Windows.Forms.Label();
             this.lbl_Special_AJ_Code = new System.Windows.Forms.Label();
@@ -157,11 +155,9 @@
             this.label49 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.tab_Project_Box = new System.Windows.Forms.TabPage();
-            this.label76 = new System.Windows.Forms.Label();
-            this.label77 = new System.Windows.Forms.Label();
-            this.label79 = new System.Windows.Forms.Label();
+            this.lbl_Project_AJ_Name = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
-            this.label82 = new System.Windows.Forms.Label();
+            this.lbl_Project_AJ_Code = new System.Windows.Forms.Label();
             this.label83 = new System.Windows.Forms.Label();
             this.btn_Project_Bottom = new System.Windows.Forms.Button();
             this.btn_Project_Top = new System.Windows.Forms.Button();
@@ -265,11 +261,9 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.tab_Topic_Box = new System.Windows.Forms.TabPage();
-            this.label84 = new System.Windows.Forms.Label();
-            this.label85 = new System.Windows.Forms.Label();
-            this.label86 = new System.Windows.Forms.Label();
+            this.lbl_Topic_AJ_Name = new System.Windows.Forms.Label();
             this.label87 = new System.Windows.Forms.Label();
-            this.label88 = new System.Windows.Forms.Label();
+            this.lbl_Topic_AJ_Code = new System.Windows.Forms.Label();
             this.label89 = new System.Windows.Forms.Label();
             this.btn_Topic_Bottom = new System.Windows.Forms.Button();
             this.btn_Topic_Top = new System.Windows.Forms.Button();
@@ -367,11 +361,9 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.tab_Subject_Box = new System.Windows.Forms.TabPage();
-            this.label103 = new System.Windows.Forms.Label();
-            this.label104 = new System.Windows.Forms.Label();
-            this.label105 = new System.Windows.Forms.Label();
+            this.lbl_Subject_AJ_Name = new System.Windows.Forms.Label();
             this.label106 = new System.Windows.Forms.Label();
-            this.label107 = new System.Windows.Forms.Label();
+            this.lbl_Subject_AJ_Code = new System.Windows.Forms.Label();
             this.label108 = new System.Windows.Forms.Label();
             this.btn_Subject_Bottom = new System.Windows.Forms.Button();
             this.btn_Subject_Top = new System.Windows.Forms.Button();
@@ -550,14 +542,14 @@
             // 
             // dgv_Special_FileList
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Special_FileList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Special_FileList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_Special_FileList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Special_FileList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgv_Special_FL_id,
@@ -713,14 +705,14 @@
             this.dgv_Special_FileValid.AllowUserToAddRows = false;
             this.dgv_Special_FileValid.AllowUserToDeleteRows = false;
             this.dgv_Special_FileValid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Special_FileValid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Special_FileValid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgv_Special_FileValid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Special_FileValid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgv_Special_FV_ID,
@@ -915,8 +907,6 @@
             // tab_Special_Box
             // 
             this.tab_Special_Box.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tab_Special_Box.Controls.Add(this.lbl_Special_AJ_User);
-            this.tab_Special_Box.Controls.Add(this.label80);
             this.tab_Special_Box.Controls.Add(this.lbl_Special_AJ_Name);
             this.tab_Special_Box.Controls.Add(this.label78);
             this.tab_Special_Box.Controls.Add(this.lbl_Special_AJ_Code);
@@ -941,29 +931,10 @@
             this.tab_Special_Box.TabIndex = 3;
             this.tab_Special_Box.Text = "盒信息";
             // 
-            // lbl_Special_AJ_User
-            // 
-            this.lbl_Special_AJ_User.AutoSize = true;
-            this.lbl_Special_AJ_User.Location = new System.Drawing.Point(1155, 17);
-            this.lbl_Special_AJ_User.Name = "lbl_Special_AJ_User";
-            this.lbl_Special_AJ_User.Size = new System.Drawing.Size(48, 16);
-            this.lbl_Special_AJ_User.TabIndex = 32;
-            this.lbl_Special_AJ_User.Text = "admin";
-            // 
-            // label80
-            // 
-            this.label80.AutoSize = true;
-            this.label80.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label80.Location = new System.Drawing.Point(1094, 16);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(65, 19);
-            this.label80.TabIndex = 31;
-            this.label80.Text = "立卷人：";
-            // 
             // lbl_Special_AJ_Name
             // 
             this.lbl_Special_AJ_Name.AutoSize = true;
-            this.lbl_Special_AJ_Name.Location = new System.Drawing.Point(935, 17);
+            this.lbl_Special_AJ_Name.Location = new System.Drawing.Point(1052, 15);
             this.lbl_Special_AJ_Name.Name = "lbl_Special_AJ_Name";
             this.lbl_Special_AJ_Name.Size = new System.Drawing.Size(40, 16);
             this.lbl_Special_AJ_Name.TabIndex = 30;
@@ -973,7 +944,7 @@
             // 
             this.label78.AutoSize = true;
             this.label78.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label78.Location = new System.Drawing.Point(849, 16);
+            this.label78.Location = new System.Drawing.Point(966, 14);
             this.label78.Name = "label78";
             this.label78.Size = new System.Drawing.Size(79, 19);
             this.label78.TabIndex = 29;
@@ -982,7 +953,7 @@
             // lbl_Special_AJ_Code
             // 
             this.lbl_Special_AJ_Code.AutoSize = true;
-            this.lbl_Special_AJ_Code.Location = new System.Drawing.Point(683, 17);
+            this.lbl_Special_AJ_Code.Location = new System.Drawing.Point(800, 15);
             this.lbl_Special_AJ_Code.Name = "lbl_Special_AJ_Code";
             this.lbl_Special_AJ_Code.Size = new System.Drawing.Size(40, 16);
             this.lbl_Special_AJ_Code.TabIndex = 28;
@@ -992,7 +963,7 @@
             // 
             this.label75.AutoSize = true;
             this.label75.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label75.Location = new System.Drawing.Point(597, 16);
+            this.label75.Location = new System.Drawing.Point(714, 14);
             this.label75.Name = "label75";
             this.label75.Size = new System.Drawing.Size(79, 19);
             this.label75.TabIndex = 27;
@@ -1022,7 +993,7 @@
             // 
             // txt_Special_GCID
             // 
-            this.txt_Special_GCID.Location = new System.Drawing.Point(370, 14);
+            this.txt_Special_GCID.Location = new System.Drawing.Point(370, 10);
             this.txt_Special_GCID.Name = "txt_Special_GCID";
             this.txt_Special_GCID.Size = new System.Drawing.Size(148, 26);
             this.txt_Special_GCID.TabIndex = 24;
@@ -1125,7 +1096,7 @@
             // 
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label39.Location = new System.Drawing.Point(299, 16);
+            this.label39.Location = new System.Drawing.Point(299, 14);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(65, 19);
             this.label39.TabIndex = 3;
@@ -1361,14 +1332,14 @@
             // 
             // dgv_Project_FileList
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Project_FileList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Project_FileList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgv_Project_FileList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Project_FileList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgv_Project_FL_id,
@@ -1494,14 +1465,14 @@
             this.dgv_Project_FileValid.AllowUserToAddRows = false;
             this.dgv_Project_FileValid.AllowUserToDeleteRows = false;
             this.dgv_Project_FileValid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Project_FileValid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Project_FileValid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgv_Project_FileValid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Project_FileValid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgv_Project_FV_id,
@@ -1694,11 +1665,9 @@
             // tab_Project_Box
             // 
             this.tab_Project_Box.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tab_Project_Box.Controls.Add(this.label76);
-            this.tab_Project_Box.Controls.Add(this.label77);
-            this.tab_Project_Box.Controls.Add(this.label79);
+            this.tab_Project_Box.Controls.Add(this.lbl_Project_AJ_Name);
             this.tab_Project_Box.Controls.Add(this.label81);
-            this.tab_Project_Box.Controls.Add(this.label82);
+            this.tab_Project_Box.Controls.Add(this.lbl_Project_AJ_Code);
             this.tab_Project_Box.Controls.Add(this.label83);
             this.tab_Project_Box.Controls.Add(this.btn_Project_Bottom);
             this.tab_Project_Box.Controls.Add(this.btn_Project_Top);
@@ -1720,58 +1689,39 @@
             this.tab_Project_Box.TabIndex = 3;
             this.tab_Project_Box.Text = "盒信息";
             // 
-            // label76
+            // lbl_Project_AJ_Name
             // 
-            this.label76.AutoSize = true;
-            this.label76.Location = new System.Drawing.Point(1190, 14);
-            this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(48, 16);
-            this.label76.TabIndex = 39;
-            this.label76.Text = "admin";
-            // 
-            // label77
-            // 
-            this.label77.AutoSize = true;
-            this.label77.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label77.Location = new System.Drawing.Point(1129, 13);
-            this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(65, 19);
-            this.label77.TabIndex = 38;
-            this.label77.Text = "立卷人：";
-            // 
-            // label79
-            // 
-            this.label79.AutoSize = true;
-            this.label79.Location = new System.Drawing.Point(970, 14);
-            this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(40, 16);
-            this.label79.TabIndex = 37;
-            this.label79.Text = "NULL";
+            this.lbl_Project_AJ_Name.AutoSize = true;
+            this.lbl_Project_AJ_Name.Location = new System.Drawing.Point(1055, 14);
+            this.lbl_Project_AJ_Name.Name = "lbl_Project_AJ_Name";
+            this.lbl_Project_AJ_Name.Size = new System.Drawing.Size(40, 16);
+            this.lbl_Project_AJ_Name.TabIndex = 37;
+            this.lbl_Project_AJ_Name.Text = "NULL";
             // 
             // label81
             // 
             this.label81.AutoSize = true;
             this.label81.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label81.Location = new System.Drawing.Point(884, 13);
+            this.label81.Location = new System.Drawing.Point(969, 13);
             this.label81.Name = "label81";
             this.label81.Size = new System.Drawing.Size(79, 19);
             this.label81.TabIndex = 36;
             this.label81.Text = "案卷名称：";
             // 
-            // label82
+            // lbl_Project_AJ_Code
             // 
-            this.label82.AutoSize = true;
-            this.label82.Location = new System.Drawing.Point(718, 14);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(40, 16);
-            this.label82.TabIndex = 35;
-            this.label82.Text = "NULL";
+            this.lbl_Project_AJ_Code.AutoSize = true;
+            this.lbl_Project_AJ_Code.Location = new System.Drawing.Point(803, 14);
+            this.lbl_Project_AJ_Code.Name = "lbl_Project_AJ_Code";
+            this.lbl_Project_AJ_Code.Size = new System.Drawing.Size(40, 16);
+            this.lbl_Project_AJ_Code.TabIndex = 35;
+            this.lbl_Project_AJ_Code.Text = "NULL";
             // 
             // label83
             // 
             this.label83.AutoSize = true;
             this.label83.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label83.Location = new System.Drawing.Point(632, 13);
+            this.label83.Location = new System.Drawing.Point(717, 13);
             this.label83.Name = "label83";
             this.label83.Size = new System.Drawing.Size(79, 19);
             this.label83.TabIndex = 34;
@@ -1801,7 +1751,7 @@
             // 
             // txt_Project_GCID
             // 
-            this.txt_Project_GCID.Location = new System.Drawing.Point(409, 10);
+            this.txt_Project_GCID.Location = new System.Drawing.Point(409, 9);
             this.txt_Project_GCID.Name = "txt_Project_GCID";
             this.txt_Project_GCID.Size = new System.Drawing.Size(180, 26);
             this.txt_Project_GCID.TabIndex = 31;
@@ -1903,10 +1853,10 @@
             // label54
             // 
             this.label54.AutoSize = true;
-            this.label54.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label54.Location = new System.Drawing.Point(307, 16);
+            this.label54.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label54.Location = new System.Drawing.Point(307, 13);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(67, 14);
+            this.label54.Size = new System.Drawing.Size(65, 19);
             this.label54.TabIndex = 3;
             this.label54.Text = "馆藏号：";
             // 
@@ -1927,10 +1877,10 @@
             // label55
             // 
             this.label55.AutoSize = true;
-            this.label55.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label55.Location = new System.Drawing.Point(21, 17);
+            this.label55.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label55.Location = new System.Drawing.Point(21, 13);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(52, 14);
+            this.label55.Size = new System.Drawing.Size(51, 19);
             this.label55.TabIndex = 0;
             this.label55.Text = "盒号：";
             // 
@@ -2428,14 +2378,14 @@
             // 
             // dgv_Topic_FileList
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Topic_FileList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Topic_FileList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dgv_Topic_FileList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Topic_FileList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgv_Topic_FL_id,
@@ -2589,14 +2539,14 @@
             this.dgv_Topic_FileValid.AllowUserToAddRows = false;
             this.dgv_Topic_FileValid.AllowUserToDeleteRows = false;
             this.dgv_Topic_FileValid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Topic_FileValid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Topic_FileValid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgv_Topic_FileValid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Topic_FileValid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgv_Topic_FV_id,
@@ -2789,11 +2739,9 @@
             // tab_Topic_Box
             // 
             this.tab_Topic_Box.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tab_Topic_Box.Controls.Add(this.label84);
-            this.tab_Topic_Box.Controls.Add(this.label85);
-            this.tab_Topic_Box.Controls.Add(this.label86);
+            this.tab_Topic_Box.Controls.Add(this.lbl_Topic_AJ_Name);
             this.tab_Topic_Box.Controls.Add(this.label87);
-            this.tab_Topic_Box.Controls.Add(this.label88);
+            this.tab_Topic_Box.Controls.Add(this.lbl_Topic_AJ_Code);
             this.tab_Topic_Box.Controls.Add(this.label89);
             this.tab_Topic_Box.Controls.Add(this.btn_Topic_Bottom);
             this.tab_Topic_Box.Controls.Add(this.btn_Topic_Top);
@@ -2815,58 +2763,39 @@
             this.tab_Topic_Box.TabIndex = 3;
             this.tab_Topic_Box.Text = "盒信息";
             // 
-            // label84
+            // lbl_Topic_AJ_Name
             // 
-            this.label84.AutoSize = true;
-            this.label84.Location = new System.Drawing.Point(1193, 11);
-            this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(48, 16);
-            this.label84.TabIndex = 53;
-            this.label84.Text = "admin";
-            // 
-            // label85
-            // 
-            this.label85.AutoSize = true;
-            this.label85.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label85.Location = new System.Drawing.Point(1132, 10);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(65, 19);
-            this.label85.TabIndex = 52;
-            this.label85.Text = "立卷人：";
-            // 
-            // label86
-            // 
-            this.label86.AutoSize = true;
-            this.label86.Location = new System.Drawing.Point(973, 11);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(40, 16);
-            this.label86.TabIndex = 51;
-            this.label86.Text = "NULL";
+            this.lbl_Topic_AJ_Name.AutoSize = true;
+            this.lbl_Topic_AJ_Name.Location = new System.Drawing.Point(1051, 13);
+            this.lbl_Topic_AJ_Name.Name = "lbl_Topic_AJ_Name";
+            this.lbl_Topic_AJ_Name.Size = new System.Drawing.Size(40, 16);
+            this.lbl_Topic_AJ_Name.TabIndex = 51;
+            this.lbl_Topic_AJ_Name.Text = "NULL";
             // 
             // label87
             // 
             this.label87.AutoSize = true;
             this.label87.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label87.Location = new System.Drawing.Point(887, 10);
+            this.label87.Location = new System.Drawing.Point(965, 12);
             this.label87.Name = "label87";
             this.label87.Size = new System.Drawing.Size(79, 19);
             this.label87.TabIndex = 50;
             this.label87.Text = "案卷名称：";
             // 
-            // label88
+            // lbl_Topic_AJ_Code
             // 
-            this.label88.AutoSize = true;
-            this.label88.Location = new System.Drawing.Point(721, 11);
-            this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(40, 16);
-            this.label88.TabIndex = 49;
-            this.label88.Text = "NULL";
+            this.lbl_Topic_AJ_Code.AutoSize = true;
+            this.lbl_Topic_AJ_Code.Location = new System.Drawing.Point(799, 13);
+            this.lbl_Topic_AJ_Code.Name = "lbl_Topic_AJ_Code";
+            this.lbl_Topic_AJ_Code.Size = new System.Drawing.Size(40, 16);
+            this.lbl_Topic_AJ_Code.TabIndex = 49;
+            this.lbl_Topic_AJ_Code.Text = "NULL";
             // 
             // label89
             // 
             this.label89.AutoSize = true;
             this.label89.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label89.Location = new System.Drawing.Point(635, 10);
+            this.label89.Location = new System.Drawing.Point(713, 12);
             this.label89.Name = "label89";
             this.label89.Size = new System.Drawing.Size(79, 19);
             this.label89.TabIndex = 48;
@@ -2896,7 +2825,7 @@
             // 
             // txt_Topic_GCID
             // 
-            this.txt_Topic_GCID.Location = new System.Drawing.Point(411, 9);
+            this.txt_Topic_GCID.Location = new System.Drawing.Point(411, 8);
             this.txt_Topic_GCID.Name = "txt_Topic_GCID";
             this.txt_Topic_GCID.Size = new System.Drawing.Size(180, 26);
             this.txt_Topic_GCID.TabIndex = 45;
@@ -3469,14 +3398,14 @@
             // 
             // dgv_Subject_FileList
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Subject_FileList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Subject_FileList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgv_Subject_FileList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Subject_FileList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgv_Subject_FL_id,
@@ -3630,14 +3559,14 @@
             this.dgv_Subject_FileValid.AllowUserToAddRows = false;
             this.dgv_Subject_FileValid.AllowUserToDeleteRows = false;
             this.dgv_Subject_FileValid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Subject_FileValid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Subject_FileValid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dgv_Subject_FileValid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Subject_FileValid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgv_Subject_FV_id,
@@ -3830,11 +3759,9 @@
             // tab_Subject_Box
             // 
             this.tab_Subject_Box.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tab_Subject_Box.Controls.Add(this.label103);
-            this.tab_Subject_Box.Controls.Add(this.label104);
-            this.tab_Subject_Box.Controls.Add(this.label105);
+            this.tab_Subject_Box.Controls.Add(this.lbl_Subject_AJ_Name);
             this.tab_Subject_Box.Controls.Add(this.label106);
-            this.tab_Subject_Box.Controls.Add(this.label107);
+            this.tab_Subject_Box.Controls.Add(this.lbl_Subject_AJ_Code);
             this.tab_Subject_Box.Controls.Add(this.label108);
             this.tab_Subject_Box.Controls.Add(this.btn_Subject_Bottom);
             this.tab_Subject_Box.Controls.Add(this.btn_Subject_Top);
@@ -3856,58 +3783,39 @@
             this.tab_Subject_Box.TabIndex = 3;
             this.tab_Subject_Box.Text = "盒信息";
             // 
-            // label103
+            // lbl_Subject_AJ_Name
             // 
-            this.label103.AutoSize = true;
-            this.label103.Location = new System.Drawing.Point(1194, 14);
-            this.label103.Name = "label103";
-            this.label103.Size = new System.Drawing.Size(48, 16);
-            this.label103.TabIndex = 67;
-            this.label103.Text = "admin";
-            // 
-            // label104
-            // 
-            this.label104.AutoSize = true;
-            this.label104.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label104.Location = new System.Drawing.Point(1131, 13);
-            this.label104.Name = "label104";
-            this.label104.Size = new System.Drawing.Size(65, 19);
-            this.label104.TabIndex = 66;
-            this.label104.Text = "立卷人：";
-            // 
-            // label105
-            // 
-            this.label105.AutoSize = true;
-            this.label105.Location = new System.Drawing.Point(974, 14);
-            this.label105.Name = "label105";
-            this.label105.Size = new System.Drawing.Size(40, 16);
-            this.label105.TabIndex = 65;
-            this.label105.Text = "NULL";
+            this.lbl_Subject_AJ_Name.AutoSize = true;
+            this.lbl_Subject_AJ_Name.Location = new System.Drawing.Point(1062, 12);
+            this.lbl_Subject_AJ_Name.Name = "lbl_Subject_AJ_Name";
+            this.lbl_Subject_AJ_Name.Size = new System.Drawing.Size(40, 16);
+            this.lbl_Subject_AJ_Name.TabIndex = 65;
+            this.lbl_Subject_AJ_Name.Text = "NULL";
             // 
             // label106
             // 
             this.label106.AutoSize = true;
             this.label106.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label106.Location = new System.Drawing.Point(888, 13);
+            this.label106.Location = new System.Drawing.Point(976, 11);
             this.label106.Name = "label106";
             this.label106.Size = new System.Drawing.Size(79, 19);
             this.label106.TabIndex = 64;
             this.label106.Text = "案卷名称：";
             // 
-            // label107
+            // lbl_Subject_AJ_Code
             // 
-            this.label107.AutoSize = true;
-            this.label107.Location = new System.Drawing.Point(722, 14);
-            this.label107.Name = "label107";
-            this.label107.Size = new System.Drawing.Size(40, 16);
-            this.label107.TabIndex = 63;
-            this.label107.Text = "NULL";
+            this.lbl_Subject_AJ_Code.AutoSize = true;
+            this.lbl_Subject_AJ_Code.Location = new System.Drawing.Point(810, 12);
+            this.lbl_Subject_AJ_Code.Name = "lbl_Subject_AJ_Code";
+            this.lbl_Subject_AJ_Code.Size = new System.Drawing.Size(40, 16);
+            this.lbl_Subject_AJ_Code.TabIndex = 63;
+            this.lbl_Subject_AJ_Code.Text = "NULL";
             // 
             // label108
             // 
             this.label108.AutoSize = true;
             this.label108.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label108.Location = new System.Drawing.Point(636, 13);
+            this.label108.Location = new System.Drawing.Point(724, 11);
             this.label108.Name = "label108";
             this.label108.Size = new System.Drawing.Size(79, 19);
             this.label108.TabIndex = 62;
@@ -3937,7 +3845,7 @@
             // 
             // txt_Subject_GCID
             // 
-            this.txt_Subject_GCID.Location = new System.Drawing.Point(414, 8);
+            this.txt_Subject_GCID.Location = new System.Drawing.Point(414, 7);
             this.txt_Subject_GCID.Name = "txt_Subject_GCID";
             this.txt_Subject_GCID.Size = new System.Drawing.Size(180, 26);
             this.txt_Subject_GCID.TabIndex = 59;
@@ -4371,10 +4279,10 @@
             this.tv_Working.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tv_Working.Location = new System.Drawing.Point(-240, 0);
             this.tv_Working.Name = "tv_Working";
-            treeNode1.Name = "863计划";
-            treeNode1.Text = "863计划";
+            treeNode2.Name = "863计划";
+            treeNode2.Text = "863计划";
             this.tv_Working.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
+            treeNode2});
             this.tv_Working.Size = new System.Drawing.Size(240, 641);
             this.tv_Working.TabIndex = 0;
             this.tv_Working.Visible = false;
@@ -4802,8 +4710,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_Subject_FV_name;
         private System.Windows.Forms.DataGridViewComboBoxColumn dgv_Subject_FV_reason;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_Subject_FV_remark;
-        private System.Windows.Forms.Label lbl_Special_AJ_User;
-        private System.Windows.Forms.Label label80;
         private System.Windows.Forms.Label lbl_Special_AJ_Name;
         private System.Windows.Forms.Label label78;
         private System.Windows.Forms.Label lbl_Special_AJ_Code;
@@ -4811,23 +4717,17 @@
         private System.Windows.Forms.Label txt_Special_Unit;
         private System.Windows.Forms.Label txt_Special_Name;
         private System.Windows.Forms.Label txt_Special_Code;
-        private System.Windows.Forms.Label label76;
-        private System.Windows.Forms.Label label77;
-        private System.Windows.Forms.Label label79;
+        private System.Windows.Forms.Label lbl_Project_AJ_Name;
         private System.Windows.Forms.Label label81;
-        private System.Windows.Forms.Label label82;
+        private System.Windows.Forms.Label lbl_Project_AJ_Code;
         private System.Windows.Forms.Label label83;
-        private System.Windows.Forms.Label label84;
-        private System.Windows.Forms.Label label85;
-        private System.Windows.Forms.Label label86;
+        private System.Windows.Forms.Label lbl_Topic_AJ_Name;
         private System.Windows.Forms.Label label87;
-        private System.Windows.Forms.Label label88;
+        private System.Windows.Forms.Label lbl_Topic_AJ_Code;
         private System.Windows.Forms.Label label89;
-        private System.Windows.Forms.Label label103;
-        private System.Windows.Forms.Label label104;
-        private System.Windows.Forms.Label label105;
+        private System.Windows.Forms.Label lbl_Subject_AJ_Name;
         private System.Windows.Forms.Label label106;
-        private System.Windows.Forms.Label label107;
+        private System.Windows.Forms.Label lbl_Subject_AJ_Code;
         private System.Windows.Forms.Label label108;
         private System.Windows.Forms.Label lbl_Subject_FileDetail;
         private System.Windows.Forms.Label lbl_Special_FileDetail;
