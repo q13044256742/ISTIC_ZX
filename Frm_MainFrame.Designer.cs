@@ -192,6 +192,8 @@
             this.pic_Export.TabIndex = 0;
             this.pic_Export.TabStop = false;
             this.pic_Export.Click += new System.EventHandler(this.pic_Export_Click);
+            this.pic_Export.MouseEnter += new System.EventHandler(this.Pic_MouseEnter);
+            this.pic_Export.MouseLeave += new System.EventHandler(this.Pic_MouseLeave);
             // 
             // groupBox1
             // 
@@ -242,6 +244,8 @@
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pic_Editpassword);
+            this.pictureBox3.MouseEnter += new System.EventHandler(this.Pic_MouseEnter);
+            this.pictureBox3.MouseLeave += new System.EventHandler(this.Pic_MouseLeave);
             // 
             // panel4
             // 
@@ -273,6 +277,8 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pictureBox2.MouseEnter += new System.EventHandler(this.Pic_MouseEnter);
+            this.pictureBox2.MouseLeave += new System.EventHandler(this.Pic_MouseLeave);
             // 
             // panel5
             // 

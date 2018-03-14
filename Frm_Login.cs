@@ -20,7 +20,14 @@ namespace 数据采集档案管理系统___加工版
                 object uid = SQLiteHelper.ExecuteOnlyOneQuery($"SELECT ui_id FROM user_info WHERE ui_username='{username}' AND ui_password='{password}'");
                 if(!string.IsNullOrEmpty(GetValue(uid)))
                 {
-                    Frm_MainFrame frm = new Frm_MainFrame(uid);
+                    DataRow row = SQLiteHelper.ExecuteSingleRowQuery($"SELECT * FROM user_info WHERE ui_id='{uid}'");
+                    User user = UserHelpler.GetUser();
+                    user.UserId = uid;
+                    user.UserName = GetValue(row["ui_username"]);
+                    user.RealName = GetValue(row["ui_realname"]);
+                    user.UserSepical = GetValue(row["ui_special_id"]);
+                    user.UserUnit = GetValue(row["ui_unit"]);
+                    Frm_MainFrame frm = new Frm_MainFrame();
                     frm.Show();
                     Hide();
                 }

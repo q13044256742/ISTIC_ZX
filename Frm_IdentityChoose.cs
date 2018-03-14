@@ -6,11 +6,9 @@ namespace 数据采集档案管理系统___加工版
 {
     public partial class Frm_IdentityChoose : Form
     {
-        private object uid;
-        public Frm_IdentityChoose(object uid)
+        public Frm_IdentityChoose()
         {
             InitializeComponent();
-            this.uid = uid;
         }
 
         private void Frm_IdentityChoose_Load(object sender, EventArgs e)
@@ -26,7 +24,7 @@ namespace 数据采集档案管理系统___加工版
             object id = cbo_ChooseIdentity.SelectedValue;
             if(MessageBox.Show("选择后不可修改，确定要选择当前身份吗?", "确认提示", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
             {
-                SQLiteHelper.ExecuteNonQuery($"UPDATE user_info SET ui_special_id='{id}' WHERE ui_id='{uid}'");
+                SQLiteHelper.ExecuteNonQuery($"UPDATE user_info SET ui_special_id='{id}' WHERE ui_id='{UserHelpler.GetUser().UserId}'");
                 MessageBox.Show("选择身份完毕。");
                 DialogResult = DialogResult.OK;
                 Close();

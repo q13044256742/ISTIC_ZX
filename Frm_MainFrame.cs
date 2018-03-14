@@ -9,13 +9,11 @@ namespace 数据采集档案管理系统___加工版
 
     public partial class Frm_MainFrame : Form
     {
-        private object userId;
         private string rootId;
-        public Frm_MainFrame(object userId)
+        public Frm_MainFrame()
         {
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
-            this.userId = userId;
         }
 
         private void Frm_MainFrame_Load(object sender, EventArgs e)
@@ -28,6 +26,7 @@ namespace 数据采集档案管理系统___加工版
             Panel panel = (sender as PictureBox).Parent as Panel;
             panel.ForeColor = System.Drawing.Color.Black;
             Cursor = Cursors.Default;
+            panel.BorderStyle = BorderStyle.None;
         }
 
         private void Pic_MouseEnter(object sender, EventArgs e)
@@ -35,6 +34,7 @@ namespace 数据采集档案管理系统___加工版
             Panel panel = (sender as PictureBox).Parent as Panel;
             panel.ForeColor = System.Drawing.Color.MidnightBlue;
             Cursor = Cursors.Hand;
+            panel.BorderStyle = BorderStyle.FixedSingle;
         }
 
         private void Pic_Add_Click(object sender, EventArgs e)
@@ -121,11 +121,11 @@ namespace 数据采集档案管理系统___加工版
 
         private void Frm_MainFrame_Shown(object sender, EventArgs e)
         {
-            string querySql = $"SELECT spi_id, spi_name FROM special_info WHERE spi_id=(SELECT ui_special_id FROM user_info WHERE ui_id='{userId}')";
+            string querySql = $"SELECT spi_id, spi_name FROM special_info WHERE spi_id=(SELECT ui_special_id FROM user_info WHERE ui_id='{UserHelpler.GetUser().UserId}')";
             object[] obj = SQLiteHelper.ExecuteRowsQuery(querySql);
             if(obj == null)
             {
-                Frm_IdentityChoose frm_Identity = new Frm_IdentityChoose(userId);
+                Frm_IdentityChoose frm_Identity = new Frm_IdentityChoose();
                 if(frm_Identity.ShowDialog() == DialogResult.OK)
                     obj = SQLiteHelper.ExecuteRowsQuery(querySql);
             }
@@ -258,8 +258,8 @@ namespace 数据采集档案管理系统___加工版
 
         private void pic_Manager_Click(object sender, EventArgs e)
         {
-            object specialId = SQLiteHelper.ExecuteOnlyOneQuery($"SELECT ui_special_id FROM user_info WHERE ui_id='{userId}'");
-            if(specialId != null)
+            string specialId = UserHelpler.GetUser().UserSepical;
+            if(!string.IsNullOrEmpty(specialId))
             {
                 Frm_Manager manager = new Frm_Manager(specialId);
                 manager.ShowDialog();
