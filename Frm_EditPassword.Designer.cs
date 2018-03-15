@@ -31,112 +31,129 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txt_Export_Path = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btn_Save = new System.Windows.Forms.Button();
+            this.txt_PassWord = new System.Windows.Forms.TextBox();
+            this.txt_NewPassWord = new System.Windows.Forms.TextBox();
+            this.txt_NewPassWordAgain = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbl_UserName = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.label1.Location = new System.Drawing.Point(30, 35);
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(41, 68);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 20);
+            this.label1.Size = new System.Drawing.Size(92, 17);
             this.label1.TabIndex = 1;
-            this.label1.Text = "请输入原始密码：";
+            this.label1.Text = "请输入原密码：";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.label2.Location = new System.Drawing.Point(46, 84);
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(41, 113);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 20);
+            this.label2.Size = new System.Drawing.Size(92, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "请输入新密码：";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.label3.Location = new System.Drawing.Point(14, 133);
+            this.label3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(27, 158);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 20);
+            this.label3.Size = new System.Drawing.Size(104, 17);
             this.label3.TabIndex = 3;
-            this.label3.Text = "请再次输入新密码：";
+            this.label3.Text = "再次输入新密码：";
             // 
-            // button2
+            // btn_Save
             // 
-            this.button2.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.button2.Location = new System.Drawing.Point(226, 194);
-            this.button2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(53, 29);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "确定(&S)";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_Save.Font = new System.Drawing.Font("微软雅黑", 11F);
+            this.btn_Save.Location = new System.Drawing.Point(146, 212);
+            this.btn_Save.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(84, 32);
+            this.btn_Save.TabIndex = 8;
+            this.btn_Save.Text = "确定(&S)";
+            this.btn_Save.UseVisualStyleBackColor = true;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
-            // button1
+            // txt_PassWord
             // 
-            this.button1.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.button1.Location = new System.Drawing.Point(289, 194);
-            this.button1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(53, 29);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "取消(&S)";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btn_close);
+            this.txt_PassWord.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_PassWord.Location = new System.Drawing.Point(147, 61);
+            this.txt_PassWord.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txt_PassWord.Name = "txt_PassWord";
+            this.txt_PassWord.Size = new System.Drawing.Size(191, 26);
+            this.txt_PassWord.TabIndex = 10;
             // 
-            // txt_Export_Path
+            // txt_NewPassWord
             // 
-            this.txt_Export_Path.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.txt_Export_Path.Location = new System.Drawing.Point(151, 35);
-            this.txt_Export_Path.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.txt_Export_Path.Name = "txt_Export_Path";
-            this.txt_Export_Path.Size = new System.Drawing.Size(191, 29);
-            this.txt_Export_Path.TabIndex = 10;
+            this.txt_NewPassWord.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_NewPassWord.Location = new System.Drawing.Point(147, 108);
+            this.txt_NewPassWord.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txt_NewPassWord.Name = "txt_NewPassWord";
+            this.txt_NewPassWord.Size = new System.Drawing.Size(191, 26);
+            this.txt_NewPassWord.TabIndex = 11;
             // 
-            // textBox1
+            // txt_NewPassWordAgain
             // 
-            this.textBox1.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.textBox1.Location = new System.Drawing.Point(151, 84);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(191, 29);
-            this.textBox1.TabIndex = 11;
+            this.txt_NewPassWordAgain.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_NewPassWordAgain.Location = new System.Drawing.Point(147, 155);
+            this.txt_NewPassWordAgain.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txt_NewPassWordAgain.Name = "txt_NewPassWordAgain";
+            this.txt_NewPassWordAgain.Size = new System.Drawing.Size(191, 26);
+            this.txt_NewPassWordAgain.TabIndex = 12;
             // 
-            // textBox2
+            // label4
             // 
-            this.textBox2.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.textBox2.Location = new System.Drawing.Point(151, 133);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(191, 29);
-            this.textBox2.TabIndex = 12;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Location = new System.Drawing.Point(69, 23);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(68, 17);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "当前用户：";
+            // 
+            // lbl_UserName
+            // 
+            this.lbl_UserName.AutoSize = true;
+            this.lbl_UserName.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_UserName.Location = new System.Drawing.Point(147, 20);
+            this.lbl_UserName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lbl_UserName.Name = "lbl_UserName";
+            this.lbl_UserName.Size = new System.Drawing.Size(35, 20);
+            this.lbl_UserName.TabIndex = 14;
+            this.lbl_UserName.Text = "null";
             // 
             // Frm_EditPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(376, 261);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.txt_Export_Path);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.lbl_UserName);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txt_NewPassWordAgain);
+            this.Controls.Add(this.txt_NewPassWord);
+            this.Controls.Add(this.txt_PassWord);
+            this.Controls.Add(this.btn_Save);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Frm_EditPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "修改密码";
+            this.Load += new System.EventHandler(this.Frm_EditPassword_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,10 +164,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txt_Export_Path;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button btn_Save;
+        private System.Windows.Forms.TextBox txt_PassWord;
+        private System.Windows.Forms.TextBox txt_NewPassWord;
+        private System.Windows.Forms.TextBox txt_NewPassWordAgain;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbl_UserName;
     }
 }

@@ -48,7 +48,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pic_BackUp = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.pic_Manager = new System.Windows.Forms.PictureBox();
@@ -85,7 +85,7 @@
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_BackUp)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Manager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -250,7 +250,7 @@
             // panel4
             // 
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Controls.Add(this.pictureBox2);
+            this.panel4.Controls.Add(this.pic_BackUp);
             this.panel4.Location = new System.Drawing.Point(420, 10);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(91, 82);
@@ -265,20 +265,20 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "数据备份\r\n";
             // 
-            // pictureBox2
+            // pic_BackUp
             // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.pic_BackUp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = global::数据采集档案管理系统___加工版.Properties.Resources.png_0281;
-            this.pictureBox2.Location = new System.Drawing.Point(18, 7);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(55, 48);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            this.pictureBox2.MouseEnter += new System.EventHandler(this.Pic_MouseEnter);
-            this.pictureBox2.MouseLeave += new System.EventHandler(this.Pic_MouseLeave);
+            this.pic_BackUp.Image = global::数据采集档案管理系统___加工版.Properties.Resources.png_0281;
+            this.pic_BackUp.Location = new System.Drawing.Point(18, 7);
+            this.pic_BackUp.Name = "pic_BackUp";
+            this.pic_BackUp.Size = new System.Drawing.Size(55, 48);
+            this.pic_BackUp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_BackUp.TabIndex = 0;
+            this.pic_BackUp.TabStop = false;
+            this.pic_BackUp.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pic_BackUp.MouseEnter += new System.EventHandler(this.Pic_MouseEnter);
+            this.pic_BackUp.MouseLeave += new System.EventHandler(this.Pic_MouseLeave);
             // 
             // panel5
             // 
@@ -587,7 +587,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_BackUp)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Manager)).EndInit();
@@ -629,7 +629,7 @@
         private System.Windows.Forms.PictureBox pic_Manager;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pic_BackUp;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox3;

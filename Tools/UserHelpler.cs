@@ -16,6 +16,7 @@
         private object userId;
         private string userName;
         private string realName;
+        private string passWord;
         private string userUnitId;
         private string userUnitName;
         private string userSepicalId;
@@ -43,5 +44,9 @@
         /// 用户所属单位名称
         /// </summary>
         public string UserUnitName { get => userUnitName; set => userUnitName = value; }
+        /// <summary>
+        /// 用户密码
+        /// </summary>
+        public string PassWord { get => passWord; set => passWord = value; }
     }
 }

@@ -76,10 +76,7 @@ namespace 数据采集档案管理系统___加工版
                 }
             }, Sub_Menu_Click);
 
-            //默认打开用户管理
-            new Frm_UserManage { MdiParent = this }.Show();
         }
-
         private void Sub_Menu_Click(object sender, System.EventArgs e)
         {
             Control control = null;
@@ -161,6 +158,11 @@ namespace 数据采集档案管理系统___加工版
         private void Frm_Manager_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult = DialogResult.OK;
+        }
+
+        private void 退出QToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            Close();
         }
     }
 }                       

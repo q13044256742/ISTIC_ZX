@@ -23,11 +23,12 @@ namespace 数据采集档案管理系统___加工版
                     DataRow row = SQLiteHelper.ExecuteSingleRowQuery($"SELECT * FROM user_info WHERE ui_id='{uid}'");
                     User user = UserHelper.GetUser();
                     user.UserId = uid;
-                    user.UserName = GetValue(row["ui_username"]);
+                    user.UserName = username;
                     user.RealName = GetValue(row["ui_realname"]);
                     user.UserSepicalId = GetValue(row["ui_special_id"]);
                     user.UserUnitId = GetValue(row["ui_unit"]);
                     user.UserUnitName = SQLiteHelper.GetCompanysNameById(user.UserUnitId);
+                    user.PassWord = password;
                     Frm_MainFrame frm = new Frm_MainFrame();
                     frm.Show();
                     Hide();

@@ -64,8 +64,9 @@
             // 退出QToolStripMenuItem
             // 
             this.退出QToolStripMenuItem.Name = "退出QToolStripMenuItem";
-            this.退出QToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.退出QToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.退出QToolStripMenuItem.Text = "退出(&Q)";
+            this.退出QToolStripMenuItem.Click += new System.EventHandler(this.退出QToolStripMenuItem_Click);
             // 
             // Frm_Manager
             // 
