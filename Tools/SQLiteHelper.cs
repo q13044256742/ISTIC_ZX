@@ -170,12 +170,7 @@ namespace 数据采集档案管理系统___加工版
             return _obj;
         }
 
-        /// <summary>
-        /// 根据单位ID获取单位名称
-        /// </summary>
-        /// <param name="companyId">来源单位ID</param>
-        /// <returns></returns>
-        public static string GetCompanysNameById(object companyId)
+        public static string GetValueByKey(object companyId)
         {
             object obj = SQLiteHelper.ExecuteOnlyOneQuery($"SELECT dd_name FROM data_dictionary WHERE dd_id='{companyId}'");
             return obj == null ? string.Empty : obj.ToString();

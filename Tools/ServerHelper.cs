@@ -16,39 +16,47 @@ namespace 数据采集档案管理系统___加工版
         /// <param name="userName">用户名</param>
         /// <param name="passWord">密码</param>
         /// <returns>连接是否成功</returns>
-        public static bool GetConnectState(string IPaddress, string userName, string passWord)
+        public static bool GetConnectState()
         {
             bool Flag = false;
-            System.Diagnostics.Process proc = new System.Diagnostics.Process();
-            try
+            string key = "00001";
+            object[] obj = SQLiteHelper.ExecuteRowsQuery($"SELECT pri_code, pri_key, pri_value FROM private_info WHERE pri_id='{key}'");
+            if(obj != null)
             {
-                proc.StartInfo.FileName = "CMD.EXE";
-                proc.StartInfo.UseShellExecute = false;
-                proc.StartInfo.RedirectStandardInput = true;
-                proc.StartInfo.RedirectStandardOutput = true;
-                proc.StartInfo.RedirectStandardError = true;
-                proc.StartInfo.CreateNoWindow = true;
-                proc.Start();
-                string dosLine = @"NET USE \\" + IPaddress + " " + passWord + @" /USER:" + userName;
-                proc.StandardInput.WriteLine(dosLine);
-                proc.StandardInput.WriteLine("EXIT");
-                while(!proc.HasExited)
-                    proc.WaitForExit(1000);
-                string errormsg = proc.StandardError.ReadToEnd();
-                proc.StandardError.Close();
-                if(string.IsNullOrEmpty(errormsg))
-                    Flag = true;
-                else
-                    throw new Exception(errormsg);
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                proc.Close();
-                proc.Dispose();
+                object IPaddress = obj[0];
+                object userName = obj[1];
+                object passWord = obj[2];
+                System.Diagnostics.Process proc = new System.Diagnostics.Process();
+                try
+                {
+                    proc.StartInfo.FileName = "CMD.EXE";
+                    proc.StartInfo.UseShellExecute = false;
+                    proc.StartInfo.RedirectStandardInput = true;
+                    proc.StartInfo.RedirectStandardOutput = true;
+                    proc.StartInfo.RedirectStandardError = true;
+                    proc.StartInfo.CreateNoWindow = true;
+                    proc.Start();
+                    string dosLine = @"NET USE \\" + IPaddress + " " + passWord + @" /USER:" + userName;
+                    proc.StandardInput.WriteLine(dosLine);
+                    proc.StandardInput.WriteLine("EXIT");
+                    while(!proc.HasExited)
+                        proc.WaitForExit(1000);
+                    string errormsg = proc.StandardError.ReadToEnd();
+                    proc.StandardError.Close();
+                    if(string.IsNullOrEmpty(errormsg))
+                        Flag = true;
+                    else
+                        throw new Exception(errormsg);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    proc.Close();
+                    proc.Dispose();
+                }
             }
             return Flag;
         }

@@ -118,6 +118,7 @@
             this.Name = "Frm_Import";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "数据导入";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Import_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

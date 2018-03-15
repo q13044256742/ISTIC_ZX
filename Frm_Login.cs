@@ -27,7 +27,7 @@ namespace 数据采集档案管理系统___加工版
                     user.RealName = GetValue(row["ui_realname"]);
                     user.UserSepicalId = GetValue(row["ui_special_id"]);
                     user.UserUnitId = GetValue(row["ui_unit"]);
-                    user.UserUnitName = SQLiteHelper.GetCompanysNameById(user.UserUnitId);
+                    user.UserUnitName = SQLiteHelper.GetValueByKey(user.UserUnitId);
                     user.PassWord = password;
                     Frm_MainFrame frm = new Frm_MainFrame();
                     frm.Show();

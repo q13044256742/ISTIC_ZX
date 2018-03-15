@@ -36,7 +36,7 @@ namespace 数据采集档案管理系统___加工版
                 dgv_UserList.Rows[index].Cells["realname"].Value = table.Rows[i]["ui_realname"];
                 dgv_UserList.Rows[index].Cells["username"].Value = table.Rows[i]["ui_username"];
                 dgv_UserList.Rows[index].Cells["phone"].Value = table.Rows[i]["ui_phone"];
-                dgv_UserList.Rows[index].Cells["unit"].Value = table.Rows[i]["ui_unit"];
+                dgv_UserList.Rows[index].Cells["unit"].Value = SQLiteHelper.GetValueByKey(table.Rows[i]["ui_unit"]);
             }
         }
 

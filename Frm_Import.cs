@@ -46,32 +46,38 @@ namespace 数据采集档案管理系统___加工版
             string sPath = txt_FilePath.Text;
             if(!string.IsNullOrEmpty(sPath))
             {
-                count = okCount = noCount = indexCount = 0;
-                pro_Show.Value = pro_Show.Minimum;
-                if(ServerHelper.GetConnectState("127.0.0.1", "Administrator", ""))
+                if(SQLiteHelper.ExecuteCountQuery($"SELECT COUNT(*) FROM backup_files_info WHERE bfi_name='{UserHelper.GetUser().RealName}' AND bfi_code='-1'") == 0)
                 {
-                    int totalFileAmount = Directory.GetFiles(sPath, "*", SearchOption.AllDirectories).Length;
-                    pro_Show.Maximum = totalFileAmount;
-
-                    string rootFolder = @"\\127.0.0.1\共享文件夹\" + UserHelper.GetUser().RealName + @"\";
-                    if(!Directory.Exists(rootFolder))
-                        Directory.CreateDirectory(rootFolder);
-                    if(SQLiteHelper.ExecuteCountQuery($"SELECT COUNT(*) FROM backup_files_info WHERE bfi_name='{UserHelper.GetUser().RealName}' AND bfi_code='-1'") == 0)
+                    if(ServerHelper.GetConnectState())
                     {
+                        btn_Import.Enabled = false;
+                        count = okCount = noCount = indexCount = 0;
+                        int totalFileAmount = Directory.GetFiles(sPath, "*", SearchOption.AllDirectories).Length;
+                        pro_Show.Value = pro_Show.Minimum;
+                        pro_Show.Maximum = totalFileAmount;
+
+                        string rootFolder = @"\\127.0.0.1\共享文件夹\" + UserHelper.GetUser().RealName + @"\";
+                        if(!Directory.Exists(rootFolder))
+                            Directory.CreateDirectory(rootFolder);
                         string primaryKey = Guid.NewGuid().ToString();
                         SQLiteHelper.ExecuteNonQuery($"INSERT INTO backup_files_info(bfi_id, bfi_code, bfi_name, bfi_date, bfi_userid) VALUES " +
                             $"('{primaryKey}', '{-1}', '{UserHelper.GetUser().RealName}', '{DateTime.Now.ToString("s")}', '{UserHelper.GetUser().UserId}')");
-                        CopyFile(sPath, rootFolder, primaryKey);
-
-                        MessageBox.Show($"读取完毕,共计{count}个文件。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                        Close();
-                    }else
-                    {
-                        MessageBox.Show("当前专项存在导入的数据。", "操作失败", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        new Thread(delegate ()
+                        {
+                            CopyFile(sPath, rootFolder, primaryKey);
+                            MessageBox.Show($"读取完毕,共计{count}个文件。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            Close();
+                            Thread.CurrentThread.Abort();
+                        }).Start();
                     }
+                    else
+                        MessageBox.Show("访问备份服务器失败。", "连接错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else
-                    MessageBox.Show("访问备份服务器失败。", "连接错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if(MessageBox.Show("当前专项已导入,是否删除当前文件。", "操作失败", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk) == DialogResult.OK)
+                {
+                    SQLiteHelper.ExecuteNonQuery($"DELETE FROM backup_files_info WHERE bfi_userid='{UserHelper.GetUser().UserId}'");
+                    MessageBox.Show("删除完毕，重新导入即可。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
             }
         }
         
@@ -108,6 +114,15 @@ namespace 数据采集档案管理系统___加工版
                 SQLiteHelper.ExecuteNonQuery($"INSERT INTO backup_files_info(bfi_id, bfi_code, bfi_name, bfi_path, bfi_date, bfi_pid, bfi_userid) VALUES " +
                         $"('{primaryKey}', '{indexCount++.ToString().PadLeft(6, '0')}', '{infos[i].Name}', '{rootFolder}', '{DateTime.Now.ToString("s")}', '{pid}', '{UserHelper.GetUser().UserId}')");
                 CopyFile(infos[i].FullName, rootFolder + infos[i].Name + @"\", primaryKey);
+            }
+        }
+
+        private void Frm_Import_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(okCount + noCount != count)
+            {
+                MessageBox.Show("请等待导入完毕,中途退出会导致数据错误。", "无法关闭", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                e.Cancel = true;
             }
         }
     }
