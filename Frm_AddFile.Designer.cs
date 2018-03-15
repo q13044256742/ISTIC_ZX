@@ -157,10 +157,11 @@
             // 
             // txt_link
             // 
-            this.txt_link.Location = new System.Drawing.Point(124, 482);
+            this.txt_link.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_link.Location = new System.Drawing.Point(124, 484);
             this.txt_link.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txt_link.Name = "txt_link";
-            this.txt_link.Size = new System.Drawing.Size(451, 26);
+            this.txt_link.Size = new System.Drawing.Size(451, 23);
             this.txt_link.TabIndex = 13;
             // 
             // label14

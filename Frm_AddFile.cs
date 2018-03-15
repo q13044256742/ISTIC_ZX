@@ -132,29 +132,29 @@ namespace 数据采集档案管理系统___加工版
         /// </summary>
         private void Btn_OpenFile_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog
-            { Multiselect = false };
-            if(openFileDialog.ShowDialog() == DialogResult.OK)
+            object rootId = SQLiteHelper.ExecuteOnlyOneQuery($"SELECT bfi_id FROM backup_files_info WHERE bfi_name = '{UserHelper.GetUser().RealName}' AND bfi_code = '-1'");
+            if(rootId != null)
             {
-                string path = openFileDialog.FileName;
-                if(MessageBox.Show("是否要打开选定文件?", "温馨提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                Frm_AddFile_FileSelect frm = new Frm_AddFile_FileSelect(rootId);
+                if(frm.ShowDialog() == DialogResult.OK)
                 {
-                    if(File.Exists(path))
+                    string fullPath = frm.SelectedFileName;
+                    if(File.Exists(fullPath))
                     {
-                        txt_link.Text = path;
-                        try
-                        {
-                            System.Diagnostics.Process.Start("Explorer.exe", path);
-                        }
-                        catch(Exception ex)
-                        {
-                            MessageBox.Show(ex.Message, "打开失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                        string savePath = Application.StartupPath + @"\TempBackupFolder\";
+                        if(!Directory.Exists(savePath))
+                            Directory.CreateDirectory(savePath);
+                        string filePath = savePath + new FileInfo(fullPath).Name;
+                        File.Copy(fullPath, filePath, true);
+                        System.Diagnostics.Process.Start("Explorer.exe", filePath);
+                        txt_link.Text = fullPath;
                     }
                     else
-                        MessageBox.Show("文件不存在。", "打开失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("服务器不存在此文件。", "打开失败", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
             }
+            else
+                MessageBox.Show("当前专项尚未导入数据。", "操作失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         
         /// <summary>

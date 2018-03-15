@@ -7,6 +7,19 @@ namespace 数据采集档案管理系统___加工版
 {
     public partial class Frm_Import : Form
     {
+        /// <summary>
+        /// 共计文件数
+        /// </summary>
+        private int count = 0;
+        /// <summary>
+        /// 导入成功数
+        /// </summary>
+        private int okCount = 0;
+        /// <summary>
+        /// 导入失败输
+        /// </summary>
+        private int noCount = 0;
+        int indexCount = 0;
         public Frm_Import()
         {
             InitializeComponent();
@@ -33,34 +46,68 @@ namespace 数据采集档案管理系统___加工版
             string sPath = txt_FilePath.Text;
             if(!string.IsNullOrEmpty(sPath))
             {
-                count = 0;
+                count = okCount = noCount = indexCount = 0;
                 pro_Show.Value = pro_Show.Minimum;
-                CopyFile(sPath);
-                new Thread(delegate ()
+                if(ServerHelper.GetConnectState("127.0.0.1", "Administrator", ""))
                 {
-                    do
-                    {
-                        pro_Show.Value += 5;
-                        Thread.Sleep(100);
-                    }
-                    while(pro_Show.Value < pro_Show.Maximum);
-                    MessageBox.Show($"读取完毕,共计{count}个文件。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    int totalFileAmount = Directory.GetFiles(sPath, "*", SearchOption.AllDirectories).Length;
+                    pro_Show.Maximum = totalFileAmount;
 
-                    Thread.CurrentThread.Abort();
-                }).Start();
+                    string rootFolder = @"\\127.0.0.1\共享文件夹\" + UserHelper.GetUser().RealName + @"\";
+                    if(!Directory.Exists(rootFolder))
+                        Directory.CreateDirectory(rootFolder);
+                    if(SQLiteHelper.ExecuteCountQuery($"SELECT COUNT(*) FROM backup_files_info WHERE bfi_name='{UserHelper.GetUser().RealName}' AND bfi_code='-1'") == 0)
+                    {
+                        string primaryKey = Guid.NewGuid().ToString();
+                        SQLiteHelper.ExecuteNonQuery($"INSERT INTO backup_files_info(bfi_id, bfi_code, bfi_name, bfi_date, bfi_userid) VALUES " +
+                            $"('{primaryKey}', '{-1}', '{UserHelper.GetUser().RealName}', '{DateTime.Now.ToString("s")}', '{UserHelper.GetUser().UserId}')");
+                        CopyFile(sPath, rootFolder, primaryKey);
+
+                        MessageBox.Show($"读取完毕,共计{count}个文件。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        Close();
+                    }else
+                    {
+                        MessageBox.Show("当前专项存在导入的数据。", "操作失败", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
+                }
+                else
+                    MessageBox.Show("访问备份服务器失败。", "连接错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private int count = 0;
-        private void CopyFile(string sPath)
+        
+        /// <summary>
+        /// 拷贝文件到备份服务器
+        /// </summary>
+        /// <param name="sPath">源文件夹路径</param>
+        /// <param name="rootFolder">目标文件夹基路径</param>
+        private void CopyFile(string sPath, string rootFolder, string pid)
         {
             DirectoryInfo info = new DirectoryInfo(sPath);
             FileInfo[] file = info.GetFiles();
             count += file.Length;
-
+            for(int i = 0; i < file.Length; i++)
+            {
+                string primaryKey = Guid.NewGuid().ToString();
+                try
+                {
+                    SQLiteHelper.ExecuteNonQuery($"INSERT INTO backup_files_info(bfi_id, bfi_code, bfi_name, bfi_path, bfi_date, bfi_pid, bfi_userid) VALUES " +
+                        $"('{primaryKey}', '{indexCount++.ToString().PadLeft(6, '0')}', '{file[i].Name}', '{rootFolder}', '{DateTime.Now.ToString("s")}', '{pid}', '{UserHelper.GetUser().UserId}')");
+                    ServerHelper.UploadFile(file[i].FullName, rootFolder, file[i].Name);
+                    okCount++;
+                }
+                catch(Exception)
+                {
+                    noCount++;
+                }
+                pro_Show.Value += 1;
+            }
             DirectoryInfo[] infos = info.GetDirectories();
             for(int i = 0; i < infos.Length; i++)
             {
-                CopyFile(infos[i].FullName);
+                string primaryKey = Guid.NewGuid().ToString();
+                SQLiteHelper.ExecuteNonQuery($"INSERT INTO backup_files_info(bfi_id, bfi_code, bfi_name, bfi_path, bfi_date, bfi_pid, bfi_userid) VALUES " +
+                        $"('{primaryKey}', '{indexCount++.ToString().PadLeft(6, '0')}', '{infos[i].Name}', '{rootFolder}', '{DateTime.Now.ToString("s")}', '{pid}', '{UserHelper.GetUser().UserId}')");
+                CopyFile(infos[i].FullName, rootFolder + infos[i].Name + @"\", primaryKey);
             }
         }
     }
