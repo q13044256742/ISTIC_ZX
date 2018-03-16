@@ -240,25 +240,13 @@ namespace 数据采集档案管理系统___加工版
         {
             if(e.RowIndex != -1 && e.ColumnIndex != -1)
             {
-                //打开word
-                if("control".Equals(dgv_DataList.Columns[e.ColumnIndex].Name))
-                {
-                    if(MessageBox.Show("是否合成Word实例?", "确认提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        Object filename = "合成word示例.docx";
-                        Object filefullname = Application.StartupPath + "\\temp\\" + filename;
-
-                        string[] str = new string[] { dgv_DataList.Rows[e.RowIndex].Cells[1].Value.ToString() };
-                        MicrosoftWordHelper.WriteDocument(filefullname.ToString(), str);
-                    }
-                }
 
             }
         }
 
         private void pic_Manager_Click(object sender, EventArgs e)
         {
-            string specialId = UserHelper.GetUser().UserSepicalId;
+            string specialId = UserHelper.GetUser().UserSpecialId;
             if(!string.IsNullOrEmpty(specialId))
             {
                 Frm_Manager manager = new Frm_Manager(specialId);
@@ -340,7 +328,6 @@ namespace 数据采集档案管理系统___加工版
                         dgv_DataList.Rows[rid].Cells["phone"].Value = projectTable.Rows[i]["pi_contacts_phone"];
                         dgv_DataList.Rows[rid].Cells["files"].Value = GetFileAmount(projectTable.Rows[i]["pi_id"], true);
                         dgv_DataList.Rows[rid].Cells["eles"].Value = GetFileAmount(projectTable.Rows[i]["pi_id"], false);
-                        dgv_DataList.Rows[rid].Cells["control"].Value = "查看";
                     }
                     DataTable topicTable = SQLiteHelper.ExecuteQuery($"SELECT * FROM topic_info WHERE ti_obj_id='{e.Node.Name}'");
                     for(int i = 0; i < topicTable.Rows.Count; i++)
@@ -356,7 +343,6 @@ namespace 数据采集档案管理系统___加工版
                         dgv_DataList.Rows[rid].Cells["phone"].Value = topicTable.Rows[i]["ti_contacts_phone"];
                         dgv_DataList.Rows[rid].Cells["files"].Value = GetFileAmount(topicTable.Rows[i]["ti_id"], true);
                         dgv_DataList.Rows[rid].Cells["eles"].Value = GetFileAmount(topicTable.Rows[i]["ti_id"], false);
-                        dgv_DataList.Rows[rid].Cells["control"].Value = "查看";
                     }
                 }
                 else if(type == ControlType.Plan_Project)
@@ -376,7 +362,6 @@ namespace 数据采集档案管理系统___加工版
                         dgv_DataList.Rows[rid].Cells["phone"].Value = subjectTable.Rows[i]["si_contacts_phone"];
                         dgv_DataList.Rows[rid].Cells["files"].Value = GetFileAmount(subjectTable.Rows[i]["si_id"], true);
                         dgv_DataList.Rows[rid].Cells["eles"].Value = GetFileAmount(subjectTable.Rows[i]["si_id"], false);
-                        dgv_DataList.Rows[rid].Cells["control"].Value = "查看";
                     }
                     DataTable topicTable = SQLiteHelper.ExecuteQuery($"SELECT * FROM topic_info WHERE ti_obj_id='{e.Node.Name}'");
                     for(int i = 0; i < topicTable.Rows.Count; i++)
@@ -392,7 +377,6 @@ namespace 数据采集档案管理系统___加工版
                         dgv_DataList.Rows[rid].Cells["phone"].Value = topicTable.Rows[i]["ti_contacts_phone"];
                         dgv_DataList.Rows[rid].Cells["files"].Value = GetFileAmount(topicTable.Rows[i]["ti_id"], true);
                         dgv_DataList.Rows[rid].Cells["eles"].Value = GetFileAmount(topicTable.Rows[i]["ti_id"], false);
-                        dgv_DataList.Rows[rid].Cells["control"].Value = "查看";
                     }
                 }
                 else if(type == ControlType.Plan_Topic)
@@ -411,7 +395,6 @@ namespace 数据采集档案管理系统___加工版
                         dgv_DataList.Rows[rid].Cells["phone"].Value = subjectTable.Rows[i]["si_contacts_phone"];
                         dgv_DataList.Rows[rid].Cells["files"].Value = GetFileAmount(subjectTable.Rows[i]["si_id"], true);
                         dgv_DataList.Rows[rid].Cells["eles"].Value = GetFileAmount(subjectTable.Rows[i]["si_id"], false);
-                        dgv_DataList.Rows[rid].Cells["control"].Value = "查看";
                     }
                 }
 

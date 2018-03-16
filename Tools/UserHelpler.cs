@@ -19,7 +19,7 @@
         private string passWord;
         private string userUnitId;
         private string userUnitName;
-        private string userSepicalId;
+        private string userSpecialId;
         /// <summary>
         /// 用户ID
         /// </summary>
@@ -35,7 +35,7 @@
         /// <summary>
         /// 用户所属专项ID
         /// </summary>
-        public string UserSepicalId { get => userSepicalId; set => userSepicalId = value; }
+        public string UserSpecialId { get => userSpecialId; set => userSpecialId = value; }
         /// <summary>
         /// 真实姓名
         /// </summary>

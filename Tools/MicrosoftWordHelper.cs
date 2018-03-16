@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Office.Interop.Word;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -9,15 +11,18 @@ namespace 数据采集档案管理系统___加工版.Tools
 {
     class MicrosoftWordHelper
     {
+        private static object SpeName, SpeCode;
         /// <summary>
         /// 向指定Word中写入指定文本
         /// </summary>
         /// <param name="filePath">Word 所在路径</param>
-        /// <param name="contexts">所需写入的内容</param>
-        public static void WriteDocument(object filePath, string[] contexts)
+        /// <param name="list">所需写入的内容</param>
+        public static void WriteDocument(object filePath, List<DataRow> list, ProgressBar bar)
         {
+            object[] objs = SQLiteHelper.ExecuteRowsQuery($"SELECT spi_code, spi_name FROM special_info WHERE spi_id='{UserHelper.GetUser().UserSpecialId}'");
+            if(objs != null) { SpeCode = objs[0]; SpeName = objs[1]; }
             Microsoft.Office.Interop.Word.Application app = null;
-            Microsoft.Office.Interop.Word.Document doc = null;
+            Document doc = null;
 
             if (File.Exists((string)filePath))
                 File.Delete((string)filePath);
@@ -26,11 +31,17 @@ namespace 数据采集档案管理系统___加工版.Tools
             {
                 //构造数据
                 List<EntityObject> datas = new List<EntityObject>();
-                datas.Add(new EntityObject { Code = "2012AA103100", Name = "国家信息体系建设研究", User = "崔文健", Type = 0, PageSize = 1, FileAmount = 10, Date = DateTime.Now });
-                datas.Add(new EntityObject { Code = "2012AA103100", Name = "国家信息体系建设研究", User = "崔文健", Type = 0, PageSize = 1, FileAmount = 10, Date = DateTime.Now });
-                datas.Add(new EntityObject { Code = "2012AA103100", Name = "国家信息体系建设研究", User = "崔文健", Type = 0, PageSize = 1, FileAmount = 10, Date = DateTime.Now });
-                datas.Add(new EntityObject { Code = "2012AA103100", Name = "国家信息体系建设研究", User = "崔文健", Type = 0, PageSize = 1, FileAmount = 10, Date = DateTime.Now });
-                datas.Add(new EntityObject { Code = "2012AA103100", Name = "国家信息体系建设研究", User = "崔文健", Type = 0, PageSize = 1, FileAmount = 10, Date = DateTime.Now });
+                for(int i = 0; i < list.Count; i++)
+                {
+                    string code = SQLiteHelper.GetValueByKey(list[i]["fi_categor"]);
+                    string name = GetValue(list[i]["fi_name"]);
+                    string user = GetValue(list[i]["fi_user"]);
+                    string carrier = SQLiteHelper.GetValueByKey(list[i]["fi_carrier"]);
+                    int pages = Convert.ToInt32(list[i]["fi_pages"]);
+                    int number = Convert.ToInt32(list[i]["fi_number"]);
+                    DateTime date = Convert.ToDateTime(list[i]["fi_create_date"]);
+                    datas.Add(new EntityObject { Code = code, Name = name, User = user, Type = carrier, PageSize = pages, FileAmount = number, Date = date });
+                }
 
                 int rows = datas.Count() + 1;//表格行数加1是为了标题栏
                 int cols = 7;//表格列数
@@ -38,59 +49,70 @@ namespace 数据采集档案管理系统___加工版.Tools
                 app = new Microsoft.Office.Interop.Word.Application();//创建word应用程序
                 doc = app.Documents.Add();//添加一个word文档
 
-                //输出大标题加粗加大字号水平居中
-                app.Selection.Font.Bold = 700;
-                app.Selection.Font.Size = 16;
-                app.Selection.Range.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
-                app.Selection.Text = "项目结构表";
-
-                //换行添加表格
-                object line = Microsoft.Office.Interop.Word.WdUnits.wdLine;
-                app.Selection.MoveDown(ref line, oMissing, oMissing);
-                app.Selection.TypeParagraph();//换行
-
                 app.Selection.PageSetup.LeftMargin = 50f;
                 app.Selection.PageSetup.RightMargin = 50f;
-                app.Selection.PageSetup.PageWidth = 650f;  //页面宽度
+                app.Selection.PageSetup.PageWidth = 800f;  //页面宽度
 
+                //标题
+                app.Selection.Font.Bold = 700;
+                app.Selection.Font.Size = 18;
+                app.Selection.Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;
+                app.Selection.Text = "重大专项项目（课题）档案交接清单";
 
-                Microsoft.Office.Interop.Word.Range range = app.Selection.Range;
-                Microsoft.Office.Interop.Word.Table table = app.Selection.Tables.Add(range, rows, cols, ref oMissing, ref oMissing);
+                //子标题
+                object subLine = WdUnits.wdLine;
+                app.Selection.MoveDown(ref subLine, oMissing, oMissing);
+                app.Selection.TypeParagraph();//换行
+                app.Selection.Font.Bold = 0;
+                app.Selection.Font.Size = 12;
+                app.Selection.Text = $"专项名称：{SpeName}\t\t专项编号：{SpeCode}";
 
+                //换行添加表格
+                object line = WdUnits.wdLine;
+                app.Selection.MoveDown(ref line, oMissing, oMissing);
+                app.Selection.TypeParagraph();//换行
+                app.Selection.Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphLeft;
+                Range range = app.Selection.Range;
+                Table table = app.Selection.Tables.Add(range, rows, cols, ref oMissing, ref oMissing);
                 //设置表格的字体大小粗细
                 table.Range.Font.Size = 10;
                 table.Range.Font.Bold = 0;
-                table.Borders.OutsideLineStyle = Microsoft.Office.Interop.Word.WdLineStyle.wdLineStyleSingle;
-                table.Borders.InsideLineStyle = Microsoft.Office.Interop.Word.WdLineStyle.wdLineStyleSingle;
+                table.Borders.OutsideLineStyle = WdLineStyle.wdLineStyleSingle;
+                table.Borders.InsideLineStyle = WdLineStyle.wdLineStyleSingle;
 
                 //设置表格标题
                 int rowIndex = 1;
-                table.Cell(rowIndex, 1).Range.Text = "重大专项项目（课题）档案材料/项目（课题）名称";
-                table.Cell(rowIndex, 2).Range.Text = "承担单位/责任者";
+                table.Rows[rowIndex].Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;
+                table.Rows[rowIndex].Range.Font.Bold = 100;
+                table.Rows[rowIndex].Height = 30f;
+                table.Cell(rowIndex, 1).Range.Text = "项目（课题）档案材料名称";
+                table.Cell(rowIndex, 2).Range.Text = "责任者";
                 table.Cell(rowIndex, 3).Range.Text = "载体类型";
                 table.Cell(rowIndex, 4).Range.Text = "页数";
                 table.Cell(rowIndex, 5).Range.Text = "文件数";
                 table.Cell(rowIndex, 6).Range.Text = "日期";
                 table.Cell(rowIndex, 7).Range.Text = "备注";
-
+                table.Columns[1].Width = 200f;
+                table.Columns[2].Width = table.Columns[4].Width = table.Columns[5].Width = 50f;
                 //循环数据创建数据行
                 foreach (EntityObject eo in datas)
                 {
                     rowIndex++;
                     table.Cell(rowIndex, 1).Range.Text = eo.Name;
                     table.Cell(rowIndex, 2).Range.Text = eo.User;
-                    table.Cell(rowIndex, 3).Range.Text = eo.Type == 0 ? "电子" : "纸质";
+                    table.Cell(rowIndex, 3).Range.Text = eo.Type;
                     table.Cell(rowIndex, 4).Range.Text = eo.PageSize.ToString();
                     table.Cell(rowIndex, 5).Range.Text = eo.FileAmount.ToString();
-                    table.Cell(rowIndex, 6).Range.Text = eo.Date.ToLocalTime().ToString();
+                    table.Cell(rowIndex, 6).Range.Text = eo.Date.ToString("yyyy-MM-dd");
                     table.Cell(rowIndex, 7).Range.Text = eo.Remark;
-
-                    //对表格中的班级、姓名，成绩单元格设置上下居中
-                    table.Cell(rowIndex, 1).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
-                    table.Cell(rowIndex, 4).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
-                    table.Cell(rowIndex, 5).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
-
                 }
+                app.Selection.EndKey(WdUnits.wdStory, oMissing); //将光标移动到文档末尾
+                app.Selection.Font.Bold = 0;
+                app.Selection.Font.Size = 11;
+                //底部署名
+                doc.Content.InsertAfter("移交单位（盖章）：                                        接收单位（盖章）：\n");
+                doc.Content.InsertAfter("移交人：                                                 接收人：\n");
+                doc.Content.InsertAfter("交接时间：    年  月  日");
 
                 //导出到文件
                 filePath += DateTime.Now.ToString("yyyyMMddHHmmss") + ".doc";
@@ -112,9 +134,10 @@ namespace 数据采集档案管理系统___加工版.Tools
                 {
                     app.Quit();//退出应用程序
                 }
+                bar.Value = bar.Maximum;
             }
 
-            if (MessageBox.Show(filePath + " 合成完毕, 是否需要现在打开?", "温馨提示", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
+            if (MessageBox.Show("合成完毕, 是否需要现在打开?", "温馨提示", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
             {
                 Microsoft.Office.Interop.Word.Application _app = new Microsoft.Office.Interop.Word.Application();
                 Microsoft.Office.Interop.Word.Document _doc = null;
@@ -135,13 +158,15 @@ namespace 数据采集档案管理系统___加工版.Tools
                 }
             }
         }
+
+        private static string GetValue(object v) => v == null ? string.Empty : v.ToString();
     }
     class EntityObject
     {
         private string code;
         private string name;
         private string user;
-        private int type;
+        private string type;
         private int pageSize;
         private int fileAmount;
         private DateTime date;
@@ -150,7 +175,7 @@ namespace 数据采集档案管理系统___加工版.Tools
         public string Code { get => code; set => code = value; }
         public string Name { get => name; set => name = value; }
         public string User { get => user; set => user = value; }
-        public int Type { get => type; set => type = value; }
+        public string Type { get => type; set => type = value; }
         public int PageSize { get => pageSize; set => pageSize = value; }
         public int FileAmount { get => fileAmount; set => fileAmount = value; }
         public DateTime Date { get => date; set => date = value; }

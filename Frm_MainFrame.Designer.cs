@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("重大专项");
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("重大专项");
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pic_Add = new System.Windows.Forms.PictureBox();
@@ -65,6 +65,7 @@
             this.lbl_TotalAmount = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgv_DataList = new System.Windows.Forms.DataGridView();
+            this.tv_DataTree = new System.Windows.Forms.TreeView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,8 +74,6 @@
             this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.files = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eles = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.control = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.tv_DataTree = new System.Windows.Forms.TreeView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Add)).BeginInit();
             this.panel2.SuspendLayout();
@@ -459,8 +458,7 @@
             this.user,
             this.phone,
             this.files,
-            this.eles,
-            this.control});
+            this.eles});
             this.dgv_DataList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_DataList.Location = new System.Drawing.Point(232, 17);
             this.dgv_DataList.Name = "dgv_DataList";
@@ -469,6 +467,22 @@
             this.dgv_DataList.Size = new System.Drawing.Size(1101, 524);
             this.dgv_DataList.TabIndex = 0;
             this.dgv_DataList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_DataList_CellContentClick);
+            // 
+            // tv_DataTree
+            // 
+            this.tv_DataTree.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tv_DataTree.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tv_DataTree.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tv_DataTree.Location = new System.Drawing.Point(3, 17);
+            this.tv_DataTree.Name = "tv_DataTree";
+            treeNode1.Name = "863计划";
+            treeNode1.Text = "重大专项";
+            this.tv_DataTree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode1});
+            this.tv_DataTree.Size = new System.Drawing.Size(229, 524);
+            this.tv_DataTree.TabIndex = 1;
+            this.tv_DataTree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.Tv_DataTree_AfterSelect);
+            this.tv_DataTree.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.Tv_DataTree_NodeMouseClick);
             // 
             // id
             // 
@@ -530,32 +544,6 @@
             this.eles.HeaderText = "电子文件数";
             this.eles.Name = "eles";
             this.eles.ReadOnly = true;
-            // 
-            // control
-            // 
-            this.control.FillWeight = 50F;
-            this.control.HeaderText = "操作";
-            this.control.Name = "control";
-            this.control.ReadOnly = true;
-            this.control.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.control.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.control.Text = "查看";
-            // 
-            // tv_DataTree
-            // 
-            this.tv_DataTree.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tv_DataTree.Dock = System.Windows.Forms.DockStyle.Left;
-            this.tv_DataTree.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tv_DataTree.Location = new System.Drawing.Point(3, 17);
-            this.tv_DataTree.Name = "tv_DataTree";
-            treeNode1.Name = "863计划";
-            treeNode1.Text = "重大专项";
-            this.tv_DataTree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
-            this.tv_DataTree.Size = new System.Drawing.Size(229, 524);
-            this.tv_DataTree.TabIndex = 1;
-            this.tv_DataTree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.Tv_DataTree_AfterSelect);
-            this.tv_DataTree.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.Tv_DataTree_NodeMouseClick);
             // 
             // Frm_MainFrame
             // 
@@ -634,6 +622,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button btn_Edit;
+        private System.Windows.Forms.Button btn_Refresh;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn code;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
@@ -642,7 +631,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn files;
         private System.Windows.Forms.DataGridViewTextBoxColumn eles;
-        private System.Windows.Forms.DataGridViewButtonColumn control;
-        private System.Windows.Forms.Button btn_Refresh;
     }
 }

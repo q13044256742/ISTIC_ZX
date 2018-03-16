@@ -1686,7 +1686,7 @@ namespace 数据采集档案管理系统___加工版
         private string GetAJCode(object objId, object objCode, int type)
         {
             string code = string.Empty;
-            DataRow row = SQLiteHelper.ExecuteSingleRowQuery($"SELECT * FROM code_rule WHERE cr_type='{type}' AND cr_special_id='{UserHelper.GetUser().UserSepicalId}'");
+            DataRow row = SQLiteHelper.ExecuteSingleRowQuery($"SELECT * FROM code_rule WHERE cr_type='{type}' AND cr_special_id='{UserHelper.GetUser().UserSpecialId}'");
             if(row != null)
             {
                 string symbol = GetValue(row["cr_split_symbol"]);
@@ -1695,7 +1695,7 @@ namespace 数据采集档案管理系统___加工版
                 for(int i = 0; i < strs.Length; i++)
                 {
                     if("AAAA".Equals(strs[i]))//专项编号
-                        code += GetValue(SQLiteHelper.ExecuteOnlyOneQuery($"SELECT spi_code FROM special_info WHERE spi_id='{UserHelper.GetUser().UserSepicalId}'"));
+                        code += GetValue(SQLiteHelper.ExecuteOnlyOneQuery($"SELECT spi_code FROM special_info WHERE spi_id='{UserHelper.GetUser().UserSpecialId}'"));
                     else if("BBBB".Equals(strs[i]))//项目/课题编号
                         code += objCode;
                     else if("CCCC".Equals(strs[i]))//来源单位
