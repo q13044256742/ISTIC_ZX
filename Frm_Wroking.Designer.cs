@@ -939,9 +939,8 @@
             this.lbl_Special_AJ_Name.AutoSize = true;
             this.lbl_Special_AJ_Name.Location = new System.Drawing.Point(1052, 15);
             this.lbl_Special_AJ_Name.Name = "lbl_Special_AJ_Name";
-            this.lbl_Special_AJ_Name.Size = new System.Drawing.Size(40, 16);
+            this.lbl_Special_AJ_Name.Size = new System.Drawing.Size(0, 16);
             this.lbl_Special_AJ_Name.TabIndex = 30;
-            this.lbl_Special_AJ_Name.Text = "NULL";
             // 
             // label78
             // 
@@ -958,9 +957,8 @@
             this.lbl_Special_AJ_Code.AutoSize = true;
             this.lbl_Special_AJ_Code.Location = new System.Drawing.Point(800, 15);
             this.lbl_Special_AJ_Code.Name = "lbl_Special_AJ_Code";
-            this.lbl_Special_AJ_Code.Size = new System.Drawing.Size(40, 16);
+            this.lbl_Special_AJ_Code.Size = new System.Drawing.Size(0, 16);
             this.lbl_Special_AJ_Code.TabIndex = 28;
-            this.lbl_Special_AJ_Code.Text = "NULL";
             // 
             // label75
             // 
@@ -1118,7 +1116,7 @@
             this.cbo_Special_BoxId.Name = "cbo_Special_BoxId";
             this.cbo_Special_BoxId.Size = new System.Drawing.Size(109, 24);
             this.cbo_Special_BoxId.TabIndex = 1;
-            this.cbo_Special_BoxId.SelectionChangeCommitted += new System.EventHandler(this.Cbo_BoxId_SelectionChangeCommitted);
+            this.cbo_Special_BoxId.SelectedIndexChanged += new System.EventHandler(this.Cbo_BoxId_SelectionChangeCommitted);
             // 
             // label40
             // 
@@ -1701,9 +1699,8 @@
             this.lbl_Project_AJ_Name.AutoSize = true;
             this.lbl_Project_AJ_Name.Location = new System.Drawing.Point(1055, 14);
             this.lbl_Project_AJ_Name.Name = "lbl_Project_AJ_Name";
-            this.lbl_Project_AJ_Name.Size = new System.Drawing.Size(40, 16);
+            this.lbl_Project_AJ_Name.Size = new System.Drawing.Size(0, 16);
             this.lbl_Project_AJ_Name.TabIndex = 37;
-            this.lbl_Project_AJ_Name.Text = "NULL";
             // 
             // label81
             // 
@@ -1720,9 +1717,8 @@
             this.lbl_Project_AJ_Code.AutoSize = true;
             this.lbl_Project_AJ_Code.Location = new System.Drawing.Point(803, 14);
             this.lbl_Project_AJ_Code.Name = "lbl_Project_AJ_Code";
-            this.lbl_Project_AJ_Code.Size = new System.Drawing.Size(40, 16);
+            this.lbl_Project_AJ_Code.Size = new System.Drawing.Size(0, 16);
             this.lbl_Project_AJ_Code.TabIndex = 35;
-            this.lbl_Project_AJ_Code.Text = "NULL";
             // 
             // label83
             // 
@@ -1880,7 +1876,7 @@
             this.cbo_Project_BoxId.Name = "cbo_Project_BoxId";
             this.cbo_Project_BoxId.Size = new System.Drawing.Size(109, 24);
             this.cbo_Project_BoxId.TabIndex = 1;
-            this.cbo_Project_BoxId.SelectionChangeCommitted += new System.EventHandler(this.Cbo_BoxId_SelectionChangeCommitted);
+            this.cbo_Project_BoxId.SelectedIndexChanged += new System.EventHandler(this.Cbo_BoxId_SelectionChangeCommitted);
             // 
             // label55
             // 
@@ -2779,9 +2775,8 @@
             this.lbl_Topic_AJ_Name.AutoSize = true;
             this.lbl_Topic_AJ_Name.Location = new System.Drawing.Point(1051, 13);
             this.lbl_Topic_AJ_Name.Name = "lbl_Topic_AJ_Name";
-            this.lbl_Topic_AJ_Name.Size = new System.Drawing.Size(40, 16);
+            this.lbl_Topic_AJ_Name.Size = new System.Drawing.Size(0, 16);
             this.lbl_Topic_AJ_Name.TabIndex = 51;
-            this.lbl_Topic_AJ_Name.Text = "NULL";
             // 
             // label87
             // 
@@ -2798,9 +2793,8 @@
             this.lbl_Topic_AJ_Code.AutoSize = true;
             this.lbl_Topic_AJ_Code.Location = new System.Drawing.Point(799, 13);
             this.lbl_Topic_AJ_Code.Name = "lbl_Topic_AJ_Code";
-            this.lbl_Topic_AJ_Code.Size = new System.Drawing.Size(40, 16);
+            this.lbl_Topic_AJ_Code.Size = new System.Drawing.Size(0, 16);
             this.lbl_Topic_AJ_Code.TabIndex = 49;
-            this.lbl_Topic_AJ_Code.Text = "NULL";
             // 
             // label89
             // 
@@ -2958,7 +2952,7 @@
             this.cbo_Topic_BoxId.Name = "cbo_Topic_BoxId";
             this.cbo_Topic_BoxId.Size = new System.Drawing.Size(109, 24);
             this.cbo_Topic_BoxId.TabIndex = 35;
-            this.cbo_Topic_BoxId.SelectionChangeCommitted += new System.EventHandler(this.Cbo_BoxId_SelectionChangeCommitted);
+            this.cbo_Topic_BoxId.SelectedIndexChanged += new System.EventHandler(this.Cbo_BoxId_SelectionChangeCommitted);
             // 
             // label70
             // 
@@ -3803,9 +3797,8 @@
             this.lbl_Subject_AJ_Name.AutoSize = true;
             this.lbl_Subject_AJ_Name.Location = new System.Drawing.Point(1062, 12);
             this.lbl_Subject_AJ_Name.Name = "lbl_Subject_AJ_Name";
-            this.lbl_Subject_AJ_Name.Size = new System.Drawing.Size(40, 16);
+            this.lbl_Subject_AJ_Name.Size = new System.Drawing.Size(0, 16);
             this.lbl_Subject_AJ_Name.TabIndex = 65;
-            this.lbl_Subject_AJ_Name.Text = "NULL";
             // 
             // label106
             // 
@@ -3822,9 +3815,8 @@
             this.lbl_Subject_AJ_Code.AutoSize = true;
             this.lbl_Subject_AJ_Code.Location = new System.Drawing.Point(810, 12);
             this.lbl_Subject_AJ_Code.Name = "lbl_Subject_AJ_Code";
-            this.lbl_Subject_AJ_Code.Size = new System.Drawing.Size(40, 16);
+            this.lbl_Subject_AJ_Code.Size = new System.Drawing.Size(0, 16);
             this.lbl_Subject_AJ_Code.TabIndex = 63;
-            this.lbl_Subject_AJ_Code.Text = "NULL";
             // 
             // label108
             // 
@@ -3982,7 +3974,7 @@
             this.cbo_Subject_BoxId.Name = "cbo_Subject_BoxId";
             this.cbo_Subject_BoxId.Size = new System.Drawing.Size(109, 24);
             this.cbo_Subject_BoxId.TabIndex = 49;
-            this.cbo_Subject_BoxId.SelectionChangeCommitted += new System.EventHandler(this.Cbo_BoxId_SelectionChangeCommitted);
+            this.cbo_Subject_BoxId.SelectedIndexChanged += new System.EventHandler(this.Cbo_BoxId_SelectionChangeCommitted);
             // 
             // label74
             // 

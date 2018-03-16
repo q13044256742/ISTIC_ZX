@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
@@ -17,16 +16,12 @@ namespace 数据采集档案管理系统___加工版.Tools
         /// </summary>
         /// <param name="filePath">Word 所在路径</param>
         /// <param name="list">所需写入的内容</param>
-        public static void WriteDocument(object filePath, List<DataRow> list, ProgressBar bar)
+        public static void WriteDocument(string filePath, List<DataRow> list, ProgressBar bar)
         {
             object[] objs = SQLiteHelper.ExecuteRowsQuery($"SELECT spi_code, spi_name FROM special_info WHERE spi_id='{UserHelper.GetUser().UserSpecialId}'");
             if(objs != null) { SpeCode = objs[0]; SpeName = objs[1]; }
             Microsoft.Office.Interop.Word.Application app = null;
             Document doc = null;
-
-            if (File.Exists((string)filePath))
-                File.Delete((string)filePath);
-
             try
             {
                 //构造数据
@@ -109,8 +104,9 @@ namespace 数据采集档案管理系统___加工版.Tools
                 app.Selection.EndKey(WdUnits.wdStory, oMissing); //将光标移动到文档末尾
                 app.Selection.Font.Bold = 0;
                 app.Selection.Font.Size = 11;
+                
                 //底部署名
-                doc.Content.InsertAfter("移交单位（盖章）：                                        接收单位（盖章）：\n");
+                doc.Content.InsertAfter("\n移交单位（盖章）：                                        接收单位（盖章）：\n");
                 doc.Content.InsertAfter("移交人：                                                 接收人：\n");
                 doc.Content.InsertAfter("交接时间：    年  月  日");
 
@@ -119,6 +115,7 @@ namespace 数据采集档案管理系统___加工版.Tools
                 doc.SaveAs(filePath,
                     oMissing, oMissing, oMissing, oMissing, oMissing, oMissing, oMissing, oMissing, oMissing,
                     oMissing, oMissing, oMissing, oMissing, oMissing, oMissing);
+                bar.Value = bar.Maximum;
             }
             catch (Exception ex)
             {
@@ -127,20 +124,15 @@ namespace 数据采集档案管理系统___加工版.Tools
             finally
             {
                 if (doc != null)
-                {
                     doc.Close();//关闭文档
-                }
                 if (app != null)
-                {
                     app.Quit();//退出应用程序
-                }
-                bar.Value = bar.Maximum;
             }
 
             if (MessageBox.Show("合成完毕, 是否需要现在打开?", "温馨提示", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
             {
                 Microsoft.Office.Interop.Word.Application _app = new Microsoft.Office.Interop.Word.Application();
-                Microsoft.Office.Interop.Word.Document _doc = null;
+                Document _doc = null;
                 try
                 {
                     object unknow = Type.Missing;

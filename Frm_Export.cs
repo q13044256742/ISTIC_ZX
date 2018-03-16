@@ -59,10 +59,15 @@ namespace 数据采集档案管理系统___加工版
 
         private void btn_Export_Click(object sender, EventArgs e)
         {
-            Object filename = "合成word示例.docx";
-            Object filefullname = Application.StartupPath + "\\" + filename;
-
-            MicrosoftWordHelper.WriteDocument(filefullname.ToString(), list, pro_Show);
+            object KEY = "SAVE_PATH";
+            object value = SQLiteHelper.ExecuteOnlyOneQuery($"SELECT dd_name FROM data_dictionary WHERE dd_code='{KEY}'");
+            if(value != null)
+            {
+                string filePath = value + "\\重大专项项目（课题）档案交接清单";
+                MicrosoftWordHelper.WriteDocument(filePath, list, pro_Show);
+            }
+            else
+                MessageBox.Show("尚未指定文件存放路径。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
     }
 }

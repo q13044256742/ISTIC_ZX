@@ -47,11 +47,12 @@
             // 
             // txt_ContextPath
             // 
-            this.txt_ContextPath.Font = new System.Drawing.Font("微软雅黑 Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_ContextPath.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_ContextPath.Location = new System.Drawing.Point(13, 49);
             this.txt_ContextPath.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_ContextPath.Multiline = true;
             this.txt_ContextPath.Name = "txt_ContextPath";
+            this.txt_ContextPath.ReadOnly = true;
             this.txt_ContextPath.Size = new System.Drawing.Size(395, 82);
             this.txt_ContextPath.TabIndex = 1;
             // 
