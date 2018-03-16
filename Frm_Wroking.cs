@@ -14,11 +14,6 @@ namespace 数据采集档案管理系统___加工版
         /// </summary>
         Dictionary<string, TabPage> tabPages;
 
-        /// <summary>
-        /// 当前专项ID
-        /// </summary>
-        //private object SpecialId;
-
         public Frm_Wroking(TreeNode treeNode)
         {
             InitializeComponent();
@@ -344,7 +339,11 @@ namespace 数据采集档案管理系统___加工版
             InitialFormList(dgv_Project_FileList, "dgv_Project_FL_");
             InitialFormList(dgv_Topic_FileList, "dgv_Topic_FL_");
             InitialFormList(dgv_Subject_FileList, "dgv_Subject_FL_");
-
+            //文件核查原因列表
+            InitialLostReasonList(dgv_Special_FileValid, "dgv_Special_FV_");
+            InitialLostReasonList(dgv_Project_FileValid, "dgv_Project_FV_");
+            InitialLostReasonList(dgv_Topic_FileValid, "dgv_Topic_FV_");
+            InitialLostReasonList(dgv_Subject_FileValid, "dgv_Subject_FV_");
             //下拉框默认
             cbo_Special_HasNext.SelectedIndex = 0;
             cbo_Project_HasNext.SelectedIndex = 0;
@@ -1257,6 +1256,19 @@ namespace 数据采集档案管理系统___加工版
             formatColumn.DisplayMember = "dd_name";
             formatColumn.ValueMember = "dd_id";
             formatColumn.DefaultCellStyle = new DataGridViewCellStyle() { Font = new System.Drawing.Font("宋体", 10.5f) };
+        }
+
+        /// <summary>
+        /// 初始化文件核查原因
+        /// </summary>
+        private void InitialLostReasonList(DataGridView view, string key)
+        {
+            string code = "dic_file_lostreason";
+            DataTable table = SQLiteHelper.ExecuteQuery($"SELECT * FROM data_dictionary WHERE dd_pId = (SELECT dd_id FROM data_dictionary WHERE dd_code='{code}') ORDER BY dd_sort");
+            DataGridViewComboBoxColumn comboBoxColumn = view.Columns[key + "reason"] as DataGridViewComboBoxColumn;
+            comboBoxColumn.DataSource = table;
+            comboBoxColumn.DisplayMember = "dd_name";
+            comboBoxColumn.ValueMember = "dd_id";
         }
 
         private void Frm_Wroking_FormClosing(object sender, FormClosingEventArgs e)

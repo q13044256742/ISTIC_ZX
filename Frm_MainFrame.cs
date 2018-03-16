@@ -70,47 +70,26 @@ namespace 数据采集档案管理系统___加工版
 
         private void Btn_Query_Click(object sender, EventArgs e)
         {
-            string queryCode = "".Equals(txt_Query_Code.Text) ? null : txt_Query_Code.Text;
-            string queryName = "".Equals(txt_Query_Name.Text) ? null : txt_Query_Name.Text;
-            if (queryCode == null && queryName == null)
-            {
-                DataTable dataTable = DataSourceHelper.GetDataTable("firstpage");
-                dgv_DataList.DataSource = dataTable;
-                lbl_TotalAmount.Text = "共有 " + dataTable.Rows.Count + " 条数据";
-            }
-            else
-            {
-                List<DataGridViewRow> rows = new List<DataGridViewRow>();
-                for(int i = 0; i < dgv_DataList.Rows.Count; i++) {
-                    string code = dgv_DataList.Rows[i].Cells[2].Value.ToString();
-                    string name = dgv_DataList.Rows[i].Cells[3].Value.ToString();
-                    if (queryCode != null && queryName == null)
+            int count = dgv_DataList.RowCount;
+            string queryCode = txt_Query_Code.Text;
+            string queryName = txt_Query_Name.Text;
+            foreach(DataGridViewRow item in dgv_DataList.Rows)
+                item.Visible = true;
+            if(!string.IsNullOrEmpty(queryCode))
+                foreach(DataGridViewRow item in dgv_DataList.Rows)
+                    if(!GetValue(item.Cells["code"].Value).Contains(queryCode))
                     {
-                        if (!code.Contains(queryCode))
-                        {
-                            rows.Add(dgv_DataList.Rows[i]);
-                        }
+                        item.Visible = false;
+                        count--;
                     }
-                    else if (queryCode == null && queryName != null)
+            if(!string.IsNullOrEmpty(queryName))
+                foreach(DataGridViewRow item in dgv_DataList.Rows)
+                    if(!GetValue(item.Cells["name"].Value).Contains(queryName))
                     {
-                        if (!name.Contains(queryName))
-                        {
-                            rows.Add(dgv_DataList.Rows[i]);
-                        }
+                        item.Visible = false;
+                        count--;
                     }
-                    else if (queryName != null && queryCode != null)
-                    {
-                        if (!code.Contains(queryCode) || !name.Contains(queryName))
-                        {
-                            rows.Add(dgv_DataList.Rows[i]);
-                        }
-                    }
-                }
-                for (int i = 0; i < rows.Count; i++)
-                {
-                    dgv_DataList.Rows.Remove(rows[i]);
-                }
-            }
+            lbl_TotalAmount.Text = $"共有 {count} 条数据";
         }
 
         private void Pic_Import_Click(object sender, EventArgs e)
@@ -397,9 +376,7 @@ namespace 数据采集档案管理系统___加工版
                         dgv_DataList.Rows[rid].Cells["eles"].Value = GetFileAmount(subjectTable.Rows[i]["si_id"], false);
                     }
                 }
-
-                int count = dgv_DataList.RowCount;
-                lbl_TotalAmount.Text = $"共有 {count} 条数据";
+                lbl_TotalAmount.Text = $"共有 {dgv_DataList.RowCount} 条数据";
             }
         }
 

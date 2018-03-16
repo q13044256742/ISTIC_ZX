@@ -16,5 +16,10 @@ namespace 数据采集档案管理系统___加工版
                 txt_FilePath.Text = fbd_Data.SelectedPath;
             }
         }
+
+        private void button2_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

@@ -28,7 +28,7 @@ namespace 数据采集档案管理系统___加工版
 
         private void InitialTree(object parentId, TreeNode parentNode)
         {
-            List<object[]> list = SQLiteHelper.ExecuteColumnsQuery($"SELECT bfi_id, bfi_name, bfi_path FROM backup_files_info WHERE bfi_pid='{parentId}' ORDER BY bfi_code DESC", 3);
+            List<object[]> list = SQLiteHelper.ExecuteColumnsQuery($"SELECT bfi_id, bfi_name, bfi_path FROM backup_files_info WHERE bfi_pid='{parentId}' ORDER BY rowid", 3);
             for(int i = 0; i < list.Count; i++)
             {
                 TreeNode treeNode = new TreeNode()
@@ -58,13 +58,23 @@ namespace 数据采集档案管理系统___加工版
 
         private void tv_file_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            lbl_filename.Text = e.Node.Text;
-            SelectedFileName = e.Node.Tag + e.Node.Text;
+            if(e.Node.Nodes.Count == 0)
+            {
+                lbl_filename.Text = e.Node.Text;
+                SelectedFileName = e.Node.Tag + e.Node.Text;
+            }
+            else
+            {
+                lbl_filename.Text = string.Empty;
+                SelectedFileName = string.Empty;
+            }
+
         }
 
         private void btn_sure_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
+            if(!string.IsNullOrEmpty(SelectedFileName))
+                DialogResult = DialogResult.OK;
             Close();
         }
     }

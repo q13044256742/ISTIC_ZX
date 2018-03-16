@@ -146,8 +146,9 @@ namespace 数据采集档案管理系统___加工版
                             Directory.CreateDirectory(savePath);
                         string filePath = savePath + new FileInfo(fullPath).Name;
                         File.Copy(fullPath, filePath, true);
-                        System.Diagnostics.Process.Start("Explorer.exe", filePath);
                         txt_link.Text = fullPath;
+                        if(MessageBox.Show("已从服务器拷贝文件到本地，是否现在打开？", "操作确认", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            System.Diagnostics.Process.Start("Explorer.exe", filePath);
                     }
                     else
                         MessageBox.Show("服务器不存在此文件。", "打开失败", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
