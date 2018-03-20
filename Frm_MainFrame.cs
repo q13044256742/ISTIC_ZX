@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Windows.Forms;
 using 数据采集档案管理系统___加工版.Tools;
 
@@ -243,8 +244,14 @@ namespace 数据采集档案管理系统___加工版
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Frm_Backup frm_Backup = new Frm_Backup();
-            frm_Backup.ShowDialog();
+            string destPath = Application.StartupPath + $"\\backupfile\\ISTIC{DateTime.Now.ToString(" yyyyMMdd-HHmm")}.db";
+            if(!Directory.Exists(Path.GetDirectoryName(destPath)))
+                Directory.CreateDirectory(Path.GetDirectoryName(destPath));
+            if(!File.Exists(destPath))
+                File.Create(destPath).Close();
+            string sourFile = Application.StartupPath + @"\ISTIC.db";
+            File.Copy(sourFile, destPath, true);
+            MessageBox.Show("备份完毕。", "温馨提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
 
         private void pic_Editpassword(object sender, EventArgs e)
