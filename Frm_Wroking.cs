@@ -423,10 +423,33 @@ namespace 数据采集档案管理系统___加工版
                 }
             if(!string.IsNullOrEmpty(tabName) && tabPages.TryGetValue(tabName, out TabPage tabPage))
             {
+                ClearText(tabPage);
                 if(tabIndex > tab_Menu.TabCount)
                     tab_Menu.TabPages.Add(tabPage);
                 else
                     tab_Menu.TabPages.Insert(tabIndex, tabPage);
+            }
+        }
+
+        private void ClearText(TabPage tabPage)
+        {
+            foreach(Control item in tabPage.Controls)
+            {
+                if(item is TextBox)
+                    (item as TextBox).ResetText();
+                else if(item is TabControl)
+                {
+                    foreach(TabPage page in item.Controls)
+                    {
+                        foreach(Control tab in page.Controls)
+                        {
+                            if(tab is DataGridView)
+                                (tab as DataGridView).Rows.Clear();
+                            else if(tab is TextBox)
+                                tab.ResetText();
+                        }
+                    }
+                }
             }
         }
 
@@ -2531,6 +2554,57 @@ namespace 数据采集档案管理系统___加工版
                     }
                 }
             }
+        }
+
+        private void 添加文件AToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataGridView view = (DataGridView)((sender as ToolStripItem).GetCurrentParent() as ContextMenuStrip).Tag;
+            object rootId = SQLiteHelper.ExecuteOnlyOneQuery($"SELECT bfi_id FROM backup_files_info WHERE bfi_name = '{UserHelper.GetUser().RealName}' AND bfi_code = '-1'");
+            if(rootId != null)
+            {
+                Frm_AddFile_FileSelect frm = new Frm_AddFile_FileSelect(rootId);
+                if(frm.ShowDialog() == DialogResult.OK)
+                {
+                    string fullPath = frm.SelectedFileName;
+                    if(File.Exists(fullPath))
+                    {
+                        string savePath = Application.StartupPath + @"\TempBackupFolder\";
+                        if(!Directory.Exists(savePath))
+                            Directory.CreateDirectory(savePath);
+                        string filePath = savePath + new FileInfo(fullPath).Name;
+                        File.Copy(fullPath, filePath, true);
+                        view.CurrentCell.Value = fullPath;
+                        if(MessageBox.Show("已从服务器拷贝文件到本地，是否现在打开？", "操作确认", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            System.Diagnostics.Process.Start("Explorer.exe", filePath);
+                    }
+                    else
+                        MessageBox.Show("服务器不存在此文件。", "打开失败", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+            }
+            else
+                MessageBox.Show("当前专项尚未导入数据。", "操作失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void dgv_FileList_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Right && e.RowIndex != -1 && e.ColumnIndex != -1)
+            {
+                DataGridView view = sender as DataGridView;
+                if(view.Columns[e.ColumnIndex].Name.Contains("link"))
+                {
+                    view.ClearSelection();
+                    view.CurrentCell = view.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                    contextMenuStrip1.Tag = view;
+                    contextMenuStrip1.Show(MousePosition);
+                }
+            }
+            
+        }
+
+        private void 删除文件DToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataGridView view = (DataGridView)((sender as ToolStripItem).GetCurrentParent() as ContextMenuStrip).Tag;
+            view.CurrentCell.Value = string.Empty;
         }
     }
 }

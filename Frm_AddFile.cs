@@ -281,7 +281,6 @@ namespace 数据采集档案管理系统___加工版
                 }
                 else if(Text.Contains("编辑"))
                     UpdateFileInfo();
-                cbo_stage.Focus();
             }
         }
 
@@ -328,7 +327,10 @@ namespace 数据采集档案管理系统___加工版
                     else if(item is NumericUpDown)
                         (item as NumericUpDown).Value = 0;
                     else if(item is ComboBox)
-                        (item as ComboBox).SelectedIndex = 0;
+                    {
+                        if(!item.Name.Equals("cbo_stage"))
+                            (item as ComboBox).SelectedIndex = 0;
+                    }
                 }
             }
         }
