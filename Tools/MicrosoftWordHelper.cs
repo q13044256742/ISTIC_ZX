@@ -16,7 +16,7 @@ namespace 数据采集档案管理系统___加工版.Tools
         /// </summary>
         /// <param name="filePath">Word 所在路径</param>
         /// <param name="list">所需写入的内容</param>
-        public static void WriteDocument(string filePath, List<DataRow> list, ProgressBar bar)
+        public static void WriteDocument(string filePath, List<DataRow> list)
         {
             object[] objs = SQLiteHelper.ExecuteRowsQuery($"SELECT spi_code, spi_name FROM special_info WHERE spi_id='{UserHelper.GetUser().UserSpecialId}'");
             if(objs != null) { SpeCode = objs[0]; SpeName = objs[1]; }
@@ -115,7 +115,6 @@ namespace 数据采集档案管理系统___加工版.Tools
                 doc.SaveAs(filePath,
                     oMissing, oMissing, oMissing, oMissing, oMissing, oMissing, oMissing, oMissing, oMissing,
                     oMissing, oMissing, oMissing, oMissing, oMissing, oMissing);
-                bar.Value = bar.Maximum;
             }
             catch (Exception ex)
             {
@@ -127,27 +126,6 @@ namespace 数据采集档案管理系统___加工版.Tools
                     doc.Close();//关闭文档
                 if (app != null)
                     app.Quit();//退出应用程序
-            }
-
-            if (MessageBox.Show("合成完毕, 是否需要现在打开?", "温馨提示", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
-            {
-                Microsoft.Office.Interop.Word.Application _app = new Microsoft.Office.Interop.Word.Application();
-                Document _doc = null;
-                try
-                {
-                    object unknow = Type.Missing;
-                    _app.Visible = true;
-                    object file = filePath;
-                    _doc = _app.Documents.Open(ref file,
-                        ref unknow, ref unknow, ref unknow, ref unknow,
-                        ref unknow, ref unknow, ref unknow, ref unknow,
-                        ref unknow, ref unknow, ref unknow, ref unknow,
-                        ref unknow, ref unknow, ref unknow);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
             }
         }
 

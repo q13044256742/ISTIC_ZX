@@ -77,6 +77,7 @@
             this.Name = "Frm_IdentityChoose";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "身份选择";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_IdentityChoose_FormClosing);
             this.Load += new System.EventHandler(this.Frm_IdentityChoose_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

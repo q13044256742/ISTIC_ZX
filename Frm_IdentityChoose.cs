@@ -33,8 +33,10 @@ namespace 数据采集档案管理系统___加工版
 
         private void Frm_IdentityChoose_FormClosing(object sender, FormClosingEventArgs e)
         {
-            MessageBox.Show("请选择您的身份");
-            e.Cancel = true;
+            if(MessageBox.Show("尚未选择身份，是否退出？", "无法进入", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                Application.Exit();
+            else
+                e.Cancel = true;
         }
     }
 }
