@@ -244,14 +244,17 @@ namespace 数据采集档案管理系统___加工版
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            string destPath = Application.StartupPath + $"\\backupfile\\ISTIC{DateTime.Now.ToString(" yyyyMMdd-HHmm")}.db";
-            if(!Directory.Exists(Path.GetDirectoryName(destPath)))
-                Directory.CreateDirectory(Path.GetDirectoryName(destPath));
-            if(!File.Exists(destPath))
-                File.Create(destPath).Close();
-            string sourFile = Application.StartupPath + @"\ISTIC.db";
-            File.Copy(sourFile, destPath, true);
-            MessageBox.Show("备份完毕。", "温馨提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            if(MessageBox.Show("确定要备份当前系统数据吗？", "确认提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk) == DialogResult.OK)
+            {
+                string destPath = Application.StartupPath + $"\\backupfile\\ISTIC{DateTime.Now.ToString(" yyyyMMdd-HHmm")}.db";
+                if(!Directory.Exists(Path.GetDirectoryName(destPath)))
+                    Directory.CreateDirectory(Path.GetDirectoryName(destPath));
+                if(!File.Exists(destPath))
+                    File.Create(destPath).Close();
+                string sourFile = Application.StartupPath + @"\ISTIC.db";
+                File.Copy(sourFile, destPath, true);
+                MessageBox.Show("备份完毕。", "温馨提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
         }
 
         private void pic_Editpassword(object sender, EventArgs e)
