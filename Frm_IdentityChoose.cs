@@ -25,7 +25,6 @@ namespace 数据采集档案管理系统___加工版
             if(MessageBox.Show("选择后不可修改，确定要选择当前身份吗?", "确认提示", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
             {
                 SQLiteHelper.ExecuteNonQuery($"UPDATE user_info SET ui_special_id='{id}' WHERE ui_id='{UserHelper.GetUser().UserId}'");
-                MessageBox.Show("选择身份完毕。");
                 DialogResult = DialogResult.OK;
                 Close();
             }
@@ -33,10 +32,13 @@ namespace 数据采集档案管理系统___加工版
 
         private void Frm_IdentityChoose_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(MessageBox.Show("尚未选择身份，是否退出？", "无法进入", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                Application.Exit();
-            else
-                e.Cancel = true;
+            if(DialogResult != DialogResult.OK)
+            {
+                if(MessageBox.Show("尚未选择身份，是否退出？", "无法进入", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    Application.Exit();
+                else
+                    e.Cancel = true;
+            }
         }
     }
 }
