@@ -48,7 +48,8 @@ namespace 数据采集档案管理系统___加工版
             {
                 if(SQLiteHelper.ExecuteCountQuery($"SELECT COUNT(*) FROM backup_files_info WHERE bfi_name='{UserHelper.GetUser().RealName}' AND bfi_code='-1'") == 0)
                 {
-                    if(ServerHelper.GetConnectState())
+                    object IPAddress = null;
+                    if(ServerHelper.GetConnectState(ref IPAddress))
                     {
                         btn_Import.Enabled = false;
                         count = okCount = noCount = indexCount = 0;
@@ -56,7 +57,7 @@ namespace 数据采集档案管理系统___加工版
                         pro_Show.Value = pro_Show.Minimum;
                         pro_Show.Maximum = totalFileAmount;
 
-                        string rootFolder = @"\\127.0.0.1\共享文件夹\" + UserHelper.GetUser().RealName + @"\";
+                        string rootFolder = @"\\" + IPAddress + @"\共享文件夹\" + UserHelper.GetUser().RealName + @"\";
                         if(!Directory.Exists(rootFolder))
                             Directory.CreateDirectory(rootFolder);
                         string primaryKey = Guid.NewGuid().ToString();

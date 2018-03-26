@@ -16,14 +16,14 @@ namespace 数据采集档案管理系统___加工版
         /// <param name="userName">用户名</param>
         /// <param name="passWord">密码</param>
         /// <returns>连接是否成功</returns>
-        public static bool GetConnectState()
+        public static bool GetConnectState(ref object IPAddress)
         {
             bool Flag = false;
             string key = "00001";
             object[] obj = SQLiteHelper.ExecuteRowsQuery($"SELECT pri_code, pri_key, pri_value FROM private_info WHERE pri_id='{key}'");
             if(obj != null)
             {
-                object IPaddress = obj[0];
+                IPAddress = obj[0];
                 object userName = obj[1];
                 object passWord = obj[2];
                 System.Diagnostics.Process proc = new System.Diagnostics.Process();
@@ -36,7 +36,7 @@ namespace 数据采集档案管理系统___加工版
                     proc.StartInfo.RedirectStandardError = true;
                     proc.StartInfo.CreateNoWindow = true;
                     proc.Start();
-                    string dosLine = @"NET USE \\" + IPaddress + " " + passWord + @" /USER:" + userName;
+                    string dosLine = @"NET USE \\" + IPAddress + " " + passWord + @" /USER:" + userName;
                     proc.StandardInput.WriteLine(dosLine);
                     proc.StandardInput.WriteLine("EXIT");
                     while(!proc.HasExited)
