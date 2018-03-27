@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Data.SQLite;
+using System.IO;
 using System.Windows.Forms;
 
 namespace 数据采集档案管理系统___加工版

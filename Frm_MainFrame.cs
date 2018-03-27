@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Windows.Forms;
-using 数据采集档案管理系统___加工版.Tools;
 
 namespace 数据采集档案管理系统___加工版
 {
@@ -15,11 +13,6 @@ namespace 数据采集档案管理系统___加工版
         {
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
-        }
-
-        private void Frm_MainFrame_Load(object sender, EventArgs e)
-        {
-            
         }
 
         private void Pic_MouseLeave(object sender, EventArgs e)
