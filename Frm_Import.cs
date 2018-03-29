@@ -18,7 +18,7 @@ namespace 数据采集档案管理系统___加工版
         /// </summary>
         private int okCount = 0;
         /// <summary>
-        /// 导入失败输
+        /// 导入失败数
         /// </summary>
         private int noCount = 0;
         int indexCount = 0;
@@ -53,21 +53,14 @@ namespace 数据采集档案管理系统___加工版
                     object IPAddress = null;
                     if(ServerHelper.GetConnectState(ref IPAddress))
                     {
-                        string rootFolder = @"\\" + IPAddress + @"\共享文件夹\" + UserHelper.GetUser().RealName + @"\";
-                        if(Directory.Exists(rootFolder))
-                        {
-                            if(MessageBox.Show("服务器已存在导入数据，此操作会删除现有文件，是否继续？", "确认提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                                Directory.Delete(rootFolder, true);
-                            else
-                                return;
-                        }
+                        string rootFolder = @"\\" + IPAddress + @"\共享文件夹\";
+
                         btn_Import.Enabled = false;
                         count = okCount = noCount = indexCount = 0;
                         int totalFileAmount = Directory.GetFiles(sPath, "*", SearchOption.AllDirectories).Length;
                         pro_Show.Value = pro_Show.Minimum;
                         pro_Show.Maximum = totalFileAmount;
 
-                        Directory.CreateDirectory(rootFolder);
                         string primaryKey = Guid.NewGuid().ToString();
                         SQLiteHelper.ExecuteNonQuery($"INSERT INTO backup_files_info(bfi_id, bfi_code, bfi_name, bfi_date, bfi_userid) VALUES " +
                             $"('{primaryKey}', '{-1}', '{UserHelper.GetUser().RealName}', '{DateTime.Now.ToString("s")}', '{UserHelper.GetUser().UserId}')");
@@ -75,7 +68,7 @@ namespace 数据采集档案管理系统___加工版
                         {
                             CopyFile(sPath, rootFolder, primaryKey);
 
-                            CopyDataTable(sPath);
+                            CopyDataTable(sPath, rootFolder);
 
                             MessageBox.Show($"读取完毕,共计{count}个文件。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                             DialogResult = DialogResult.OK;
@@ -99,11 +92,11 @@ namespace 数据采集档案管理系统___加工版
         /// 【课题组 >> 专项办】
         /// </summary>
         /// <param name="rootFolder">课题组数据库文件路径</param>
-        private void CopyDataTable(string rootFolder)
+        private void CopyDataTable(string sourPath, string rootFolder)
         {
-            if(Directory.Exists(rootFolder))
+            if(Directory.Exists(sourPath))
             {
-                string[] files = Directory.GetFiles(rootFolder, "*.db");
+                string[] files = Directory.GetFiles(sourPath, "*.db");
                 if(files != null && files.Length > 0)
                 {
                     FileInfo fileInfo = new FileInfo(files[0]);
@@ -113,7 +106,7 @@ namespace 数据采集档案管理系统___加工版
                         if(_fileInfo.LastWriteTime > fileInfo.LastWriteTime)
                             fileInfo = _fileInfo;
                     }
-                    CopyDataTableInstince(fileInfo.FullName);
+                    CopyDataTableInstince(fileInfo.FullName, rootFolder);
                 }
             }
         }
@@ -121,7 +114,7 @@ namespace 数据采集档案管理系统___加工版
         /// <summary>
         /// 复制文件
         /// </summary>
-        private void CopyDataTableInstince(string dataBasePath)
+        private void CopyDataTableInstince(string dataBasePath, string rootFolder)
         {
             SQLiteBackupHelper helper = new SQLiteBackupHelper(dataBasePath);
 
@@ -162,9 +155,28 @@ namespace 数据采集档案管理系统___加工版
             for(int i = 0; i < fileTable.Rows.Count; i++)
             {
                 DataRow row = fileTable.Rows[i];
+                //转换为当前服务器链接
+                string link = GetValue(row["fi_link"]);
+                if(!string.IsNullOrEmpty(link))
+                {
+                    string fileName = Path.GetFileName(link);
+                    string[] files = Directory.GetFiles(rootFolder, "*" + fileName, SearchOption.AllDirectories);
+                    for(int j = 0; j < files.Length; j++)
+                    {
+                        string parent = Directory.GetParent(files[j]).Name;
+                        string real = GetRealParentName(row["fi_obj_id"]);
+                        if(string.IsNullOrEmpty(real))
+                            link = real;
+                        else if(parent.Equals(real))
+                        {
+                            link = files[j];
+                            break;
+                        }
+                    }
+                }
                 string insertSql = "INSERT INTO files_info VALUES(" +
                     $"'{row["fi_id"]}', '{row["fi_code"]}', '{row["fi_stage"]}', '{row["fi_categor"]}', '{row["fi_name"]}', '{row["fi_user"]}', '{row["fi_type"]}', '{row["fi_secret"]}', '{row["fi_pages"]}'," +
-                    $"'{row["fi_number"]}', '{GetFormatDate(row["fi_create_date"])}', '{row["fi_unit"]}', '{row["fi_carrier"]}', '{row["fi_format"]}', '{row["fi_form"]}', '{row["fi_link"]}', '{row["fi_status"]}', '{row["fi_obj_id"]}')";
+                    $"'{row["fi_number"]}', '{GetFormatDate(row["fi_create_date"])}', '{row["fi_unit"]}', '{row["fi_carrier"]}', '{row["fi_format"]}', '{row["fi_form"]}', '{link}', '{row["fi_status"]}', '{row["fi_obj_id"]}')";
                 SQLiteHelper.ExecuteNonQuery($"DELETE FROM files_info WHERE fi_id='{row["fi_id"]}'");
                 SQLiteHelper.ExecuteNonQuery(insertSql);
             }
@@ -195,6 +207,17 @@ namespace 数据采集档案管理系统___加工版
                 SQLiteHelper.ExecuteNonQuery($"DELETE FROM files_box_info WHERE pb_id='{row["pb_id"]}'");
                 SQLiteHelper.ExecuteNonQuery(insertSql);
             }
+        }
+
+        private string GetRealParentName(object id)
+        {
+            object name = null;
+            name = SQLiteHelper.ExecuteOnlyOneQuery($"SELECT pi_name FROM project_info WHERE pi_id='{id}'");
+            if(name == null)
+                name = SQLiteHelper.ExecuteOnlyOneQuery($"SELECT ti_name FROM topic_info WHERE ti_id='{id}'");
+            if(name == null)
+                name = SQLiteHelper.ExecuteOnlyOneQuery($"SELECT si_name FROM subject_info WHERE si_id='{id}'");
+            return GetValue(name);
         }
 
         private object GetFormatDate(object v) => v == null ? DateTime.Now.ToString("s") : Convert.ToDateTime(v).ToString("s");
@@ -243,5 +266,7 @@ namespace 数据采集档案管理系统___加工版
                 e.Cancel = true;
             }
         }
+
+        private string GetValue(object v) => v == null ? string.Empty : v.ToString();
     }
 }

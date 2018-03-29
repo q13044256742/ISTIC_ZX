@@ -310,6 +310,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\png-0285.png" />
+    <None Include="Resources\png-0217.png" />
     <None Include="Resources\login_1.png" />
     <None Include="Images\png-0228.png" />
     <None Include="Images\png-0222.png" />
@@ -320,7 +322,9 @@
     <Content Include="Images\7.png" />
     <Content Include="Images\Mbg.jpg" />
     <Content Include="Images\logo.png" />
+    <Content Include="Images\png-0217.png" />
     <Content Include="Images\png-0281.png" />
+    <Content Include="Images\png-0285.png" />
     <Content Include="Images\png-0289.png" />
   </ItemGroup>
   <ItemGroup>

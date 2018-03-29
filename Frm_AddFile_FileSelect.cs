@@ -31,17 +31,21 @@ namespace 数据采集档案管理系统___加工版
             List<object[]> list = SQLiteHelper.ExecuteColumnsQuery($"SELECT bfi_id, bfi_name, bfi_path FROM backup_files_info WHERE bfi_pid='{parentId}' ORDER BY rowid", 3);
             for(int i = 0; i < list.Count; i++)
             {
-                TreeNode treeNode = new TreeNode()
+                string name = GetValue(list[i][1]);
+                if(!name.Contains(".db"))
                 {
-                    Name = GetValue(list[i][0]),
-                    Text = GetValue(list[i][1]),
-                    Tag = GetValue(list[i][2])
-                };
-                parentNode.Nodes.Add(treeNode);
-                InitialTree(treeNode.Name, treeNode);
+                    TreeNode treeNode = new TreeNode()
+                    {
+                        Name = GetValue(list[i][0]),
+                        Text = name,
+                        Tag = GetValue(list[i][2])
+                    };
+                    if(name.Contains("."))
+                        treeNode.ImageIndex = treeNode.SelectedImageIndex = 2;
+                    parentNode.Nodes.Add(treeNode);
+                    InitialTree(treeNode.Name, treeNode);
+                }
             }
-            if(list.Count == 0)
-                parentNode.ImageIndex = parentNode.SelectedImageIndex = 2;
         }
 
         private void Frm_AddFile_FileSelect_Load(object sender, EventArgs e)
@@ -58,7 +62,7 @@ namespace 数据采集档案管理系统___加工版
 
         private void tv_file_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            if(e.Node.Nodes.Count == 0)
+            if(e.Node.Text.Contains("."))
             {
                 lbl_filename.Text = e.Node.Text;
                 SelectedFileName = e.Node.Tag + e.Node.Text;
