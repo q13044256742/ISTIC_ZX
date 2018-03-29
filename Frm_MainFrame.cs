@@ -18,17 +18,15 @@ namespace 数据采集档案管理系统___加工版
         private void Pic_MouseLeave(object sender, EventArgs e)
         {
             Panel panel = (sender as PictureBox).Parent as Panel;
-            panel.ForeColor = System.Drawing.Color.Black;
+            panel.BackColor = System.Drawing.Color.FromName("control");
             Cursor = Cursors.Default;
-            panel.BorderStyle = BorderStyle.None;
         }
 
         private void Pic_MouseEnter(object sender, EventArgs e)
         {
             Panel panel = (sender as PictureBox).Parent as Panel;
-            panel.ForeColor = System.Drawing.Color.MidnightBlue;
+            panel.BackColor = System.Drawing.Color.Gainsboro;
             Cursor = Cursors.Hand;
-            panel.BorderStyle = BorderStyle.FixedSingle;
         }
 
         private void Pic_Add_Click(object sender, EventArgs e)
@@ -89,7 +87,10 @@ namespace 数据采集档案管理系统___加工版
         private void Pic_Import_Click(object sender, EventArgs e)
         {
             Frm_Import frm_Import = new Frm_Import();
-            frm_Import.ShowDialog();
+            if(frm_Import.ShowDialog() == DialogResult.OK)
+            {
+                btn_Refresh_Click(sender, e);
+            }
         }
 
         private void Frm_MainFrame_Shown(object sender, EventArgs e)
