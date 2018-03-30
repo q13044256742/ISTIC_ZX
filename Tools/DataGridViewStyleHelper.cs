@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace 数据采集档案管理系统___加工版.Tools
+namespace 数据采集档案管理系统___加工版
 {
     class DataGridViewStyleHelper
     {
@@ -63,6 +62,17 @@ namespace 数据采集档案管理系统___加工版.Tools
             DataGridViewCellStyle style = new DataGridViewCellStyle();
             style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             for (int j = 0; j < indexs.Length; j++)
+                dataGridView.Columns[indexs[j]].DefaultCellStyle = style;
+        }
+
+        /// <summary>
+        /// 设置单元格文本对齐方式为居中
+        /// </summary>
+        public static void SetAlignWithCenter(DataGridView dataGridView, string[] indexs)
+        {
+            DataGridViewCellStyle style = new DataGridViewCellStyle();
+            style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            for(int j = 0; j < indexs.Length; j++)
                 dataGridView.Columns[indexs[j]].DefaultCellStyle = style;
         }
     }

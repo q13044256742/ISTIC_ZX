@@ -187,6 +187,12 @@
     <Compile Include="Frm_Print.Designer.cs">
       <DependentUpon>Frm_Print.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_Query.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Query.designer.cs">
+      <DependentUpon>Frm_Query.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_SetContextPath.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +281,9 @@
     <EmbeddedResource Include="Frm_Print.resx">
       <DependentUpon>Frm_Print.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Query.resx">
+      <DependentUpon>Frm_Query.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_SetContextPath.resx">
       <DependentUpon>Frm_SetContextPath.cs</DependentUpon>
     </EmbeddedResource>
@@ -310,6 +319,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\png-0152.png" />
     <None Include="Resources\png-0285.png" />
     <None Include="Resources\png-0217.png" />
     <None Include="Resources\login_1.png" />

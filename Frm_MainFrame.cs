@@ -128,7 +128,7 @@ namespace 数据采集档案管理系统___加工版
                 rootNode = new TreeNode()
                 {
                     Name = GetValue(row["spi_id"]),
-                    Text = GetValue(row["spi_code"]),
+                    Text = GetValue(row["spi_name"]),
                     Tag = ControlType.Plan
                 };
                 //【项目】
@@ -306,7 +306,7 @@ namespace 数据采集档案管理系统___加工版
                         dgv_DataList.Rows[rid].Cells["id"].Value = rowNumber++;
                         dgv_DataList.Rows[rid].Cells["code"].Value = projectTable.Rows[i]["pi_code"];
                         dgv_DataList.Rows[rid].Cells["name"].Value = projectTable.Rows[i]["pi_name"];
-                        dgv_DataList.Rows[rid].Cells["unit"].Value = SQLiteHelper.GetValueByKey(projectTable.Rows[i]["pi_unit"]);
+                        dgv_DataList.Rows[rid].Cells["unit"].Value = projectTable.Rows[i]["pi_unit"];
                         dgv_DataList.Rows[rid].Cells["user"].Value = projectTable.Rows[i]["pi_unit_user"];
                         dgv_DataList.Rows[rid].Cells["phone"].Value = projectTable.Rows[i]["pi_contacts_phone"];
                         dgv_DataList.Rows[rid].Cells["files"].Value = GetFileAmount(projectTable.Rows[i]["pi_id"], true);
@@ -321,7 +321,7 @@ namespace 数据采集档案管理系统___加工版
                         dgv_DataList.Rows[rid].Cells["id"].Value = rowNumber++;
                         dgv_DataList.Rows[rid].Cells["code"].Value = topicTable.Rows[i]["ti_code"];
                         dgv_DataList.Rows[rid].Cells["name"].Value = topicTable.Rows[i]["ti_name"];
-                        dgv_DataList.Rows[rid].Cells["unit"].Value = SQLiteHelper.GetValueByKey(topicTable.Rows[i]["ti_unit"]);
+                        dgv_DataList.Rows[rid].Cells["unit"].Value = topicTable.Rows[i]["ti_unit"];
                         dgv_DataList.Rows[rid].Cells["user"].Value = topicTable.Rows[i]["ti_unit_user"];
                         dgv_DataList.Rows[rid].Cells["phone"].Value = topicTable.Rows[i]["ti_contacts_phone"];
                         dgv_DataList.Rows[rid].Cells["files"].Value = GetFileAmount(topicTable.Rows[i]["ti_id"], true);
@@ -340,7 +340,7 @@ namespace 数据采集档案管理系统___加工版
                         dgv_DataList.Rows[rid].Cells["id"].Value = rowNumber++;
                         dgv_DataList.Rows[rid].Cells["code"].Value = subjectTable.Rows[i]["si_code"];
                         dgv_DataList.Rows[rid].Cells["name"].Value = subjectTable.Rows[i]["si_name"];
-                        dgv_DataList.Rows[rid].Cells["unit"].Value = SQLiteHelper.GetValueByKey(subjectTable.Rows[i]["si_unit"]);
+                        dgv_DataList.Rows[rid].Cells["unit"].Value = subjectTable.Rows[i]["si_unit"];
                         dgv_DataList.Rows[rid].Cells["user"].Value = subjectTable.Rows[i]["si_unit_user"];
                         dgv_DataList.Rows[rid].Cells["phone"].Value = subjectTable.Rows[i]["si_contacts_phone"];
                         dgv_DataList.Rows[rid].Cells["files"].Value = GetFileAmount(subjectTable.Rows[i]["si_id"], true);
@@ -355,7 +355,7 @@ namespace 数据采集档案管理系统___加工版
                         dgv_DataList.Rows[rid].Cells["id"].Value = rowNumber++;
                         dgv_DataList.Rows[rid].Cells["code"].Value = topicTable.Rows[i]["ti_code"];
                         dgv_DataList.Rows[rid].Cells["name"].Value = topicTable.Rows[i]["ti_name"];
-                        dgv_DataList.Rows[rid].Cells["unit"].Value = SQLiteHelper.GetValueByKey(topicTable.Rows[i]["ti_unit"]);
+                        dgv_DataList.Rows[rid].Cells["unit"].Value = topicTable.Rows[i]["ti_unit"];
                         dgv_DataList.Rows[rid].Cells["user"].Value = topicTable.Rows[i]["ti_unit_user"];
                         dgv_DataList.Rows[rid].Cells["phone"].Value = topicTable.Rows[i]["ti_contacts_phone"];
                         dgv_DataList.Rows[rid].Cells["files"].Value = GetFileAmount(topicTable.Rows[i]["ti_id"], true);
@@ -373,7 +373,7 @@ namespace 数据采集档案管理系统___加工版
                         dgv_DataList.Rows[rid].Cells["id"].Value = i + 1;
                         dgv_DataList.Rows[rid].Cells["code"].Value = subjectTable.Rows[i]["si_code"];
                         dgv_DataList.Rows[rid].Cells["name"].Value = subjectTable.Rows[i]["si_name"];
-                        dgv_DataList.Rows[rid].Cells["unit"].Value = SQLiteHelper.GetValueByKey(subjectTable.Rows[i]["si_unit"]);
+                        dgv_DataList.Rows[rid].Cells["unit"].Value = subjectTable.Rows[i]["si_unit"];
                         dgv_DataList.Rows[rid].Cells["user"].Value = subjectTable.Rows[i]["si_unit_user"];
                         dgv_DataList.Rows[rid].Cells["phone"].Value = subjectTable.Rows[i]["si_contacts_phone"];
                         dgv_DataList.Rows[rid].Cells["files"].Value = GetFileAmount(subjectTable.Rows[i]["si_id"], true);
@@ -403,6 +403,11 @@ namespace 数据采集档案管理系统___加工版
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
             LoadTreeList(tv_DataTree.Nodes[0].Nodes[0].Name);
+        }
+
+        private void pic_Query_Click(object sender, EventArgs e)
+        {
+            new Frm_Query(rootId).ShowDialog();
         }
     }
 }

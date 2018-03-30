@@ -26,6 +26,7 @@ namespace 数据采集档案管理系统___加工版
             this.tabPages = new Dictionary<string, TabPage>();
             foreach(TabPage item in tab_Menu.TabPages)
                 tabPages.Add(item.Name, item);
+            tab_Menu.TabPages.Clear();
             LoadBasicInfo(treeNode);
         }
 
@@ -66,21 +67,7 @@ namespace 数据采集档案管理系统___加工版
             InitialLostReasonList(dgv_Project_FileValid, "dgv_Project_FV_");
             InitialLostReasonList(dgv_Topic_FileValid, "dgv_Topic_FV_");
             InitialLostReasonList(dgv_Subject_FileValid, "dgv_Subject_FV_");
-            //领域
-            string key = "5B05D998-6EDE-4E8A-9574-79CE6C7656D9";
-            InitialFieldList(key, cbo_Project_Field);
-            InitialFieldList(key, cbo_Subject_Field);
-            InitialFieldList(key, cbo_Topic_Field);
-            //承担单位
-            key = "9af559e5-25c7-4b1b-a076-bf8849c58a47";
-            InitialFieldList(key, cbo_Project_Unit);
-            InitialFieldList(key, cbo_Subject_Unit);
-            InitialFieldList(key, cbo_Topic_Unit);
-            //省市
-            key = "567779a6-f742-456a-89cc-cfdd9555ec25";
-            InitialFieldList(key, cbo_Project_Province);
-            InitialFieldList(key, cbo_Subject_Province);
-            InitialFieldList(key, cbo_Topic_Province);
+            
             //下拉框默认
             cbo_Project_HasNext.SelectedIndex = 0;
             cbo_Topic_HasNext.SelectedIndex = 0;
@@ -91,7 +78,7 @@ namespace 数据采集档案管理系统___加工版
             ControlType type = (ControlType)treeNode.Tag;
             if(type == ControlType.Plan)
             {
-                ShowTabPageByName("special", 1);
+                ShowTabPageByName("special", 0);
                 DataRow row = SQLiteHelper.ExecuteSingleRowQuery($"SELECT spi_code, spi_name, spi_unit, spi_intro FROM SPECIAL_INFO WHERE spi_id='{treeNode.Name}'");
                 if(row != null)
                 {
@@ -106,12 +93,12 @@ namespace 数据采集档案管理系统___加工版
                     DataRow rootRow = SQLiteHelper.ExecuteSingleRowQuery($"SELECT spi_id, spi_code, spi_name, spi_unit, spi_intro FROM SPECIAL_INFO WHERE spi_id='{row["pi_obj_id"]}'");
                     if(rootRow != null)
                     {
-                        ShowTabPageByName("special", 1);
+                        ShowTabPageByName("special", 0);
                         LoadBasicInfoInstince(ControlType.Plan, rootRow["spi_id"], rootRow);
 
-                        ShowTabPageByName("project", 2);
-                        gro_Project_Btns.Tag = 2;
-                        project.Tag = row["pi_id"];
+                        ShowTabPageByName("project", 1);
+                        gro_Project_Btns.Tag = 1;
+                        project.Tag = row["pi_obj_id"];
                         LoadBasicInfoInstince(ControlType.Plan_Project, row["pi_id"], row);
 
                         tab_Menu.SelectedIndex = tab_Menu.TabCount - 1;
@@ -127,12 +114,12 @@ namespace 数据采集档案管理系统___加工版
                     DataRow rootRow = SQLiteHelper.ExecuteSingleRowQuery($"SELECT spi_id, spi_code, spi_name, spi_unit, spi_intro FROM special_info WHERE spi_id='{row["ti_obj_id"]}'");
                     if(rootRow != null)// 计划 >> 课题
                     {
-                        ShowTabPageByName("special", 1);
+                        ShowTabPageByName("special", 0);
                         LoadBasicInfoInstince(ControlType.Plan, rootRow["spi_id"], rootRow);
 
-                        ShowTabPageByName("topic", 2);
-                        gro_Topic_Btns.Tag = 2;
-                        topic.Tag = row["ti_id"];
+                        ShowTabPageByName("topic", 1);
+                        gro_Topic_Btns.Tag = 1;
+                        topic.Tag = row["ti_obj_id"];
                         LoadBasicInfoInstince(ControlType.Plan_Topic, row["ti_id"], row);
                     }
                     else
@@ -143,17 +130,17 @@ namespace 数据采集档案管理系统___加工版
                             DataRow specialRow = SQLiteHelper.ExecuteSingleRowQuery($"SELECT spi_id, spi_code, spi_name, spi_unit, spi_intro FROM special_info WHERE spi_id='{projectRow["pi_obj_id"]}'");
                             if(specialRow != null)
                             {
-                                ShowTabPageByName("special", 1);
+                                ShowTabPageByName("special", 0);
                                 LoadBasicInfoInstince(ControlType.Plan, specialRow["spi_id"], specialRow);
 
-                                ShowTabPageByName("project", 2);
-                                gro_Project_Btns.Tag = 2;
-                                project.Tag = projectRow["pi_id"];
+                                ShowTabPageByName("project", 1);
+                                gro_Project_Btns.Tag = 1;
+                                project.Tag = projectRow["pi_ob_id"];
                                 LoadBasicInfoInstince(ControlType.Plan_Project, projectRow["pi_id"], projectRow);
 
-                                ShowTabPageByName("topic", 3);
-                                gro_Topic_Btns.Tag = 3;
-                                topic.Tag = row["ti_id"];
+                                ShowTabPageByName("topic", 2);
+                                gro_Topic_Btns.Tag = 2;
+                                topic.Tag = row["ti_obj_id"];
                                 LoadBasicInfoInstince(ControlType.Plan_Topic, row["ti_id"], row);
 
                             }
@@ -176,20 +163,20 @@ namespace 数据采集档案管理系统___加工版
                         {
                             DataRow specialRow = SQLiteHelper.ExecuteSingleRowQuery($"SELECT * FROM special_info WHERE spi_id='{projectRow["pi_obj_id"]}'");
 
-                            ShowTabPageByName("special", 1);
+                            ShowTabPageByName("special", 0);
                             LoadBasicInfoInstince(ControlType.Plan, specialRow["spi_id"], specialRow);
 
-                            ShowTabPageByName("project", 2);
-                            gro_Project_Btns.Tag = 2;
-                            project.Tag = projectRow["pi_id"];
+                            ShowTabPageByName("project", 1);
+                            gro_Project_Btns.Tag = 1;
+                            project.Tag = projectRow["pi_obj_id"];
                             LoadBasicInfoInstince(ControlType.Plan_Project, projectRow["pi_id"], projectRow);
 
-                            ShowTabPageByName("topic", 3);
-                            gro_Topic_Btns.Tag = 3;
-                            topic.Tag = topicRow["ti_id"];
+                            ShowTabPageByName("topic", 2);
+                            gro_Topic_Btns.Tag = 2;
+                            topic.Tag = topicRow["ti_obj_id"];
                             LoadBasicInfoInstince(ControlType.Plan_Topic, topicRow["ti_id"], topicRow);
 
-                            ShowTabPageByName("Subject", 4);
+                            ShowTabPageByName("Subject", 3);
                             LoadBasicInfoInstince(ControlType.Plan_Topic_Subject, subjectRow["si_id"], subjectRow);
                         }
                         else
@@ -198,15 +185,15 @@ namespace 数据采集档案管理系统___加工版
                             //计划 >> 课题 >> 子课题
                             if(specialRow != null)
                             {
-                                ShowTabPageByName("special", 1);
+                                ShowTabPageByName("special", 0);
                                 LoadBasicInfoInstince(ControlType.Plan, specialRow["spi_id"], specialRow);
 
-                                ShowTabPageByName("topic", 2);
-                                gro_Topic_Btns.Tag = 2;
-                                topic.Tag = topicRow["ti_id"];
+                                ShowTabPageByName("topic", 1);
+                                gro_Topic_Btns.Tag = 1;
+                                topic.Tag = topicRow["ti_obj_id"];
                                 LoadBasicInfoInstince(ControlType.Plan_Topic, topicRow["ti_id"], topicRow);
 
-                                ShowTabPageByName("Subject", 3);
+                                ShowTabPageByName("Subject", 2);
                                 LoadBasicInfoInstince(ControlType.Plan_Topic_Subject, subjectRow["si_id"], subjectRow);
 
                             }
@@ -221,15 +208,15 @@ namespace 数据采集档案管理系统___加工版
                             DataRow specialRow = SQLiteHelper.ExecuteSingleRowQuery($"SELECT * FROM special_info WHERE spi_id='{projectRow["pi_obj_id"]}'");
                             if(specialRow != null)
                             {
-                                ShowTabPageByName("special", 1);
+                                ShowTabPageByName("special", 0);
                                 LoadBasicInfoInstince(ControlType.Plan, specialRow["spi_id"], specialRow);
 
-                                ShowTabPageByName("project", 2);
-                                gro_Project_Btns.Tag = 2;
-                                project.Tag = projectRow["pi_id"];
+                                ShowTabPageByName("project", 1);
+                                gro_Project_Btns.Tag = 1;
+                                project.Tag = projectRow["pi_obj_id"];
                                 LoadBasicInfoInstince(ControlType.Plan_Project, projectRow["pi_id"], projectRow);
 
-                                ShowTabPageByName("Subject", 3);
+                                ShowTabPageByName("Subject", 2);
                                 LoadBasicInfoInstince(ControlType.Plan_Topic_Subject, subjectRow["si_id"], subjectRow);
                             }
                         }
@@ -273,14 +260,14 @@ namespace 数据采集档案管理系统___加工版
             {
                 txt_Project_Code.Text = GetValue(row["pi_code"]);
                 txt_Project_Name.Text = GetValue(row["pi_name"]);
-                cbo_Project_Field.SelectedValue = GetValue(row["pi_field"]);
+                cbo_Project_Field.Text = GetValue(row["pi_field"]);
                 txt_Project_Theme.Text = GetValue(row["pi_theme"]);
                 txt_Project_Funds.Text = GetValue(row["pi_funds"]);
                 dtp_Project_StartDate.Value = GetDateTimeValue(row["pi_startdate"]);
                 dtp_Project_FinishDate.Value = GetDateTimeValue(row["pi_finishdate"]);
                 txt_Project_Year.Text = GetValue(row["pi_year"]);
-                cbo_Project_Unit.SelectedValue = GetValue(row["pi_unit"]);
-                cbo_Project_Province.SelectedValue = GetValue(row["pi_province"]);
+                cbo_Project_Unit.Text = GetValue(row["pi_unit"]);
+                cbo_Project_Province.Text = GetValue(row["pi_province"]);
                 txt_Project_Uniter.Text = GetValue(row["pi_unit_user"]);
                 txt_Project_Proer.Text = GetValue(row["pi_project_user"]);
                 txt_Project_Connecter.Text = GetValue(row["pi_contacts"]);
@@ -294,14 +281,14 @@ namespace 数据采集档案管理系统___加工版
             {
                 txt_Topic_Code.Text = GetValue(row["ti_code"]);
                 txt_Topic_Name.Text = GetValue(row["ti_name"]);
-                cbo_Topic_Field.SelectedValue = GetValue(row["ti_field"]);
+                cbo_Topic_Field.Text = GetValue(row["ti_field"]);
                 txt_Topic_Theme.Text = GetValue(row["ti_theme"]);
                 txt_Topic_Funds.Text = GetValue(row["ti_funds"]);
                 dtp_Topic_StartDate.Value = GetDateTimeValue(row["ti_startdate"]);
                 dtp_Topic_FinishDate.Value = GetDateTimeValue(row["ti_finishdate"]);
                 txt_Topic_Year.Text = GetValue(row["ti_year"]);
-                cbo_Topic_Unit.SelectedValue = GetValue(row["ti_unit"]);
-                cbo_Topic_Province.SelectedValue = GetValue(row["ti_province"]);
+                cbo_Topic_Unit.Text = GetValue(row["ti_unit"]);
+                cbo_Topic_Province.Text = GetValue(row["ti_province"]);
                 txt_Topic_Uniter.Text = GetValue(row["ti_unit_user"]);
                 txt_Topic_Proer.Text = GetValue(row["ti_project_user"]);
                 txt_Topic_Connecter.Text = GetValue(row["ti_contacts"]);
@@ -315,14 +302,14 @@ namespace 数据采集档案管理系统___加工版
             {
                 txt_Subject_Code.Text = GetValue(row["si_code"]);
                 txt_Subject_Name.Text = GetValue(row["si_name"]);
-                cbo_Subject_Field.SelectedValue = GetValue(row["si_field"]);
+                cbo_Subject_Field.Text = GetValue(row["si_field"]);
                 txt_Subject_Theme.Text = GetValue(row["si_theme"]);
                 txt_Subject_Funds.Text = GetValue(row["si_funds"]);
                 dtp_Subject_StartDate.Value = GetDateTimeValue(row["si_startdate"]);
                 dtp_Subject_FinishDate.Value = GetDateTimeValue(row["si_finishdate"]);
                 txt_Subject_Year.Text = GetValue(row["si_year"]);
-                cbo_Subject_Unit.SelectedValue = GetValue(row["si_unit"]);
-                cbo_Subject_Province.SelectedValue = GetValue(row["si_province"]);
+                cbo_Subject_Unit.Text = GetValue(row["si_unit"]);
+                cbo_Subject_Province.Text = GetValue(row["si_province"]);
                 txt_Subject_Uniter.Text = GetValue(row["si_unit_user"]);
                 txt_Subject_Proer.Text = GetValue(row["si_project_user"]);
                 txt_Subject_Connecter.Text = GetValue(row["si_contacts"]);
@@ -446,7 +433,7 @@ namespace 数据采集档案管理系统___加工版
                 }
             if(!string.IsNullOrEmpty(tabName) && tabPages.TryGetValue(tabName, out TabPage tabPage))
             {
-                ClearText(tabPage);
+                ClearText(tabPage, true);
                 if(tabIndex > tab_Menu.TabCount)
                     tab_Menu.TabPages.Add(tabPage);
                 else
@@ -454,21 +441,26 @@ namespace 数据采集档案管理系统___加工版
             }
         }
 
-        private void ClearText(TabPage tabPage)
+        /// <summary>
+        /// 清空输入板
+        /// </summary>
+        /// <param name="isClearBaseId">是否清空主键</param>
+        private void ClearText(TabPage tabPage, bool isClearBaseId)
         {
             foreach(Control item in tabPage.Controls)
             {
-                if(item is TextBox)
-                    (item as TextBox).ResetText();
+                if(item is TextBox || item is ComboBox)
+                    item.ResetText();
                 else if(item is TabControl)
                 {
+                    if(isClearBaseId) item.Tag = null;
                     foreach(TabPage page in item.Controls)
                     {
                         foreach(Control tab in page.Controls)
                         {
                             if(tab is DataGridView)
                                 (tab as DataGridView).Rows.Clear();
-                            else if(tab is TextBox)
+                            else if(tab is TextBox || item is ComboBox)
                                 tab.ResetText();
                         }
                     }
@@ -947,14 +939,14 @@ namespace 数据采集档案管理系统___加工版
             {
                 object code = txt_Project_Code.Text;
                 object name = txt_Project_Name.Text;
-                object field = cbo_Project_Field.SelectedValue;
+                object field = cbo_Project_Field.Text;
                 object theme = txt_Project_Theme.Text;
                 object funds = txt_Project_Funds.Text;
                 object sdate = dtp_Project_StartDate.Value.ToString("s");
                 object fdate = dtp_Project_FinishDate.Value.ToString("s");
                 object year = txt_Project_Year.Text;
-                object unit = cbo_Project_Unit.SelectedValue;
-                object province = cbo_Project_Province.SelectedValue;
+                object unit = cbo_Project_Unit.Text;
+                object province = cbo_Project_Province.Text;
                 object uniter = txt_Project_Uniter.Text;
                 object proer = txt_Project_Proer.Text;
                 object coner = txt_Project_Connecter.Text;
@@ -993,14 +985,14 @@ namespace 数据采集档案管理系统___加工版
             {
                 object code = txt_Topic_Code.Text;
                 object name = txt_Topic_Name.Text;
-                object field = cbo_Topic_Field.SelectedValue;
+                object field = cbo_Topic_Field.Text;
                 object theme = txt_Topic_Theme.Text;
                 object funds = txt_Topic_Funds.Text;
                 object sdate = dtp_Topic_StartDate.Value.ToString("s");
                 object fdate = dtp_Topic_FinishDate.Value.ToString("s");
                 object year = txt_Topic_Year.Text;
-                object unit = cbo_Topic_Unit.SelectedValue;
-                object province = cbo_Topic_Province.SelectedValue;
+                object unit = cbo_Topic_Unit.Text;
+                object province = cbo_Topic_Province.Text;
                 object uniter = txt_Topic_Uniter.Text;
                 object proer = txt_Topic_Proer.Text;
                 object coner = txt_Topic_Connecter.Text;
@@ -1039,14 +1031,14 @@ namespace 数据采集档案管理系统___加工版
             {
                 object code = txt_Subject_Code.Text;
                 object name = txt_Subject_Name.Text;
-                object field = cbo_Subject_Field.SelectedValue;
+                object field = cbo_Subject_Field.Text;
                 object theme = txt_Subject_Theme.Text;
                 object funds = txt_Subject_Funds.Text;
                 object sdate = dtp_Subject_StartDate.Value.ToString("s");
                 object fdate = dtp_Subject_FinishDate.Value.ToString("s");
                 object year = txt_Subject_Year.Text;
-                object unit = cbo_Subject_Unit.SelectedValue;
-                object province = cbo_Subject_Province.SelectedValue;
+                object unit = cbo_Subject_Unit.Text;
+                object province = cbo_Subject_Province.Text;
                 object uniter = txt_Subject_Uniter.Text;
                 object proer = txt_Subject_Proer.Text;
                 object coner = txt_Subject_Connecter.Text;
@@ -2661,6 +2653,23 @@ namespace 数据采集档案管理系统___加工版
         {
             DataGridView view = (DataGridView)((sender as ToolStripItem).GetCurrentParent() as ContextMenuStrip).Tag;
             view.CurrentCell.Value = string.Empty;
+        }
+
+        private void btn_Project_Add_Click(object sender, EventArgs e)
+        {
+            string name = (sender as Control).Name;
+            if(name.Contains("Project"))
+            {
+                ClearText(project, true);
+            }
+            else if(name.Contains("Topic"))
+            {
+                ClearText(topic, true);
+            }
+            else if(name.Contains("Subject"))
+            {
+                ClearText(Subject, true);
+            }
         }
     }
 }

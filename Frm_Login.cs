@@ -31,7 +31,8 @@ namespace 数据采集档案管理系统___加工版
                     user.PassWord = password;
 
                     DataRow spRow = SQLiteHelper.ExecuteSingleRowQuery($"SELECT * FROM special_info WHERE spi_id='{user.UserSpecialId}'");
-                    user.SpecialName = GetValue(spRow["spi_name"]);
+                    if(spRow != null)
+                        user.SpecialName = GetValue(spRow["spi_name"]);
 
                     Frm_MainFrame frm = new Frm_MainFrame();
                     frm.Show();
