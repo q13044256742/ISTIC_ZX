@@ -481,23 +481,29 @@ namespace 数据采集档案管理系统___加工版
             int index = cbo_Special_HasNext.SelectedIndex;
             int sort = 0;
             if(index == 0 || index == 1)
-            {
                 ShowTabPageByName(string.Empty, sort + 1);
-            }
             else
             {
-                object SpecialId = tab_Special_Info.Tag;
-                if(index == 2)//项目
+                object id = tab_Special_Info.Tag;
+                if(id != null)
                 {
-                    ShowTabPageByName("project", sort + 1);
-                    gro_Project_Btns.Tag = sort + 1;
-                    project.Tag = tab_Special_Info.Tag;
+                    if(index == 2)//项目
+                    {
+                        ShowTabPageByName("project", sort + 1);
+                        gro_Project_Btns.Tag = sort + 1;
+                        project.Tag = id;
+                    }
+                    else if(index == 3)//课题
+                    {
+                        ShowTabPageByName("topic", sort + 1);
+                        gro_Topic_Btns.Tag = sort + 1;
+                        topic.Tag = id;
+                    }
                 }
-                else if(index == 3)//课题
+                else
                 {
-                    ShowTabPageByName("topic", sort + 1);
-                    gro_Topic_Btns.Tag = sort + 1;
-                    topic.Tag = tab_Special_Info.Tag;
+                    MessageBox.Show("请先保存基本信息。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    cbo_Special_HasNext.SelectedIndex = 0;
                 }
             }
         }
@@ -515,9 +521,18 @@ namespace 数据采集档案管理系统___加工版
             }
             else
             {
-                ShowTabPageByName("Subject", sort + 1);
-                gro_Subject_Btns.Tag = sort + 1;
-                Subject.Tag = tab_Topic_Info.Tag;
+                object id = tab_Topic_Info.Tag;
+                if(id != null)
+                {
+                    ShowTabPageByName("Subject", sort + 1);
+                    gro_Subject_Btns.Tag = sort + 1;
+                    Subject.Tag = id;
+                }
+                else
+                {
+                    MessageBox.Show("请先保存基本信息。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    cbo_Topic_HasNext.SelectedIndex = 0;
+                }
             }
         }
 
@@ -578,12 +593,13 @@ namespace 数据采集档案管理系统___加工版
                                     UpdateFileInfo(key, row);
                             }
                         }
-                        MessageBox.Show("文件保存成功。");
+                        if(maxLength > 1)
+                            MessageBox.Show("文件保存成功。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
                     else if(index == 1)
                     {
                         ModifyFileValid(dgv_Special_FileValid, objId, "dgv_Special_FV_");
-                        MessageBox.Show("文件核查信息保存成功。");
+                        MessageBox.Show("文件核查信息保存成功。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
                     else if(index == 2)
                     {
@@ -608,7 +624,7 @@ namespace 数据采集档案管理系统___加工版
                                 string updateSql = $"UPDATE files_tag_info SET pt_code='{code}',pt_name='{_name}',pt_term='{term}',pt_secret='{secret}',pt_user='{user}',pt_unit='{unit}' WHERE pt_id='{aid}'";
                                 SQLiteHelper.ExecuteNonQuery(updateSql);
                             }
-                            MessageBox.Show($"案卷信息保存成功！");
+                            MessageBox.Show("案卷信息保存成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         }
                         else
                             MessageBox.Show("案卷编号不能为空。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -632,7 +648,7 @@ namespace 数据采集档案管理系统___加工版
                                     SQLiteHelper.ExecuteNonQuery($"UPDATE files_info SET fi_status=1 WHERE fi_id IN({ids})");
                                     SQLiteHelper.ExecuteNonQuery($"UPDATE files_box_info SET pb_files_id='{ids.Replace("'", string.Empty)}' WHERE pb_id='{boxId}'");
 
-                                    MessageBox.Show("保存案卷盒成功。");
+                                    MessageBox.Show("保存案卷盒成功。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                                     LoadFileBoxTable(boxId, objId, ControlType.Plan);
                                 }
                             }
@@ -640,11 +656,9 @@ namespace 数据采集档案管理系统___加工版
                                 MessageBox.Show("馆藏号不能为空。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         }
                         else
-                            MessageBox.Show("请先添加案卷盒。");
+                            MessageBox.Show("请先添加案卷盒。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
                 }
-                else
-                    MessageBox.Show("请先保存基础信息！", "保存失败", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
             else if(name.Contains("Project"))
             {
@@ -653,28 +667,34 @@ namespace 数据采集档案管理系统___加工版
                 object objId = tab_Project_Info.Tag;
                 if(index == 0)
                 {
-                    objId = tab_Project_Info.Tag = ModifyBasicInfo(ControlType.Plan_Project, objId, project.Tag);
-                    MessageBox.Show("基本信息保存成功。");
-                    //保存文件信息
-                    int maxLength = dgv_Project_FileList.Rows.Count;
-                    for(int i = 0; i < maxLength; i++)
+                    if(!string.IsNullOrEmpty(txt_Project_Code.Text))
                     {
-                        object fileName = dgv_Project_FileList.Rows[i].Cells[$"{key}name"].Value;
-                        if(fileName != null)
+                        objId = tab_Project_Info.Tag = ModifyBasicInfo(ControlType.Plan_Project, objId, project.Tag);
+                        MessageBox.Show("基本信息保存成功。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        //保存文件信息
+                        int maxLength = dgv_Project_FileList.Rows.Count;
+                        for(int i = 0; i < maxLength; i++)
                         {
-                            DataGridViewRow row = dgv_Project_FileList.Rows[i];
-                            object fileId = row.Cells[$"{key}id"].Tag;
-                            if(fileId == null)
+                            object fileName = dgv_Project_FileList.Rows[i].Cells[$"{key}name"].Value;
+                            if(fileName != null)
                             {
-                                fileId = AddFileInfo(key, row, objId);
-                                row.Cells[$"{key}id"].Value = row.Index + 1;
-                                row.Cells[$"{key}id"].Tag = fileId;
+                                DataGridViewRow row = dgv_Project_FileList.Rows[i];
+                                object fileId = row.Cells[$"{key}id"].Tag;
+                                if(fileId == null)
+                                {
+                                    fileId = AddFileInfo(key, row, objId);
+                                    row.Cells[$"{key}id"].Value = row.Index + 1;
+                                    row.Cells[$"{key}id"].Tag = fileId;
+                                }
+                                else
+                                    UpdateFileInfo(key, row);
                             }
-                            else
-                                UpdateFileInfo(key, row);
                         }
+                        if(maxLength > 1)
+                            MessageBox.Show("文件保存成功。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
-                    MessageBox.Show("文件保存成功。");
+                    else
+                        MessageBox.Show("文件编号不能为空。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
                 else if(index == 1)
                 {
@@ -746,33 +766,39 @@ namespace 数据采集档案管理系统___加工版
                 object objId = tab_Topic_Info.Tag;
                 if(index == 0)
                 {
-                    objId = tab_Topic_Info.Tag = ModifyBasicInfo(ControlType.Plan_Topic, objId, topic.Tag);
-                    MessageBox.Show("基本信息保存成功。");
-                    //保存文件信息
-                    int maxLength = dgv_Topic_FileList.Rows.Count;
-                    for(int i = 0; i < maxLength; i++)
+                    if(!string.IsNullOrEmpty(txt_Topic_Code.Text))
                     {
-                        object fileName = dgv_Topic_FileList.Rows[i].Cells[$"{key}name"].Value;
-                        if(fileName != null)
+                        objId = tab_Topic_Info.Tag = ModifyBasicInfo(ControlType.Plan_Topic, objId, topic.Tag);
+                        MessageBox.Show("基本信息保存成功。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        //保存文件信息
+                        int maxLength = dgv_Topic_FileList.Rows.Count;
+                        for(int i = 0; i < maxLength; i++)
                         {
-                            DataGridViewRow row = dgv_Topic_FileList.Rows[i];
-                            object fileId = row.Cells[$"{key}id"].Tag;
-                            if(fileId == null)
+                            object fileName = dgv_Topic_FileList.Rows[i].Cells[$"{key}name"].Value;
+                            if(fileName != null)
                             {
-                                fileId = AddFileInfo(key, row, objId);
-                                row.Cells[$"{key}id"].Value = row.Index + 1;
-                                row.Cells[$"{key}id"].Tag = fileId;
+                                DataGridViewRow row = dgv_Topic_FileList.Rows[i];
+                                object fileId = row.Cells[$"{key}id"].Tag;
+                                if(fileId == null)
+                                {
+                                    fileId = AddFileInfo(key, row, objId);
+                                    row.Cells[$"{key}id"].Value = row.Index + 1;
+                                    row.Cells[$"{key}id"].Tag = fileId;
+                                }
+                                else
+                                    UpdateFileInfo(key, row);
                             }
-                            else
-                                UpdateFileInfo(key, row);
                         }
+                        if(maxLength > 1)
+                            MessageBox.Show("文件信息保存成功。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
-                    MessageBox.Show("文件保存成功。");
+                    else
+                        MessageBox.Show("文件保存成功。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
                 else if(index == 1)
                 {
                     ModifyFileValid(dgv_Topic_FileValid, objId, "dgv_Topic_FV_");
-                    MessageBox.Show("文件核查信息保存成功。");
+                    MessageBox.Show("文件核查信息保存成功。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
                 else if(index == 2)
                 {
@@ -797,7 +823,7 @@ namespace 数据采集档案管理系统___加工版
                             string updateSql = $"UPDATE files_tag_info SET pt_code='{code}',pt_name='{_name}',pt_term='{term}',pt_secret='{secret}',pt_user='{user}',pt_unit='{unit}' WHERE pt_id='{aid}'";
                             SQLiteHelper.ExecuteNonQuery(updateSql);
                         }
-                        MessageBox.Show($"案卷信息保存成功！");
+                        MessageBox.Show($"案卷信息保存成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
                     else
                         MessageBox.Show("案卷编号不能为空。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -821,7 +847,7 @@ namespace 数据采集档案管理系统___加工版
                                 SQLiteHelper.ExecuteNonQuery($"UPDATE files_info SET fi_status=1 WHERE fi_id IN({ids})");
                                 SQLiteHelper.ExecuteNonQuery($"UPDATE files_box_info SET pb_files_id='{ids.Replace("'", string.Empty)}' WHERE pb_id='{boxId}'");
 
-                                MessageBox.Show("保存案卷盒成功。");
+                                MessageBox.Show("保存案卷盒成功。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                                 LoadFileBoxTable(boxId, objId, ControlType.Plan);
                             }
                         }
@@ -829,7 +855,7 @@ namespace 数据采集档案管理系统___加工版
                             MessageBox.Show("馆藏号不能为空。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
                     else
-                        MessageBox.Show("请先添加案卷盒。");
+                        MessageBox.Show("请先添加案卷盒。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
             }
             else if(name.Contains("Subject"))
@@ -839,33 +865,39 @@ namespace 数据采集档案管理系统___加工版
                 object objId = tab_Subject_Info.Tag;
                 if(index == 0)
                 {
-                    objId = tab_Subject_Info.Tag = ModifyBasicInfo(ControlType.Plan_Topic_Subject, objId, Subject.Tag);
-                    MessageBox.Show("基本信息保存成功。");
-                    //保存文件信息
-                    int maxLength = dgv_Subject_FileList.Rows.Count;
-                    for(int i = 0; i < maxLength; i++)
+                    if(!string.IsNullOrEmpty(txt_Subject_Code.Text))
                     {
-                        object fileName = dgv_Subject_FileList.Rows[i].Cells[$"{key}name"].Value;
-                        if(fileName != null)
+                        objId = tab_Subject_Info.Tag = ModifyBasicInfo(ControlType.Plan_Topic_Subject, objId, Subject.Tag);
+                        MessageBox.Show("基本信息保存成功。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        //保存文件信息
+                        int maxLength = dgv_Subject_FileList.Rows.Count;
+                        for(int i = 0; i < maxLength; i++)
                         {
-                            DataGridViewRow row = dgv_Subject_FileList.Rows[i];
-                            object fileId = row.Cells[$"{key}id"].Tag;
-                            if(fileId == null)
+                            object fileName = dgv_Subject_FileList.Rows[i].Cells[$"{key}name"].Value;
+                            if(fileName != null)
                             {
-                                fileId = AddFileInfo(key, row, objId);
-                                row.Cells[$"{key}id"].Value = row.Index + 1;
-                                row.Cells[$"{key}id"].Tag = fileId;
+                                DataGridViewRow row = dgv_Subject_FileList.Rows[i];
+                                object fileId = row.Cells[$"{key}id"].Tag;
+                                if(fileId == null)
+                                {
+                                    fileId = AddFileInfo(key, row, objId);
+                                    row.Cells[$"{key}id"].Value = row.Index + 1;
+                                    row.Cells[$"{key}id"].Tag = fileId;
+                                }
+                                else
+                                    UpdateFileInfo(key, row);
                             }
-                            else
-                                UpdateFileInfo(key, row);
                         }
+                        if(maxLength > 1)
+                            MessageBox.Show("文件保存成功。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
-                    MessageBox.Show("文件保存成功。");
+                    else
+                        MessageBox.Show("编号不能为空。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
                 else if(index == 1)
                 {
                     ModifyFileValid(dgv_Subject_FileValid, objId, "dgv_Subject_FV_");
-                    MessageBox.Show("文件核查信息保存成功。");
+                    MessageBox.Show("文件核查信息保存成功。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
                 else if(index == 2)
                 {
@@ -890,7 +922,7 @@ namespace 数据采集档案管理系统___加工版
                             string updateSql = $"UPDATE files_tag_info SET pt_code='{code}',pt_name='{_name}',pt_term='{term}',pt_secret='{secret}',pt_user='{user}',pt_unit='{unit}' WHERE pt_id='{aid}'";
                             SQLiteHelper.ExecuteNonQuery(updateSql);
                         }
-                        MessageBox.Show($"案卷信息保存成功！");
+                        MessageBox.Show($"案卷信息保存成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
                     else
                         MessageBox.Show("案卷编号不能为空。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -914,7 +946,7 @@ namespace 数据采集档案管理系统___加工版
                                 SQLiteHelper.ExecuteNonQuery($"UPDATE files_info SET fi_status=1 WHERE fi_id IN({ids})");
                                 SQLiteHelper.ExecuteNonQuery($"UPDATE files_box_info SET pb_files_id='{ids.Replace("'", string.Empty)}' WHERE pb_id='{boxId}'");
 
-                                MessageBox.Show("保存案卷盒成功。");
+                                MessageBox.Show("保存案卷盒成功。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                                 LoadFileBoxTable(boxId, objId, ControlType.Plan);
                             }
                         }
@@ -922,7 +954,7 @@ namespace 数据采集档案管理系统___加工版
                             MessageBox.Show("馆藏号不能为空。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
                     else
-                        MessageBox.Show("请先添加案卷盒。");
+                        MessageBox.Show("请先添加案卷盒。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
             }
         }
@@ -1324,18 +1356,30 @@ namespace 数据采集档案管理系统___加工版
             {
                 ShowTabPageByName(string.Empty, sort + 1);
             }
-            else if(index == 2)//课题
+            else
             {
-                ShowTabPageByName("topic", sort + 1);
-                gro_Topic_Btns.Tag = sort + 1;
-                topic.Tag = tab_Project_Info.Tag;
+                object id = tab_Project_Info.Tag;
+                if(id != null)
+                {
+                    if(index == 2)//课题
+                    {
+                        ShowTabPageByName("topic", sort + 1);
+                        gro_Topic_Btns.Tag = sort + 1;
+                        topic.Tag = id;
 
-            }
-            else if(index == 3)//子课题
-            {
-                ShowTabPageByName("Subject", sort + 1);
-                gro_Subject_Btns.Tag = sort + 1;
-                Subject.Tag = tab_Project_Info.Tag;
+                    }
+                    else if(index == 3)//子课题
+                    {
+                        ShowTabPageByName("Subject", sort + 1);
+                        gro_Subject_Btns.Tag = sort + 1;
+                        Subject.Tag = id;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("请先保存基本信息。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    cbo_Project_HasNext.SelectedIndex = 0;
+                }
             }
         }
 
