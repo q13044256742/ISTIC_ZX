@@ -32,9 +32,11 @@ namespace 数据采集档案管理系统___加工版
         private void Pic_Add_Click(object sender, EventArgs e)
         {
             TreeNode node = new TreeNode() { Name = rootId, Tag = ControlType.Plan };
+            Hide();
             Frm_Wroking frm_Wroking = new Frm_Wroking(node);
             if(frm_Wroking.ShowDialog(this) == DialogResult.OK)
                 LoadTreeList(rootId);
+            Show();
         }
 
         private void Btn_Delete_Click(object sender, EventArgs e)
