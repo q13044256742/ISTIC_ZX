@@ -169,9 +169,9 @@ namespace 数据采集档案管理系统___加工版
             return _obj;
         }
 
-        public static string GetValueByKey(object companyId)
+        public static string GetValueByKey(object key)
         {
-            object obj = SQLiteHelper.ExecuteOnlyOneQuery($"SELECT dd_name FROM data_dictionary WHERE dd_id='{companyId}'");
+            object obj = SQLiteHelper.ExecuteOnlyOneQuery($"SELECT dd_name FROM data_dictionary WHERE dd_id='{key}'");
             return obj == null ? string.Empty : obj.ToString();
         }
         /// <summary>

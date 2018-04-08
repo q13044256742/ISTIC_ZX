@@ -149,15 +149,33 @@ namespace 数据采集档案管理系统___加工版
 
         private void cbo_Type_SelectedIndexChanged(object sender, EventArgs e)
         {
+            btn_Reset_Click(sender, e);
+
             int index = cbo_Type.SelectedIndex;
             DataRow row = SQLiteHelper.ExecuteSingleRowQuery($"SELECT cr_id, cr_template FROM code_rule WHERE cr_special_id='{specialId}' AND cr_type='{index}'");
             if(row != null)
             {
                 cbo_Type.Tag = row["cr_id"];
-                lbl_Template.Text = GetValue(row["cr_template"]);
+                string template = GetValue(row["cr_template"]);
+                if(template.Contains("AAAA"))
+                    chk_ZX_Code.Checked = true;
+                if(template.Contains("BBBB"))
+                    chk_KT_Code.Checked = true;
+                if(template.Contains("CCCC"))
+                    chk_Unit.Checked = true;
+                if(template.Contains("2018"))
+                    chk_Year.Checked = true;
+                num_Water.Value = num_Water.Minimum;
+                string water = template.Replace("2018-", string.Empty);
+                if(water.Contains("0"))
+                {
+                    chk_Water.Checked = true;
+                    foreach(char c in water)
+                        if(c.Equals('0'))
+                            num_Water.Value += 1;
+                }
+                lbl_Template.Text = template;
             }
-            else
-                lbl_Template.Text = string.Empty;
         }
 
         private string GetValue(object v) => v == null ? string.Empty : v.ToString();

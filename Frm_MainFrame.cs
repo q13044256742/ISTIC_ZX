@@ -108,6 +108,8 @@ namespace 数据采集档案管理系统___加工版
             if(obj != null)
             {
                 rootId = GetValue(obj[0]);
+                UserHelper.GetUser().UserSpecialId = rootId;
+                UserHelper.GetUser().SpecialName = GetValue(obj[1]);
                 LoadTreeList(rootId);
                 Tv_DataTree_AfterSelect(sender, new TreeViewEventArgs(tv_DataTree.Nodes[0].Nodes[0]));
 
@@ -268,8 +270,11 @@ namespace 数据采集档案管理系统___加工版
         {
             if(e.Node.Tag != null)
             {
+                Hide();
                 Frm_Wroking frm = new Frm_Wroking(e.Node);
-                frm.ShowDialog();
+                if(frm.ShowDialog() == DialogResult.OK)
+                    LoadTreeList(rootId);
+                Show();
             }
         }
 

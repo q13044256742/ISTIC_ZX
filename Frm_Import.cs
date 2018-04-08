@@ -194,7 +194,8 @@ namespace 数据采集档案管理系统___加工版
             for(int i = 0; i < tagTable.Rows.Count; i++)
             {
                 DataRow row = tagTable.Rows[i];
-                string insertSql = $"INSERT INTO files_tag_info VALUES('{row["pt_id"]}', '{row["pt_code"]}', '{row["pt_name"]}', '{row["pt_term"]}', '{row["pt_secret"]}', '{row["pt_user"]}', '{row["pt_unit"]}', '{row["pt_obj_id"]}')";
+                string insertSql = $"INSERT INTO files_tag_info(pt_id, pt_code, pt_name, pt_term, pt_secret, pt_user, pt_unit, pt_obj_id, pt_special_id) " +
+                    $"VALUES('{row["pt_id"]}', '{row["pt_code"]}', '{row["pt_name"]}', '{row["pt_term"]}', '{row["pt_secret"]}', '{row["pt_user"]}', '{row["pt_unit"]}', '{row["pt_obj_id"]}', '{row["pt_special_id"]}')";
                 SQLiteHelper.ExecuteNonQuery($"DELETE FROM files_tag_info WHERE pt_id='{row["pt_id"]}'");
                 SQLiteHelper.ExecuteNonQuery(insertSql);
             }
@@ -203,7 +204,8 @@ namespace 数据采集档案管理系统___加工版
             for(int i = 0; i < boxTable.Rows.Count; i++)
             {
                 DataRow row = boxTable.Rows[i];
-                string insertSql = $"INSERT INTO files_box_info VALUES('{row["pb_id"]}', '{row["pb_box_number"]}', '{row["pb_gc_id"]}', '{row["pb_files_id"]}', '{row["pb_obj_id"]}', '{row["pb_unit_id"]}')";
+                string insertSql = $"INSERT INTO files_box_info(pb_id, pb_box_number, pb_gc_id, pb_files_id, pb_obj_id, pb_special_id) " +
+                    $"VALUES('{row["pb_id"]}', '{row["pb_box_number"]}', '{row["pb_gc_id"]}', '{row["pb_files_id"]}', '{row["pb_obj_id"]}', '{row["pb_special_id"]}')";
                 SQLiteHelper.ExecuteNonQuery($"DELETE FROM files_box_info WHERE pb_id='{row["pb_id"]}'");
                 SQLiteHelper.ExecuteNonQuery(insertSql);
             }

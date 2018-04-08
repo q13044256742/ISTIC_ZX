@@ -67,8 +67,9 @@ namespace 数据采集档案管理系统___加工版
             InitialLostReasonList(dgv_Project_FileValid, "dgv_Project_FV_");
             InitialLostReasonList(dgv_Topic_FileValid, "dgv_Topic_FV_");
             InitialLostReasonList(dgv_Subject_FileValid, "dgv_Subject_FV_");
-            
+
             //下拉框默认
+            cbo_Special_HasNext.SelectedIndex = 0;
             cbo_Project_HasNext.SelectedIndex = 0;
             cbo_Topic_HasNext.SelectedIndex = 0;
         }
@@ -135,7 +136,7 @@ namespace 数据采集档案管理系统___加工版
 
                                 ShowTabPageByName("project", 1);
                                 gro_Project_Btns.Tag = 1;
-                                project.Tag = projectRow["pi_ob_id"];
+                                project.Tag = projectRow["pi_obj_id"];
                                 LoadBasicInfoInstince(ControlType.Plan_Project, projectRow["pi_id"], projectRow);
 
                                 ShowTabPageByName("topic", 2);
@@ -615,7 +616,8 @@ namespace 数据采集档案管理系统___加工版
                             if(aid == null)
                             {
                                 aid = Guid.NewGuid().ToString();
-                                string insertSql = $"INSERT INTO files_tag_info VALUES ('{aid}','{code}','{_name}','{term}','{secret}','{user}','{unit}','{objId}')";
+                                string insertSql = $"INSERT INTO files_tag_info(pt_id, pt_code, pt_name, pt_term, pt_secret, pt_user, pt_unit, pt_obj_id, pt_special_id) " +
+                                $"VALUES ('{aid}','{code}','{_name}','{term}','{secret}','{user}','{unit}','{objId}', '{UserHelper.GetUser().UserSpecialId}')";
                                 SQLiteHelper.ExecuteNonQuery(insertSql);
                                 txt_Special_AJ_Code.Tag = aid;
                             }
@@ -659,6 +661,8 @@ namespace 数据采集档案管理系统___加工版
                             MessageBox.Show("请先添加案卷盒。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
                 }
+                else
+                    MessageBox.Show("未找到当前专项信息", "系统错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if(name.Contains("Project"))
             {
@@ -715,7 +719,8 @@ namespace 数据采集档案管理系统___加工版
                         if(aid == null)
                         {
                             aid = Guid.NewGuid().ToString();
-                            string insertSql = $"INSERT INTO files_tag_info VALUES ('{aid}','{code}','{_name}','{term}','{secret}','{user}','{unit}','{objId}')";
+                            string insertSql = $"INSERT INTO files_tag_info(pt_id, pt_code, pt_name, pt_term, pt_secret, pt_user, pt_unit, pt_obj_id, pt_special_id) " +
+                                $"VALUES ('{aid}','{code}','{_name}','{term}','{secret}','{user}','{unit}','{objId}', '{UserHelper.GetUser().UserSpecialId}')";
                             SQLiteHelper.ExecuteNonQuery(insertSql);
                             txt_Project_AJ_Code.Tag = aid;
                         }
@@ -814,7 +819,8 @@ namespace 数据采集档案管理系统___加工版
                         if(aid == null)
                         {
                             aid = Guid.NewGuid().ToString();
-                            string insertSql = $"INSERT INTO files_tag_info VALUES ('{aid}','{code}','{_name}','{term}','{secret}','{user}','{unit}','{objId}')";
+                            string insertSql = $"INSERT INTO files_tag_info(pt_id, pt_code, pt_name, pt_term, pt_secret, pt_user, pt_unit, pt_obj_id, pt_special_id) " +
+                                $"VALUES ('{aid}','{code}','{_name}','{term}','{secret}','{user}','{unit}','{objId}', '{UserHelper.GetUser().UserSpecialId}')";
                             SQLiteHelper.ExecuteNonQuery(insertSql);
                             txt_Topic_AJ_Code.Tag = aid;
                         }
@@ -913,7 +919,8 @@ namespace 数据采集档案管理系统___加工版
                         if(aid == null)
                         {
                             aid = Guid.NewGuid().ToString();
-                            string insertSql = $"INSERT INTO files_tag_info VALUES ('{aid}','{code}','{_name}','{term}','{secret}','{user}','{unit}','{objId}')";
+                            string insertSql = $"INSERT INTO files_tag_info(pt_id, pt_code, pt_name, pt_term, pt_secret, pt_user, pt_unit, pt_obj_id, pt_special_id) " +
+                                $"VALUES ('{aid}','{code}','{_name}','{term}','{secret}','{user}','{unit}','{objId}', '{UserHelper.GetUser().UserSpecialId}')";
                             SQLiteHelper.ExecuteNonQuery(insertSql);
                             txt_Subject_AJ_Code.Tag = aid;
                         }
@@ -1553,7 +1560,7 @@ namespace 数据采集档案管理系统___加工版
                     }
                     if(index == 1)
                     {
-                        LoadFileValidList(dgv_Special_FileValid, objid, "dgv_Special_FV_");
+                        LoadFileValidList(dgv_Special_FileValid, objid, "dgv_Special_FV_", txt_Project_Code.Text, txt_Project_Name.Text);
                         dgv_Special_FileValid.DefaultCellStyle.Font = new System.Drawing.Font("微软雅黑", 10.5f, System.Drawing.FontStyle.Regular);
                     }
                     else if(index == 2)
@@ -1615,7 +1622,7 @@ namespace 数据采集档案管理系统___加工版
                     }
                     if(index == 1)
                     {
-                        LoadFileValidList(dgv_Project_FileValid, objid, "dgv_Project_FV_");
+                        LoadFileValidList(dgv_Project_FileValid, objid, "dgv_Project_FV_", txt_Project_Code.Text, txt_Project_Name.Text);
                         dgv_Project_FileValid.DefaultCellStyle.Font = new System.Drawing.Font("微软雅黑", 10.5f, System.Drawing.FontStyle.Regular);
                     }
                     else if(index == 2)
@@ -1677,7 +1684,7 @@ namespace 数据采集档案管理系统___加工版
                     }
                     if(index == 1)
                     {
-                        LoadFileValidList(dgv_Topic_FileValid, objid, "dgv_Topic_FV_");
+                        LoadFileValidList(dgv_Topic_FileValid, objid, "dgv_Topic_FV_", txt_Topic_Code.Text, txt_Topic_Name.Text);
                         dgv_Topic_FileValid.DefaultCellStyle.Font = new System.Drawing.Font("微软雅黑", 10.5f, System.Drawing.FontStyle.Regular);
                     }
                     else if(index == 2)
@@ -1739,7 +1746,7 @@ namespace 数据采集档案管理系统___加工版
                     }
                     if(index == 1)
                     {
-                        LoadFileValidList(dgv_Subject_FileValid, objId, "dgv_Subject_FV_");
+                        LoadFileValidList(dgv_Subject_FileValid, objId, "dgv_Subject_FV_", txt_Subject_Code.Text, txt_Subject_Name.Text);
                         dgv_Subject_FileValid.DefaultCellStyle.Font = new System.Drawing.Font("微软雅黑", 10.5f, System.Drawing.FontStyle.Regular);
                     }
                     else if(index == 2)
@@ -1819,10 +1826,10 @@ namespace 数据采集档案管理系统___加工版
                         int amount = 0;
                         if(type == 0)
                         {
-                            amount = SQLiteHelper.ExecuteCountQuery($"SELECT COUNT(pt_id) FROM files_tag_info WHERE pt_obj_id='{objId}'") + 1;
+                            amount = SQLiteHelper.ExecuteCountQuery($"SELECT COUNT(pt_id) FROM files_tag_info WHERE pt_special_id='{objId}'") + 1;
                         }else if(type == 1)
                         {
-                            amount = SQLiteHelper.ExecuteCountQuery($"SELECT COUNT(pb_id) FROM files_box_info WHERE pb_obj_id='{objId}'") + 1;
+                            amount = SQLiteHelper.ExecuteCountQuery($"SELECT COUNT(pb_id) FROM files_box_info WHERE pb_special_id='{objId}'") + 1;
                         }
                         code += amount.ToString().PadLeft(length, '0');
                     }
@@ -1976,7 +1983,7 @@ namespace 数据采集档案管理系统___加工版
         /// </summary>
         /// <param name="dataGridView">待校验表格</param>
         /// <param name="objid">主键</param>
-        private void LoadFileValidList(DataGridView dataGridView, object objid, string key)
+        private void LoadFileValidList(DataGridView dataGridView, object objid, string key, string code, string name)
         {
             dataGridView.Rows.Clear();
 
@@ -1992,7 +1999,8 @@ namespace 数据采集档案管理系统___加工版
                 dataGridView.Rows[indexRow].Cells[key + "id"].Value = i + 1;
                 dataGridView.Rows[indexRow].Cells[key + "categor"].Value = table.Rows[i]["dd_name"];
                 dataGridView.Rows[indexRow].Cells[key + "name"].Value = table.Rows[i]["dd_note"];
-
+                dataGridView.Rows[indexRow].Cells[key + "pcode"].Value = code;
+                dataGridView.Rows[indexRow].Cells[key + "pname"].Value = name;
                 string queryReasonSql = $"SELECT pfo_id, pfo_reason, pfo_remark FROM files_lost_info WHERE pfo_obj_id='{objid}' AND pfo_categor='{table.Rows[i]["dd_name"]}'";
                 object[] _obj = SQLiteHelper.ExecuteRowsQuery(queryReasonSql);
                 if(_obj != null)

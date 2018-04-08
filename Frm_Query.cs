@@ -242,12 +242,12 @@ namespace 数据采集档案管理系统___加工版
                 int index = dgv_ShowData.Rows.Add();
                 dgv_ShowData.Rows[index].Tag = table.Rows[i]["fi_id"];
                 dgv_ShowData.Rows[index].Cells["id"].Value = i + 1;
-                dgv_ShowData.Rows[index].Cells["stage"].Value = table.Rows[i]["fi_stage"];
-                dgv_ShowData.Rows[index].Cells["categor"].Value = table.Rows[i]["fi_categor"];
+                dgv_ShowData.Rows[index].Cells["stage"].Value = SQLiteHelper.GetValueByKey(table.Rows[i]["fi_stage"]);
+                dgv_ShowData.Rows[index].Cells["categor"].Value = SQLiteHelper.GetValueByKey(table.Rows[i]["fi_categor"]);
                 dgv_ShowData.Rows[index].Cells["name"].Value = table.Rows[i]["fi_name"];
                 dgv_ShowData.Rows[index].Cells["user"].Value = table.Rows[i]["fi_user"];
-                dgv_ShowData.Rows[index].Cells["type"].Value = table.Rows[i]["fi_type"];
-                dgv_ShowData.Rows[index].Cells["secret"].Value = table.Rows[i]["fi_secret"];
+                dgv_ShowData.Rows[index].Cells["type"].Value = SQLiteHelper.GetValueByKey(table.Rows[i]["fi_type"]);
+                dgv_ShowData.Rows[index].Cells["secret"].Value = SQLiteHelper.GetValueByKey(table.Rows[i]["fi_secret"]);
                 dgv_ShowData.Rows[index].Cells["pages"].Value = table.Rows[i]["fi_pages"];
                 dgv_ShowData.Rows[index].Cells["number"].Value = table.Rows[i]["fi_number"];
                 dgv_ShowData.Rows[index].Cells["date"].Value = table.Rows[i]["fi_create_date"];
