@@ -36,34 +36,42 @@ namespace 数据采集档案管理系统___加工版
         private void InitialBaseList()
         {
             //【阶段】
+            InitialStageList(dgv_Special_FileList.Columns["dgv_Special_FL_stage"]);
             InitialStageList(dgv_Project_FileList.Columns["dgv_Project_FL_stage"]);
             InitialStageList(dgv_Topic_FileList.Columns["dgv_Topic_FL_stage"]);
             InitialStageList(dgv_Subject_FileList.Columns["dgv_Subject_FL_stage"]);
             //【文件类别】
+            InitialCategorList(dgv_Special_FileList, "dgv_Special_FL_");
             InitialCategorList(dgv_Project_FileList, "dgv_Project_FL_");
             InitialCategorList(dgv_Topic_FileList, "dgv_Topic_FL_");
             InitialCategorList(dgv_Subject_FileList, "dgv_Subject_FL_");
             //【文件类型】
+            InitialTypeList(dgv_Special_FileList, "dgv_Special_FL_");
             InitialTypeList(dgv_Project_FileList, "dgv_Project_FL_");
             InitialTypeList(dgv_Topic_FileList, "dgv_Topic_FL_");
             InitialTypeList(dgv_Subject_FileList, "dgv_Subject_FL_");
             //【密级】
+            InitialSecretList(dgv_Special_FileList, "dgv_Special_FL_");
             InitialSecretList(dgv_Project_FileList, "dgv_Project_FL_");
             InitialSecretList(dgv_Topic_FileList, "dgv_Topic_FL_");
             InitialSecretList(dgv_Subject_FileList, "dgv_Subject_FL_");
             //【载体】
+            InitialCarrierList(dgv_Special_FileList, "dgv_Special_FL_");
             InitialCarrierList(dgv_Project_FileList, "dgv_Project_FL_");
             InitialCarrierList(dgv_Topic_FileList, "dgv_Topic_FL_");
             InitialCarrierList(dgv_Subject_FileList, "dgv_Subject_FL_");
             //【文件格式】
+            InitialFormatList(dgv_Special_FileList, "dgv_Special_FL_");
             InitialFormatList(dgv_Project_FileList, "dgv_Project_FL_");
             InitialFormatList(dgv_Topic_FileList, "dgv_Topic_FL_");
             InitialFormatList(dgv_Subject_FileList, "dgv_Subject_FL_");
             //文件形态
+            InitialFormList(dgv_Special_FileList, "dgv_Special_FL_");
             InitialFormList(dgv_Project_FileList, "dgv_Project_FL_");
             InitialFormList(dgv_Topic_FileList, "dgv_Topic_FL_");
             InitialFormList(dgv_Subject_FileList, "dgv_Subject_FL_");
             //文件核查原因列表
+            InitialLostReasonList(dgv_Special_FileValid, "dgv_Special_FV_");
             InitialLostReasonList(dgv_Project_FileValid, "dgv_Project_FV_");
             InitialLostReasonList(dgv_Topic_FileValid, "dgv_Topic_FV_");
             InitialLostReasonList(dgv_Subject_FileValid, "dgv_Subject_FV_");
