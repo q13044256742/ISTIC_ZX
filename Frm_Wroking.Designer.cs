@@ -30,14 +30,26 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("863计划");
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("863计划");
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Wroking));
             this.tab_Menu = new System.Windows.Forms.TabControl();
             this.special = new System.Windows.Forms.TabPage();
@@ -47,21 +59,6 @@
             this.tab_Special_Info = new System.Windows.Forms.TabControl();
             this.tab_Special_File = new System.Windows.Forms.TabPage();
             this.dgv_Special_FileList = new System.Windows.Forms.DataGridView();
-            this.dgv_Special_FL_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_Special_FL_stage = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgv_Special_FL_categor = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgv_Special_FL_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_Special_FL_user = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_Special_FL_type = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgv_Special_FL_secret = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgv_Special_FL_pages = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_Special_FL_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_Special_FL_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_Special_FL_unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_Special_FL_carrier = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgv_Special_FL_format = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgv_Special_FL_form = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgv_Special_FL_link = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tab_Special_FileValid = new System.Windows.Forms.TabPage();
             this.dgv_Special_FileValid = new System.Windows.Forms.DataGridView();
             this.dgv_Special_FV_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -120,21 +117,6 @@
             this.tab_Project_Info = new System.Windows.Forms.TabControl();
             this.tab_Project_File = new System.Windows.Forms.TabPage();
             this.dgv_Project_FileList = new System.Windows.Forms.DataGridView();
-            this.dgv_Project_FL_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_Project_FL_stage = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgv_Project_FL_categor = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgv_Project_FL_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_Project_FL_user = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_Project_FL_type = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgv_Project_FL_secret = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgv_Project_FL_pages = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_Project_FL_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_Project_FL_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_Project_FL_unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_Project_FL_carrier = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgv_Project_FL_format = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgv_Project_FL_form = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgv_Project_FL_link = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tab_Project_FileValid = new System.Windows.Forms.TabPage();
             this.dgv_Project_FileValid = new System.Windows.Forms.DataGridView();
             this.dgv_Project_FV_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -223,21 +205,6 @@
             this.tab_Topic_Info = new System.Windows.Forms.TabControl();
             this.tab_Topic_File = new System.Windows.Forms.TabPage();
             this.dgv_Topic_FileList = new System.Windows.Forms.DataGridView();
-            this.dgv_Topic_FL_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_Topic_FL_stage = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgv_Topic_FL_categor = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgv_Topic_FL_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_Topic_FL_user = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_Topic_FL_type = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgv_Topic_FL_secret = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgv_Topic_FL_pages = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_Topic_FL_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_Topic_FL_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_Topic_FL_unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_Topic_FL_carrier = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgv_Topic_FL_format = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgv_Topic_FL_form = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgv_Topic_FL_link = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tab_Topic_FileValid = new System.Windows.Forms.TabPage();
             this.dgv_Topic_FileValid = new System.Windows.Forms.DataGridView();
             this.dgv_Topic_FV_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -320,21 +287,6 @@
             this.tab_Subject_Info = new System.Windows.Forms.TabControl();
             this.tab_Subject_File = new System.Windows.Forms.TabPage();
             this.dgv_Subject_FileList = new System.Windows.Forms.DataGridView();
-            this.dgv_Subject_FL_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_Subject_FL_stage = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgv_Subject_FL_categor = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgv_Subject_FL_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_Subject_FL_user = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_Subject_FL_type = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgv_Subject_FL_secret = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgv_Subject_FL_pages = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_Subject_FL_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_Subject_FL_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_Subject_FL_unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_Subject_FL_carrier = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgv_Subject_FL_format = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgv_Subject_FL_form = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgv_Subject_FL_link = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tab_Subject_FileValid = new System.Windows.Forms.TabPage();
             this.dgv_Subject_FileValid = new System.Windows.Forms.DataGridView();
             this.dgv_Subject_FV_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -407,6 +359,66 @@
             this.删除文件DToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tv_Working = new System.Windows.Forms.TreeView();
             this.txt_Special_Intro = new System.Windows.Forms.TextBox();
+            this.dgv_Special_FL_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Special_FL_stage = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgv_Special_FL_categor = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgv_Special_FL_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Special_FL_user = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Special_FL_type = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgv_Special_FL_secret = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgv_Special_FL_pages = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Special_FL_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Special_FL_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Special_FL_unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Special_FL_carrier = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgv_Special_FL_format = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgv_Special_FL_form = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgv_Special_FL_link = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Topic_FL_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Topic_FL_stage = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgv_Topic_FL_categor = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgv_Topic_FL_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Topic_FL_user = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Topic_FL_type = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgv_Topic_FL_secret = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgv_Topic_FL_pages = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Topic_FL_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Topic_FL_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Topic_FL_unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Topic_FL_carrier = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgv_Topic_FL_format = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgv_Topic_FL_form = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgv_Topic_FL_link = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Project_FL_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Project_FL_stage = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgv_Project_FL_categor = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgv_Project_FL_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Project_FL_user = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Project_FL_type = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgv_Project_FL_secret = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgv_Project_FL_pages = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Project_FL_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Project_FL_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Project_FL_unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Project_FL_carrier = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgv_Project_FL_format = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgv_Project_FL_form = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgv_Project_FL_link = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Subject_FL_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Subject_FL_stage = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgv_Subject_FL_categor = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgv_Subject_FL_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Subject_FL_user = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Subject_FL_type = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgv_Subject_FL_secret = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgv_Subject_FL_pages = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Subject_FL_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Subject_FL_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Subject_FL_unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Subject_FL_carrier = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgv_Subject_FL_format = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgv_Subject_FL_form = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgv_Subject_FL_link = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tab_Menu.SuspendLayout();
             this.special.SuspendLayout();
             this.tab_Special_Info.SuspendLayout();
@@ -578,117 +590,6 @@
             this.dgv_Special_FileList.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.Dgv_File_EditingControlShowing);
             this.dgv_Special_FileList.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Special_FileList_RowEnter);
             // 
-            // dgv_Special_FL_id
-            // 
-            this.dgv_Special_FL_id.HeaderText = "序号";
-            this.dgv_Special_FL_id.Name = "dgv_Special_FL_id";
-            this.dgv_Special_FL_id.Visible = false;
-            // 
-            // dgv_Special_FL_stage
-            // 
-            this.dgv_Special_FL_stage.HeaderText = "阶段";
-            this.dgv_Special_FL_stage.Items.AddRange(new object[] {
-            "规划阶段",
-            "申报立项阶段",
-            "过程管理阶段",
-            "验收阶段"});
-            this.dgv_Special_FL_stage.Name = "dgv_Special_FL_stage";
-            this.dgv_Special_FL_stage.Width = 130;
-            // 
-            // dgv_Special_FL_categor
-            // 
-            this.dgv_Special_FL_categor.HeaderText = "文件类别";
-            this.dgv_Special_FL_categor.Name = "dgv_Special_FL_categor";
-            // 
-            // dgv_Special_FL_name
-            // 
-            this.dgv_Special_FL_name.HeaderText = "文件名称";
-            this.dgv_Special_FL_name.Name = "dgv_Special_FL_name";
-            this.dgv_Special_FL_name.Width = 200;
-            // 
-            // dgv_Special_FL_user
-            // 
-            this.dgv_Special_FL_user.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dgv_Special_FL_user.HeaderText = "责任者";
-            this.dgv_Special_FL_user.Name = "dgv_Special_FL_user";
-            this.dgv_Special_FL_user.Width = 76;
-            // 
-            // dgv_Special_FL_type
-            // 
-            this.dgv_Special_FL_type.HeaderText = "类型";
-            this.dgv_Special_FL_type.Items.AddRange(new object[] {
-            "财务",
-            "管理",
-            "评审",
-            "技术",
-            "汇编"});
-            this.dgv_Special_FL_type.Name = "dgv_Special_FL_type";
-            // 
-            // dgv_Special_FL_secret
-            // 
-            this.dgv_Special_FL_secret.HeaderText = "密级";
-            this.dgv_Special_FL_secret.Items.AddRange(new object[] {
-            "公开",
-            "国内",
-            "秘密",
-            "机密",
-            "绝密"});
-            this.dgv_Special_FL_secret.Name = "dgv_Special_FL_secret";
-            this.dgv_Special_FL_secret.Width = 70;
-            // 
-            // dgv_Special_FL_pages
-            // 
-            this.dgv_Special_FL_pages.HeaderText = "页数";
-            this.dgv_Special_FL_pages.Name = "dgv_Special_FL_pages";
-            // 
-            // dgv_Special_FL_number
-            // 
-            this.dgv_Special_FL_number.HeaderText = "份数";
-            this.dgv_Special_FL_number.Name = "dgv_Special_FL_number";
-            // 
-            // dgv_Special_FL_date
-            // 
-            this.dgv_Special_FL_date.HeaderText = "形成日期";
-            this.dgv_Special_FL_date.Name = "dgv_Special_FL_date";
-            // 
-            // dgv_Special_FL_unit
-            // 
-            this.dgv_Special_FL_unit.HeaderText = "存放单位";
-            this.dgv_Special_FL_unit.Name = "dgv_Special_FL_unit";
-            this.dgv_Special_FL_unit.Width = 250;
-            // 
-            // dgv_Special_FL_carrier
-            // 
-            this.dgv_Special_FL_carrier.HeaderText = "载体";
-            this.dgv_Special_FL_carrier.Items.AddRange(new object[] {
-            "纸质",
-            "电子",
-            "纸质+电子"});
-            this.dgv_Special_FL_carrier.Name = "dgv_Special_FL_carrier";
-            // 
-            // dgv_Special_FL_format
-            // 
-            this.dgv_Special_FL_format.HeaderText = "格式";
-            this.dgv_Special_FL_format.Items.AddRange(new object[] {
-            "PDF",
-            "DOC",
-            "EXCEL"});
-            this.dgv_Special_FL_format.Name = "dgv_Special_FL_format";
-            // 
-            // dgv_Special_FL_form
-            // 
-            this.dgv_Special_FL_form.HeaderText = "形态";
-            this.dgv_Special_FL_form.Items.AddRange(new object[] {
-            "原件",
-            "复印本"});
-            this.dgv_Special_FL_form.Name = "dgv_Special_FL_form";
-            // 
-            // dgv_Special_FL_link
-            // 
-            this.dgv_Special_FL_link.HeaderText = "链接";
-            this.dgv_Special_FL_link.Name = "dgv_Special_FL_link";
-            this.dgv_Special_FL_link.ReadOnly = true;
-            // 
             // tab_Special_FileValid
             // 
             this.tab_Special_FileValid.Controls.Add(this.dgv_Special_FileValid);
@@ -707,14 +608,14 @@
             this.dgv_Special_FileValid.AllowUserToDeleteRows = false;
             this.dgv_Special_FileValid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Special_FileValid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Special_FileValid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Special_FileValid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_Special_FileValid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Special_FileValid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgv_Special_FV_ID,
@@ -1340,14 +1241,14 @@
             // dgv_Project_FileList
             // 
             this.dgv_Project_FileList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Project_FileList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Project_FileList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_Project_FileList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Project_FileList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgv_Project_FL_id,
@@ -1375,89 +1276,6 @@
             this.dgv_Project_FileList.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_FileList_CellMouseDown);
             this.dgv_Project_FileList.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Special_FileList_RowEnter);
             // 
-            // dgv_Project_FL_id
-            // 
-            this.dgv_Project_FL_id.HeaderText = "序号";
-            this.dgv_Project_FL_id.Name = "dgv_Project_FL_id";
-            this.dgv_Project_FL_id.Visible = false;
-            // 
-            // dgv_Project_FL_stage
-            // 
-            this.dgv_Project_FL_stage.HeaderText = "阶段";
-            this.dgv_Project_FL_stage.Name = "dgv_Project_FL_stage";
-            this.dgv_Project_FL_stage.Width = 130;
-            // 
-            // dgv_Project_FL_categor
-            // 
-            this.dgv_Project_FL_categor.HeaderText = "文件类别";
-            this.dgv_Project_FL_categor.Name = "dgv_Project_FL_categor";
-            // 
-            // dgv_Project_FL_name
-            // 
-            this.dgv_Project_FL_name.HeaderText = "文件名称";
-            this.dgv_Project_FL_name.Name = "dgv_Project_FL_name";
-            this.dgv_Project_FL_name.Width = 200;
-            // 
-            // dgv_Project_FL_user
-            // 
-            this.dgv_Project_FL_user.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dgv_Project_FL_user.HeaderText = "责任者";
-            this.dgv_Project_FL_user.Name = "dgv_Project_FL_user";
-            this.dgv_Project_FL_user.Width = 76;
-            // 
-            // dgv_Project_FL_type
-            // 
-            this.dgv_Project_FL_type.HeaderText = "类型";
-            this.dgv_Project_FL_type.Name = "dgv_Project_FL_type";
-            // 
-            // dgv_Project_FL_secret
-            // 
-            this.dgv_Project_FL_secret.HeaderText = "密级";
-            this.dgv_Project_FL_secret.Name = "dgv_Project_FL_secret";
-            this.dgv_Project_FL_secret.Width = 70;
-            // 
-            // dgv_Project_FL_pages
-            // 
-            this.dgv_Project_FL_pages.HeaderText = "页数";
-            this.dgv_Project_FL_pages.Name = "dgv_Project_FL_pages";
-            // 
-            // dgv_Project_FL_number
-            // 
-            this.dgv_Project_FL_number.HeaderText = "份数";
-            this.dgv_Project_FL_number.Name = "dgv_Project_FL_number";
-            // 
-            // dgv_Project_FL_date
-            // 
-            this.dgv_Project_FL_date.HeaderText = "形成日期";
-            this.dgv_Project_FL_date.Name = "dgv_Project_FL_date";
-            // 
-            // dgv_Project_FL_unit
-            // 
-            this.dgv_Project_FL_unit.HeaderText = "存放单位";
-            this.dgv_Project_FL_unit.Name = "dgv_Project_FL_unit";
-            this.dgv_Project_FL_unit.Width = 250;
-            // 
-            // dgv_Project_FL_carrier
-            // 
-            this.dgv_Project_FL_carrier.HeaderText = "载体";
-            this.dgv_Project_FL_carrier.Name = "dgv_Project_FL_carrier";
-            // 
-            // dgv_Project_FL_format
-            // 
-            this.dgv_Project_FL_format.HeaderText = "格式";
-            this.dgv_Project_FL_format.Name = "dgv_Project_FL_format";
-            // 
-            // dgv_Project_FL_form
-            // 
-            this.dgv_Project_FL_form.HeaderText = "形态";
-            this.dgv_Project_FL_form.Name = "dgv_Project_FL_form";
-            // 
-            // dgv_Project_FL_link
-            // 
-            this.dgv_Project_FL_link.HeaderText = "链接";
-            this.dgv_Project_FL_link.Name = "dgv_Project_FL_link";
-            this.dgv_Project_FL_link.ReadOnly = true;
-            // 
             // tab_Project_FileValid
             // 
             this.tab_Project_FileValid.Controls.Add(this.dgv_Project_FileValid);
@@ -1476,14 +1294,14 @@
             this.dgv_Project_FileValid.AllowUserToDeleteRows = false;
             this.dgv_Project_FileValid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Project_FileValid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Project_FileValid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Project_FileValid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgv_Project_FileValid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Project_FileValid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgv_Project_FV_id,
@@ -2375,14 +2193,14 @@
             // dgv_Topic_FileList
             // 
             this.dgv_Topic_FileList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Topic_FileList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Topic_FileList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgv_Topic_FileList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Topic_FileList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgv_Topic_FL_id,
@@ -2410,117 +2228,6 @@
             this.dgv_Topic_FileList.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_FileList_CellMouseDown);
             this.dgv_Topic_FileList.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Special_FileList_RowEnter);
             // 
-            // dgv_Topic_FL_id
-            // 
-            this.dgv_Topic_FL_id.HeaderText = "序号";
-            this.dgv_Topic_FL_id.Name = "dgv_Topic_FL_id";
-            this.dgv_Topic_FL_id.Visible = false;
-            // 
-            // dgv_Topic_FL_stage
-            // 
-            this.dgv_Topic_FL_stage.HeaderText = "阶段";
-            this.dgv_Topic_FL_stage.Items.AddRange(new object[] {
-            "规划阶段",
-            "申报立项阶段",
-            "过程管理阶段",
-            "验收阶段"});
-            this.dgv_Topic_FL_stage.Name = "dgv_Topic_FL_stage";
-            this.dgv_Topic_FL_stage.Width = 130;
-            // 
-            // dgv_Topic_FL_categor
-            // 
-            this.dgv_Topic_FL_categor.HeaderText = "文件类别";
-            this.dgv_Topic_FL_categor.Name = "dgv_Topic_FL_categor";
-            // 
-            // dgv_Topic_FL_name
-            // 
-            this.dgv_Topic_FL_name.HeaderText = "文件名称";
-            this.dgv_Topic_FL_name.Name = "dgv_Topic_FL_name";
-            this.dgv_Topic_FL_name.Width = 200;
-            // 
-            // dgv_Topic_FL_user
-            // 
-            this.dgv_Topic_FL_user.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dgv_Topic_FL_user.HeaderText = "责任者";
-            this.dgv_Topic_FL_user.Name = "dgv_Topic_FL_user";
-            this.dgv_Topic_FL_user.Width = 76;
-            // 
-            // dgv_Topic_FL_type
-            // 
-            this.dgv_Topic_FL_type.HeaderText = "类型";
-            this.dgv_Topic_FL_type.Items.AddRange(new object[] {
-            "财务",
-            "管理",
-            "评审",
-            "技术",
-            "汇编"});
-            this.dgv_Topic_FL_type.Name = "dgv_Topic_FL_type";
-            // 
-            // dgv_Topic_FL_secret
-            // 
-            this.dgv_Topic_FL_secret.HeaderText = "密级";
-            this.dgv_Topic_FL_secret.Items.AddRange(new object[] {
-            "公开",
-            "国内",
-            "秘密",
-            "机密",
-            "绝密"});
-            this.dgv_Topic_FL_secret.Name = "dgv_Topic_FL_secret";
-            this.dgv_Topic_FL_secret.Width = 70;
-            // 
-            // dgv_Topic_FL_pages
-            // 
-            this.dgv_Topic_FL_pages.HeaderText = "页数";
-            this.dgv_Topic_FL_pages.Name = "dgv_Topic_FL_pages";
-            // 
-            // dgv_Topic_FL_number
-            // 
-            this.dgv_Topic_FL_number.HeaderText = "份数";
-            this.dgv_Topic_FL_number.Name = "dgv_Topic_FL_number";
-            // 
-            // dgv_Topic_FL_date
-            // 
-            this.dgv_Topic_FL_date.HeaderText = "形成日期";
-            this.dgv_Topic_FL_date.Name = "dgv_Topic_FL_date";
-            // 
-            // dgv_Topic_FL_unit
-            // 
-            this.dgv_Topic_FL_unit.HeaderText = "存放单位";
-            this.dgv_Topic_FL_unit.Name = "dgv_Topic_FL_unit";
-            this.dgv_Topic_FL_unit.Width = 250;
-            // 
-            // dgv_Topic_FL_carrier
-            // 
-            this.dgv_Topic_FL_carrier.HeaderText = "载体";
-            this.dgv_Topic_FL_carrier.Items.AddRange(new object[] {
-            "纸质",
-            "电子",
-            "纸质+电子"});
-            this.dgv_Topic_FL_carrier.Name = "dgv_Topic_FL_carrier";
-            // 
-            // dgv_Topic_FL_format
-            // 
-            this.dgv_Topic_FL_format.HeaderText = "格式";
-            this.dgv_Topic_FL_format.Items.AddRange(new object[] {
-            "PDF",
-            "DOC",
-            "EXCEL"});
-            this.dgv_Topic_FL_format.Name = "dgv_Topic_FL_format";
-            // 
-            // dgv_Topic_FL_form
-            // 
-            this.dgv_Topic_FL_form.HeaderText = "形态";
-            this.dgv_Topic_FL_form.Items.AddRange(new object[] {
-            "原件",
-            "复印本"});
-            this.dgv_Topic_FL_form.Name = "dgv_Topic_FL_form";
-            // 
-            // dgv_Topic_FL_link
-            // 
-            this.dgv_Topic_FL_link.HeaderText = "链接";
-            this.dgv_Topic_FL_link.Name = "dgv_Topic_FL_link";
-            this.dgv_Topic_FL_link.ReadOnly = true;
-            // 
             // tab_Topic_FileValid
             // 
             this.tab_Topic_FileValid.Controls.Add(this.dgv_Topic_FileValid);
@@ -2539,14 +2246,14 @@
             this.dgv_Topic_FileValid.AllowUserToDeleteRows = false;
             this.dgv_Topic_FileValid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Topic_FileValid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Topic_FileValid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Topic_FileValid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgv_Topic_FileValid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Topic_FileValid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgv_Topic_FV_id,
@@ -3383,14 +3090,14 @@
             // dgv_Subject_FileList
             // 
             this.dgv_Subject_FileList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Subject_FileList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Subject_FileList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dgv_Subject_FileList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Subject_FileList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgv_Subject_FL_id,
@@ -3418,117 +3125,6 @@
             this.dgv_Subject_FileList.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_FileList_CellMouseDown);
             this.dgv_Subject_FileList.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Special_FileList_RowEnter);
             // 
-            // dgv_Subject_FL_id
-            // 
-            this.dgv_Subject_FL_id.HeaderText = "序号";
-            this.dgv_Subject_FL_id.Name = "dgv_Subject_FL_id";
-            this.dgv_Subject_FL_id.Visible = false;
-            // 
-            // dgv_Subject_FL_stage
-            // 
-            this.dgv_Subject_FL_stage.HeaderText = "阶段";
-            this.dgv_Subject_FL_stage.Items.AddRange(new object[] {
-            "规划阶段",
-            "申报立项阶段",
-            "过程管理阶段",
-            "验收阶段"});
-            this.dgv_Subject_FL_stage.Name = "dgv_Subject_FL_stage";
-            this.dgv_Subject_FL_stage.Width = 130;
-            // 
-            // dgv_Subject_FL_categor
-            // 
-            this.dgv_Subject_FL_categor.HeaderText = "文件类别";
-            this.dgv_Subject_FL_categor.Name = "dgv_Subject_FL_categor";
-            // 
-            // dgv_Subject_FL_name
-            // 
-            this.dgv_Subject_FL_name.HeaderText = "文件名称";
-            this.dgv_Subject_FL_name.Name = "dgv_Subject_FL_name";
-            this.dgv_Subject_FL_name.Width = 200;
-            // 
-            // dgv_Subject_FL_user
-            // 
-            this.dgv_Subject_FL_user.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dgv_Subject_FL_user.HeaderText = "责任者";
-            this.dgv_Subject_FL_user.Name = "dgv_Subject_FL_user";
-            this.dgv_Subject_FL_user.Width = 76;
-            // 
-            // dgv_Subject_FL_type
-            // 
-            this.dgv_Subject_FL_type.HeaderText = "类型";
-            this.dgv_Subject_FL_type.Items.AddRange(new object[] {
-            "财务",
-            "管理",
-            "评审",
-            "技术",
-            "汇编"});
-            this.dgv_Subject_FL_type.Name = "dgv_Subject_FL_type";
-            // 
-            // dgv_Subject_FL_secret
-            // 
-            this.dgv_Subject_FL_secret.HeaderText = "密级";
-            this.dgv_Subject_FL_secret.Items.AddRange(new object[] {
-            "公开",
-            "国内",
-            "秘密",
-            "机密",
-            "绝密"});
-            this.dgv_Subject_FL_secret.Name = "dgv_Subject_FL_secret";
-            this.dgv_Subject_FL_secret.Width = 70;
-            // 
-            // dgv_Subject_FL_pages
-            // 
-            this.dgv_Subject_FL_pages.HeaderText = "页数";
-            this.dgv_Subject_FL_pages.Name = "dgv_Subject_FL_pages";
-            // 
-            // dgv_Subject_FL_number
-            // 
-            this.dgv_Subject_FL_number.HeaderText = "份数";
-            this.dgv_Subject_FL_number.Name = "dgv_Subject_FL_number";
-            // 
-            // dgv_Subject_FL_date
-            // 
-            this.dgv_Subject_FL_date.HeaderText = "形成日期";
-            this.dgv_Subject_FL_date.Name = "dgv_Subject_FL_date";
-            // 
-            // dgv_Subject_FL_unit
-            // 
-            this.dgv_Subject_FL_unit.HeaderText = "存放单位";
-            this.dgv_Subject_FL_unit.Name = "dgv_Subject_FL_unit";
-            this.dgv_Subject_FL_unit.Width = 250;
-            // 
-            // dgv_Subject_FL_carrier
-            // 
-            this.dgv_Subject_FL_carrier.HeaderText = "载体";
-            this.dgv_Subject_FL_carrier.Items.AddRange(new object[] {
-            "纸质",
-            "电子",
-            "纸质+电子"});
-            this.dgv_Subject_FL_carrier.Name = "dgv_Subject_FL_carrier";
-            // 
-            // dgv_Subject_FL_format
-            // 
-            this.dgv_Subject_FL_format.HeaderText = "格式";
-            this.dgv_Subject_FL_format.Items.AddRange(new object[] {
-            "PDF",
-            "DOC",
-            "EXCEL"});
-            this.dgv_Subject_FL_format.Name = "dgv_Subject_FL_format";
-            // 
-            // dgv_Subject_FL_form
-            // 
-            this.dgv_Subject_FL_form.HeaderText = "形态";
-            this.dgv_Subject_FL_form.Items.AddRange(new object[] {
-            "原件",
-            "复印本"});
-            this.dgv_Subject_FL_form.Name = "dgv_Subject_FL_form";
-            // 
-            // dgv_Subject_FL_link
-            // 
-            this.dgv_Subject_FL_link.HeaderText = "链接";
-            this.dgv_Subject_FL_link.Name = "dgv_Subject_FL_link";
-            this.dgv_Subject_FL_link.ReadOnly = true;
-            // 
             // tab_Subject_FileValid
             // 
             this.tab_Subject_FileValid.Controls.Add(this.dgv_Subject_FileValid);
@@ -3547,14 +3143,14 @@
             this.dgv_Subject_FileValid.AllowUserToDeleteRows = false;
             this.dgv_Subject_FileValid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Subject_FileValid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Subject_FileValid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Subject_FileValid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.dgv_Subject_FileValid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Subject_FileValid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgv_Subject_FV_id,
@@ -4269,6 +3865,454 @@
             this.txt_Special_Intro.Size = new System.Drawing.Size(1151, 139);
             this.txt_Special_Intro.TabIndex = 36;
             // 
+            // dgv_Special_FL_id
+            // 
+            this.dgv_Special_FL_id.HeaderText = "序号";
+            this.dgv_Special_FL_id.Name = "dgv_Special_FL_id";
+            this.dgv_Special_FL_id.Visible = false;
+            // 
+            // dgv_Special_FL_stage
+            // 
+            this.dgv_Special_FL_stage.HeaderText = "阶段";
+            this.dgv_Special_FL_stage.Items.AddRange(new object[] {
+            "规划阶段",
+            "申报立项阶段",
+            "过程管理阶段",
+            "验收阶段"});
+            this.dgv_Special_FL_stage.Name = "dgv_Special_FL_stage";
+            this.dgv_Special_FL_stage.Width = 130;
+            // 
+            // dgv_Special_FL_categor
+            // 
+            this.dgv_Special_FL_categor.HeaderText = "文件类别";
+            this.dgv_Special_FL_categor.Name = "dgv_Special_FL_categor";
+            // 
+            // dgv_Special_FL_name
+            // 
+            this.dgv_Special_FL_name.HeaderText = "文件名称";
+            this.dgv_Special_FL_name.Name = "dgv_Special_FL_name";
+            this.dgv_Special_FL_name.Width = 250;
+            // 
+            // dgv_Special_FL_user
+            // 
+            this.dgv_Special_FL_user.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgv_Special_FL_user.HeaderText = "责任者";
+            this.dgv_Special_FL_user.Name = "dgv_Special_FL_user";
+            this.dgv_Special_FL_user.Width = 76;
+            // 
+            // dgv_Special_FL_type
+            // 
+            this.dgv_Special_FL_type.HeaderText = "类型";
+            this.dgv_Special_FL_type.Items.AddRange(new object[] {
+            "财务",
+            "管理",
+            "评审",
+            "技术",
+            "汇编"});
+            this.dgv_Special_FL_type.Name = "dgv_Special_FL_type";
+            // 
+            // dgv_Special_FL_secret
+            // 
+            this.dgv_Special_FL_secret.HeaderText = "密级";
+            this.dgv_Special_FL_secret.Items.AddRange(new object[] {
+            "公开",
+            "国内",
+            "秘密",
+            "机密",
+            "绝密"});
+            this.dgv_Special_FL_secret.Name = "dgv_Special_FL_secret";
+            // 
+            // dgv_Special_FL_pages
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgv_Special_FL_pages.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_Special_FL_pages.HeaderText = "页数";
+            this.dgv_Special_FL_pages.Name = "dgv_Special_FL_pages";
+            this.dgv_Special_FL_pages.Width = 50;
+            // 
+            // dgv_Special_FL_number
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgv_Special_FL_number.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_Special_FL_number.HeaderText = "份数";
+            this.dgv_Special_FL_number.Name = "dgv_Special_FL_number";
+            this.dgv_Special_FL_number.Width = 50;
+            // 
+            // dgv_Special_FL_date
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgv_Special_FL_date.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgv_Special_FL_date.HeaderText = "形成日期";
+            this.dgv_Special_FL_date.Name = "dgv_Special_FL_date";
+            // 
+            // dgv_Special_FL_unit
+            // 
+            this.dgv_Special_FL_unit.HeaderText = "存放单位";
+            this.dgv_Special_FL_unit.Name = "dgv_Special_FL_unit";
+            this.dgv_Special_FL_unit.Width = 250;
+            // 
+            // dgv_Special_FL_carrier
+            // 
+            this.dgv_Special_FL_carrier.HeaderText = "载体";
+            this.dgv_Special_FL_carrier.Items.AddRange(new object[] {
+            "纸质",
+            "电子",
+            "纸质+电子"});
+            this.dgv_Special_FL_carrier.Name = "dgv_Special_FL_carrier";
+            // 
+            // dgv_Special_FL_format
+            // 
+            this.dgv_Special_FL_format.HeaderText = "格式";
+            this.dgv_Special_FL_format.Items.AddRange(new object[] {
+            "PDF",
+            "DOC",
+            "EXCEL"});
+            this.dgv_Special_FL_format.Name = "dgv_Special_FL_format";
+            // 
+            // dgv_Special_FL_form
+            // 
+            this.dgv_Special_FL_form.HeaderText = "形态";
+            this.dgv_Special_FL_form.Items.AddRange(new object[] {
+            "原件",
+            "复印本"});
+            this.dgv_Special_FL_form.Name = "dgv_Special_FL_form";
+            // 
+            // dgv_Special_FL_link
+            // 
+            this.dgv_Special_FL_link.HeaderText = "链接";
+            this.dgv_Special_FL_link.Name = "dgv_Special_FL_link";
+            this.dgv_Special_FL_link.ReadOnly = true;
+            this.dgv_Special_FL_link.Width = 300;
+            // 
+            // dgv_Topic_FL_id
+            // 
+            this.dgv_Topic_FL_id.HeaderText = "序号";
+            this.dgv_Topic_FL_id.Name = "dgv_Topic_FL_id";
+            this.dgv_Topic_FL_id.Visible = false;
+            // 
+            // dgv_Topic_FL_stage
+            // 
+            this.dgv_Topic_FL_stage.HeaderText = "阶段";
+            this.dgv_Topic_FL_stage.Items.AddRange(new object[] {
+            "规划阶段",
+            "申报立项阶段",
+            "过程管理阶段",
+            "验收阶段"});
+            this.dgv_Topic_FL_stage.Name = "dgv_Topic_FL_stage";
+            this.dgv_Topic_FL_stage.Width = 130;
+            // 
+            // dgv_Topic_FL_categor
+            // 
+            this.dgv_Topic_FL_categor.HeaderText = "文件类别";
+            this.dgv_Topic_FL_categor.Name = "dgv_Topic_FL_categor";
+            // 
+            // dgv_Topic_FL_name
+            // 
+            this.dgv_Topic_FL_name.HeaderText = "文件名称";
+            this.dgv_Topic_FL_name.Name = "dgv_Topic_FL_name";
+            this.dgv_Topic_FL_name.Width = 250;
+            // 
+            // dgv_Topic_FL_user
+            // 
+            this.dgv_Topic_FL_user.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgv_Topic_FL_user.HeaderText = "责任者";
+            this.dgv_Topic_FL_user.Name = "dgv_Topic_FL_user";
+            this.dgv_Topic_FL_user.Width = 76;
+            // 
+            // dgv_Topic_FL_type
+            // 
+            this.dgv_Topic_FL_type.HeaderText = "类型";
+            this.dgv_Topic_FL_type.Items.AddRange(new object[] {
+            "财务",
+            "管理",
+            "评审",
+            "技术",
+            "汇编"});
+            this.dgv_Topic_FL_type.Name = "dgv_Topic_FL_type";
+            // 
+            // dgv_Topic_FL_secret
+            // 
+            this.dgv_Topic_FL_secret.HeaderText = "密级";
+            this.dgv_Topic_FL_secret.Items.AddRange(new object[] {
+            "公开",
+            "国内",
+            "秘密",
+            "机密",
+            "绝密"});
+            this.dgv_Topic_FL_secret.Name = "dgv_Topic_FL_secret";
+            // 
+            // dgv_Topic_FL_pages
+            // 
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgv_Topic_FL_pages.DefaultCellStyle = dataGridViewCellStyle12;
+            this.dgv_Topic_FL_pages.HeaderText = "页数";
+            this.dgv_Topic_FL_pages.Name = "dgv_Topic_FL_pages";
+            this.dgv_Topic_FL_pages.Width = 50;
+            // 
+            // dgv_Topic_FL_number
+            // 
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgv_Topic_FL_number.DefaultCellStyle = dataGridViewCellStyle13;
+            this.dgv_Topic_FL_number.HeaderText = "份数";
+            this.dgv_Topic_FL_number.Name = "dgv_Topic_FL_number";
+            this.dgv_Topic_FL_number.Width = 50;
+            // 
+            // dgv_Topic_FL_date
+            // 
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgv_Topic_FL_date.DefaultCellStyle = dataGridViewCellStyle14;
+            this.dgv_Topic_FL_date.HeaderText = "形成日期";
+            this.dgv_Topic_FL_date.Name = "dgv_Topic_FL_date";
+            // 
+            // dgv_Topic_FL_unit
+            // 
+            this.dgv_Topic_FL_unit.HeaderText = "存放单位";
+            this.dgv_Topic_FL_unit.Name = "dgv_Topic_FL_unit";
+            this.dgv_Topic_FL_unit.Width = 250;
+            // 
+            // dgv_Topic_FL_carrier
+            // 
+            this.dgv_Topic_FL_carrier.HeaderText = "载体";
+            this.dgv_Topic_FL_carrier.Items.AddRange(new object[] {
+            "纸质",
+            "电子",
+            "纸质+电子"});
+            this.dgv_Topic_FL_carrier.Name = "dgv_Topic_FL_carrier";
+            // 
+            // dgv_Topic_FL_format
+            // 
+            this.dgv_Topic_FL_format.HeaderText = "格式";
+            this.dgv_Topic_FL_format.Items.AddRange(new object[] {
+            "PDF",
+            "DOC",
+            "EXCEL"});
+            this.dgv_Topic_FL_format.Name = "dgv_Topic_FL_format";
+            // 
+            // dgv_Topic_FL_form
+            // 
+            this.dgv_Topic_FL_form.HeaderText = "形态";
+            this.dgv_Topic_FL_form.Items.AddRange(new object[] {
+            "原件",
+            "复印本"});
+            this.dgv_Topic_FL_form.Name = "dgv_Topic_FL_form";
+            // 
+            // dgv_Topic_FL_link
+            // 
+            this.dgv_Topic_FL_link.HeaderText = "链接";
+            this.dgv_Topic_FL_link.Name = "dgv_Topic_FL_link";
+            this.dgv_Topic_FL_link.ReadOnly = true;
+            this.dgv_Topic_FL_link.Width = 300;
+            // 
+            // dgv_Project_FL_id
+            // 
+            this.dgv_Project_FL_id.HeaderText = "序号";
+            this.dgv_Project_FL_id.Name = "dgv_Project_FL_id";
+            this.dgv_Project_FL_id.Visible = false;
+            // 
+            // dgv_Project_FL_stage
+            // 
+            this.dgv_Project_FL_stage.HeaderText = "阶段";
+            this.dgv_Project_FL_stage.Name = "dgv_Project_FL_stage";
+            this.dgv_Project_FL_stage.Width = 130;
+            // 
+            // dgv_Project_FL_categor
+            // 
+            this.dgv_Project_FL_categor.HeaderText = "文件类别";
+            this.dgv_Project_FL_categor.Name = "dgv_Project_FL_categor";
+            // 
+            // dgv_Project_FL_name
+            // 
+            this.dgv_Project_FL_name.HeaderText = "文件名称";
+            this.dgv_Project_FL_name.Name = "dgv_Project_FL_name";
+            this.dgv_Project_FL_name.Width = 250;
+            // 
+            // dgv_Project_FL_user
+            // 
+            this.dgv_Project_FL_user.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgv_Project_FL_user.HeaderText = "责任者";
+            this.dgv_Project_FL_user.Name = "dgv_Project_FL_user";
+            this.dgv_Project_FL_user.Width = 76;
+            // 
+            // dgv_Project_FL_type
+            // 
+            this.dgv_Project_FL_type.HeaderText = "类型";
+            this.dgv_Project_FL_type.Name = "dgv_Project_FL_type";
+            // 
+            // dgv_Project_FL_secret
+            // 
+            this.dgv_Project_FL_secret.HeaderText = "密级";
+            this.dgv_Project_FL_secret.Name = "dgv_Project_FL_secret";
+            // 
+            // dgv_Project_FL_pages
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgv_Project_FL_pages.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dgv_Project_FL_pages.HeaderText = "页数";
+            this.dgv_Project_FL_pages.Name = "dgv_Project_FL_pages";
+            this.dgv_Project_FL_pages.Width = 50;
+            // 
+            // dgv_Project_FL_number
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgv_Project_FL_number.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgv_Project_FL_number.HeaderText = "份数";
+            this.dgv_Project_FL_number.Name = "dgv_Project_FL_number";
+            this.dgv_Project_FL_number.Width = 50;
+            // 
+            // dgv_Project_FL_date
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgv_Project_FL_date.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dgv_Project_FL_date.HeaderText = "形成日期";
+            this.dgv_Project_FL_date.Name = "dgv_Project_FL_date";
+            // 
+            // dgv_Project_FL_unit
+            // 
+            this.dgv_Project_FL_unit.HeaderText = "存放单位";
+            this.dgv_Project_FL_unit.Name = "dgv_Project_FL_unit";
+            this.dgv_Project_FL_unit.Width = 250;
+            // 
+            // dgv_Project_FL_carrier
+            // 
+            this.dgv_Project_FL_carrier.HeaderText = "载体";
+            this.dgv_Project_FL_carrier.Name = "dgv_Project_FL_carrier";
+            // 
+            // dgv_Project_FL_format
+            // 
+            this.dgv_Project_FL_format.HeaderText = "格式";
+            this.dgv_Project_FL_format.Name = "dgv_Project_FL_format";
+            // 
+            // dgv_Project_FL_form
+            // 
+            this.dgv_Project_FL_form.HeaderText = "形态";
+            this.dgv_Project_FL_form.Name = "dgv_Project_FL_form";
+            // 
+            // dgv_Project_FL_link
+            // 
+            this.dgv_Project_FL_link.HeaderText = "链接";
+            this.dgv_Project_FL_link.Name = "dgv_Project_FL_link";
+            this.dgv_Project_FL_link.ReadOnly = true;
+            this.dgv_Project_FL_link.Width = 300;
+            // 
+            // dgv_Subject_FL_id
+            // 
+            this.dgv_Subject_FL_id.HeaderText = "序号";
+            this.dgv_Subject_FL_id.Name = "dgv_Subject_FL_id";
+            this.dgv_Subject_FL_id.Visible = false;
+            // 
+            // dgv_Subject_FL_stage
+            // 
+            this.dgv_Subject_FL_stage.HeaderText = "阶段";
+            this.dgv_Subject_FL_stage.Items.AddRange(new object[] {
+            "规划阶段",
+            "申报立项阶段",
+            "过程管理阶段",
+            "验收阶段"});
+            this.dgv_Subject_FL_stage.Name = "dgv_Subject_FL_stage";
+            this.dgv_Subject_FL_stage.Width = 130;
+            // 
+            // dgv_Subject_FL_categor
+            // 
+            this.dgv_Subject_FL_categor.HeaderText = "文件类别";
+            this.dgv_Subject_FL_categor.Name = "dgv_Subject_FL_categor";
+            // 
+            // dgv_Subject_FL_name
+            // 
+            this.dgv_Subject_FL_name.HeaderText = "文件名称";
+            this.dgv_Subject_FL_name.Name = "dgv_Subject_FL_name";
+            this.dgv_Subject_FL_name.Width = 250;
+            // 
+            // dgv_Subject_FL_user
+            // 
+            this.dgv_Subject_FL_user.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgv_Subject_FL_user.HeaderText = "责任者";
+            this.dgv_Subject_FL_user.Name = "dgv_Subject_FL_user";
+            this.dgv_Subject_FL_user.Width = 76;
+            // 
+            // dgv_Subject_FL_type
+            // 
+            this.dgv_Subject_FL_type.HeaderText = "类型";
+            this.dgv_Subject_FL_type.Items.AddRange(new object[] {
+            "财务",
+            "管理",
+            "评审",
+            "技术",
+            "汇编"});
+            this.dgv_Subject_FL_type.Name = "dgv_Subject_FL_type";
+            // 
+            // dgv_Subject_FL_secret
+            // 
+            this.dgv_Subject_FL_secret.HeaderText = "密级";
+            this.dgv_Subject_FL_secret.Items.AddRange(new object[] {
+            "公开",
+            "国内",
+            "秘密",
+            "机密",
+            "绝密"});
+            this.dgv_Subject_FL_secret.Name = "dgv_Subject_FL_secret";
+            // 
+            // dgv_Subject_FL_pages
+            // 
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgv_Subject_FL_pages.DefaultCellStyle = dataGridViewCellStyle17;
+            this.dgv_Subject_FL_pages.HeaderText = "页数";
+            this.dgv_Subject_FL_pages.Name = "dgv_Subject_FL_pages";
+            this.dgv_Subject_FL_pages.Width = 50;
+            // 
+            // dgv_Subject_FL_number
+            // 
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgv_Subject_FL_number.DefaultCellStyle = dataGridViewCellStyle18;
+            this.dgv_Subject_FL_number.HeaderText = "份数";
+            this.dgv_Subject_FL_number.Name = "dgv_Subject_FL_number";
+            this.dgv_Subject_FL_number.Width = 50;
+            // 
+            // dgv_Subject_FL_date
+            // 
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgv_Subject_FL_date.DefaultCellStyle = dataGridViewCellStyle19;
+            this.dgv_Subject_FL_date.HeaderText = "形成日期";
+            this.dgv_Subject_FL_date.Name = "dgv_Subject_FL_date";
+            // 
+            // dgv_Subject_FL_unit
+            // 
+            this.dgv_Subject_FL_unit.HeaderText = "存放单位";
+            this.dgv_Subject_FL_unit.Name = "dgv_Subject_FL_unit";
+            this.dgv_Subject_FL_unit.Width = 250;
+            // 
+            // dgv_Subject_FL_carrier
+            // 
+            this.dgv_Subject_FL_carrier.HeaderText = "载体";
+            this.dgv_Subject_FL_carrier.Items.AddRange(new object[] {
+            "纸质",
+            "电子",
+            "纸质+电子"});
+            this.dgv_Subject_FL_carrier.Name = "dgv_Subject_FL_carrier";
+            // 
+            // dgv_Subject_FL_format
+            // 
+            this.dgv_Subject_FL_format.HeaderText = "格式";
+            this.dgv_Subject_FL_format.Items.AddRange(new object[] {
+            "PDF",
+            "DOC",
+            "EXCEL"});
+            this.dgv_Subject_FL_format.Name = "dgv_Subject_FL_format";
+            // 
+            // dgv_Subject_FL_form
+            // 
+            this.dgv_Subject_FL_form.HeaderText = "形态";
+            this.dgv_Subject_FL_form.Items.AddRange(new object[] {
+            "原件",
+            "复印本"});
+            this.dgv_Subject_FL_form.Name = "dgv_Subject_FL_form";
+            // 
+            // dgv_Subject_FL_link
+            // 
+            this.dgv_Subject_FL_link.HeaderText = "链接";
+            this.dgv_Subject_FL_link.Name = "dgv_Subject_FL_link";
+            this.dgv_Subject_FL_link.ReadOnly = true;
+            this.dgv_Subject_FL_link.Width = 300;
+            // 
             // Frm_Wroking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -4639,6 +4683,16 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 添加文件AToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 删除文件DToolStripMenuItem;
+        private System.Windows.Forms.ComboBox cbo_Project_Province;
+        private System.Windows.Forms.ComboBox cbo_Project_Unit;
+        private System.Windows.Forms.ComboBox cbo_Project_Field;
+        private System.Windows.Forms.ComboBox cbo_Topic_Province;
+        private System.Windows.Forms.ComboBox cbo_Topic_Unit;
+        private System.Windows.Forms.ComboBox cbo_Topic_Field;
+        private System.Windows.Forms.ComboBox cbo_Subject_Province;
+        private System.Windows.Forms.ComboBox cbo_Subject_Unit;
+        private System.Windows.Forms.ComboBox cbo_Subject_Field;
+        private System.Windows.Forms.TextBox txt_Special_Intro;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_Special_FL_id;
         private System.Windows.Forms.DataGridViewComboBoxColumn dgv_Special_FL_stage;
         private System.Windows.Forms.DataGridViewComboBoxColumn dgv_Special_FL_categor;
@@ -4654,21 +4708,6 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn dgv_Special_FL_format;
         private System.Windows.Forms.DataGridViewComboBoxColumn dgv_Special_FL_form;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_Special_FL_link;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_Project_FL_id;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dgv_Project_FL_stage;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dgv_Project_FL_categor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_Project_FL_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_Project_FL_user;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dgv_Project_FL_type;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dgv_Project_FL_secret;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_Project_FL_pages;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_Project_FL_number;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_Project_FL_date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_Project_FL_unit;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dgv_Project_FL_carrier;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dgv_Project_FL_format;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dgv_Project_FL_form;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_Project_FL_link;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_Topic_FL_id;
         private System.Windows.Forms.DataGridViewComboBoxColumn dgv_Topic_FL_stage;
         private System.Windows.Forms.DataGridViewComboBoxColumn dgv_Topic_FL_categor;
@@ -4684,6 +4723,21 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn dgv_Topic_FL_format;
         private System.Windows.Forms.DataGridViewComboBoxColumn dgv_Topic_FL_form;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_Topic_FL_link;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_Project_FL_id;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dgv_Project_FL_stage;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dgv_Project_FL_categor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_Project_FL_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_Project_FL_user;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dgv_Project_FL_type;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dgv_Project_FL_secret;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_Project_FL_pages;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_Project_FL_number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_Project_FL_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_Project_FL_unit;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dgv_Project_FL_carrier;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dgv_Project_FL_format;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dgv_Project_FL_form;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_Project_FL_link;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_Subject_FL_id;
         private System.Windows.Forms.DataGridViewComboBoxColumn dgv_Subject_FL_stage;
         private System.Windows.Forms.DataGridViewComboBoxColumn dgv_Subject_FL_categor;
@@ -4699,15 +4753,5 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn dgv_Subject_FL_format;
         private System.Windows.Forms.DataGridViewComboBoxColumn dgv_Subject_FL_form;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_Subject_FL_link;
-        private System.Windows.Forms.ComboBox cbo_Project_Province;
-        private System.Windows.Forms.ComboBox cbo_Project_Unit;
-        private System.Windows.Forms.ComboBox cbo_Project_Field;
-        private System.Windows.Forms.ComboBox cbo_Topic_Province;
-        private System.Windows.Forms.ComboBox cbo_Topic_Unit;
-        private System.Windows.Forms.ComboBox cbo_Topic_Field;
-        private System.Windows.Forms.ComboBox cbo_Subject_Province;
-        private System.Windows.Forms.ComboBox cbo_Subject_Unit;
-        private System.Windows.Forms.ComboBox cbo_Subject_Field;
-        private System.Windows.Forms.TextBox txt_Special_Intro;
     }
 }
