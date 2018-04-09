@@ -491,7 +491,7 @@
             this.special.Location = new System.Drawing.Point(4, 26);
             this.special.Name = "special";
             this.special.Padding = new System.Windows.Forms.Padding(3);
-            this.special.Size = new System.Drawing.Size(1256, 581);
+            this.special.Size = new System.Drawing.Size(1256, 681);
             this.special.TabIndex = 1;
             this.special.Text = "专项信息";
             this.special.UseVisualStyleBackColor = true;
@@ -535,7 +535,7 @@
             this.tab_Special_Info.Location = new System.Drawing.Point(3, 241);
             this.tab_Special_Info.Name = "tab_Special_Info";
             this.tab_Special_Info.SelectedIndex = 0;
-            this.tab_Special_Info.Size = new System.Drawing.Size(1250, 291);
+            this.tab_Special_Info.Size = new System.Drawing.Size(1250, 391);
             this.tab_Special_Info.TabIndex = 8;
             this.tab_Special_Info.SelectedIndexChanged += new System.EventHandler(this.Tab_Info_SelectedIndexChanged);
             // 
@@ -546,7 +546,7 @@
             this.tab_Special_File.Location = new System.Drawing.Point(4, 26);
             this.tab_Special_File.Name = "tab_Special_File";
             this.tab_Special_File.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Special_File.Size = new System.Drawing.Size(1242, 261);
+            this.tab_Special_File.Size = new System.Drawing.Size(1242, 361);
             this.tab_Special_File.TabIndex = 0;
             this.tab_Special_File.Text = "文件列表";
             this.tab_Special_File.UseVisualStyleBackColor = true;
@@ -583,7 +583,7 @@
             this.dgv_Special_FileList.Location = new System.Drawing.Point(3, 3);
             this.dgv_Special_FileList.Name = "dgv_Special_FileList";
             this.dgv_Special_FileList.RowTemplate.Height = 23;
-            this.dgv_Special_FileList.Size = new System.Drawing.Size(1236, 255);
+            this.dgv_Special_FileList.Size = new System.Drawing.Size(1236, 355);
             this.dgv_Special_FileList.TabIndex = 0;
             this.dgv_Special_FileList.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Subject_FileList_CellContentClick);
             this.dgv_Special_FileList.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_FileList_CellMouseDown);
@@ -1231,7 +1231,7 @@
             this.gro_Special_Btns.Controls.Add(this.btn_Special_AddFile);
             this.gro_Special_Btns.Controls.Add(this.btn_Special_Save);
             this.gro_Special_Btns.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gro_Special_Btns.Location = new System.Drawing.Point(3, 532);
+            this.gro_Special_Btns.Location = new System.Drawing.Point(3, 632);
             this.gro_Special_Btns.Name = "gro_Special_Btns";
             this.gro_Special_Btns.Size = new System.Drawing.Size(1250, 46);
             this.gro_Special_Btns.TabIndex = 9;
@@ -1503,7 +1503,7 @@
             this.tab_Project_FileValid.Location = new System.Drawing.Point(4, 26);
             this.tab_Project_FileValid.Name = "tab_Project_FileValid";
             this.tab_Project_FileValid.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Project_FileValid.Size = new System.Drawing.Size(1248, 262);
+            this.tab_Project_FileValid.Size = new System.Drawing.Size(1248, 362);
             this.tab_Project_FileValid.TabIndex = 1;
             this.tab_Project_FileValid.Text = "文件核查";
             this.tab_Project_FileValid.UseVisualStyleBackColor = true;
@@ -1535,7 +1535,7 @@
             this.dgv_Project_FileValid.Location = new System.Drawing.Point(3, 3);
             this.dgv_Project_FileValid.Name = "dgv_Project_FileValid";
             this.dgv_Project_FileValid.RowTemplate.Height = 23;
-            this.dgv_Project_FileValid.Size = new System.Drawing.Size(1242, 256);
+            this.dgv_Project_FileValid.Size = new System.Drawing.Size(1242, 356);
             this.dgv_Project_FileValid.TabIndex = 0;
             // 
             // dgv_Project_FV_id
@@ -1603,7 +1603,7 @@
             this.tab_Project_AJ.Controls.Add(this.label50);
             this.tab_Project_AJ.Location = new System.Drawing.Point(4, 26);
             this.tab_Project_AJ.Name = "tab_Project_AJ";
-            this.tab_Project_AJ.Size = new System.Drawing.Size(1248, 262);
+            this.tab_Project_AJ.Size = new System.Drawing.Size(1248, 362);
             this.tab_Project_AJ.TabIndex = 2;
             this.tab_Project_AJ.Text = "案卷信息";
             // 
