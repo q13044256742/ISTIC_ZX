@@ -1757,8 +1757,13 @@ namespace 数据采集档案管理系统___加工版
                             lbl_Project_AJ_Code.Text = string.Empty;
                             lbl_Project_AJ_Name.Text = string.Empty;
                         }
-                        LoadBoxList(objid, ControlType.Plan_Project);
-                        LoadFileBoxTable(cbo_Project_BoxId.SelectedValue, objid, ControlType.Plan_Project);
+                        if(!string.IsNullOrEmpty(GetAJCode(null, null, 1)))
+                        {
+                            LoadBoxList(objid, ControlType.Plan_Project);
+                            LoadFileBoxTable(cbo_Project_BoxId.SelectedValue, objid, ControlType.Plan_Project);
+                        }
+                        else
+                            MessageBox.Show("尚未设定馆藏号生成规则。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
                 }
             }
@@ -1830,8 +1835,13 @@ namespace 数据采集档案管理系统___加工版
                             lbl_Topic_AJ_Code.Text = string.Empty;
                             lbl_Topic_AJ_Name.Text = string.Empty;
                         }
-                        LoadBoxList(objid, ControlType.Plan_Topic);
-                        LoadFileBoxTable(cbo_Topic_BoxId.SelectedValue, objid, ControlType.Plan_Topic);
+                        if(!string.IsNullOrEmpty(GetAJCode(null, null, 1)))
+                        {
+                            LoadBoxList(objid, ControlType.Plan_Topic);
+                            LoadFileBoxTable(cbo_Topic_BoxId.SelectedValue, objid, ControlType.Plan_Topic);
+                        }
+                        else
+                            MessageBox.Show("尚未设定馆藏号生成规则。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
                 }
             }
@@ -1903,8 +1913,13 @@ namespace 数据采集档案管理系统___加工版
                             lbl_Subject_AJ_Code.Text = string.Empty;
                             lbl_Subject_AJ_Name.Text = string.Empty;
                         }
-                        LoadBoxList(objId, ControlType.Plan_Topic_Subject);
-                        LoadFileBoxTable(cbo_Subject_BoxId.SelectedValue, objId, ControlType.Plan_Topic_Subject);
+                        if(!string.IsNullOrEmpty(GetAJCode(null, null, 1)))
+                        {
+                            LoadBoxList(objId, ControlType.Plan_Topic_Subject);
+                            LoadFileBoxTable(cbo_Subject_BoxId.SelectedValue, objId, ControlType.Plan_Topic_Subject);
+                        }
+                        else
+                            MessageBox.Show("尚未设定馆藏号生成规则。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
                 }
             }
@@ -2066,7 +2081,10 @@ namespace 数据采集档案管理系统___加工版
                 cbo_Project_BoxId.DisplayMember = "pb_box_number";
                 cbo_Project_BoxId.ValueMember = "pb_id";
                 if(table.Rows.Count > 0)
+                {
                     cbo_Project_BoxId.SelectedIndex = 0;
+                    Cbo_BoxId_SelectionChangeCommitted(cbo_Project_BoxId, null);
+                }
             }
             else if(type == ControlType.Plan_Topic)
             {
@@ -2074,7 +2092,10 @@ namespace 数据采集档案管理系统___加工版
                 cbo_Topic_BoxId.DisplayMember = "pb_box_number";
                 cbo_Topic_BoxId.ValueMember = "pb_id";
                 if(table.Rows.Count > 0)
+                {
                     cbo_Topic_BoxId.SelectedIndex = 0;
+                    Cbo_BoxId_SelectionChangeCommitted(cbo_Topic_BoxId, null);
+                }
             }
             else if(type == ControlType.Plan_Topic_Subject)
             {
@@ -2082,7 +2103,10 @@ namespace 数据采集档案管理系统___加工版
                 cbo_Subject_BoxId.DisplayMember = "pb_box_number";
                 cbo_Subject_BoxId.ValueMember = "pb_id";
                 if(table.Rows.Count > 0)
+                {
                     cbo_Subject_BoxId.SelectedIndex = 0;
+                    Cbo_BoxId_SelectionChangeCommitted(cbo_Subject_BoxId, null);
+                }
             }
         }
 
@@ -2488,8 +2512,8 @@ namespace 数据采集档案管理系统___加工版
                         if(!string.IsNullOrEmpty(gch))
                         {
                             int amount = Convert.ToInt32(SQLiteHelper.ExecuteOnlyOneQuery($"SELECT COUNT(pb_box_number) FROM files_box_info WHERE pb_obj_id='{objId}'"));
-                            string unitCode = string.Empty;
-                            string insertSql = $"INSERT INTO files_box_info VALUES('{Guid.NewGuid().ToString()}','{amount + 1}','{gch}',null,'{objId}','{unitCode}')";
+                            string insertSql = $"INSERT INTO files_box_info(pb_id, pb_box_number, pb_gc_id, pb_files_id, pb_obj_id, pb_special_id, pb_source_type) " +
+                                $"VALUES('{Guid.NewGuid().ToString()}', '{amount + 1}', '{gch}', null, '{objId}', '{UserHelper.GetUser().UserSpecialId}', 0)";
                             SQLiteHelper.ExecuteNonQuery(insertSql);
                             MessageBox.Show("添加案卷盒成功。");
                         }
@@ -2540,8 +2564,8 @@ namespace 数据采集档案管理系统___加工版
                         if(!string.IsNullOrEmpty(gch))
                         {
                             int amount = Convert.ToInt32(SQLiteHelper.ExecuteOnlyOneQuery($"SELECT COUNT(pb_box_number) FROM files_box_info WHERE pb_obj_id='{objId}'"));
-                            string unitCode = string.Empty;
-                            string insertSql = $"INSERT INTO files_box_info VALUES('{Guid.NewGuid().ToString()}','{amount + 1}','{gch}',null,'{objId}','{unitCode}')";
+                            string insertSql = $"INSERT INTO files_box_info(pb_id, pb_box_number, pb_gc_id, pb_files_id, pb_obj_id, pb_special_id, pb_source_type) " +
+                                $"VALUES('{Guid.NewGuid().ToString()}', '{amount + 1}', '{gch}', null, '{objId}', '{UserHelper.GetUser().UserSpecialId}', 0)";
                             SQLiteHelper.ExecuteNonQuery(insertSql);
                             MessageBox.Show("添加案卷盒成功。");
                         }
@@ -2592,8 +2616,8 @@ namespace 数据采集档案管理系统___加工版
                         if(!string.IsNullOrEmpty(gch))
                         {
                             int amount = Convert.ToInt32(SQLiteHelper.ExecuteOnlyOneQuery($"SELECT COUNT(pb_box_number) FROM files_box_info WHERE pb_obj_id='{objId}'"));
-                            string unitCode = string.Empty;
-                            string insertSql = $"INSERT INTO files_box_info VALUES('{Guid.NewGuid().ToString()}','{amount + 1}','{gch}',null,'{objId}','{unitCode}')";
+                            string insertSql = $"INSERT INTO files_box_info(pb_id, pb_box_number, pb_gc_id, pb_files_id, pb_obj_id, pb_special_id, pb_source_type) " +
+                                $"VALUES('{Guid.NewGuid().ToString()}', '{amount + 1}', '{gch}', null, '{objId}', '{UserHelper.GetUser().UserSpecialId}', 0)";
                             SQLiteHelper.ExecuteNonQuery(insertSql);
                             MessageBox.Show("添加案卷盒成功。");
                         }
@@ -2644,8 +2668,8 @@ namespace 数据采集档案管理系统___加工版
                         if(!string.IsNullOrEmpty(gch))
                         {
                             int amount = Convert.ToInt32(SQLiteHelper.ExecuteOnlyOneQuery($"SELECT COUNT(pb_box_number) FROM files_box_info WHERE pb_obj_id='{objId}'"));
-                            string unitCode = string.Empty;
-                            string insertSql = $"INSERT INTO files_box_info VALUES('{Guid.NewGuid().ToString()}','{amount + 1}','{gch}',null,'{objId}','{unitCode}')";
+                            string insertSql = $"INSERT INTO files_box_info(pb_id, pb_box_number, pb_gc_id, pb_files_id, pb_obj_id, pb_special_id, pb_source_type) " +
+                                $"VALUES('{Guid.NewGuid().ToString()}', '{amount + 1}', '{gch}', null, '{objId}', '{UserHelper.GetUser().UserSpecialId}', 0)";
                             SQLiteHelper.ExecuteNonQuery(insertSql);
                             MessageBox.Show("添加案卷盒成功。");
                         }
@@ -2702,25 +2726,43 @@ namespace 数据采集档案管理系统___加工版
             {
                 object pbId = comboBox.SelectedValue;
                 LoadFileBoxTable(pbId, tab_Project_Info.Tag, ControlType.Plan_Project);
-                object gcid = SQLiteHelper.ExecuteOnlyOneQuery($"SELECT pb_gc_id FROM files_box_info WHERE pb_id='{pbId}'");
+                object gcid = SQLiteHelper.ExecuteOnlyOneQuery($"SELECT pb_gc_id FROM files_box_info WHERE pb_id='{pbId}' AND pb_source_type=0");
                 if(gcid != null)
                     txt_Project_GCID.Text = GetValue(gcid);
+                else
+                {
+                    string code = GetAJCode(null, txt_Project_Code.Text, 1);
+                    SQLiteHelper.ExecuteNonQuery($"UPDATE files_box_info SET pb_gc_id='{code}', pb_source_type=0 WHERE pb_id='{pbId}'");
+                    Cbo_BoxId_SelectionChangeCommitted(sender, e);
+                }
             }
             else if("cbo_Topic_BoxId".Equals(comboBox.Name))
             {
                 object pbId = comboBox.SelectedValue;
                 LoadFileBoxTable(pbId, tab_Topic_Info.Tag, ControlType.Plan_Topic);
-                object gcid = SQLiteHelper.ExecuteOnlyOneQuery($"SELECT pb_gc_id FROM files_box_info WHERE pb_id='{pbId}'");
+                object gcid = SQLiteHelper.ExecuteOnlyOneQuery($"SELECT pb_gc_id FROM files_box_info WHERE pb_id='{pbId}' AND pb_source_type=0");
                 if(gcid != null)
                     txt_Topic_GCID.Text = GetValue(gcid);
+                else
+                {
+                    string code = GetAJCode(null, txt_Topic_Code.Text, 1);
+                    SQLiteHelper.ExecuteNonQuery($"UPDATE files_box_info SET pb_gc_id='{code}', pb_source_type=0 WHERE pb_id='{pbId}'");
+                    Cbo_BoxId_SelectionChangeCommitted(sender, e);
+                }
             }
             else if("cbo_Subject_BoxId".Equals(comboBox.Name))
             {
                 object pbId = comboBox.SelectedValue;
                 LoadFileBoxTable(pbId, tab_Subject_Info.Tag, ControlType.Plan_Topic_Subject);
-                object gcid = SQLiteHelper.ExecuteOnlyOneQuery($"SELECT pb_gc_id FROM files_box_info WHERE pb_id='{pbId}'");
+                object gcid = SQLiteHelper.ExecuteOnlyOneQuery($"SELECT pb_gc_id FROM files_box_info WHERE pb_id='{pbId}' AND pb_source_type=0");
                 if(gcid != null)
                     txt_Subject_GCID.Text = GetValue(gcid);
+                else
+                {
+                    string code = GetAJCode(null, txt_Subject_Code.Text, 1);
+                    SQLiteHelper.ExecuteNonQuery($"UPDATE files_box_info SET pb_gc_id='{code}', pb_source_type=0 WHERE pb_id='{pbId}'");
+                    Cbo_BoxId_SelectionChangeCommitted(sender, e);
+                }
             }
         }
 

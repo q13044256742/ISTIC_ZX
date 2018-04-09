@@ -176,6 +176,8 @@ namespace 数据采集档案管理系统___加工版
                 }
                 lbl_Template.Text = template;
             }
+            else
+                cbo_Type.Tag = null;
         }
 
         private string GetValue(object v) => v == null ? string.Empty : v.ToString();
