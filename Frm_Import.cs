@@ -117,43 +117,50 @@ namespace 数据采集档案管理系统___加工版
         private void CopyDataTableInstince(string dataBasePath, string rootFolder)
         {
             SQLiteBackupHelper helper = new SQLiteBackupHelper(dataBasePath);
-
             DataTable projectTable = helper.ExecuteQuery($"SELECT * FROM project_info");
-            for(int i = 0; i < projectTable.Rows.Count; i++)
+            int length = projectTable.Rows.Count;
+            for(int i = 0; i < length; i++)
             {
+                SetTip($"正在导入数据库[project_info({i}\\{length})]");
                 DataRow row = projectTable.Rows[i];
                 string insertSql = "INSERT INTO project_info VALUES(" +
                     $"'{row["pi_id"]}', '{row["pi_code"]}', '{row["pi_name"]}', '{row["pi_field"]}', '{row["pi_theme"]}', '{row["pi_funds"]}', '{GetFormatDate(row["pi_startdate"])}', '{GetFormatDate(row["pi_finishdate"])}', " +
-                    $"'{row["pi_year"]}', '{row["pi_unit"]}', '{row["pi_province"]}', '{row["pi_unit_user"]}', '{row["pi_project_user"]}', '{row["pi_contacts"]}', '{row["pi_contacts_phone"]}', '{row["pi_introduction"]}', '{row["pi_obj_id"]}')";
+                    $"'{row["pi_year"]}', '{row["pi_unit"]}', '{row["pi_province"]}', '{row["pi_unit_user"]}', '{row["pi_project_user"]}', '{row["pi_contacts"]}', '{row["pi_contacts_phone"]}', '{row["pi_introduction"]}', '{row["pi_obj_id"]}', 1)";
                 SQLiteHelper.ExecuteNonQuery($"DELETE FROM project_info WHERE pi_id='{row["pi_id"]}'");
                 SQLiteHelper.ExecuteNonQuery(insertSql);
             }
 
             DataTable topicTable = helper.ExecuteQuery($"SELECT * FROM topic_info");
-            for(int i = 0; i < topicTable.Rows.Count; i++)
+            length = topicTable.Rows.Count;
+            for(int i = 0; i < length; i++)
             {
+                SetTip($"正在导入数据库[topic_info({i}\\{length})]");
                 DataRow row = topicTable.Rows[i];
                 string insertSql = "INSERT INTO topic_info VALUES(" +
                     $"'{row["ti_id"]}', '{row["ti_code"]}', '{row["ti_name"]}', '{row["ti_field"]}', '{row["ti_theme"]}', '{row["ti_funds"]}', '{GetFormatDate(row["ti_startdate"])}', '{GetFormatDate(row["ti_finishdate"])}'," +
-                    $"'{row["ti_year"]}', '{row["ti_unit"]}', '{row["ti_province"]}', '{row["ti_unit_user"]}', '{row["ti_project_user"]}', '{row["ti_contacts"]}', '{row["ti_contacts_phone"]}', '{ row["ti_introduction"]}', '{row["ti_obj_id"]}')";
+                    $"'{row["ti_year"]}', '{row["ti_unit"]}', '{row["ti_province"]}', '{row["ti_unit_user"]}', '{row["ti_project_user"]}', '{row["ti_contacts"]}', '{row["ti_contacts_phone"]}', '{ row["ti_introduction"]}', '{row["ti_obj_id"]}', 1)";
                 SQLiteHelper.ExecuteNonQuery($"DELETE FROM topic_info WHERE ti_id='{row["ti_id"]}'");
                 SQLiteHelper.ExecuteNonQuery(insertSql);
             }
 
             DataTable subjectTable = helper.ExecuteQuery($"SELECT * FROM subject_info");
-            for(int i = 0; i < subjectTable.Rows.Count; i++)
+            length = subjectTable.Rows.Count;
+            for(int i = 0; i < length; i++)
             {
+                SetTip($"正在导入数据库[subject_info({i}\\{length})]");
                 DataRow row = subjectTable.Rows[i];
                 string insertSql = "INSERT INTO subject_info VALUES(" +
                     $"'{row["si_id"]}', '{row["si_code"]}', '{row["si_name"]}', '{row["si_field"]}', '{row["si_theme"]}', '{row["si_funds"]}', '{GetFormatDate(row["si_startdate"])}', '{GetFormatDate(row["si_finishdate"])}'," +
-                    $"'{row["si_year"]}', '{row["si_unit"]}', '{row["si_province"]}', '{row["si_unit_user"]}', '{row["si_project_user"]}', '{row["si_contacts"]}', '{row["si_contacts_phone"]}', '{row["si_introduction"]}', '{row["si_obj_id"]}')";
+                    $"'{row["si_year"]}', '{row["si_unit"]}', '{row["si_province"]}', '{row["si_unit_user"]}', '{row["si_project_user"]}', '{row["si_contacts"]}', '{row["si_contacts_phone"]}', '{row["si_introduction"]}', '{row["si_obj_id"]}', 1)";
                 SQLiteHelper.ExecuteNonQuery($"DELETE FROM subject_info WHERE si_id='{row["si_id"]}'");
                 SQLiteHelper.ExecuteNonQuery(insertSql);
             }
 
             DataTable fileTable = helper.ExecuteQuery($"SELECT * FROM files_info");
-            for(int i = 0; i < fileTable.Rows.Count; i++)
+            length = fileTable.Rows.Count;
+            for(int i = 0; i < length; i++)
             {
+                SetTip($"正在导入数据库[files_info({i}\\{length})]");
                 DataRow row = fileTable.Rows[i];
                 //转换为当前服务器链接
                 string link = GetValue(row["fi_link"]);
@@ -182,8 +189,10 @@ namespace 数据采集档案管理系统___加工版
             }
 
             DataTable lostTable = helper.ExecuteQuery($"SELECT * FROM files_lost_info");
-            for(int i = 0; i < lostTable.Rows.Count; i++)
+            length = lostTable.Rows.Count;
+            for(int i = 0; i < length; i++)
             {
+                SetTip($"正在导入数据库[files_lost_info({i}\\{length})]");
                 DataRow row = lostTable.Rows[i];
                 string insertSql = $"INSERT INTO files_lost_info VALUES('{row["pfo_id"]}', '{row["pfo_categor"]}', '{row["pfo_name"]}', '{row["pfo_reason"]}', '{row["pfo_remark"]}', '{row["pfo_obj_id"]}')";
                 SQLiteHelper.ExecuteNonQuery($"DELETE FROM files_lost_info WHERE pfo_id='{row["pfo_id"]}'");
@@ -191,21 +200,25 @@ namespace 数据采集档案管理系统___加工版
             }
 
             DataTable tagTable = helper.ExecuteQuery($"SELECT * FROM files_tag_info");
-            for(int i = 0; i < tagTable.Rows.Count; i++)
+            length = tagTable.Rows.Count;
+            for(int i = 0; i < length; i++)
             {
+                SetTip($"正在导入数据库[files_tag_info({i}\\{length})]");
                 DataRow row = tagTable.Rows[i];
-                string insertSql = $"INSERT INTO files_tag_info(pt_id, pt_code, pt_name, pt_term, pt_secret, pt_user, pt_unit, pt_obj_id, pt_special_id) " +
-                    $"VALUES('{row["pt_id"]}', '{row["pt_code"]}', '{row["pt_name"]}', '{row["pt_term"]}', '{row["pt_secret"]}', '{row["pt_user"]}', '{row["pt_unit"]}', '{row["pt_obj_id"]}', '{row["pt_special_id"]}')";
+                string insertSql = $"INSERT INTO files_tag_info(pt_id, pt_code, pt_name, pt_term, pt_secret, pt_user, pt_unit, pt_obj_id, pt_special_id, pt_source_type) " +
+                    $"VALUES('{row["pt_id"]}', '{row["pt_code"]}', '{row["pt_name"]}', '{row["pt_term"]}', '{row["pt_secret"]}', '{row["pt_user"]}', '{row["pt_unit"]}', '{row["pt_obj_id"]}', '{row["pt_special_id"]}', 1)";
                 SQLiteHelper.ExecuteNonQuery($"DELETE FROM files_tag_info WHERE pt_id='{row["pt_id"]}'");
                 SQLiteHelper.ExecuteNonQuery(insertSql);
             }
 
             DataTable boxTable = helper.ExecuteQuery($"SELECT * FROM files_box_info");
-            for(int i = 0; i < boxTable.Rows.Count; i++)
+            length = boxTable.Rows.Count;
+            for(int i = 0; i < length; i++)
             {
+                SetTip($"正在导入数据库[files_box_info({i}\\{length})]");
                 DataRow row = boxTable.Rows[i];
-                string insertSql = $"INSERT INTO files_box_info(pb_id, pb_box_number, pb_gc_id, pb_files_id, pb_obj_id, pb_special_id) " +
-                    $"VALUES('{row["pb_id"]}', '{row["pb_box_number"]}', '{row["pb_gc_id"]}', '{row["pb_files_id"]}', '{row["pb_obj_id"]}', '{row["pb_special_id"]}')";
+                string insertSql = $"INSERT INTO files_box_info(pb_id, pb_box_number, pb_gc_id, pb_files_id, pb_obj_id, pb_special_id, pb_source_type) " +
+                    $"VALUES('{row["pb_id"]}', '{row["pb_box_number"]}', '{row["pb_gc_id"]}', '{row["pb_files_id"]}', '{row["pb_obj_id"]}', '{row["pb_special_id"]}', 1)";
                 SQLiteHelper.ExecuteNonQuery($"DELETE FROM files_box_info WHERE pb_id='{row["pb_id"]}'");
                 SQLiteHelper.ExecuteNonQuery(insertSql);
             }
@@ -239,6 +252,7 @@ namespace 数据采集档案管理系统___加工版
                 string primaryKey = Guid.NewGuid().ToString();
                 try
                 {
+                    SetTip($"正在备份文件[{file[i].Name}]");
                     SQLiteHelper.ExecuteNonQuery($"INSERT INTO backup_files_info(bfi_id, bfi_code, bfi_name, bfi_path, bfi_date, bfi_pid, bfi_userid) VALUES " +
                         $"('{primaryKey}', '{indexCount++.ToString().PadLeft(6, '0')}', '{file[i].Name}', '{rootFolder}', '{DateTime.Now.ToString("s")}', '{pid}', '{UserHelper.GetUser().UserId}')");
                     ServerHelper.UploadFile(file[i].FullName, rootFolder, file[i].Name);
@@ -270,5 +284,15 @@ namespace 数据采集档案管理系统___加工版
         }
 
         private string GetValue(object v) => v == null ? string.Empty : v.ToString();
+
+        private void Frm_Import_Load(object sender, EventArgs e)
+        {
+            SetTip("请先指定元数据路径，然后开始导入数据。");
+        }
+
+        private void SetTip(string msg)
+        {
+            tool_Tip.Text = "提示：" + msg;
+        }
     }
 }

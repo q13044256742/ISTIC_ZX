@@ -35,6 +35,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.fbd_Data = new System.Windows.Forms.FolderBrowserDialog();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.tool_Tip = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -99,11 +102,29 @@
             this.linkLabel1.Text = "...";
             this.linkLabel1.Click += new System.EventHandler(this.btn_Import_Click);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tool_Tip});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 228);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(457, 22);
+            this.statusStrip1.SizingGrip = false;
+            this.statusStrip1.TabIndex = 7;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // tool_Tip
+            // 
+            this.tool_Tip.Name = "tool_Tip";
+            this.tool_Tip.Size = new System.Drawing.Size(0, 17);
+            // 
             // Frm_Import
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 228);
+            this.ClientSize = new System.Drawing.Size(457, 250);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pro_Show);
@@ -119,6 +140,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "数据导入";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Import_FormClosing);
+            this.Load += new System.EventHandler(this.Frm_Import_Load);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,5 +157,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.FolderBrowserDialog fbd_Data;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel tool_Tip;
     }
 }

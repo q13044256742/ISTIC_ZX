@@ -118,8 +118,9 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Frm_Explain";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "填报说明";
             this.Load += new System.EventHandler(this.Frm_Explain_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
