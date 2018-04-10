@@ -337,6 +337,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\55-Refresh.png" />
+    <None Include="Resources\69-Plus.png" />
+    <None Include="Resources\153-Delete.png" />
+    <None Include="Resources\zippo_46.png" />
+    <None Include="Resources\zippo_45.png" />
+    <None Include="Resources\zippo_16.png" />
     <None Include="Resources\png-0098.png" />
     <None Include="Resources\png-0152.png" />
     <None Include="Resources\png-0285.png" />

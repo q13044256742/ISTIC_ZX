@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "数据采集档案管理系统 - 加工版", "数据采集档案管理系统 - 加工版.csproj", "{835E7C75-F614-4D98-9B76-93F82B8D2BBF}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ISTIC_ZX", "..\ISTIC_ZX\ISTIC_ZX.vdproj", "{29DC09DD-955C-46A3-9EDC-DE747DED7F11}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,12 @@ Global
 		{835E7C75-F614-4D98-9B76-93F82B8D2BBF}.Release|x64.Build.0 = Release|x64
 		{835E7C75-F614-4D98-9B76-93F82B8D2BBF}.Release|x86.ActiveCfg = Release|Any CPU
 		{835E7C75-F614-4D98-9B76-93F82B8D2BBF}.Release|x86.Build.0 = Release|Any CPU
+		{29DC09DD-955C-46A3-9EDC-DE747DED7F11}.Debug|Any CPU.ActiveCfg = Debug
+		{29DC09DD-955C-46A3-9EDC-DE747DED7F11}.Debug|x64.ActiveCfg = Debug
+		{29DC09DD-955C-46A3-9EDC-DE747DED7F11}.Debug|x86.ActiveCfg = Debug
+		{29DC09DD-955C-46A3-9EDC-DE747DED7F11}.Release|Any CPU.ActiveCfg = Release
+		{29DC09DD-955C-46A3-9EDC-DE747DED7F11}.Release|x64.ActiveCfg = Release
+		{29DC09DD-955C-46A3-9EDC-DE747DED7F11}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

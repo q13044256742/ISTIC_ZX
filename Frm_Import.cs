@@ -183,7 +183,7 @@ namespace 数据采集档案管理系统___加工版
                 }
                 string insertSql = "INSERT INTO files_info VALUES(" +
                     $"'{row["fi_id"]}', '{row["fi_code"]}', '{row["fi_stage"]}', '{row["fi_categor"]}', '{row["fi_name"]}', '{row["fi_user"]}', '{row["fi_type"]}', '{row["fi_secret"]}', '{row["fi_pages"]}'," +
-                    $"'{row["fi_number"]}', '{GetFormatDate(row["fi_create_date"])}', '{row["fi_unit"]}', '{row["fi_carrier"]}', '{row["fi_format"]}', '{row["fi_form"]}', '{link}', '{row["fi_status"]}', '{row["fi_obj_id"]}')";
+                    $"'{row["fi_number"]}', '{GetFormatDate(row["fi_create_date"])}', '{row["fi_unit"]}', '{row["fi_carrier"]}', '{row["fi_format"]}', '{row["fi_form"]}', '{link}', '{row["fi_status"]}', '{row["fi_obj_id"]}', '{row["fi_sort"]}')";
                 SQLiteHelper.ExecuteNonQuery($"DELETE FROM files_info WHERE fi_id='{row["fi_id"]}'");
                 SQLiteHelper.ExecuteNonQuery(insertSql);
             }
