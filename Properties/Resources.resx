@@ -157,4 +157,7 @@
   <data name="png_0152" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\png-0152.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="png_0098" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\png-0098.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

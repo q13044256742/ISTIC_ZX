@@ -36,27 +36,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_MainFrame));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pic_Add = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.pic_Import = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.pic_Export = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.pic_Query = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.pic_BackUp = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.pic_Manager = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_Refresh = new System.Windows.Forms.Button();
             this.btn_Edit = new System.Windows.Forms.Button();
@@ -78,25 +70,38 @@
             this.files = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eles = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tv_DataTree = new System.Windows.Forms.TreeView();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.pic_Exit = new System.Windows.Forms.PictureBox();
+            this.pic_Query = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pic_BackUp = new System.Windows.Forms.PictureBox();
+            this.pic_Manager = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pic_Import = new System.Windows.Forms.PictureBox();
+            this.pic_Add = new System.Windows.Forms.PictureBox();
+            this.pic_Export = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Add)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Import)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Export)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Query)).BeginInit();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_BackUp)).BeginInit();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Manager)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DataList)).BeginInit();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Exit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Query)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_BackUp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Manager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Import)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Add)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Export)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -119,21 +124,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "录入加工";
             // 
-            // pic_Add
-            // 
-            this.pic_Add.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pic_Add.Image = global::数据采集档案管理系统___加工版.Properties.Resources.png_0289;
-            this.pic_Add.Location = new System.Drawing.Point(18, 7);
-            this.pic_Add.Name = "pic_Add";
-            this.pic_Add.Size = new System.Drawing.Size(55, 48);
-            this.pic_Add.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_Add.TabIndex = 0;
-            this.pic_Add.TabStop = false;
-            this.pic_Add.Click += new System.EventHandler(this.Pic_Add_Click);
-            this.pic_Add.MouseEnter += new System.EventHandler(this.Pic_MouseEnter);
-            this.pic_Add.MouseLeave += new System.EventHandler(this.Pic_MouseLeave);
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label2);
@@ -151,21 +141,6 @@
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 1;
             this.label2.Text = "数据导入";
-            // 
-            // pic_Import
-            // 
-            this.pic_Import.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pic_Import.Image = global::数据采集档案管理系统___加工版.Properties.Resources.png_0217;
-            this.pic_Import.Location = new System.Drawing.Point(18, 7);
-            this.pic_Import.Name = "pic_Import";
-            this.pic_Import.Size = new System.Drawing.Size(55, 48);
-            this.pic_Import.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_Import.TabIndex = 0;
-            this.pic_Import.TabStop = false;
-            this.pic_Import.Click += new System.EventHandler(this.Pic_Import_Click);
-            this.pic_Import.MouseEnter += new System.EventHandler(this.Pic_MouseEnter);
-            this.pic_Import.MouseLeave += new System.EventHandler(this.Pic_MouseLeave);
             // 
             // panel3
             // 
@@ -185,25 +160,11 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "档案移交";
             // 
-            // pic_Export
-            // 
-            this.pic_Export.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pic_Export.Image = global::数据采集档案管理系统___加工版.Properties.Resources.png_0228;
-            this.pic_Export.Location = new System.Drawing.Point(18, 7);
-            this.pic_Export.Name = "pic_Export";
-            this.pic_Export.Size = new System.Drawing.Size(55, 48);
-            this.pic_Export.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_Export.TabIndex = 0;
-            this.pic_Export.TabStop = false;
-            this.pic_Export.Click += new System.EventHandler(this.pic_Export_Click);
-            this.pic_Export.MouseEnter += new System.EventHandler(this.Pic_MouseEnter);
-            this.pic_Export.MouseLeave += new System.EventHandler(this.Pic_MouseLeave);
-            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.panel8);
             this.groupBox1.Controls.Add(this.panel7);
             this.groupBox1.Controls.Add(this.panel6);
             this.groupBox1.Controls.Add(this.panel4);
@@ -236,21 +197,6 @@
             this.label9.TabIndex = 1;
             this.label9.Text = "查询统计";
             // 
-            // pic_Query
-            // 
-            this.pic_Query.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pic_Query.Image = global::数据采集档案管理系统___加工版.Properties.Resources.png_0281;
-            this.pic_Query.Location = new System.Drawing.Point(18, 7);
-            this.pic_Query.Name = "pic_Query";
-            this.pic_Query.Size = new System.Drawing.Size(55, 48);
-            this.pic_Query.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_Query.TabIndex = 0;
-            this.pic_Query.TabStop = false;
-            this.pic_Query.Click += new System.EventHandler(this.pic_Query_Click);
-            this.pic_Query.MouseEnter += new System.EventHandler(this.Pic_MouseEnter);
-            this.pic_Query.MouseLeave += new System.EventHandler(this.Pic_MouseLeave);
-            // 
             // panel6
             // 
             this.panel6.Controls.Add(this.label8);
@@ -271,21 +217,6 @@
             this.label8.TabIndex = 1;
             this.label8.Text = "修改密码";
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.Image = global::数据采集档案管理系统___加工版.Properties.Resources.png_0285;
-            this.pictureBox3.Location = new System.Drawing.Point(18, 7);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(55, 48);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pic_Editpassword);
-            this.pictureBox3.MouseEnter += new System.EventHandler(this.Pic_MouseEnter);
-            this.pictureBox3.MouseLeave += new System.EventHandler(this.Pic_MouseLeave);
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.label4);
@@ -304,21 +235,6 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "数据备份\r\n";
             // 
-            // pic_BackUp
-            // 
-            this.pic_BackUp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pic_BackUp.Image = global::数据采集档案管理系统___加工版.Properties.Resources.png_0152;
-            this.pic_BackUp.Location = new System.Drawing.Point(18, 7);
-            this.pic_BackUp.Name = "pic_BackUp";
-            this.pic_BackUp.Size = new System.Drawing.Size(55, 48);
-            this.pic_BackUp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_BackUp.TabIndex = 0;
-            this.pic_BackUp.TabStop = false;
-            this.pic_BackUp.Click += new System.EventHandler(this.pictureBox2_Click);
-            this.pic_BackUp.MouseEnter += new System.EventHandler(this.Pic_MouseEnter);
-            this.pic_BackUp.MouseLeave += new System.EventHandler(this.Pic_MouseLeave);
-            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.label7);
@@ -336,31 +252,6 @@
             this.label7.Size = new System.Drawing.Size(53, 12);
             this.label7.TabIndex = 1;
             this.label7.Text = "后台管理";
-            // 
-            // pic_Manager
-            // 
-            this.pic_Manager.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pic_Manager.Image = global::数据采集档案管理系统___加工版.Properties.Resources.png_0222;
-            this.pic_Manager.Location = new System.Drawing.Point(18, 7);
-            this.pic_Manager.Name = "pic_Manager";
-            this.pic_Manager.Size = new System.Drawing.Size(55, 48);
-            this.pic_Manager.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_Manager.TabIndex = 0;
-            this.pic_Manager.TabStop = false;
-            this.pic_Manager.Click += new System.EventHandler(this.pic_Manager_Click);
-            this.pic_Manager.MouseEnter += new System.EventHandler(this.Pic_MouseEnter);
-            this.pic_Manager.MouseLeave += new System.EventHandler(this.Pic_MouseLeave);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::数据采集档案管理系统___加工版.Properties.Resources.login_1;
-            this.pictureBox1.Location = new System.Drawing.Point(799, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(484, 67);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
             // 
             // groupBox2
             // 
@@ -586,6 +477,156 @@
             this.tv_DataTree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.Tv_DataTree_AfterSelect);
             this.tv_DataTree.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.Tv_DataTree_NodeMouseClick);
             // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.label10);
+            this.panel8.Controls.Add(this.pic_Exit);
+            this.panel8.Location = new System.Drawing.Point(736, 10);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(91, 82);
+            this.panel8.TabIndex = 10;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(31, 64);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(29, 12);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "注销";
+            // 
+            // pic_Exit
+            // 
+            this.pic_Exit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pic_Exit.Image = global::数据采集档案管理系统___加工版.Properties.Resources.png_0098;
+            this.pic_Exit.Location = new System.Drawing.Point(18, 7);
+            this.pic_Exit.Name = "pic_Exit";
+            this.pic_Exit.Size = new System.Drawing.Size(55, 48);
+            this.pic_Exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_Exit.TabIndex = 0;
+            this.pic_Exit.TabStop = false;
+            this.pic_Exit.Click += new System.EventHandler(this.pic_Exit_Click);
+            this.pic_Exit.MouseEnter += new System.EventHandler(this.Pic_MouseEnter);
+            this.pic_Exit.MouseLeave += new System.EventHandler(this.Pic_MouseLeave);
+            // 
+            // pic_Query
+            // 
+            this.pic_Query.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pic_Query.Image = global::数据采集档案管理系统___加工版.Properties.Resources.png_0281;
+            this.pic_Query.Location = new System.Drawing.Point(18, 7);
+            this.pic_Query.Name = "pic_Query";
+            this.pic_Query.Size = new System.Drawing.Size(55, 48);
+            this.pic_Query.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_Query.TabIndex = 0;
+            this.pic_Query.TabStop = false;
+            this.pic_Query.Click += new System.EventHandler(this.pic_Query_Click);
+            this.pic_Query.MouseEnter += new System.EventHandler(this.Pic_MouseEnter);
+            this.pic_Query.MouseLeave += new System.EventHandler(this.Pic_MouseLeave);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.Image = global::数据采集档案管理系统___加工版.Properties.Resources.png_0285;
+            this.pictureBox3.Location = new System.Drawing.Point(18, 7);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(55, 48);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pic_Editpassword);
+            this.pictureBox3.MouseEnter += new System.EventHandler(this.Pic_MouseEnter);
+            this.pictureBox3.MouseLeave += new System.EventHandler(this.Pic_MouseLeave);
+            // 
+            // pic_BackUp
+            // 
+            this.pic_BackUp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pic_BackUp.Image = global::数据采集档案管理系统___加工版.Properties.Resources.png_0152;
+            this.pic_BackUp.Location = new System.Drawing.Point(18, 7);
+            this.pic_BackUp.Name = "pic_BackUp";
+            this.pic_BackUp.Size = new System.Drawing.Size(55, 48);
+            this.pic_BackUp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_BackUp.TabIndex = 0;
+            this.pic_BackUp.TabStop = false;
+            this.pic_BackUp.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pic_BackUp.MouseEnter += new System.EventHandler(this.Pic_MouseEnter);
+            this.pic_BackUp.MouseLeave += new System.EventHandler(this.Pic_MouseLeave);
+            // 
+            // pic_Manager
+            // 
+            this.pic_Manager.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pic_Manager.Image = global::数据采集档案管理系统___加工版.Properties.Resources.png_0222;
+            this.pic_Manager.Location = new System.Drawing.Point(18, 7);
+            this.pic_Manager.Name = "pic_Manager";
+            this.pic_Manager.Size = new System.Drawing.Size(55, 48);
+            this.pic_Manager.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_Manager.TabIndex = 0;
+            this.pic_Manager.TabStop = false;
+            this.pic_Manager.Click += new System.EventHandler(this.pic_Manager_Click);
+            this.pic_Manager.MouseEnter += new System.EventHandler(this.Pic_MouseEnter);
+            this.pic_Manager.MouseLeave += new System.EventHandler(this.Pic_MouseLeave);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::数据采集档案管理系统___加工版.Properties.Resources.login_1;
+            this.pictureBox1.Location = new System.Drawing.Point(852, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(484, 67);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pic_Import
+            // 
+            this.pic_Import.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pic_Import.Image = global::数据采集档案管理系统___加工版.Properties.Resources.png_0217;
+            this.pic_Import.Location = new System.Drawing.Point(18, 7);
+            this.pic_Import.Name = "pic_Import";
+            this.pic_Import.Size = new System.Drawing.Size(55, 48);
+            this.pic_Import.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_Import.TabIndex = 0;
+            this.pic_Import.TabStop = false;
+            this.pic_Import.Click += new System.EventHandler(this.Pic_Import_Click);
+            this.pic_Import.MouseEnter += new System.EventHandler(this.Pic_MouseEnter);
+            this.pic_Import.MouseLeave += new System.EventHandler(this.Pic_MouseLeave);
+            // 
+            // pic_Add
+            // 
+            this.pic_Add.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pic_Add.Image = global::数据采集档案管理系统___加工版.Properties.Resources.png_0289;
+            this.pic_Add.Location = new System.Drawing.Point(18, 7);
+            this.pic_Add.Name = "pic_Add";
+            this.pic_Add.Size = new System.Drawing.Size(55, 48);
+            this.pic_Add.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_Add.TabIndex = 0;
+            this.pic_Add.TabStop = false;
+            this.pic_Add.Click += new System.EventHandler(this.Pic_Add_Click);
+            this.pic_Add.MouseEnter += new System.EventHandler(this.Pic_MouseEnter);
+            this.pic_Add.MouseLeave += new System.EventHandler(this.Pic_MouseLeave);
+            // 
+            // pic_Export
+            // 
+            this.pic_Export.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pic_Export.Image = global::数据采集档案管理系统___加工版.Properties.Resources.png_0228;
+            this.pic_Export.Location = new System.Drawing.Point(18, 7);
+            this.pic_Export.Name = "pic_Export";
+            this.pic_Export.Size = new System.Drawing.Size(55, 48);
+            this.pic_Export.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_Export.TabIndex = 0;
+            this.pic_Export.TabStop = false;
+            this.pic_Export.Click += new System.EventHandler(this.pic_Export_Click);
+            this.pic_Export.MouseEnter += new System.EventHandler(this.Pic_MouseEnter);
+            this.pic_Export.MouseLeave += new System.EventHandler(this.Pic_MouseLeave);
+            // 
             // Frm_MainFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -603,31 +644,34 @@
             this.Shown += new System.EventHandler(this.Frm_MainFrame_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Add)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Import)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Export)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Query)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_BackUp)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Manager)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DataList)).EndInit();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Exit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Query)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_BackUp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Manager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Import)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Add)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Export)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -678,5 +722,8 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pic_Query;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.PictureBox pic_Exit;
     }
 }

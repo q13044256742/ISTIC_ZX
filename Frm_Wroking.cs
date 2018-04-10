@@ -588,20 +588,26 @@ namespace 数据采集档案管理系统___加工版
                 {
                     if(index == 0)
                     {
-                        //先删除，再新增
-                        SQLiteHelper.ExecuteNonQuery($"DELETE FROM files_info WHERE fi_obj_id='{objId}'");
-                        int maxLength = dgv_Special_FileList.Rows.Count - 1;
-                        for(int i = 0; i < maxLength; i++)
+                        if(CheckFileName(dgv_Project_FileList.Rows, key))
                         {
-                            object fileName = dgv_Special_FileList.Rows[i].Cells[$"{key}name"].Value;
-                            if(fileName != null)
+                            //先删除，再新增
+                            SQLiteHelper.ExecuteNonQuery($"DELETE FROM files_info WHERE fi_obj_id='{objId}'");
+                            int maxLength = dgv_Special_FileList.Rows.Count - 1;
+                            for(int i = 0; i < maxLength; i++)
                             {
-                                DataGridViewRow row = dgv_Special_FileList.Rows[i];
-                                object fileId = AddFileInfo(key, row, objId, i);
-                                row.Cells[$"{key}id"].Tag = fileId;
+                                object fileName = dgv_Special_FileList.Rows[i].Cells[$"{key}name"].Value;
+                                if(fileName != null)
+                                {
+                                    DataGridViewRow row = dgv_Special_FileList.Rows[i];
+                                    object fileId = AddFileInfo(key, row, objId, i);
+                                    row.Cells[$"{key}id"].Tag = fileId;
+                                }
                             }
+                            MessageBox.Show("文件保存成功。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            LoadFileInfoById(dgv_Special_FileList, key, objId);
                         }
-                        MessageBox.Show("文件保存成功。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        else
+                            MessageBox.Show("存在重复的文件名。", "保存失败", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
                     else if(index == 1)
                     {
@@ -683,20 +689,26 @@ namespace 数据采集档案管理系统___加工版
                     if(!string.IsNullOrEmpty(txt_Project_Code.Text))
                     {
                         objId = tab_Project_Info.Tag = ModifyBasicInfo(ControlType.Plan_Project, objId, project.Tag);
-                        //先删除，再新增
-                        SQLiteHelper.ExecuteNonQuery($"DELETE FROM files_info WHERE fi_obj_id='{objId}'");
-                        int maxLength = dgv_Project_FileList.Rows.Count - 1;
-                        for(int i = 0; i < maxLength; i++)
+                        if(CheckFileName(dgv_Project_FileList.Rows, key))
                         {
-                            object fileName = dgv_Project_FileList.Rows[i].Cells[$"{key}name"].Value;
-                            if(fileName != null)
+                            //先删除，再新增
+                            SQLiteHelper.ExecuteNonQuery($"DELETE FROM files_info WHERE fi_obj_id='{objId}'");
+                            int maxLength = dgv_Project_FileList.Rows.Count - 1;
+                            for(int i = 0; i < maxLength; i++)
                             {
-                                DataGridViewRow row = dgv_Project_FileList.Rows[i];
-                                object fileId = AddFileInfo(key, row, objId, i);
-                                row.Cells[$"{key}id"].Tag = fileId;
+                                object fileName = dgv_Project_FileList.Rows[i].Cells[$"{key}name"].Value;
+                                if(fileName != null)
+                                {
+                                    DataGridViewRow row = dgv_Project_FileList.Rows[i];
+                                    object fileId = AddFileInfo(key, row, objId, i);
+                                    row.Cells[$"{key}id"].Tag = fileId;
+                                }
                             }
+                            MessageBox.Show("信息保存成功。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            LoadFileInfoById(dgv_Project_FileList, key, objId);
                         }
-                        MessageBox.Show("信息保存成功。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        else
+                            MessageBox.Show("存在重复的文件名。", "保存失败", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
                     else
                         MessageBox.Show("文件编号不能为空。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -787,20 +799,26 @@ namespace 数据采集档案管理系统___加工版
                     if(!string.IsNullOrEmpty(txt_Topic_Code.Text))
                     {
                         objId = tab_Topic_Info.Tag = ModifyBasicInfo(ControlType.Plan_Topic, objId, topic.Tag);
-                        //先删除，再新增
-                        SQLiteHelper.ExecuteNonQuery($"DELETE FROM files_info WHERE fi_obj_id='{objId}'");
-                        int maxLength = dgv_Topic_FileList.Rows.Count - 1;
-                        for(int i = 0; i < maxLength; i++)
+                        if(CheckFileName(dgv_Topic_FileList.Rows, key))
                         {
-                            object fileName = dgv_Topic_FileList.Rows[i].Cells[$"{key}name"].Value;
-                            if(fileName != null)
+                            //先删除，再新增
+                            SQLiteHelper.ExecuteNonQuery($"DELETE FROM files_info WHERE fi_obj_id='{objId}'");
+                            int maxLength = dgv_Topic_FileList.Rows.Count - 1;
+                            for(int i = 0; i < maxLength; i++)
                             {
-                                DataGridViewRow row = dgv_Topic_FileList.Rows[i];
-                                object fileId = AddFileInfo(key, row, objId, i);
-                                row.Cells[$"{key}id"].Tag = fileId;
+                                object fileName = dgv_Topic_FileList.Rows[i].Cells[$"{key}name"].Value;
+                                if(fileName != null)
+                                {
+                                    DataGridViewRow row = dgv_Topic_FileList.Rows[i];
+                                    object fileId = AddFileInfo(key, row, objId, i);
+                                    row.Cells[$"{key}id"].Tag = fileId;
+                                }
                             }
+                            MessageBox.Show("信息保存成功。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            LoadFileInfoById(dgv_Topic_FileList, key, objId);
                         }
-                        MessageBox.Show("信息保存成功。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        else
+                            MessageBox.Show("存在重复的文件名。", "保存失败", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
                     else
                         MessageBox.Show("文件保存成功。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -891,20 +909,26 @@ namespace 数据采集档案管理系统___加工版
                     if(!string.IsNullOrEmpty(txt_Subject_Code.Text))
                     {
                         objId = tab_Subject_Info.Tag = ModifyBasicInfo(ControlType.Plan_Topic_Subject, objId, Subject.Tag);
-                        //先删除，再新增
-                        SQLiteHelper.ExecuteNonQuery($"DELETE FROM files_info WHERE fi_obj_id='{objId}'");
-                        int maxLength = dgv_Subject_FileList.Rows.Count - 1;
-                        for(int i = 0; i < maxLength; i++)
+                        if(CheckFileName(dgv_Subject_FileList.Rows, key))
                         {
-                            object fileName = dgv_Subject_FileList.Rows[i].Cells[$"{key}name"].Value;
-                            if(fileName != null)
+                            //先删除，再新增
+                            SQLiteHelper.ExecuteNonQuery($"DELETE FROM files_info WHERE fi_obj_id='{objId}'");
+                            int maxLength = dgv_Subject_FileList.Rows.Count - 1;
+                            for(int i = 0; i < maxLength; i++)
                             {
-                                DataGridViewRow row = dgv_Subject_FileList.Rows[i];
-                                object fileId = AddFileInfo(key, row, objId, i);
-                                row.Cells[$"{key}id"].Tag = fileId;
+                                object fileName = dgv_Subject_FileList.Rows[i].Cells[$"{key}name"].Value;
+                                if(fileName != null)
+                                {
+                                    DataGridViewRow row = dgv_Subject_FileList.Rows[i];
+                                    object fileId = AddFileInfo(key, row, objId, i);
+                                    row.Cells[$"{key}id"].Tag = fileId;
+                                }
                             }
+                            MessageBox.Show("信息保存成功。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            LoadFileInfoById(dgv_Subject_FileList, key, objId);
                         }
-                        MessageBox.Show("信息保存成功。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        else
+                            MessageBox.Show("存在重复的文件名。", "保存失败", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
                     else
                         MessageBox.Show("编号不能为空。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -985,6 +1009,28 @@ namespace 数据采集档案管理系统___加工版
                         MessageBox.Show("请先添加案卷盒。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
             }
+        }
+
+        /// <summary>
+        /// 检测是否存在重复的文件名
+        /// </summary>
+        private bool CheckFileName(DataGridViewRowCollection rows, string key)
+        {
+            for(int i = 0; i < rows.Count - 1; i++)
+            {
+                DataGridViewCell cell1 = rows[i].Cells[key + "name"];
+                for(int j = i + 1; j < rows.Count - 1; j++)
+                {
+                    DataGridViewCell cell2 = rows[j].Cells[key + "name"];
+                    if(cell1.Value.Equals(cell2.Value))
+                    {
+                        cell1.ErrorText = $"温馨提示：与{j + 1}行的文件名重复。";
+                        cell2.ErrorText = $"温馨提示：与{i + 1}行的文件名重复。";
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
 
         /// <summary>

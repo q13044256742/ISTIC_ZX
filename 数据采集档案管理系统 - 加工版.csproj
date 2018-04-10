@@ -337,6 +337,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\png-0098.png" />
     <None Include="Resources\png-0152.png" />
     <None Include="Resources\png-0285.png" />
     <None Include="Resources\png-0217.png" />
