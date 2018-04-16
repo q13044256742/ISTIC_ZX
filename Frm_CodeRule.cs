@@ -28,7 +28,9 @@ namespace 数据采集档案管理系统___加工版
             }
             else if(!string.IsNullOrEmpty(txt_Mdi.Text))
             {
-                lbl_Template.Text = lbl_Template.Text.Remove(lbl_Template.Text.LastIndexOf(txt_Mdi.Text) + 1);
+                int startIndex = lbl_Template.Text.LastIndexOf(txt_Mdi.Text) + 1;
+                if(startIndex < lbl_Template.Text.Length)
+                    lbl_Template.Text = lbl_Template.Text.Remove(startIndex);
             }
         }
 
@@ -68,7 +70,9 @@ namespace 数据采集档案管理系统___加工版
             {
                 if(!string.IsNullOrEmpty(txt_Mdi.Text))
                 {
-                    lbl_Template.Text = lbl_Template.Text.Remove(lbl_Template.Text.LastIndexOf(txt_Mdi.Text) + 1);
+                    int startIndex = lbl_Template.Text.LastIndexOf(txt_Mdi.Text) + 1;
+                    if(startIndex < lbl_Template.Text.Length)
+                        lbl_Template.Text = lbl_Template.Text.Remove(startIndex);
                     int length = (int)num_Water.Value;
                     for(int i = 0; i < length; i++)
                         lbl_Template.Text += "0";

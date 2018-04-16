@@ -665,9 +665,9 @@ namespace 数据采集档案管理系统___加工版
                                     SQLiteHelper.ExecuteNonQuery($"UPDATE files_info SET fi_status=1 WHERE fi_id IN({ids})");
                                     SQLiteHelper.ExecuteNonQuery($"UPDATE files_box_info SET pb_files_id='{ids.Replace("'", string.Empty)}' WHERE pb_id='{boxId}'");
 
-                                    MessageBox.Show("保存案卷盒成功。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                                     LoadFileBoxTable(boxId, objId, ControlType.Plan);
                                 }
+                                MessageBox.Show("保存案卷盒成功。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                             }
                             else
                                 MessageBox.Show("馆藏号不能为空。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -778,9 +778,9 @@ namespace 数据采集档案管理系统___加工版
                                 SQLiteHelper.ExecuteNonQuery($"UPDATE files_info SET fi_status=1 WHERE fi_id IN({ids})");
                                 SQLiteHelper.ExecuteNonQuery($"UPDATE files_box_info SET pb_files_id='{ids.Replace("'", string.Empty)}' WHERE pb_id='{boxId}'");
 
-                                MessageBox.Show("保存案卷盒成功。");
                                 LoadFileBoxTable(boxId, objId, ControlType.Plan);
                             }
+                            MessageBox.Show("保存案卷盒成功。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         }
                         else
                             MessageBox.Show("馆藏号不能为空。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -888,9 +888,9 @@ namespace 数据采集档案管理系统___加工版
                                 SQLiteHelper.ExecuteNonQuery($"UPDATE files_info SET fi_status=1 WHERE fi_id IN({ids})");
                                 SQLiteHelper.ExecuteNonQuery($"UPDATE files_box_info SET pb_files_id='{ids.Replace("'", string.Empty)}' WHERE pb_id='{boxId}'");
 
-                                MessageBox.Show("保存案卷盒成功。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                                 LoadFileBoxTable(boxId, objId, ControlType.Plan);
                             }
+                            MessageBox.Show("保存案卷盒成功。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         }
                         else
                             MessageBox.Show("馆藏号不能为空。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -1012,6 +1012,21 @@ namespace 数据采集档案管理系统___加工版
         }
 
         /// <summary>
+        /// 检查编码是否重复
+        /// </summary>
+        private bool CheckCode(string code, int type)
+        {
+            int result = 0;
+            if(type == 0)
+                result = SQLiteHelper.ExecuteCountQuery($"SELECT COUNT(*) FROM project_info WHERE pi_code='{code}'");
+            else if(type == 1)
+                result = SQLiteHelper.ExecuteCountQuery($"SELECT COUNT(*) FROM topic_info WHERE ti_code='{code}'");
+            else if(type == 2)
+                result = SQLiteHelper.ExecuteCountQuery($"SELECT COUNT(*) FROM subject_info WHERE si_code='{code}'");
+            return result == 0 ? true : false;
+        }
+
+        /// <summary>
         /// 检测是否存在重复的文件名
         /// </summary>
         private bool CheckFileName(DataGridViewRowCollection rows, string key)
@@ -1068,7 +1083,7 @@ namespace 数据采集档案管理系统___加工版
                 }
                 else
                 {
-                    if((int)txt_Project_Code.Tag == 1)//如果是课题组的，则为历史记录，执行新增操作
+                    if(txt_Project_Code.Tag != null && (int)txt_Project_Code.Tag == 1)//如果是课题组的，则为历史记录，执行新增操作
                     {
                         object souId = objId;
                         object newId = ModifyBasicInfo(type, null, parentId);
@@ -1128,7 +1143,7 @@ namespace 数据采集档案管理系统___加工版
                 }
                 else
                 {
-                    if((int)txt_Topic_Code.Tag == 1)//如果是课题组的，则为历史记录，执行新增操作
+                    if(txt_Topic_Code.Tag != null && (int)txt_Topic_Code.Tag == 1)//如果是课题组的，则为历史记录，执行新增操作
                     {
                         object souId = objId;
                         object newId = ModifyBasicInfo(type, null, parentId);
@@ -1188,7 +1203,7 @@ namespace 数据采集档案管理系统___加工版
                 }
                 else
                 {
-                    if((int)txt_Subject_Code.Tag == 1)//如果是课题组的，则为历史记录，执行新增操作
+                    if(txt_Subject_Code.Tag != null && (int)txt_Subject_Code.Tag == 1)//如果是课题组的，则为历史记录，执行新增操作
                     {
                         object souId = objId;
                         object newId = ModifyBasicInfo(type, null, parentId);
@@ -2577,7 +2592,7 @@ namespace 数据采集档案管理系统___加工版
                                     SQLiteHelper.ExecuteNonQuery(sb.ToString());
 
                                     //删除当前盒信息
-                                    SQLiteHelper.ExecuteNonQuery($"DELETE FROM processing_box WHERE pb_id='{boxId}'");
+                                    SQLiteHelper.ExecuteNonQuery($"DELETE FROM files_box_info WHERE pb_id='{boxId}'");
 
                                     MessageBox.Show("删除案卷盒成功。");
                                 }
@@ -2972,6 +2987,34 @@ namespace 数据采集档案管理系统___加工版
                 key = "dgv_Subject_FL_";
             if(!string.IsNullOrEmpty(key))
                 LoadFileInfoById(view, key, objId);
+        }
+
+        private void txt_Project_Code_Leave(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if(!string.IsNullOrEmpty(textBox.Text.Trim())){
+                if(textBox.Name.Contains("Project"))
+                {
+                    if(!CheckCode(textBox.Text, 0))
+                        errorProvider1.SetError(textBox, "提示：此编号已存在");
+                    else
+                        errorProvider1.SetError(textBox, string.Empty);
+                }
+                else if(textBox.Name.Contains("Topic"))
+                {
+                    if(!CheckCode(textBox.Text, 1))
+                        errorProvider1.SetError(textBox, "提示：此编号已存在");
+                    else
+                        errorProvider1.SetError(textBox, string.Empty);
+                }
+                else if(textBox.Name.Contains("Subject"))
+                {
+                    if(!CheckCode(textBox.Text, 2))
+                        errorProvider1.SetError(textBox, "提示：此编号已存在");
+                    else
+                        errorProvider1.SetError(textBox, string.Empty);
+                }
+            }
         }
     }
 }
