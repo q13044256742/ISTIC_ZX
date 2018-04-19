@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gro_BasicInfo = new System.Windows.Forms.GroupBox();
             this.btn_Reset = new System.Windows.Forms.Button();
             this.lbl_OpenFile = new System.Windows.Forms.LinkLabel();
@@ -61,9 +62,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cbo_stage = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gro_BasicInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_amount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_page)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // gro_BasicInfo
@@ -272,6 +275,7 @@
             // 
             // num_amount
             // 
+            this.num_amount.Enabled = false;
             this.num_amount.Location = new System.Drawing.Point(124, 250);
             this.num_amount.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.num_amount.Maximum = new decimal(new int[] {
@@ -305,6 +309,8 @@
             this.num_page.Name = "num_page";
             this.num_page.Size = new System.Drawing.Size(149, 26);
             this.num_page.TabIndex = 6;
+            this.num_page.ValueChanged += new System.EventHandler(this.num_page_ValueChanged);
+            this.num_page.KeyDown += new System.Windows.Forms.KeyEventHandler(this.num_page_KeyDown);
             // 
             // label7
             // 
@@ -434,6 +440,10 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "阶段";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Frm_AddFile
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -452,6 +462,7 @@
             this.gro_BasicInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_amount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_page)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -491,5 +502,6 @@
         private System.Windows.Forms.ComboBox cbo_stage;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_Reset;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

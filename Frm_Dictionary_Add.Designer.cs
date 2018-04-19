@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.txt_Sort = new System.Windows.Forms.NumericUpDown();
-            this.btn_Cancel = new System.Windows.Forms.Button();
             this.btn_Save = new System.Windows.Forms.Button();
             this.txt_Intro = new System.Windows.Forms.TextBox();
             this.txt_name = new System.Windows.Forms.TextBox();
@@ -55,25 +54,14 @@
             this.txt_Sort.Size = new System.Drawing.Size(351, 26);
             this.txt_Sort.TabIndex = 34;
             // 
-            // btn_Cancel
-            // 
-            this.btn_Cancel.Location = new System.Drawing.Point(284, 392);
-            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(79, 30);
-            this.btn_Cancel.TabIndex = 33;
-            this.btn_Cancel.Text = "取消(&C)";
-            this.btn_Cancel.UseVisualStyleBackColor = true;
-            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
-            // 
             // btn_Save
             // 
-            this.btn_Save.Location = new System.Drawing.Point(188, 392);
+            this.btn_Save.Location = new System.Drawing.Point(235, 392);
             this.btn_Save.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(79, 30);
+            this.btn_Save.Size = new System.Drawing.Size(81, 34);
             this.btn_Save.TabIndex = 32;
-            this.btn_Save.Text = "保存(&S)";
+            this.btn_Save.Text = "保存";
             this.btn_Save.UseVisualStyleBackColor = true;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
@@ -155,7 +143,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(550, 454);
             this.Controls.Add(this.txt_Sort);
-            this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.btn_Save);
             this.Controls.Add(this.txt_Intro);
             this.Controls.Add(this.txt_name);
@@ -182,7 +169,6 @@
         #endregion
 
         private System.Windows.Forms.NumericUpDown txt_Sort;
-        private System.Windows.Forms.Button btn_Cancel;
         private System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.TextBox txt_Intro;
         private System.Windows.Forms.TextBox txt_name;
