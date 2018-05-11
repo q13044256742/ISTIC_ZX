@@ -21,6 +21,7 @@
         private string userUnitName;
         private string userSpecialId;
         private string specialName;
+        private string departmentName;
         /// <summary>
         /// 用户ID
         /// </summary>
@@ -53,5 +54,9 @@
         /// 用户所属专项名称
         /// </summary>
         public string SpecialName { get => specialName; set => specialName = value; }
+        /// <summary>
+        /// 部门名称
+        /// </summary>
+        public string DepartmentName { get => departmentName; set => departmentName = value; }
     }
 }

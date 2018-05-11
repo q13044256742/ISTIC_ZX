@@ -243,6 +243,7 @@
     <Compile Include="Tools\DictionaryHelper.cs" />
     <Compile Include="Tools\FileBoxHelper.cs" />
     <Compile Include="Tools\FileListHelper.cs" />
+    <Compile Include="Tools\GetFilePageCount.cs" />
     <Compile Include="Tools\MicrosoftWordHelper.cs" />
     <Compile Include="Tools\ServerHelper.cs" />
     <Compile Include="Tools\SQLiteBackupHelper.cs" />
@@ -337,6 +338,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\lock.jpg" />
+    <None Include="Resources\file2.jpg" />
+    <None Include="Resources\file.jpg" />
     <None Include="Resources\55-Refresh.png" />
     <None Include="Resources\69-Plus.png" />
     <None Include="Resources\153-Delete.png" />

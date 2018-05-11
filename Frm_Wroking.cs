@@ -3175,10 +3175,10 @@ namespace 数据采集档案管理系统___加工版
         private void 添加文件AToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DataGridView view = (DataGridView)((sender as ToolStripItem).GetCurrentParent() as ContextMenuStrip).Tag;
-            object rootId = SQLiteHelper.ExecuteOnlyOneQuery($"SELECT bfi_id FROM backup_files_info WHERE bfi_name = '{UserHelper.GetUser().RealName}' AND bfi_code = '-1'");
-            if(rootId != null)
+            object[] rootIds = SQLiteHelper.ExecuteSingleColumnQuery($"SELECT bfi_id FROM backup_files_info WHERE bfi_code = '-1'");
+            if(rootIds.Length > 0)
             {
-                Frm_AddFile_FileSelect frm = new Frm_AddFile_FileSelect(rootId);
+                Frm_AddFile_FileSelect frm = new Frm_AddFile_FileSelect(rootIds);
                 if(frm.ShowDialog() == DialogResult.OK)
                 {
                     string fullPath = frm.SelectedFileName;
@@ -3190,6 +3190,7 @@ namespace 数据采集档案管理系统___加工版
                         string filePath = savePath + new FileInfo(fullPath).Name;
                         File.Copy(fullPath, filePath, true);
                         view.CurrentCell.Value = fullPath;
+                        view.CurrentCell.Tag = frm.SelectedFileId;
                         if(MessageBox.Show("已从服务器拷贝文件到本地，是否现在打开？", "操作确认", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             System.Diagnostics.Process.Start("Explorer.exe", filePath);
                     }
@@ -3307,36 +3308,76 @@ namespace 数据采集档案管理系统___加工版
         private void txt_Project_Code_Leave(object sender, EventArgs e)
         {
             TextBox textBox = sender as TextBox;
-            if(!string.IsNullOrEmpty(textBox.Text.Trim()))
+            string value = textBox.Text;
+            if(!string.IsNullOrEmpty(value))
             {
                 if(textBox.Name.Contains("Project"))
                 {
                     if(tab_Project_Info.Tag == null)
                     {
-                        if(!CheckCode(textBox.Text, 0))
+                        if(!CheckCode(value, 0))
                             errorProvider1.SetError(textBox, "提示：此编号已存在");
                         else
+                        {
                             errorProvider1.SetError(textBox, string.Empty);
+                        }
+                    }
+                    if(value.Length > 4)
+                    {
+                        int year = 0;
+                        if(int.TryParse(value.Substring(0, 4), out year))
+                        {
+                            txt_Project_Year.Text = year.ToString();
+                            DateTime time = DateTime.MinValue;
+                            if(DateTime.TryParse(year + "-01-01", out time))
+                                dtp_Project_StartDate.Value = time;
+                        }
                     }
                 }
                 else if(textBox.Name.Contains("Topic"))
                 {
                     if(tab_Topic_Info.Tag == null)
                     {
-                        if(!CheckCode(textBox.Text, 1))
+                        if(!CheckCode(value, 1))
                             errorProvider1.SetError(textBox, "提示：此编号已存在");
                         else
+                        {
                             errorProvider1.SetError(textBox, string.Empty);
+                        }
+                    }
+                    if(value.Length > 4)
+                    {
+                        int year = 0;
+                        if(int.TryParse(value.Substring(0, 4), out year))
+                        {
+                            txt_Topic_Year.Text = year.ToString();
+                            DateTime time = DateTime.MinValue;
+                            if(DateTime.TryParse(year + "-01-01", out time))
+                                dtp_Topic_StartDate.Value = time;
+                        }
                     }
                 }
                 else if(textBox.Name.Contains("Subject"))
                 {
                     if(tab_Subject_Info.Tag == null)
                     {
-                        if(!CheckCode(textBox.Text, 2))
+                        if(!CheckCode(value, 2))
                             errorProvider1.SetError(textBox, "提示：此编号已存在");
                         else
+                        {
                             errorProvider1.SetError(textBox, string.Empty);
+                        }
+                    }
+                    if(value.Length > 4)
+                    {
+                        int year = 0;
+                        if(int.TryParse(value.Substring(0, 4), out year))
+                        {
+                            txt_Subject_Year.Text = year.ToString();
+                            DateTime time = DateTime.MinValue;
+                            if(DateTime.TryParse(year + "-01-01", out time))
+                                dtp_Subject_StartDate.Value = time;
+                        }
                     }
                 }
             }
@@ -3362,6 +3403,17 @@ namespace 数据采集档案管理系统___加工版
                     view.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Style.BackColor = System.Drawing.Color.White;
                 }
             }
+        }
+
+        private void dgv_Special_FileList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Code_MouseHover(object sender, EventArgs e)
+        {
+            Control con = sender as Control;
+            toolTip.SetToolTip(con, con.Text);
         }
     }
 }
