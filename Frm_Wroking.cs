@@ -404,8 +404,8 @@ namespace 数据采集档案管理系统___加工版
                 dataGridView.Rows[index].Cells[key + "id"].Tag = dataTable.Rows[i]["fi_id"];
                 dataGridView.Rows[index].Cells[key + "stage"].Value = dataTable.Rows[i]["fi_stage"];
                 SetCategorByStage(dataTable.Rows[i]["fi_stage"], dataGridView.Rows[index], key);
-
                 dataGridView.Rows[index].Cells[key + "categor"].Value = dataTable.Rows[i]["fi_categor"];
+                dataGridView.Rows[index].Cells[key + "categor_name"].Value = dataTable.Rows[i]["fi_categor_name"];
                 dataGridView.Rows[index].Cells[key + "name"].Value = dataTable.Rows[i]["fi_name"];
                 dataGridView.Rows[index].Cells[key + "user"].Value = dataTable.Rows[i]["fi_user"];
                 dataGridView.Rows[index].Cells[key + "type"].Value = dataTable.Rows[i]["fi_type"];
@@ -416,13 +416,6 @@ namespace 数据采集档案管理系统___加工版
 
                 object value = dataTable.Rows[i]["fi_pages"];
                 dataGridView.Rows[index].Cells[key + "pages"].Value = value;
-                if(value != null && !string.IsNullOrEmpty(GetValue(value)) && Convert.ToInt32(value) == 0)
-                {
-                    dataGridView.Rows[index].Cells[key + "number"].ReadOnly = true;
-                    dataGridView.Rows[index].Cells[key + "number"].Style.BackColor = System.Drawing.Color.Wheat;
-                }
-                else
-                    dataGridView.Rows[index].Cells[key + "number"].Value = dataTable.Rows[i]["fi_number"];
                 object _date = dataTable.Rows[i]["fi_create_date"];
                 if(_date != null)
                 {
@@ -518,7 +511,7 @@ namespace 数据采集档案管理系统___加工版
         /// <summary>
         /// 专项 >> 项目|课题
         /// </summary>
-        private void Cbo_Special_HasNext_SelectedIndexChanged(object sender, EventArgs e)
+        public void Cbo_Special_HasNext_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = cbo_Special_HasNext.SelectedIndex;
             int sort = 0;
@@ -553,7 +546,7 @@ namespace 数据采集档案管理系统___加工版
         /// <summary>
         /// 有无子课题事件
         /// </summary>
-        private void Cbo_Topic_HasNext_SelectionChangeCommitted(object sender, EventArgs e)
+        public void Cbo_Topic_HasNext_SelectionChangeCommitted(object sender, EventArgs e)
         {
             int index = cbo_Topic_HasNext.SelectedIndex;
             int sort = Convert.ToInt32(gro_Topic_Btns.Tag);
@@ -1655,6 +1648,12 @@ namespace 数据采集档案管理系统___加工版
                 else if("dgv_Subject_FL_categor".Equals(columnName))
                     (con as ComboBox).SelectionChangeCommitted += new EventHandler(CategorComboBox_SelectionChangeCommitted);
             }
+            if(e.Control is ComboBox)
+            {
+                ComboBox box = e.Control as ComboBox;
+                if(box.Items.Count > 0)
+                    box.SelectedValue = box.Items[0];
+            }
         }
 
         /// <summary>
@@ -1793,7 +1792,7 @@ namespace 数据采集档案管理系统___加工版
             }
         }
 
-        private void Cbo_Project_HasNext_SelectionChangeCommitted(object sender, EventArgs e)
+        public void Cbo_Project_HasNext_SelectionChangeCommitted(object sender, EventArgs e)
         {
             int index = cbo_Project_HasNext.SelectedIndex;
             int sort = Convert.ToInt32(gro_Project_Btns.Tag);

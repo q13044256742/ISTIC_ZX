@@ -80,7 +80,6 @@ namespace 数据采集档案管理系统___加工版
                         item.Visible = false;
                         count--;
                     }
-            lbl_TotalAmount.Text = $"共有 {count} 条数据";
         }
 
         private void Pic_Import_Click(object sender, EventArgs e)
@@ -108,7 +107,7 @@ namespace 数据采集档案管理系统___加工版
                 UserHelper.GetUser().UserSpecialId = rootId;
                 UserHelper.GetUser().SpecialName = GetValue(obj[1]);
                 LoadTreeList(rootId);
-                Tv_DataTree_AfterSelect(sender, new TreeViewEventArgs(tv_DataTree.Nodes[0].Nodes[0]));
+                NodeMouseClick(sender, new TreeNodeMouseClickEventArgs(tv_DataTree.Nodes[0], MouseButtons.Left, 1, 0, 0));
 
                 new Frm_Explain().ShowDialog();
             }
@@ -288,103 +287,6 @@ namespace 数据采集档案管理系统___加工版
             }
         }
 
-        private void Tv_DataTree_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-            if(e.Node.Tag != null)
-            {
-                dgv_DataList.Rows.Clear();
-                object objId = e.Node.Name;
-                ControlType type = (ControlType)e.Node.Tag;
-                if(type == ControlType.Plan)
-                {
-                    int rowNumber = 1;
-                    DataTable projectTable = SQLiteHelper.ExecuteQuery($"SELECT * FROM project_info WHERE pi_obj_id='{e.Node.Name}'");
-                    for(int i = 0; i < projectTable.Rows.Count; i++)
-                    {
-                        int rid = dgv_DataList.Rows.Add();
-                        dgv_DataList.Rows[rid].Tag = ControlType.Plan_Project;
-                        dgv_DataList.Rows[rid].Cells["id"].Tag = projectTable.Rows[i]["pi_id"];
-                        dgv_DataList.Rows[rid].Cells["id"].Value = rowNumber++;
-                        dgv_DataList.Rows[rid].Cells["code"].Value = projectTable.Rows[i]["pi_code"];
-                        dgv_DataList.Rows[rid].Cells["name"].Value = projectTable.Rows[i]["pi_name"];
-                        dgv_DataList.Rows[rid].Cells["unit"].Value = projectTable.Rows[i]["pi_unit"];
-                        dgv_DataList.Rows[rid].Cells["user"].Value = projectTable.Rows[i]["pi_unit_user"];
-                        dgv_DataList.Rows[rid].Cells["phone"].Value = projectTable.Rows[i]["pi_contacts_phone"];
-                        dgv_DataList.Rows[rid].Cells["files"].Value = GetFileAmount(projectTable.Rows[i]["pi_id"], true);
-                        dgv_DataList.Rows[rid].Cells["eles"].Value = GetFileAmount(projectTable.Rows[i]["pi_id"], false);
-                    }
-                    DataTable topicTable = SQLiteHelper.ExecuteQuery($"SELECT * FROM topic_info WHERE ti_obj_id='{e.Node.Name}'");
-                    for(int i = 0; i < topicTable.Rows.Count; i++)
-                    {
-                        int rid = dgv_DataList.Rows.Add();
-                        dgv_DataList.Rows[rid].Tag = ControlType.Plan_Topic;
-                        dgv_DataList.Rows[rid].Cells["id"].Tag = topicTable.Rows[i]["ti_id"];
-                        dgv_DataList.Rows[rid].Cells["id"].Value = rowNumber++;
-                        dgv_DataList.Rows[rid].Cells["code"].Value = topicTable.Rows[i]["ti_code"];
-                        dgv_DataList.Rows[rid].Cells["name"].Value = topicTable.Rows[i]["ti_name"];
-                        dgv_DataList.Rows[rid].Cells["unit"].Value = topicTable.Rows[i]["ti_unit"];
-                        dgv_DataList.Rows[rid].Cells["user"].Value = topicTable.Rows[i]["ti_unit_user"];
-                        dgv_DataList.Rows[rid].Cells["phone"].Value = topicTable.Rows[i]["ti_contacts_phone"];
-                        dgv_DataList.Rows[rid].Cells["files"].Value = GetFileAmount(topicTable.Rows[i]["ti_id"], true);
-                        dgv_DataList.Rows[rid].Cells["eles"].Value = GetFileAmount(topicTable.Rows[i]["ti_id"], false);
-                    }
-                }
-                else if(type == ControlType.Plan_Project)
-                {
-                    DataTable subjectTable = SQLiteHelper.ExecuteQuery($"SELECT * FROM subject_info WHERE si_obj_id='{e.Node.Name}'");
-                    int rowNumber = 1;
-                    for(int i = 0; i < subjectTable.Rows.Count; i++)
-                    {
-                        int rid = dgv_DataList.Rows.Add();
-                        dgv_DataList.Rows[rid].Tag = ControlType.Plan_Topic_Subject;
-                        dgv_DataList.Rows[rid].Cells["id"].Tag = subjectTable.Rows[i]["si_id"];
-                        dgv_DataList.Rows[rid].Cells["id"].Value = rowNumber++;
-                        dgv_DataList.Rows[rid].Cells["code"].Value = subjectTable.Rows[i]["si_code"];
-                        dgv_DataList.Rows[rid].Cells["name"].Value = subjectTable.Rows[i]["si_name"];
-                        dgv_DataList.Rows[rid].Cells["unit"].Value = subjectTable.Rows[i]["si_unit"];
-                        dgv_DataList.Rows[rid].Cells["user"].Value = subjectTable.Rows[i]["si_unit_user"];
-                        dgv_DataList.Rows[rid].Cells["phone"].Value = subjectTable.Rows[i]["si_contacts_phone"];
-                        dgv_DataList.Rows[rid].Cells["files"].Value = GetFileAmount(subjectTable.Rows[i]["si_id"], true);
-                        dgv_DataList.Rows[rid].Cells["eles"].Value = GetFileAmount(subjectTable.Rows[i]["si_id"], false);
-                    }
-                    DataTable topicTable = SQLiteHelper.ExecuteQuery($"SELECT * FROM topic_info WHERE ti_obj_id='{e.Node.Name}'");
-                    for(int i = 0; i < topicTable.Rows.Count; i++)
-                    {
-                        int rid = dgv_DataList.Rows.Add();
-                        dgv_DataList.Rows[rid].Tag = ControlType.Plan_Topic;
-                        dgv_DataList.Rows[rid].Cells["id"].Tag = topicTable.Rows[i]["ti_id"];
-                        dgv_DataList.Rows[rid].Cells["id"].Value = rowNumber++;
-                        dgv_DataList.Rows[rid].Cells["code"].Value = topicTable.Rows[i]["ti_code"];
-                        dgv_DataList.Rows[rid].Cells["name"].Value = topicTable.Rows[i]["ti_name"];
-                        dgv_DataList.Rows[rid].Cells["unit"].Value = topicTable.Rows[i]["ti_unit"];
-                        dgv_DataList.Rows[rid].Cells["user"].Value = topicTable.Rows[i]["ti_unit_user"];
-                        dgv_DataList.Rows[rid].Cells["phone"].Value = topicTable.Rows[i]["ti_contacts_phone"];
-                        dgv_DataList.Rows[rid].Cells["files"].Value = GetFileAmount(topicTable.Rows[i]["ti_id"], true);
-                        dgv_DataList.Rows[rid].Cells["eles"].Value = GetFileAmount(topicTable.Rows[i]["ti_id"], false);
-                    }
-                }
-                else if(type == ControlType.Plan_Topic)
-                {
-                    DataTable subjectTable = SQLiteHelper.ExecuteQuery($"SELECT * FROM subject_info WHERE si_obj_id='{e.Node.Name}'");
-                    for(int i = 0; i < subjectTable.Rows.Count; i++)
-                    {
-                        int rid = dgv_DataList.Rows.Add();
-                        dgv_DataList.Rows[rid].Tag = ControlType.Plan_Topic_Subject;
-                        dgv_DataList.Rows[rid].Cells["id"].Tag = subjectTable.Rows[i]["si_id"];
-                        dgv_DataList.Rows[rid].Cells["id"].Value = i + 1;
-                        dgv_DataList.Rows[rid].Cells["code"].Value = subjectTable.Rows[i]["si_code"];
-                        dgv_DataList.Rows[rid].Cells["name"].Value = subjectTable.Rows[i]["si_name"];
-                        dgv_DataList.Rows[rid].Cells["unit"].Value = subjectTable.Rows[i]["si_unit"];
-                        dgv_DataList.Rows[rid].Cells["user"].Value = subjectTable.Rows[i]["si_unit_user"];
-                        dgv_DataList.Rows[rid].Cells["phone"].Value = subjectTable.Rows[i]["si_contacts_phone"];
-                        dgv_DataList.Rows[rid].Cells["files"].Value = GetFileAmount(subjectTable.Rows[i]["si_id"], true);
-                        dgv_DataList.Rows[rid].Cells["eles"].Value = GetFileAmount(subjectTable.Rows[i]["si_id"], false);
-                    }
-                }
-                lbl_TotalAmount.Text = $"共有 {dgv_DataList.RowCount} 条数据";
-            }
-        }
-
         /// <summary>
         /// 获取对象的文件数（纸本和电子）
         /// </summary>
@@ -417,6 +319,205 @@ namespace 数据采集档案管理系统___加工版
             {
                 Hide();
                 new Frm_Login().Show();
+            }
+        }
+
+        private void NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if(e.Button == MouseButtons.Left)
+            {
+                if(e.Node.Tag != null)
+                {
+                    dgv_DataList.Rows.Clear();
+                    object objId = e.Node.Name;
+                    ControlType type = (ControlType)e.Node.Tag;
+                    if(type == ControlType.Plan)
+                    {
+                        int rowNumber = 1;
+                        DataTable projectTable = SQLiteHelper.ExecuteQuery($"SELECT * FROM project_info WHERE pi_obj_id='{e.Node.Name}'");
+                        for(int i = 0; i < projectTable.Rows.Count; i++)
+                        {
+                            int rid = dgv_DataList.Rows.Add();
+                            dgv_DataList.Rows[rid].Tag = ControlType.Plan_Project;
+                            dgv_DataList.Rows[rid].Cells["id"].Tag = projectTable.Rows[i]["pi_id"];
+                            dgv_DataList.Rows[rid].Cells["id"].Value = rowNumber++;
+                            dgv_DataList.Rows[rid].Cells["code"].Value = projectTable.Rows[i]["pi_code"];
+                            dgv_DataList.Rows[rid].Cells["name"].Value = projectTable.Rows[i]["pi_name"];
+                            dgv_DataList.Rows[rid].Cells["unit"].Value = projectTable.Rows[i]["pi_unit"];
+                            dgv_DataList.Rows[rid].Cells["user"].Value = projectTable.Rows[i]["pi_unit_user"];
+                            dgv_DataList.Rows[rid].Cells["phone"].Value = projectTable.Rows[i]["pi_contacts_phone"];
+                            dgv_DataList.Rows[rid].Cells["files"].Value = GetFileAmount(projectTable.Rows[i]["pi_id"], true);
+                            dgv_DataList.Rows[rid].Cells["eles"].Value = GetFileAmount(projectTable.Rows[i]["pi_id"], false);
+                        }
+                        DataTable topicTable = SQLiteHelper.ExecuteQuery($"SELECT * FROM topic_info WHERE ti_obj_id='{e.Node.Name}'");
+                        for(int i = 0; i < topicTable.Rows.Count; i++)
+                        {
+                            int rid = dgv_DataList.Rows.Add();
+                            dgv_DataList.Rows[rid].Tag = ControlType.Plan_Topic;
+                            dgv_DataList.Rows[rid].Cells["id"].Tag = topicTable.Rows[i]["ti_id"];
+                            dgv_DataList.Rows[rid].Cells["id"].Value = rowNumber++;
+                            dgv_DataList.Rows[rid].Cells["code"].Value = topicTable.Rows[i]["ti_code"];
+                            dgv_DataList.Rows[rid].Cells["name"].Value = topicTable.Rows[i]["ti_name"];
+                            dgv_DataList.Rows[rid].Cells["unit"].Value = topicTable.Rows[i]["ti_unit"];
+                            dgv_DataList.Rows[rid].Cells["user"].Value = topicTable.Rows[i]["ti_unit_user"];
+                            dgv_DataList.Rows[rid].Cells["phone"].Value = topicTable.Rows[i]["ti_contacts_phone"];
+                            dgv_DataList.Rows[rid].Cells["files"].Value = GetFileAmount(topicTable.Rows[i]["ti_id"], true);
+                            dgv_DataList.Rows[rid].Cells["eles"].Value = GetFileAmount(topicTable.Rows[i]["ti_id"], false);
+                        }
+                    }
+                    else if(type == ControlType.Plan_Project)
+                    {
+                        DataTable subjectTable = SQLiteHelper.ExecuteQuery($"SELECT * FROM subject_info WHERE si_obj_id='{e.Node.Name}'");
+                        int rowNumber = 1;
+                        for(int i = 0; i < subjectTable.Rows.Count; i++)
+                        {
+                            int rid = dgv_DataList.Rows.Add();
+                            dgv_DataList.Rows[rid].Tag = ControlType.Plan_Topic_Subject;
+                            dgv_DataList.Rows[rid].Cells["id"].Tag = subjectTable.Rows[i]["si_id"];
+                            dgv_DataList.Rows[rid].Cells["id"].Value = rowNumber++;
+                            dgv_DataList.Rows[rid].Cells["code"].Value = subjectTable.Rows[i]["si_code"];
+                            dgv_DataList.Rows[rid].Cells["name"].Value = subjectTable.Rows[i]["si_name"];
+                            dgv_DataList.Rows[rid].Cells["unit"].Value = subjectTable.Rows[i]["si_unit"];
+                            dgv_DataList.Rows[rid].Cells["user"].Value = subjectTable.Rows[i]["si_unit_user"];
+                            dgv_DataList.Rows[rid].Cells["phone"].Value = subjectTable.Rows[i]["si_contacts_phone"];
+                            dgv_DataList.Rows[rid].Cells["files"].Value = GetFileAmount(subjectTable.Rows[i]["si_id"], true);
+                            dgv_DataList.Rows[rid].Cells["eles"].Value = GetFileAmount(subjectTable.Rows[i]["si_id"], false);
+                        }
+                        DataTable topicTable = SQLiteHelper.ExecuteQuery($"SELECT * FROM topic_info WHERE ti_obj_id='{e.Node.Name}'");
+                        for(int i = 0; i < topicTable.Rows.Count; i++)
+                        {
+                            int rid = dgv_DataList.Rows.Add();
+                            dgv_DataList.Rows[rid].Tag = ControlType.Plan_Topic;
+                            dgv_DataList.Rows[rid].Cells["id"].Tag = topicTable.Rows[i]["ti_id"];
+                            dgv_DataList.Rows[rid].Cells["id"].Value = rowNumber++;
+                            dgv_DataList.Rows[rid].Cells["code"].Value = topicTable.Rows[i]["ti_code"];
+                            dgv_DataList.Rows[rid].Cells["name"].Value = topicTable.Rows[i]["ti_name"];
+                            dgv_DataList.Rows[rid].Cells["unit"].Value = topicTable.Rows[i]["ti_unit"];
+                            dgv_DataList.Rows[rid].Cells["user"].Value = topicTable.Rows[i]["ti_unit_user"];
+                            dgv_DataList.Rows[rid].Cells["phone"].Value = topicTable.Rows[i]["ti_contacts_phone"];
+                            dgv_DataList.Rows[rid].Cells["files"].Value = GetFileAmount(topicTable.Rows[i]["ti_id"], true);
+                            dgv_DataList.Rows[rid].Cells["eles"].Value = GetFileAmount(topicTable.Rows[i]["ti_id"], false);
+                        }
+                    }
+                    else if(type == ControlType.Plan_Topic)
+                    {
+                        DataTable subjectTable = SQLiteHelper.ExecuteQuery($"SELECT * FROM subject_info WHERE si_obj_id='{e.Node.Name}'");
+                        for(int i = 0; i < subjectTable.Rows.Count; i++)
+                        {
+                            int rid = dgv_DataList.Rows.Add();
+                            dgv_DataList.Rows[rid].Tag = ControlType.Plan_Topic_Subject;
+                            dgv_DataList.Rows[rid].Cells["id"].Tag = subjectTable.Rows[i]["si_id"];
+                            dgv_DataList.Rows[rid].Cells["id"].Value = i + 1;
+                            dgv_DataList.Rows[rid].Cells["code"].Value = subjectTable.Rows[i]["si_code"];
+                            dgv_DataList.Rows[rid].Cells["name"].Value = subjectTable.Rows[i]["si_name"];
+                            dgv_DataList.Rows[rid].Cells["unit"].Value = subjectTable.Rows[i]["si_unit"];
+                            dgv_DataList.Rows[rid].Cells["user"].Value = subjectTable.Rows[i]["si_unit_user"];
+                            dgv_DataList.Rows[rid].Cells["phone"].Value = subjectTable.Rows[i]["si_contacts_phone"];
+                            dgv_DataList.Rows[rid].Cells["files"].Value = GetFileAmount(subjectTable.Rows[i]["si_id"], true);
+                            dgv_DataList.Rows[rid].Cells["eles"].Value = GetFileAmount(subjectTable.Rows[i]["si_id"], false);
+                        }
+                    }
+                }
+            }
+            else if(e.Button == MouseButtons.Right)
+            {
+                TreeNode node = tv_DataTree.GetNodeAt(e.X, e.Y);
+                if(node != null && node.Tag != null)
+                {
+                    tv_DataTree.SelectedNode = node;
+                    cms_TreeView.Show(MousePosition);
+
+                    ControlType type = (ControlType)node.Tag;
+                    if(type == ControlType.Plan)
+                    {
+                        tsm_Project.Visible = true;
+                        tsm_Topic.Visible = true;
+                        tsm_Subject.Visible = false;
+                        tsm_Add.Visible = true;
+                    }
+                    else if(type == ControlType.Plan_Project)
+                    {
+                        tsm_Project.Visible = false;
+                        tsm_Topic.Visible = true;
+                        tsm_Subject.Visible = true;
+                        tsm_Add.Visible = true;
+                    }
+                    else if(type == ControlType.Plan_Topic)
+                    {
+                        tsm_Project.Visible = false;
+                        tsm_Topic.Visible = false;
+                        tsm_Subject.Visible = true;
+                        tsm_Add.Visible = true;
+                    }
+                    else if(type == ControlType.Plan_Topic_Subject)
+                    {
+                        cms_TreeView.Close();
+                    }
+                }
+            }
+        }
+
+        private void tsm_Project_Click(object sender, EventArgs e)
+        {
+            TreeNode node = tv_DataTree.SelectedNode;
+            if(node != null && node.Tag != null)
+            {
+                Frm_Wroking frm = new Frm_Wroking(node, LoadTreeList);
+                frm.cbo_Special_HasNext.SelectedIndex = 2;
+                frm.Cbo_Special_HasNext_SelectedIndexChanged(null, null);
+                frm.tab_Menu.SelectedIndex = frm.tab_Menu.TabCount - 1;
+                frm.Show();
+            }
+        }
+
+        private void tsm_Topic_Click(object sender, EventArgs e)
+        {
+            TreeNode node = tv_DataTree.SelectedNode;
+            if(node != null && node.Tag != null)
+            {
+                if(!node.Tag.Equals(ControlType.Plan))
+                {
+                    Frm_Wroking frm = new Frm_Wroking(node, LoadTreeList);
+                    frm.cbo_Project_HasNext.SelectedIndex = 2;
+                    frm.Cbo_Project_HasNext_SelectionChangeCommitted(null, null);
+                    frm.tab_Menu.SelectedIndex = frm.tab_Menu.TabCount - 1;
+                    frm.Show();
+                }
+                else
+                {
+                    Frm_Wroking frm = new Frm_Wroking(node, LoadTreeList);
+                    frm.cbo_Special_HasNext.SelectedIndex = 3;
+                    frm.Cbo_Special_HasNext_SelectedIndexChanged(null, null);
+                    frm.tab_Menu.SelectedIndex = frm.tab_Menu.TabCount - 1;
+                    frm.Show();
+                }
+            }
+        }
+
+        private void tsm_Subject_Click(object sender, EventArgs e)
+        {
+            TreeNode node = tv_DataTree.SelectedNode;
+            if(node != null && node.Tag != null)
+            {
+                if(!node.Tag.Equals(ControlType.Plan))
+                {
+                    if(node.Tag.Equals(ControlType.Plan_Project))
+                    {
+                        Frm_Wroking frm = new Frm_Wroking(node, LoadTreeList);
+                        frm.Show();
+                        frm.cbo_Project_HasNext.SelectedIndex = 3;
+                        frm.Cbo_Project_HasNext_SelectionChangeCommitted(null, null);
+                        frm.tab_Menu.SelectedIndex = frm.tab_Menu.TabCount - 1;
+                    }
+                    else if(node.Tag.Equals(ControlType.Plan_Topic))
+                    {
+                        Frm_Wroking frm = new Frm_Wroking(node, LoadTreeList);
+                        frm.Show();
+                        frm.cbo_Topic_HasNext.SelectedIndex = 1;
+                        frm.Cbo_Topic_HasNext_SelectionChangeCommitted(null, null);
+                        frm.tab_Menu.SelectedIndex = frm.tab_Menu.TabCount - 1;
+                    }
+                }
             }
         }
     }
